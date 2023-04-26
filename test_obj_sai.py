@@ -28,7 +28,7 @@ class TestSai%(CLASS_NAME)s:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values remove =======")
         pprint(results)
-        assert all( [result == 0 for result in results]), "Remove error"
+        assert all( [result == 'SAI_STATUS_SUCCESS' for result in results]), "Remove error"
 
 '''
 
@@ -45,7 +45,7 @@ def get_all_attributes(obj_type):
     dictionary = {}
 
     import os
-    for root, dirs, files in os.walk(r'C:/github-keysight/SAI/inc'):
+    for root, dirs, files in os.walk(r'/home/ubuntuserver/dinesh/SAI/'):
         for file in files:
             if file.endswith(".h"):
 
@@ -135,6 +135,12 @@ def get_create_command(obj_type):
         if 'type' in mandatory_attributes[attribute].keys():
             if 'sai_uint16_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('10')
+            elif 'sai_bridge_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_BRIDGE_TYPE_1Q')
+            elif "sai_meter_type_t"  == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_METER_TYPE_PACKETS')
+            elif "sai_policer_mode_t" == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_POLICER_MODE_SR_TCM')
             else:
                 attributes.append(mandatory_attributes[attribute]['type'])
         else:
@@ -163,7 +169,8 @@ def generate_comment(obj_type):
         parents = []
         for attribute in mandatory_attributes.keys():
             if 'objects' in mandatory_attributes[attribute].keys():
-                parent.append(mandatory_attributes[attribute]['objects'])
+                if mandatory_attributes[attribute]['objects'] != None:
+                    parents.append(mandatory_attributes[attribute]['objects'])
         if len(parents) == 0:
             return 'object with no parents'
         else:
