@@ -16,8 +16,18 @@ run all tests on by one
 
 ## phase 3:
 run only the test cases that have no mandatory attributes
+test_hostif_trap_group.py
+test_ipmc_group.py
+test_lag.py
+test_rpf_group.py
+test_scheduler.py
+test_stp.py
+test_udf_group.py
+test_virtual_router.py
+test_vlan.py
+test_wred.py
 
-| TEST CASE                           | RESULT | COMMENT |
+| TEST CASE                           | SONiC | DASH | COMMENT |
 |-------------------------------------|---|---|
 | test_ars.py                         |   |   |
 | test_ars_profile.py                 |   |   |
@@ -34,7 +44,7 @@ run only the test cases that have no mandatory attributes
 | test_extensions_range_start.py      |   |   |
 | test_fdb_flush.py                   |   |   |
 | test_hash.py                        |   |   |
-| test_hostif_trap_group.py           |   |   |
+| test_hostif_trap_group.py           | PASS |   |
 | test_host_interface.py              |   |   |
 | test_inbound_routing_entry.py       |   |   |
 | test_inseg_entry.py                 |   |   |
