@@ -4,7 +4,7 @@ from pprint import pprint
 
 import pytest
 
-
+# object with no attributes
 class TestSaiOutboundRoutingEntry:
 
     @pytest.mark.dependency(scope='session')
@@ -15,6 +15,7 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values create =======")
         pprint(results)
+        assert all(results), "Create error"
 
     def test_outbound_routing_entry_remove(self, npu):
 
@@ -23,4 +24,5 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values remove =======")
         pprint(results)
+        assert all( [result == 0 for result in results]), "Remove error"
 

@@ -4,7 +4,7 @@ from pprint import pprint
 
 import pytest
 
-
+# object with no attributes
 class TestSaiMax:
 
     @pytest.mark.dependency(scope='session')
@@ -15,6 +15,7 @@ class TestSaiMax:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values create =======")
         pprint(results)
+        assert all(results), "Create error"
 
     def test_max_remove(self, npu):
 
@@ -23,4 +24,5 @@ class TestSaiMax:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values remove =======")
         pprint(results)
+        assert all( [result == 0 for result in results]), "Remove error"
 

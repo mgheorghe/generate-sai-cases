@@ -4,7 +4,7 @@ from pprint import pprint
 
 import pytest
 
-
+# object with no attributes
 class TestSaiTableBitmapRouterEntry:
 
     @pytest.mark.dependency(scope='session')
@@ -15,6 +15,7 @@ class TestSaiTableBitmapRouterEntry:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values create =======")
         pprint(results)
+        assert all(results), "Create error"
 
     def test_table_bitmap_router_entry_remove(self, npu):
 
@@ -23,4 +24,5 @@ class TestSaiTableBitmapRouterEntry:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values remove =======")
         pprint(results)
+        assert all( [result == 0 for result in results]), "Remove error"
 
