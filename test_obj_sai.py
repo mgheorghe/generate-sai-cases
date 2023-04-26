@@ -8,7 +8,7 @@ from pprint import pprint
 
 import pytest
 
-
+# %(COMMENT)s
 class TestSai%(CLASS_NAME)s:
 
     @pytest.mark.dependency(scope='session')
@@ -19,6 +19,7 @@ class TestSai%(CLASS_NAME)s:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values create =======")
         pprint(results)
+        assert all(results), "Create error"
 
     def test_%(OBJECT_NAME)s_remove(self, npu):
 
@@ -27,6 +28,7 @@ class TestSai%(CLASS_NAME)s:
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values remove =======")
         pprint(results)
+        assert all( [result == 0 for result in results]), "Remove error"
 
 '''
 
@@ -152,6 +154,21 @@ def camel_case(s):
     s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
     return s
 
+def generate_comment(obj_type):
+
+    mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
+    if len(mandatory_attributes) == 0:
+        return 'object with no attributes'
+    else:
+        parents = []
+        for attribute in mandatory_attributes.keys():
+            if 'objects' in mandatory_attributes[attribute].keys():
+                parent.append(mandatory_attributes[attribute]['objects'])
+        if len(parents) == 0:
+            return 'object with no parents'
+        else:
+            return 'object with parent %s' % ( ' '.join(parents))
+
 
 def generate_pyetes_test(obj_type):
     obj_name = get_obj_name(obj_type)
@@ -165,6 +182,7 @@ def generate_pyetes_test(obj_type):
                 'OBJECT_NAME': obj_name,
                 'CREATE_COMMANDS': [get_create_command(obj_type)],
                 'REMOVE_COMMANDS': [get_remove_command(obj_type)],
+                'COMMENT': generate_comment(obj_type)
             }
         )
 
