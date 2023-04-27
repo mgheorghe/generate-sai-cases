@@ -1,12 +1,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-
+        
             <script src="lib/bindings/utils.js"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
+            
+        
 <center>
 <h1></h1>
 </center>
@@ -40,7 +40,7 @@
                  float: left;
              }
 
-
+             
              #loadingBar {
                  position:absolute;
                  top:0px;
@@ -109,23 +109,23 @@
                  border-radius:72px;
                  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
              }
+             
 
+             
 
-
-
-
+             
         </style>
     </head>
 
 
     <body>
         <div class="card" style="width: 100%">
-
-
+            
+            
             <div id="mynetwork" class="card-body"></div>
         </div>
 
-
+        
             <div id="loadingBar">
               <div class="outerBorder">
                 <div id="text">0%</div>
@@ -134,8 +134,8 @@
                 </div>
               </div>
             </div>
-
-
+        
+        
 
         <script type="text/javascript">
 
@@ -155,15 +155,15 @@
                   value : []
               };
 
+              
 
-
-
+              
 
               // This method is responsible for drawing the graph, returns the drawn network
               function drawGraph() {
                   var container = document.getElementById('mynetwork');
 
-
+                  
 
                   // parsing and collecting nodes and edges from the python
                   nodes = new vis.DataSet([{"color": "#97c2fc", "id": "ACL_COUNTER", "label": "ACL_COUNTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_TABLE", "label": "ACL_TABLE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_ENTRY", "label": "ACL_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_TABLE_GROUP_MEMBER", "label": "ACL_TABLE_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_TABLE_GROUP", "label": "ACL_TABLE_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BFD_SESSION", "label": "BFD_SESSION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VIRTUAL_ROUTER", "label": "VIRTUAL_ROUTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PORT", "label": "PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SRV6_SIDLIST", "label": "SRV6_SIDLIST", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BRIDGE_PORT", "label": "BRIDGE_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "LAG", "label": "LAG", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SYSTEM_PORT", "label": "SYSTEM_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ROUTER_INTERFACE", "label": "ROUTER_INTERFACE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TUNNEL", "label": "TUNNEL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BRIDGE", "label": "BRIDGE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VLAN", "label": "VLAN", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BUFFER_PROFILE", "label": "BUFFER_PROFILE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BUFFER_POOL", "label": "BUFFER_POOL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DASH_ACL_RULE", "label": "DASH_ACL_RULE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DASH_ACL_GROUP", "label": "DASH_ACL_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL_QUEUE_REPORT", "label": "DTEL_QUEUE_REPORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "QUEUE", "label": "QUEUE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SCHEDULER_GROUP", "label": "SCHEDULER_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF", "label": "HOSTIF", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_PACKET", "label": "HOSTIF_PACKET", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_TABLE_ENTRY", "label": "HOSTIF_TABLE_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_TRAP", "label": "HOSTIF_TRAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_USER_DEFINED_TRAP", "label": "HOSTIF_USER_DEFINED_TRAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "INGRESS_PRIORITY_GROUP", "label": "INGRESS_PRIORITY_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPMC_ENTRY", "label": "IPMC_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "RPF_GROUP", "label": "RPF_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPMC_GROUP_MEMBER", "label": "IPMC_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPMC_GROUP", "label": "IPMC_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPSEC_PORT", "label": "IPSEC_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPSEC_SA", "label": "IPSEC_SA", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPSEC", "label": "IPSEC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ISOLATION_GROUP_MEMBER", "label": "ISOLATION_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ISOLATION_GROUP", "label": "ISOLATION_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "LAG_MEMBER", "label": "LAG_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC_PORT", "label": "MACSEC_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC_SA", "label": "MACSEC_SA", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC_SC", "label": "MACSEC_SC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC_FLOW", "label": "MACSEC_FLOW", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MCAST_FDB_ENTRY", "label": "MCAST_FDB_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "L2MC_GROUP", "label": "L2MC_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MIRROR_SESSION", "label": "MIRROR_SESSION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEXT_HOP", "label": "NEXT_HOP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEXT_HOP_GROUP_MEMBER", "label": "NEXT_HOP_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEXT_HOP_GROUP", "label": "NEXT_HOP_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PORT_CONNECTOR", "label": "PORT_CONNECTOR", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PORT_POOL", "label": "PORT_POOL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PORT_SERDES", "label": "PORT_SERDES", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "RPF_GROUP_MEMBER", "label": "RPF_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "STP_PORT", "label": "STP_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "STP", "label": "STP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TABLE_BITMAP_ROUTER_ENTRY", "label": "TABLE_BITMAP_ROUTER_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TABLE_META_TUNNEL_ENTRY", "label": "TABLE_META_TUNNEL_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_COLLECTOR", "label": "TAM_COLLECTOR", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_TRANSPORT", "label": "TAM_TRANSPORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_EVENT", "label": "TAM_EVENT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_EVENT_ACTION", "label": "TAM_EVENT_ACTION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_REPORT", "label": "TAM_REPORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_INT", "label": "TAM_INT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_TEL_TYPE", "label": "TAM_TEL_TYPE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_TELEMETRY", "label": "TAM_TELEMETRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TUNNEL_MAP_ENTRY", "label": "TUNNEL_MAP_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TUNNEL_MAP", "label": "TUNNEL_MAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TUNNEL_TERM_TABLE_ENTRY", "label": "TUNNEL_TERM_TABLE_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "UDF", "label": "UDF", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "UDF_MATCH", "label": "UDF_MATCH", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "UDF_GROUP", "label": "UDF_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VLAN_MEMBER", "label": "VLAN_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "__", "label": "__", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_RANGE", "label": "ACL_RANGE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ARS", "label": "ARS", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ARS_PROFILE", "label": "ARS_PROFILE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "COUNTER", "label": "COUNTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DEBUG_COUNTER", "label": "DEBUG_COUNTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DIRECTION_LOOKUP_ENTRY", "label": "DIRECTION_LOOKUP_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL", "label": "DTEL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL_EVENT", "label": "DTEL_EVENT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL_INT_SESSION", "label": "DTEL_INT_SESSION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL_REPORT_SESSION", "label": "DTEL_REPORT_SESSION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ENI", "label": "ENI", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ENI_ETHER_ADDRESS_MAP_ENTRY", "label": "ENI_ETHER_ADDRESS_MAP_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "EXTENSIONS_RANGE_END", "label": "EXTENSIONS_RANGE_END", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "EXTENSIONS_RANGE_START", "label": "EXTENSIONS_RANGE_START", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "FDB_ENTRY", "label": "FDB_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "FDB_FLUSH", "label": "FDB_FLUSH", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "FINE_GRAINED_HASH_FIELD", "label": "FINE_GRAINED_HASH_FIELD", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "GENERIC_PROGRAMMABLE", "label": "GENERIC_PROGRAMMABLE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HASH", "label": "HASH", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOST_INTERFACE", "label": "HOST_INTERFACE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_TRAP_GROUP", "label": "HOSTIF_TRAP_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "INBOUND_ROUTING_ENTRY", "label": "INBOUND_ROUTING_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "INSEG_ENTRY", "label": "INSEG_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "L", "label": "L", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC", "label": "MACSEC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MAX", "label": "MAX", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MY_MAC", "label": "MY_MAC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MY_SID_ENTRY", "label": "MY_SID_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NAT_ENTRY", "label": "NAT_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NAT_ZONE_COUNTER", "label": "NAT_ZONE_COUNTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEIGHBOR_ENTRY", "label": "NEIGHBOR_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEXT_HOP_GROUP_MAP", "label": "NEXT_HOP_GROUP_MAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NULL", "label": "NULL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "OUTBOUND_CA_TO_PA_ENTRY", "label": "OUTBOUND_CA_TO_PA_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "OUTBOUND_ROUTING_ENTRY", "label": "OUTBOUND_ROUTING_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PA_VALIDATION_ENTRY", "label": "PA_VALIDATION_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "POLICER", "label": "POLICER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "QOS_MAP", "label": "QOS_MAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ROUTE_ENTRY", "label": "ROUTE_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SAMPLEPACKET", "label": "SAMPLEPACKET", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SCHEDULER", "label": "SCHEDULER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SRV", "label": "SRV", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SWITCH", "label": "SWITCH", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SWITCH_TUNNEL", "label": "SWITCH_TUNNEL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM", "label": "TAM", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_EVENT_THRESHOLD", "label": "TAM_EVENT_THRESHOLD", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_MATH_FUNC", "label": "TAM_MATH_FUNC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VIP_ENTRY", "label": "VIP_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VNET", "label": "VNET", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WRED", "label": "WRED", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "XXX", "label": "XXX", "shape": "dot", "size": 10}]);
@@ -208,21 +208,21 @@
     }
 };
 
+                  
 
 
-
-
+                  
 
                   network = new vis.Network(container, data, options);
 
+                  
+
+                  
+
+                  
 
 
-
-
-
-
-
-
+                  
                       network.on("stabilizationProgress", function(params) {
                           document.getElementById('loadingBar').removeAttribute("style");
                           var maxWidth = 496;
@@ -239,7 +239,7 @@
                           // really clean the dom element
                           setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
                       });
-
+                  
 
                   return network;
 
