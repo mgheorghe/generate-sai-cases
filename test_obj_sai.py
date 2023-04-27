@@ -24,18 +24,18 @@ class TestSai%(CLASS_NAME)s:
         commands = %(CREATE_COMMANDS)s
 
         results = [*npu.process_commands(commands)]
-        print("======= SAI commands RETURN values create =======")
+        print('======= SAI commands RETURN values create =======')
         pprint(results)
-        assert all(results), "Create error"
+        assert all(results), 'Create error'
 
     def test_%(OBJECT_NAME)s_remove(self, npu):
 
         commands = %(REMOVE_COMMANDS)s
 
         results = [*npu.process_commands(commands)]
-        print("======= SAI commands RETURN values remove =======")
+        print('======= SAI commands RETURN values remove =======')
         pprint(results)
-        assert all( [result == 'SAI_STATUS_SUCCESS' for result in results]), "Remove error"
+        assert all( [result == 'SAI_STATUS_SUCCESS' for result in results]), 'Remove error'
 
 '''
 
@@ -54,7 +54,7 @@ def get_all_attributes(obj_type):
     import os
     for root, dirs, files in os.walk(SAI_GIT_LOCATION):
         for file in files:
-            if file.endswith(".h"):
+            if file.endswith('.h'):
 
                 start_copy = False
                 is_attribute = False
@@ -151,15 +151,15 @@ def get_create_command(obj_type):
                 attributes.append('10')
             elif 'sai_bridge_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_BRIDGE_TYPE_1Q')
-            elif "sai_meter_type_t" == mandatory_attributes[attribute]['type']:
+            elif 'sai_meter_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_METER_TYPE_PACKETS')
-            elif "sai_policer_mode_t" == mandatory_attributes[attribute]['type']:
+            elif 'sai_policer_mode_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_POLICER_MODE_SR_TCM')
             else:
                 attributes.append(mandatory_attributes[attribute]['type'])
         else:
             attributes.append('TODO')
-    command["attributes"] = attributes
+    command['attributes'] = attributes
 
     return command
 
@@ -171,7 +171,7 @@ def get_remove_command(obj_type):
 
 
 def camel_case(s):
-    s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+    s = sub(r'(_|-)+', ' ', s).title().replace(' ', '')
     return s
 
 

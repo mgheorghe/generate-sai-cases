@@ -13,16 +13,15 @@ class TestSaiTamInt:
         commands = [{'name': 'tam_int_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_TAM_INT', 'attributes': ['SAI_TAM_INT_ATTR_TYPE', 'sai_tam_int_type_t', 'SAI_TAM_INT_ATTR_DEVICE_ID', '10', 'SAI_TAM_INT_ATTR_INT_PRESENCE_TYPE', 'sai_tam_int_presence_type_t', 'SAI_TAM_INT_ATTR_INT_PRESENCE_PB1', '10', 'SAI_TAM_INT_ATTR_INT_PRESENCE_PB2', '10', 'SAI_TAM_INT_ATTR_INT_PRESENCE_DSCP_VALUE', 'sai_uint8_t', 'SAI_TAM_INT_ATTR_INLINE', 'true', 'SAI_TAM_INT_ATTR_INT_PRESENCE_L3_PROTOCOL', 'sai_uint8_t', 'SAI_TAM_INT_ATTR_REPORT_ID', 'sai_object_id_t']}]
 
         results = [*npu.process_commands(commands)]
-        print("======= SAI commands RETURN values create =======")
+        print('======= SAI commands RETURN values create =======')
         pprint(results)
-        assert all(results), "Create error"
+        assert all(results), 'Create error'
 
     def test_tam_int_remove(self, npu):
 
         commands = [{'name': 'tam_int_1', 'op': 'remove', 'type': 'SAI_OBJECT_TYPE_TAM_INT', 'attributes': ['SAI_TAM_INT_ATTR_TYPE', 'sai_tam_int_type_t', 'SAI_TAM_INT_ATTR_DEVICE_ID', '10', 'SAI_TAM_INT_ATTR_INT_PRESENCE_TYPE', 'sai_tam_int_presence_type_t', 'SAI_TAM_INT_ATTR_INT_PRESENCE_PB1', '10', 'SAI_TAM_INT_ATTR_INT_PRESENCE_PB2', '10', 'SAI_TAM_INT_ATTR_INT_PRESENCE_DSCP_VALUE', 'sai_uint8_t', 'SAI_TAM_INT_ATTR_INLINE', 'true', 'SAI_TAM_INT_ATTR_INT_PRESENCE_L3_PROTOCOL', 'sai_uint8_t', 'SAI_TAM_INT_ATTR_REPORT_ID', 'sai_object_id_t']}]
 
         results = [*npu.process_commands(commands)]
-        print("======= SAI commands RETURN values remove =======")
+        print('======= SAI commands RETURN values remove =======')
         pprint(results)
-        assert all( [result == 'SAI_STATUS_SUCCESS' for result in results]), "Remove error"
-
+        assert all( [result == 'SAI_STATUS_SUCCESS' for result in results]), 'Remove error'
