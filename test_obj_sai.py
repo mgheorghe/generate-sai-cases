@@ -2,6 +2,13 @@ import io
 import pprint
 from re import sub
 
+import matplotlib.pyplot as plt
+import networkx as nx
+from pyvis.network import Network
+
+SAI_GIT_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
+SAI_GIT_LOCATION = r'C:/github-keysight/SAI'
+
 TEST_TEMPLATE = '''
 
 from pprint import pprint
@@ -45,7 +52,7 @@ def get_all_attributes(obj_type):
     dictionary = {}
 
     import os
-    for root, dirs, files in os.walk(r'/home/ubuntuserver/dinesh/SAI/'):
+    for root, dirs, files in os.walk(SAI_GIT_LOCATION):
         for file in files:
             if file.endswith(".h"):
 
@@ -63,13 +70,19 @@ def get_all_attributes(obj_type):
                             if attr_block_start:
                                 if '@type' in text_line:
                                     o_type = text_line.replace('* @type', '').strip()
-                                if '@flags' in  text_line:
+                                if '@flags' in text_line:
                                     flags = text_line.replace('* @flags', '').strip()
-                                if '@objects' in  text_line:
-                                    objects = text_line.replace('* @objects', '').strip()
-                                if '@allownull' in  text_line:
+                                if '@objects' in text_line:
+                                    objects = []
+                                    for parent in text_line.replace('* @objects', '').strip().split(','):
+                                        objects.append(parent.strip())
+                                        if flags:
+                                            if 'MANDATORY_ON_CREATE' in flags:
+                                                G.add_edge(obj_type.replace('SAI_OBJECT_TYPE_', ''),
+                                                           parent.strip().replace('SAI_OBJECT_TYPE_', ''))
+                                if '@allownull' in text_line:
                                     allownull = text_line.replace('* @allownull', '').strip()
-                                if '@default' in  text_line:
+                                if '@default' in text_line:
                                     default = text_line.replace('* @default', '').strip()
 
                             if is_attribute:
@@ -100,9 +113,10 @@ def get_all_attributes(obj_type):
                             if '*/' in text_line:
                                 attr_block_start = False
                                 is_attribute = True
-    
+
     # pprint.pprint(dictionary)
     return dictionary
+
 
 def select_mandatory_attributes(all_attributes):
     mandatory = {}
@@ -110,7 +124,7 @@ def select_mandatory_attributes(all_attributes):
         if all_attributes[attribute]['flags'] is not None:
             if 'MANDATORY_ON_CREATE' in all_attributes[attribute]['flags']:
                 mandatory[attribute] = all_attributes[attribute]
-    
+
     pprint.pprint(mandatory)
     return mandatory
 
@@ -137,7 +151,7 @@ def get_create_command(obj_type):
                 attributes.append('10')
             elif 'sai_bridge_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_BRIDGE_TYPE_1Q')
-            elif "sai_meter_type_t"  == mandatory_attributes[attribute]['type']:
+            elif "sai_meter_type_t" == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_METER_TYPE_PACKETS')
             elif "sai_policer_mode_t" == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_POLICER_MODE_SR_TCM')
@@ -160,6 +174,7 @@ def camel_case(s):
     s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
     return s
 
+
 def generate_comment(obj_type):
 
     mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
@@ -170,17 +185,17 @@ def generate_comment(obj_type):
         for attribute in mandatory_attributes.keys():
             if 'objects' in mandatory_attributes[attribute].keys():
                 if mandatory_attributes[attribute]['objects'] != None:
-                    parents.append(mandatory_attributes[attribute]['objects'])
+                    parents.extend(mandatory_attributes[attribute]['objects'])
         if len(parents) == 0:
             return 'object with no parents'
         else:
-            return 'object with parent %s' % ( ' '.join(parents))
+            return 'object with parent %s' % (' '.join(parents))
 
 
 def generate_pyetes_test(obj_type):
     obj_name = get_obj_name(obj_type)
     test_file_name = 'test_%s.py' % obj_name
-    #print(test_file_name)
+    # print(test_file_name)
 
     with io.open(test_file_name, 'wt', encoding='ascii') as test_file:
         test_file.write(
@@ -195,11 +210,15 @@ def generate_pyetes_test(obj_type):
 
 
 object_dict = {}
-
 object_types = get_object_types()
 
+G = nx.DiGraph()
+nt = Network('1300px', '2500px', notebook=True)
+
 for obj_type in object_types:
+    G.add_node(obj_type.replace('SAI_OBJECT_TYPE_', ''))
     generate_pyetes_test(obj_type)
 
 
-#pprint.pprint(object_dict)
+nt.from_nx(G)
+nt.show('nx.html')
