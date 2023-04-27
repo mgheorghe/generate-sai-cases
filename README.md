@@ -86,5 +86,13 @@ run all cases that have mandatory attributes but do not have a parent (depedency
 ## phase 6:
 create depedency graph between SAI objects
 
+```
+python test_obj_sai.py
+python -m pre_commit run --all-files
+python -m black --skip-string-normalization .\
+```
+
+* contribute in https://github.com/opencomputeproject/SAI-Challenger/tree/main/tests/api
+
 ## phase 7:
 run all cases that have depedency on other attributes but those depdencies are on objects from other cases that already passed in phase 1-6
