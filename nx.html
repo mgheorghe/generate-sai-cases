@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 2500px;
+                 height: 1300px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 2500px;
+                 height: 1300px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "ACL_COUNTER", "label": "ACL_COUNTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_TABLE", "label": "ACL_TABLE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_ENTRY", "label": "ACL_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_TABLE_GROUP_MEMBER", "label": "ACL_TABLE_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_TABLE_GROUP", "label": "ACL_TABLE_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BFD_SESSION", "label": "BFD_SESSION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VIRTUAL_ROUTER", "label": "VIRTUAL_ROUTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PORT", "label": "PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SRV6_SIDLIST", "label": "SRV6_SIDLIST", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BRIDGE_PORT", "label": "BRIDGE_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "LAG", "label": "LAG", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SYSTEM_PORT", "label": "SYSTEM_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ROUTER_INTERFACE", "label": "ROUTER_INTERFACE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TUNNEL", "label": "TUNNEL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BRIDGE", "label": "BRIDGE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VLAN", "label": "VLAN", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BUFFER_PROFILE", "label": "BUFFER_PROFILE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "BUFFER_POOL", "label": "BUFFER_POOL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DASH_ACL_RULE", "label": "DASH_ACL_RULE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DASH_ACL_GROUP", "label": "DASH_ACL_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL_QUEUE_REPORT", "label": "DTEL_QUEUE_REPORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "QUEUE", "label": "QUEUE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SCHEDULER_GROUP", "label": "SCHEDULER_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF", "label": "HOSTIF", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_PACKET", "label": "HOSTIF_PACKET", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_TABLE_ENTRY", "label": "HOSTIF_TABLE_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_TRAP", "label": "HOSTIF_TRAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_USER_DEFINED_TRAP", "label": "HOSTIF_USER_DEFINED_TRAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "INGRESS_PRIORITY_GROUP", "label": "INGRESS_PRIORITY_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPMC_ENTRY", "label": "IPMC_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "RPF_GROUP", "label": "RPF_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPMC_GROUP_MEMBER", "label": "IPMC_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPMC_GROUP", "label": "IPMC_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPSEC_PORT", "label": "IPSEC_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPSEC_SA", "label": "IPSEC_SA", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "IPSEC", "label": "IPSEC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ISOLATION_GROUP_MEMBER", "label": "ISOLATION_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ISOLATION_GROUP", "label": "ISOLATION_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "LAG_MEMBER", "label": "LAG_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC_PORT", "label": "MACSEC_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC_SA", "label": "MACSEC_SA", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC_SC", "label": "MACSEC_SC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC_FLOW", "label": "MACSEC_FLOW", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MCAST_FDB_ENTRY", "label": "MCAST_FDB_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "L2MC_GROUP", "label": "L2MC_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MIRROR_SESSION", "label": "MIRROR_SESSION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEXT_HOP", "label": "NEXT_HOP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEXT_HOP_GROUP_MEMBER", "label": "NEXT_HOP_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEXT_HOP_GROUP", "label": "NEXT_HOP_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PORT_CONNECTOR", "label": "PORT_CONNECTOR", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PORT_POOL", "label": "PORT_POOL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PORT_SERDES", "label": "PORT_SERDES", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "RPF_GROUP_MEMBER", "label": "RPF_GROUP_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "STP_PORT", "label": "STP_PORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "STP", "label": "STP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TABLE_BITMAP_ROUTER_ENTRY", "label": "TABLE_BITMAP_ROUTER_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TABLE_META_TUNNEL_ENTRY", "label": "TABLE_META_TUNNEL_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_COLLECTOR", "label": "TAM_COLLECTOR", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_TRANSPORT", "label": "TAM_TRANSPORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_EVENT", "label": "TAM_EVENT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_EVENT_ACTION", "label": "TAM_EVENT_ACTION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_REPORT", "label": "TAM_REPORT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_INT", "label": "TAM_INT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_TEL_TYPE", "label": "TAM_TEL_TYPE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_TELEMETRY", "label": "TAM_TELEMETRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TUNNEL_MAP_ENTRY", "label": "TUNNEL_MAP_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TUNNEL_MAP", "label": "TUNNEL_MAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TUNNEL_TERM_TABLE_ENTRY", "label": "TUNNEL_TERM_TABLE_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "UDF", "label": "UDF", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "UDF_MATCH", "label": "UDF_MATCH", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "UDF_GROUP", "label": "UDF_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VLAN_MEMBER", "label": "VLAN_MEMBER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "__", "label": "__", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ACL_RANGE", "label": "ACL_RANGE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ARS", "label": "ARS", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ARS_PROFILE", "label": "ARS_PROFILE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "COUNTER", "label": "COUNTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DEBUG_COUNTER", "label": "DEBUG_COUNTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DIRECTION_LOOKUP_ENTRY", "label": "DIRECTION_LOOKUP_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL", "label": "DTEL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL_EVENT", "label": "DTEL_EVENT", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL_INT_SESSION", "label": "DTEL_INT_SESSION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DTEL_REPORT_SESSION", "label": "DTEL_REPORT_SESSION", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ENI", "label": "ENI", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ENI_ETHER_ADDRESS_MAP_ENTRY", "label": "ENI_ETHER_ADDRESS_MAP_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "EXTENSIONS_RANGE_END", "label": "EXTENSIONS_RANGE_END", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "EXTENSIONS_RANGE_START", "label": "EXTENSIONS_RANGE_START", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "FDB_ENTRY", "label": "FDB_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "FDB_FLUSH", "label": "FDB_FLUSH", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "FINE_GRAINED_HASH_FIELD", "label": "FINE_GRAINED_HASH_FIELD", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "GENERIC_PROGRAMMABLE", "label": "GENERIC_PROGRAMMABLE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HASH", "label": "HASH", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOST_INTERFACE", "label": "HOST_INTERFACE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "HOSTIF_TRAP_GROUP", "label": "HOSTIF_TRAP_GROUP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "INBOUND_ROUTING_ENTRY", "label": "INBOUND_ROUTING_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "INSEG_ENTRY", "label": "INSEG_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "L", "label": "L", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MACSEC", "label": "MACSEC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MAX", "label": "MAX", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MY_MAC", "label": "MY_MAC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MY_SID_ENTRY", "label": "MY_SID_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NAT_ENTRY", "label": "NAT_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NAT_ZONE_COUNTER", "label": "NAT_ZONE_COUNTER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEIGHBOR_ENTRY", "label": "NEIGHBOR_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NEXT_HOP_GROUP_MAP", "label": "NEXT_HOP_GROUP_MAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "NULL", "label": "NULL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "OUTBOUND_CA_TO_PA_ENTRY", "label": "OUTBOUND_CA_TO_PA_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "OUTBOUND_ROUTING_ENTRY", "label": "OUTBOUND_ROUTING_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "PA_VALIDATION_ENTRY", "label": "PA_VALIDATION_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "POLICER", "label": "POLICER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "QOS_MAP", "label": "QOS_MAP", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ROUTE_ENTRY", "label": "ROUTE_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SAMPLEPACKET", "label": "SAMPLEPACKET", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SCHEDULER", "label": "SCHEDULER", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SRV", "label": "SRV", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SWITCH", "label": "SWITCH", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "SWITCH_TUNNEL", "label": "SWITCH_TUNNEL", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM", "label": "TAM", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_EVENT_THRESHOLD", "label": "TAM_EVENT_THRESHOLD", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "TAM_MATH_FUNC", "label": "TAM_MATH_FUNC", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VIP_ENTRY", "label": "VIP_ENTRY", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "VNET", "label": "VNET", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WRED", "label": "WRED", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "XXX", "label": "XXX", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "ACL_COUNTER", "to": "ACL_TABLE", "width": 1}, {"from": "ACL_ENTRY", "to": "ACL_TABLE", "width": 1}, {"from": "ACL_TABLE_GROUP_MEMBER", "to": "ACL_TABLE_GROUP", "width": 1}, {"from": "ACL_TABLE_GROUP_MEMBER", "to": "ACL_TABLE", "width": 1}, {"from": "BFD_SESSION", "to": "VIRTUAL_ROUTER", "width": 1}, {"from": "BFD_SESSION", "to": "PORT", "width": 1}, {"from": "BFD_SESSION", "to": "SRV6_SIDLIST", "width": 1}, {"from": "BRIDGE_PORT", "to": "PORT", "width": 1}, {"from": "BRIDGE_PORT", "to": "LAG", "width": 1}, {"from": "BRIDGE_PORT", "to": "SYSTEM_PORT", "width": 1}, {"from": "BRIDGE_PORT", "to": "ROUTER_INTERFACE", "width": 1}, {"from": "BRIDGE_PORT", "to": "TUNNEL", "width": 1}, {"from": "BRIDGE_PORT", "to": "BRIDGE", "width": 1}, {"from": "ROUTER_INTERFACE", "to": "VIRTUAL_ROUTER", "width": 1}, {"from": "ROUTER_INTERFACE", "to": "PORT", "width": 1}, {"from": "ROUTER_INTERFACE", "to": "LAG", "width": 1}, {"from": "ROUTER_INTERFACE", "to": "SYSTEM_PORT", "width": 1}, {"from": "ROUTER_INTERFACE", "to": "VLAN", "width": 1}, {"from": "ROUTER_INTERFACE", "to": "BRIDGE", "width": 1}, {"from": "TUNNEL", "to": "ROUTER_INTERFACE", "width": 1}, {"from": "BUFFER_PROFILE", "to": "BUFFER_POOL", "width": 1}, {"from": "DASH_ACL_RULE", "to": "DASH_ACL_GROUP", "width": 1}, {"from": "DTEL_QUEUE_REPORT", "to": "QUEUE", "width": 1}, {"from": "QUEUE", "to": "PORT", "width": 1}, {"from": "QUEUE", "to": "SCHEDULER_GROUP", "width": 1}, {"from": "HOSTIF", "to": "PORT", "width": 1}, {"from": "HOSTIF", "to": "LAG", "width": 1}, {"from": "HOSTIF", "to": "VLAN", "width": 1}, {"from": "HOSTIF", "to": "SYSTEM_PORT", "width": 1}, {"from": "HOSTIF_PACKET", "to": "PORT", "width": 1}, {"from": "HOSTIF_TABLE_ENTRY", "to": "PORT", "width": 1}, {"from": "HOSTIF_TABLE_ENTRY", "to": "LAG", "width": 1}, {"from": "HOSTIF_TABLE_ENTRY", "to": "ROUTER_INTERFACE", "width": 1}, {"from": "HOSTIF_TABLE_ENTRY", "to": "HOSTIF_TRAP", "width": 1}, {"from": "HOSTIF_TABLE_ENTRY", "to": "HOSTIF_USER_DEFINED_TRAP", "width": 1}, {"from": "HOSTIF_TABLE_ENTRY", "to": "HOSTIF", "width": 1}, {"from": "INGRESS_PRIORITY_GROUP", "to": "PORT", "width": 1}, {"from": "IPMC_ENTRY", "to": "RPF_GROUP", "width": 1}, {"from": "IPMC_GROUP_MEMBER", "to": "IPMC_GROUP", "width": 1}, {"from": "IPMC_GROUP_MEMBER", "to": "ROUTER_INTERFACE", "width": 1}, {"from": "IPMC_GROUP_MEMBER", "to": "TUNNEL", "width": 1}, {"from": "IPSEC_PORT", "to": "PORT", "width": 1}, {"from": "IPSEC_SA", "to": "IPSEC", "width": 1}, {"from": "ISOLATION_GROUP_MEMBER", "to": "ISOLATION_GROUP", "width": 1}, {"from": "ISOLATION_GROUP_MEMBER", "to": "PORT", "width": 1}, {"from": "ISOLATION_GROUP_MEMBER", "to": "BRIDGE_PORT", "width": 1}, {"from": "LAG_MEMBER", "to": "LAG", "width": 1}, {"from": "LAG_MEMBER", "to": "PORT", "width": 1}, {"from": "LAG_MEMBER", "to": "SYSTEM_PORT", "width": 1}, {"from": "MACSEC_PORT", "to": "PORT", "width": 1}, {"from": "MACSEC_SA", "to": "MACSEC_SC", "width": 1}, {"from": "MACSEC_SC", "to": "MACSEC_FLOW", "width": 1}, {"from": "MCAST_FDB_ENTRY", "to": "L2MC_GROUP", "width": 1}, {"from": "MIRROR_SESSION", "to": "PORT", "width": 1}, {"from": "MIRROR_SESSION", "to": "LAG", "width": 1}, {"from": "MIRROR_SESSION", "to": "SYSTEM_PORT", "width": 1}, {"from": "NEXT_HOP", "to": "ROUTER_INTERFACE", "width": 1}, {"from": "NEXT_HOP", "to": "TUNNEL", "width": 1}, {"from": "NEXT_HOP", "to": "SRV6_SIDLIST", "width": 1}, {"from": "NEXT_HOP_GROUP_MEMBER", "to": "NEXT_HOP_GROUP", "width": 1}, {"from": "NEXT_HOP_GROUP_MEMBER", "to": "NEXT_HOP", "width": 1}, {"from": "PORT_CONNECTOR", "to": "PORT", "width": 1}, {"from": "PORT_POOL", "to": "PORT", "width": 1}, {"from": "PORT_POOL", "to": "BUFFER_POOL", "width": 1}, {"from": "PORT_SERDES", "to": "PORT", "width": 1}, {"from": "SCHEDULER_GROUP", "to": "PORT", "width": 1}, {"from": "SCHEDULER_GROUP", "to": "SCHEDULER_GROUP", "width": 1}, {"from": "RPF_GROUP_MEMBER", "to": "RPF_GROUP", "width": 1}, {"from": "RPF_GROUP_MEMBER", "to": "ROUTER_INTERFACE", "width": 1}, {"from": "STP_PORT", "to": "STP", "width": 1}, {"from": "STP_PORT", "to": "BRIDGE_PORT", "width": 1}, {"from": "TABLE_BITMAP_ROUTER_ENTRY", "to": "NEXT_HOP", "width": 1}, {"from": "TABLE_BITMAP_ROUTER_ENTRY", "to": "ROUTER_INTERFACE", "width": 1}, {"from": "TABLE_BITMAP_ROUTER_ENTRY", "to": "HOSTIF_TRAP", "width": 1}, {"from": "TABLE_META_TUNNEL_ENTRY", "to": "TUNNEL", "width": 1}, {"from": "TAM_COLLECTOR", "to": "TAM_TRANSPORT", "width": 1}, {"from": "TAM_EVENT", "to": "TAM_EVENT_ACTION", "width": 1}, {"from": "TAM_EVENT", "to": "TAM_COLLECTOR", "width": 1}, {"from": "TAM_EVENT_ACTION", "to": "TAM_REPORT", "width": 1}, {"from": "TAM_INT", "to": "TAM_REPORT", "width": 1}, {"from": "TAM_TEL_TYPE", "to": "TAM_REPORT", "width": 1}, {"from": "TAM_TELEMETRY", "to": "TAM_COLLECTOR", "width": 1}, {"from": "TUNNEL_MAP_ENTRY", "to": "TUNNEL_MAP", "width": 1}, {"from": "TUNNEL_MAP_ENTRY", "to": "BRIDGE", "width": 1}, {"from": "TUNNEL_MAP_ENTRY", "to": "VIRTUAL_ROUTER", "width": 1}, {"from": "TUNNEL_TERM_TABLE_ENTRY", "to": "VIRTUAL_ROUTER", "width": 1}, {"from": "TUNNEL_TERM_TABLE_ENTRY", "to": "TUNNEL", "width": 1}, {"from": "UDF", "to": "UDF_MATCH", "width": 1}, {"from": "UDF", "to": "UDF_GROUP", "width": 1}, {"from": "VLAN_MEMBER", "to": "VLAN", "width": 1}, {"from": "VLAN_MEMBER", "to": "BRIDGE_PORT", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
