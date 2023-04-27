@@ -4,7 +4,7 @@ import pytest
 
 
 class TestSaiMirrorSession:
-    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT
+    # object with parent SAI_OBJECT_TYPE_PORT, SAI_OBJECT_TYPE_LAG, SAI_OBJECT_TYPE_SYSTEM_PORT SAI_OBJECT_TYPE_PORT, SAI_OBJECT_TYPE_LAG, SAI_OBJECT_TYPE_SYSTEM_PORT
 
     @pytest.mark.dependency(scope='session')
     def test_mirror_session_create(self, npu):
@@ -29,9 +29,9 @@ class TestSaiMirrorSession:
                     'SAI_MIRROR_SESSION_ATTR_DST_IP_ADDRESS',
                     'sai_ip_address_t',
                     'SAI_MIRROR_SESSION_ATTR_SRC_MAC_ADDRESS',
-                    'sai_mac_t',
+                    '00:00:00:00:00:00',
                     'SAI_MIRROR_SESSION_ATTR_DST_MAC_ADDRESS',
-                    'sai_mac_t',
+                    '00:00:00:00:00:00',
                     'SAI_MIRROR_SESSION_ATTR_GRE_PROTOCOL_TYPE',
                     '10',
                     'SAI_MIRROR_SESSION_ATTR_MONITOR_PORTLIST',
@@ -71,9 +71,9 @@ class TestSaiMirrorSession:
                     'SAI_MIRROR_SESSION_ATTR_DST_IP_ADDRESS',
                     'sai_ip_address_t',
                     'SAI_MIRROR_SESSION_ATTR_SRC_MAC_ADDRESS',
-                    'sai_mac_t',
+                    '00:00:00:00:00:00',
                     'SAI_MIRROR_SESSION_ATTR_DST_MAC_ADDRESS',
-                    'sai_mac_t',
+                    '00:00:00:00:00:00',
                     'SAI_MIRROR_SESSION_ATTR_GRE_PROTOCOL_TYPE',
                     '10',
                     'SAI_MIRROR_SESSION_ATTR_MONITOR_PORTLIST',

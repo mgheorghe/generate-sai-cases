@@ -27,7 +27,7 @@ class TestSaiDashAclRule:
                     'SAI_DASH_ACL_RULE_ATTR_DST_PORT',
                     'sai_u16_range_list_t',
                     'SAI_DASH_ACL_RULE_ATTR_PRIORITY',
-                    'sai_uint32_t',
+                    '10',
                 ],
             }
         ]
@@ -57,7 +57,7 @@ class TestSaiDashAclRule:
                     'SAI_DASH_ACL_RULE_ATTR_DST_PORT',
                     'sai_u16_range_list_t',
                     'SAI_DASH_ACL_RULE_ATTR_PRIORITY',
-                    'sai_uint32_t',
+                    '10',
                 ],
             }
         ]

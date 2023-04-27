@@ -15,7 +15,7 @@ class TestSaiMacsecPort:
                 'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
                 'attributes': [
                     'SAI_MACSEC_PORT_ATTR_MACSEC_DIRECTION',
-                    'sai_macsec_direction_t',
+                    'SAI_MACSEC_DIRECTION_EGRESS',
                     'SAI_MACSEC_PORT_ATTR_PORT_ID',
                     'sai_object_id_t',
                 ],
@@ -35,7 +35,7 @@ class TestSaiMacsecPort:
                 'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
                 'attributes': [
                     'SAI_MACSEC_PORT_ATTR_MACSEC_DIRECTION',
-                    'sai_macsec_direction_t',
+                    'SAI_MACSEC_DIRECTION_EGRESS',
                     'SAI_MACSEC_PORT_ATTR_PORT_ID',
                     'sai_object_id_t',
                 ],

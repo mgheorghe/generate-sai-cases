@@ -13,7 +13,7 @@ class TestSaiFdbEntry:
                 'name': 'fdb_entry_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'attributes': ['SAI_FDB_ENTRY_ATTR_TYPE', 'sai_fdb_entry_type_t'],
+                'attributes': ['SAI_FDB_ENTRY_ATTR_TYPE', 'SAI_FDB_ENTRY_TYPE_DYNAMIC'],
             }
         ]
 
@@ -28,7 +28,7 @@ class TestSaiFdbEntry:
                 'name': 'fdb_entry_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'attributes': ['SAI_FDB_ENTRY_ATTR_TYPE', 'sai_fdb_entry_type_t'],
+                'attributes': ['SAI_FDB_ENTRY_ATTR_TYPE', 'SAI_FDB_ENTRY_TYPE_DYNAMIC'],
             }
         ]
 

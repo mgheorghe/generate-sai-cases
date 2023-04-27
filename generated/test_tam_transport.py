@@ -15,7 +15,7 @@ class TestSaiTamTransport:
                 'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
                 'attributes': [
                     'SAI_TAM_TRANSPORT_ATTR_TRANSPORT_TYPE',
-                    'sai_tam_transport_type_t',
+                    'SAI_TAM_TRANSPORT_TYPE_TCP',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiTamTransport:
                 'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
                 'attributes': [
                     'SAI_TAM_TRANSPORT_ATTR_TRANSPORT_TYPE',
-                    'sai_tam_transport_type_t',
+                    'SAI_TAM_TRANSPORT_TYPE_TCP',
                 ],
             }
         ]

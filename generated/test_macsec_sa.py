@@ -15,7 +15,7 @@ class TestSaiMacsecSa:
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SA',
                 'attributes': [
                     'SAI_MACSEC_SA_ATTR_MACSEC_DIRECTION',
-                    'sai_macsec_direction_t',
+                    'SAI_MACSEC_DIRECTION_EGRESS',
                     'SAI_MACSEC_SA_ATTR_SC_ID',
                     'sai_object_id_t',
                     'SAI_MACSEC_SA_ATTR_AN',
@@ -27,7 +27,7 @@ class TestSaiMacsecSa:
                     'SAI_MACSEC_SA_ATTR_AUTH_KEY',
                     'sai_macsec_auth_key_t',
                     'SAI_MACSEC_SA_ATTR_MACSEC_SSCI',
-                    'sai_uint32_t',
+                    '10',
                 ],
             }
         ]
@@ -45,7 +45,7 @@ class TestSaiMacsecSa:
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SA',
                 'attributes': [
                     'SAI_MACSEC_SA_ATTR_MACSEC_DIRECTION',
-                    'sai_macsec_direction_t',
+                    'SAI_MACSEC_DIRECTION_EGRESS',
                     'SAI_MACSEC_SA_ATTR_SC_ID',
                     'sai_object_id_t',
                     'SAI_MACSEC_SA_ATTR_AN',
@@ -57,7 +57,7 @@ class TestSaiMacsecSa:
                     'SAI_MACSEC_SA_ATTR_AUTH_KEY',
                     'sai_macsec_auth_key_t',
                     'SAI_MACSEC_SA_ATTR_MACSEC_SSCI',
-                    'sai_uint32_t',
+                    '10',
                 ],
             }
         ]

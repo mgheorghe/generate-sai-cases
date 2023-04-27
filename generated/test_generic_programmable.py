@@ -13,10 +13,7 @@ class TestSaiGenericProgrammable:
                 'name': 'generic_programmable_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-                'attributes': [
-                    'SAI_GENERIC_PROGRAMMABLE_ATTR_OBJECT_NAME',
-                    'sai_s8_list_t',
-                ],
+                'attributes': ['SAI_GENERIC_PROGRAMMABLE_ATTR_OBJECT_NAME', '2:10,11'],
             }
         ]
 
@@ -31,10 +28,7 @@ class TestSaiGenericProgrammable:
                 'name': 'generic_programmable_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-                'attributes': [
-                    'SAI_GENERIC_PROGRAMMABLE_ATTR_OBJECT_NAME',
-                    'sai_s8_list_t',
-                ],
+                'attributes': ['SAI_GENERIC_PROGRAMMABLE_ATTR_OBJECT_NAME', '2:10,11'],
             }
         ]
 

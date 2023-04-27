@@ -15,7 +15,7 @@ class TestSaiDebugCounter:
                 'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
                 'attributes': [
                     'SAI_DEBUG_COUNTER_ATTR_TYPE',
-                    'sai_debug_counter_type_t',
+                    'SAI_DEBUG_COUNTER_TYPE_PORT_IN_DROP_REASONS',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiDebugCounter:
                 'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
                 'attributes': [
                     'SAI_DEBUG_COUNTER_ATTR_TYPE',
-                    'sai_debug_counter_type_t',
+                    'SAI_DEBUG_COUNTER_TYPE_PORT_IN_DROP_REASONS',
                 ],
             }
         ]

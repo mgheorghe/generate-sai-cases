@@ -13,7 +13,7 @@ class TestSaiIpsec:
                 'name': 'ipsec_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'bool'],
+                'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'true'],
             }
         ]
 
@@ -28,7 +28,7 @@ class TestSaiIpsec:
                 'name': 'ipsec_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'bool'],
+                'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'true'],
             }
         ]
 

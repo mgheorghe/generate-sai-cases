@@ -17,13 +17,13 @@ class TestSaiBufferProfile:
                     'SAI_BUFFER_PROFILE_ATTR_POOL_ID',
                     'sai_object_id_t',
                     'SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE',
-                    'sai_uint64_t',
+                    '10',
                     'SAI_BUFFER_PROFILE_ATTR_THRESHOLD_MODE',
                     'sai_buffer_profile_threshold_mode_t',
                     'SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH',
                     'sai_int8_t',
                     'SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH',
-                    'sai_uint64_t',
+                    '10',
                 ],
             }
         ]
@@ -43,13 +43,13 @@ class TestSaiBufferProfile:
                     'SAI_BUFFER_PROFILE_ATTR_POOL_ID',
                     'sai_object_id_t',
                     'SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE',
-                    'sai_uint64_t',
+                    '10',
                     'SAI_BUFFER_PROFILE_ATTR_THRESHOLD_MODE',
                     'sai_buffer_profile_threshold_mode_t',
                     'SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH',
                     'sai_int8_t',
                     'SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH',
-                    'sai_uint64_t',
+                    '10',
                 ],
             }
         ]

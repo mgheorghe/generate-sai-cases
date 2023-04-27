@@ -15,7 +15,7 @@ class TestSaiNextHopGroupMap:
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MAP',
                 'attributes': [
                     'SAI_NEXT_HOP_GROUP_MAP_ATTR_TYPE',
-                    'sai_next_hop_group_map_type_t',
+                    'SAI_NEXT_HOP_GROUP_MAP_TYPE_FORWARDING_CLASS_TO_INDEX',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiNextHopGroupMap:
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MAP',
                 'attributes': [
                     'SAI_NEXT_HOP_GROUP_MAP_ATTR_TYPE',
-                    'sai_next_hop_group_map_type_t',
+                    'SAI_NEXT_HOP_GROUP_MAP_TYPE_FORWARDING_CLASS_TO_INDEX',
                 ],
             }
         ]

@@ -13,7 +13,7 @@ class TestSaiSamplepacket:
                 'name': 'samplepacket_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_SAMPLEPACKET',
-                'attributes': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', 'sai_uint32_t'],
+                'attributes': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', '10'],
             }
         ]
 
@@ -28,7 +28,7 @@ class TestSaiSamplepacket:
                 'name': 'samplepacket_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_SAMPLEPACKET',
-                'attributes': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', 'sai_uint32_t'],
+                'attributes': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', '10'],
             }
         ]
 

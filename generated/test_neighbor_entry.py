@@ -13,7 +13,10 @@ class TestSaiNeighborEntry:
                 'name': 'neighbor_entry_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_NEIGHBOR_ENTRY',
-                'attributes': ['SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS', 'sai_mac_t'],
+                'attributes': [
+                    'SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS',
+                    '00:00:00:00:00:00',
+                ],
             }
         ]
 
@@ -28,7 +31,10 @@ class TestSaiNeighborEntry:
                 'name': 'neighbor_entry_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_NEIGHBOR_ENTRY',
-                'attributes': ['SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS', 'sai_mac_t'],
+                'attributes': [
+                    'SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS',
+                    '00:00:00:00:00:00',
+                ],
             }
         ]
 

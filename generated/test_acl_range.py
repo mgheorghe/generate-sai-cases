@@ -15,9 +15,9 @@ class TestSaiAclRange:
                 'type': 'SAI_OBJECT_TYPE_ACL_RANGE',
                 'attributes': [
                     'SAI_ACL_RANGE_ATTR_TYPE',
-                    'sai_acl_range_type_t',
+                    'SAI_ACL_RANGE_TYPE_L4_SRC_PORT_RANGE',
                     'SAI_ACL_RANGE_ATTR_LIMIT',
-                    'sai_u32_range_t',
+                    '10,20',
                 ],
             }
         ]
@@ -35,9 +35,9 @@ class TestSaiAclRange:
                 'type': 'SAI_OBJECT_TYPE_ACL_RANGE',
                 'attributes': [
                     'SAI_ACL_RANGE_ATTR_TYPE',
-                    'sai_acl_range_type_t',
+                    'SAI_ACL_RANGE_TYPE_L4_SRC_PORT_RANGE',
                     'SAI_ACL_RANGE_ATTR_LIMIT',
-                    'sai_u32_range_t',
+                    '10,20',
                 ],
             }
         ]

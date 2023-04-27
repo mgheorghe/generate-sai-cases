@@ -25,7 +25,7 @@ class TestSaiNextHop:
                     'SAI_NEXT_HOP_ATTR_SRV6_SIDLIST_ID',
                     'sai_object_id_t',
                     'SAI_NEXT_HOP_ATTR_LABELSTACK',
-                    'sai_u32_list_t',
+                    '2:10,11',
                 ],
             }
         ]
@@ -53,7 +53,7 @@ class TestSaiNextHop:
                     'SAI_NEXT_HOP_ATTR_SRV6_SIDLIST_ID',
                     'sai_object_id_t',
                     'SAI_NEXT_HOP_ATTR_LABELSTACK',
-                    'sai_u32_list_t',
+                    '2:10,11',
                 ],
             }
         ]

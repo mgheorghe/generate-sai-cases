@@ -15,7 +15,7 @@ class TestSaiNextHopGroup:
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP',
                 'attributes': [
                     'SAI_NEXT_HOP_GROUP_ATTR_TYPE',
-                    'sai_next_hop_group_type_t',
+                    'SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_UNORDERED_ECMP',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiNextHopGroup:
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP',
                 'attributes': [
                     'SAI_NEXT_HOP_GROUP_ATTR_TYPE',
-                    'sai_next_hop_group_type_t',
+                    'SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_UNORDERED_ECMP',
                 ],
             }
         ]

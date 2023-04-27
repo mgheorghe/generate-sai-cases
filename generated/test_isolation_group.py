@@ -15,7 +15,7 @@ class TestSaiIsolationGroup:
                 'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
                 'attributes': [
                     'SAI_ISOLATION_GROUP_ATTR_TYPE',
-                    'sai_isolation_group_type_t',
+                    'SAI_ISOLATION_GROUP_TYPE_PORT',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiIsolationGroup:
                 'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
                 'attributes': [
                     'SAI_ISOLATION_GROUP_ATTR_TYPE',
-                    'sai_isolation_group_type_t',
+                    'SAI_ISOLATION_GROUP_TYPE_PORT',
                 ],
             }
         ]

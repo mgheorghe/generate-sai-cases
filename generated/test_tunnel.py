@@ -15,7 +15,7 @@ class TestSaiTunnel:
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'attributes': [
                     'SAI_TUNNEL_ATTR_TYPE',
-                    'sai_tunnel_type_t',
+                    'SAI_TUNNEL_TYPE_IPINIP',
                     'SAI_TUNNEL_ATTR_UNDERLAY_INTERFACE',
                     'sai_object_id_t',
                     'SAI_TUNNEL_ATTR_OVERLAY_INTERFACE',
@@ -37,7 +37,7 @@ class TestSaiTunnel:
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'attributes': [
                     'SAI_TUNNEL_ATTR_TYPE',
-                    'sai_tunnel_type_t',
+                    'SAI_TUNNEL_TYPE_IPINIP',
                     'SAI_TUNNEL_ATTR_UNDERLAY_INTERFACE',
                     'sai_object_id_t',
                     'SAI_TUNNEL_ATTR_OVERLAY_INTERFACE',

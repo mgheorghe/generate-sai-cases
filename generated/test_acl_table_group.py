@@ -13,7 +13,10 @@ class TestSaiAclTableGroup:
                 'name': 'acl_table_group_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_ACL_TABLE_GROUP',
-                'attributes': ['SAI_ACL_TABLE_GROUP_ATTR_ACL_STAGE', 'sai_acl_stage_t'],
+                'attributes': [
+                    'SAI_ACL_TABLE_GROUP_ATTR_ACL_STAGE',
+                    'SAI_ACL_STAGE_INGRESS',
+                ],
             }
         ]
 
@@ -28,7 +31,10 @@ class TestSaiAclTableGroup:
                 'name': 'acl_table_group_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_ACL_TABLE_GROUP',
-                'attributes': ['SAI_ACL_TABLE_GROUP_ATTR_ACL_STAGE', 'sai_acl_stage_t'],
+                'attributes': [
+                    'SAI_ACL_TABLE_GROUP_ATTR_ACL_STAGE',
+                    'SAI_ACL_STAGE_INGRESS',
+                ],
             }
         ]
 

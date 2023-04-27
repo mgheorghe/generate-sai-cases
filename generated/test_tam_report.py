@@ -13,7 +13,7 @@ class TestSaiTamReport:
                 'name': 'tam_report_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_TAM_REPORT',
-                'attributes': ['SAI_TAM_REPORT_ATTR_TYPE', 'sai_tam_report_type_t'],
+                'attributes': ['SAI_TAM_REPORT_ATTR_TYPE', 'SAI_TAM_REPORT_TYPE_SFLOW'],
             }
         ]
 
@@ -28,7 +28,7 @@ class TestSaiTamReport:
                 'name': 'tam_report_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_TAM_REPORT',
-                'attributes': ['SAI_TAM_REPORT_ATTR_TYPE', 'sai_tam_report_type_t'],
+                'attributes': ['SAI_TAM_REPORT_ATTR_TYPE', 'SAI_TAM_REPORT_TYPE_SFLOW'],
             }
         ]
 

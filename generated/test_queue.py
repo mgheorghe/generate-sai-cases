@@ -4,7 +4,7 @@ import pytest
 
 
 class TestSaiQueue:
-    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_SCHEDULER_GROUP SAI_OBJECT_TYPE_PORT
+    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_SCHEDULER_GROUP, SAI_OBJECT_TYPE_PORT
 
     @pytest.mark.dependency(scope='session')
     def test_queue_create(self, npu):

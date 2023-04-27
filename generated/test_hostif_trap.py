@@ -15,9 +15,9 @@ class TestSaiHostifTrap:
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP',
                 'attributes': [
                     'SAI_HOSTIF_TRAP_ATTR_TRAP_TYPE',
-                    'sai_hostif_trap_type_t',
+                    'SAI_HOSTIF_TRAP_TYPE_START',
                     'SAI_HOSTIF_TRAP_ATTR_PACKET_ACTION',
-                    'sai_packet_action_t',
+                    'SAI_PACKET_ACTION_DROP',
                 ],
             }
         ]
@@ -35,9 +35,9 @@ class TestSaiHostifTrap:
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP',
                 'attributes': [
                     'SAI_HOSTIF_TRAP_ATTR_TRAP_TYPE',
-                    'sai_hostif_trap_type_t',
+                    'SAI_HOSTIF_TRAP_TYPE_START',
                     'SAI_HOSTIF_TRAP_ATTR_PACKET_ACTION',
-                    'sai_packet_action_t',
+                    'SAI_PACKET_ACTION_DROP',
                 ],
             }
         ]

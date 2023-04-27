@@ -13,7 +13,10 @@ class TestSaiMacsec:
                 'name': 'macsec_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'attributes': ['SAI_MACSEC_ATTR_DIRECTION', 'sai_macsec_direction_t'],
+                'attributes': [
+                    'SAI_MACSEC_ATTR_DIRECTION',
+                    'SAI_MACSEC_DIRECTION_EGRESS',
+                ],
             }
         ]
 
@@ -28,7 +31,10 @@ class TestSaiMacsec:
                 'name': 'macsec_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'attributes': ['SAI_MACSEC_ATTR_DIRECTION', 'sai_macsec_direction_t'],
+                'attributes': [
+                    'SAI_MACSEC_ATTR_DIRECTION',
+                    'SAI_MACSEC_DIRECTION_EGRESS',
+                ],
             }
         ]
 

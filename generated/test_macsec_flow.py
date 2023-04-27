@@ -15,7 +15,7 @@ class TestSaiMacsecFlow:
                 'type': 'SAI_OBJECT_TYPE_MACSEC_FLOW',
                 'attributes': [
                     'SAI_MACSEC_FLOW_ATTR_MACSEC_DIRECTION',
-                    'sai_macsec_direction_t',
+                    'SAI_MACSEC_DIRECTION_EGRESS',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiMacsecFlow:
                 'type': 'SAI_OBJECT_TYPE_MACSEC_FLOW',
                 'attributes': [
                     'SAI_MACSEC_FLOW_ATTR_MACSEC_DIRECTION',
-                    'sai_macsec_direction_t',
+                    'SAI_MACSEC_DIRECTION_EGRESS',
                 ],
             }
         ]

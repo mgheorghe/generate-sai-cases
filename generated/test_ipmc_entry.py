@@ -15,7 +15,7 @@ class TestSaiIpmcEntry:
                 'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
                 'attributes': [
                     'SAI_IPMC_ENTRY_ATTR_PACKET_ACTION',
-                    'sai_packet_action_t',
+                    'SAI_PACKET_ACTION_DROP',
                     'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
                     'sai_object_id_t',
                 ],
@@ -35,7 +35,7 @@ class TestSaiIpmcEntry:
                 'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
                 'attributes': [
                     'SAI_IPMC_ENTRY_ATTR_PACKET_ACTION',
-                    'sai_packet_action_t',
+                    'SAI_PACKET_ACTION_DROP',
                     'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
                     'sai_object_id_t',
                 ],

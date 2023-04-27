@@ -15,9 +15,9 @@ class TestSaiBufferPool:
                 'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
                 'attributes': [
                     'SAI_BUFFER_POOL_ATTR_TYPE',
-                    'sai_buffer_pool_type_t',
+                    'SAI_BUFFER_POOL_TYPE_INGRESS',
                     'SAI_BUFFER_POOL_ATTR_SIZE',
-                    'sai_uint64_t',
+                    '10',
                 ],
             }
         ]
@@ -35,9 +35,9 @@ class TestSaiBufferPool:
                 'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
                 'attributes': [
                     'SAI_BUFFER_POOL_ATTR_TYPE',
-                    'sai_buffer_pool_type_t',
+                    'SAI_BUFFER_POOL_TYPE_INGRESS',
                     'SAI_BUFFER_POOL_ATTR_SIZE',
-                    'sai_uint64_t',
+                    '10',
                 ],
             }
         ]

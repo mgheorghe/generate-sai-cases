@@ -17,7 +17,7 @@ class TestSaiMcastFdbEntry:
                     'SAI_MCAST_FDB_ENTRY_ATTR_GROUP_ID',
                     'sai_object_id_t',
                     'SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION',
-                    'sai_packet_action_t',
+                    'SAI_PACKET_ACTION_DROP',
                 ],
             }
         ]
@@ -37,7 +37,7 @@ class TestSaiMcastFdbEntry:
                     'SAI_MCAST_FDB_ENTRY_ATTR_GROUP_ID',
                     'sai_object_id_t',
                     'SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION',
-                    'sai_packet_action_t',
+                    'SAI_PACKET_ACTION_DROP',
                 ],
             }
         ]

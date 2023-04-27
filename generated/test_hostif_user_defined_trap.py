@@ -15,7 +15,7 @@ class TestSaiHostifUserDefinedTrap:
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP',
                 'attributes': [
                     'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TYPE',
-                    'sai_hostif_user_defined_trap_type_t',
+                    'SAI_HOSTIF_USER_DEFINED_TRAP_TYPE_END',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiHostifUserDefinedTrap:
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP',
                 'attributes': [
                     'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TYPE',
-                    'sai_hostif_user_defined_trap_type_t',
+                    'SAI_HOSTIF_USER_DEFINED_TRAP_TYPE_END',
                 ],
             }
         ]

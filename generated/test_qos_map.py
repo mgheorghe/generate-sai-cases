@@ -15,9 +15,9 @@ class TestSaiQosMap:
                 'type': 'SAI_OBJECT_TYPE_QOS_MAP',
                 'attributes': [
                     'SAI_QOS_MAP_ATTR_TYPE',
-                    'sai_qos_map_type_t',
+                    'SAI_QOS_MAP_TYPE_DOT1P_TO_TC',
                     'SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST',
-                    'sai_qos_map_list_t',
+                    '2:10,11',
                 ],
             }
         ]
@@ -35,9 +35,9 @@ class TestSaiQosMap:
                 'type': 'SAI_OBJECT_TYPE_QOS_MAP',
                 'attributes': [
                     'SAI_QOS_MAP_ATTR_TYPE',
-                    'sai_qos_map_type_t',
+                    'SAI_QOS_MAP_TYPE_DOT1P_TO_TC',
                     'SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST',
-                    'sai_qos_map_list_t',
+                    '2:10,11',
                 ],
             }
         ]

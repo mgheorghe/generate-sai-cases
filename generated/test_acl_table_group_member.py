@@ -19,7 +19,7 @@ class TestSaiAclTableGroupMember:
                     'SAI_ACL_TABLE_GROUP_MEMBER_ATTR_ACL_TABLE_ID',
                     'sai_object_id_t',
                     'SAI_ACL_TABLE_GROUP_MEMBER_ATTR_PRIORITY',
-                    'sai_uint32_t',
+                    '10',
                 ],
             }
         ]
@@ -41,7 +41,7 @@ class TestSaiAclTableGroupMember:
                     'SAI_ACL_TABLE_GROUP_MEMBER_ATTR_ACL_TABLE_ID',
                     'sai_object_id_t',
                     'SAI_ACL_TABLE_GROUP_MEMBER_ATTR_PRIORITY',
-                    'sai_uint32_t',
+                    '10',
                 ],
             }
         ]

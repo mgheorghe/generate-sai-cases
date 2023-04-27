@@ -15,7 +15,7 @@ class TestSaiSwitchTunnel:
                 'type': 'SAI_OBJECT_TYPE_SWITCH_TUNNEL',
                 'attributes': [
                     'SAI_SWITCH_TUNNEL_ATTR_TUNNEL_TYPE',
-                    'sai_tunnel_type_t',
+                    'SAI_TUNNEL_TYPE_IPINIP',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiSwitchTunnel:
                 'type': 'SAI_OBJECT_TYPE_SWITCH_TUNNEL',
                 'attributes': [
                     'SAI_SWITCH_TUNNEL_ATTR_TUNNEL_TYPE',
-                    'sai_tunnel_type_t',
+                    'SAI_TUNNEL_TYPE_IPINIP',
                 ],
             }
         ]

@@ -13,7 +13,10 @@ class TestSaiTunnelMap:
                 'name': 'tunnel_map_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL_MAP',
-                'attributes': ['SAI_TUNNEL_MAP_ATTR_TYPE', 'sai_tunnel_map_type_t'],
+                'attributes': [
+                    'SAI_TUNNEL_MAP_ATTR_TYPE',
+                    'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
+                ],
             }
         ]
 
@@ -28,7 +31,10 @@ class TestSaiTunnelMap:
                 'name': 'tunnel_map_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL_MAP',
-                'attributes': ['SAI_TUNNEL_MAP_ATTR_TYPE', 'sai_tunnel_map_type_t'],
+                'attributes': [
+                    'SAI_TUNNEL_MAP_ATTR_TYPE',
+                    'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
+                ],
             }
         ]
 

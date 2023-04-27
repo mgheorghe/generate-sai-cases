@@ -15,7 +15,7 @@ class TestSaiMySidEntry:
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'attributes': [
                     'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR',
-                    'sai_my_sid_entry_endpoint_behavior_t',
+                    'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_E',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiMySidEntry:
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'attributes': [
                     'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR',
-                    'sai_my_sid_entry_endpoint_behavior_t',
+                    'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_E',
                 ],
             }
         ]
