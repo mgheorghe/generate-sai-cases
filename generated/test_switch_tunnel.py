@@ -10,7 +10,7 @@ class TestSaiSwitchTunnel:
     @pytest.mark.dependency(scope='session')
     def test_switch_tunnel_create(self, npu):
 
-        commands = [{'name': 'switch_tunnel_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_SWITCH_TUNNEL', 'attributes': ['SAI_SWITCH_TUNNEL_ATTR_TUNNEL_TYPE', 'sai_tunnel_type_t']}]
+        commands = [{'name': 'switch_tunnel_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_SWITCH_TUNNEL', 'attributes': ['SAI_SWITCH_TUNNEL_ATTR_TUNNEL_TYPE', 'SAI_TUNNEL_TYPE_IPINIP']}]
 
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values create =======")
@@ -19,7 +19,7 @@ class TestSaiSwitchTunnel:
 
     def test_switch_tunnel_remove(self, npu):
 
-        commands = [{'name': 'switch_tunnel_1', 'op': 'remove', 'type': 'SAI_OBJECT_TYPE_SWITCH_TUNNEL', 'attributes': ['SAI_SWITCH_TUNNEL_ATTR_TUNNEL_TYPE', 'sai_tunnel_type_t']}]
+        commands = [{'name': 'switch_tunnel_1', 'op': 'remove', 'type': 'SAI_OBJECT_TYPE_SWITCH_TUNNEL', 'attributes': ['SAI_SWITCH_TUNNEL_ATTR_TUNNEL_TYPE', 'SAI_TUNNEL_TYPE_IPINIP']}]
 
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values remove =======")

@@ -10,7 +10,7 @@ class TestSaiIpsec:
     @pytest.mark.dependency(scope='session')
     def test_ipsec_create(self, npu):
 
-        commands = [{'name': 'ipsec_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_IPSEC', 'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'bool']}]
+        commands = [{'name': 'ipsec_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_IPSEC', 'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'true']}]
 
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values create =======")
@@ -19,7 +19,7 @@ class TestSaiIpsec:
 
     def test_ipsec_remove(self, npu):
 
-        commands = [{'name': 'ipsec_1', 'op': 'remove', 'type': 'SAI_OBJECT_TYPE_IPSEC', 'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'bool']}]
+        commands = [{'name': 'ipsec_1', 'op': 'remove', 'type': 'SAI_OBJECT_TYPE_IPSEC', 'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'true']}]
 
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values remove =======")
