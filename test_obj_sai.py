@@ -371,6 +371,10 @@ def get_create_commands(obj_type):
                 attributes.append('FF::0')
             elif 'sai_stp_port_state_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_STP_PORT_STATE_LEARNING')
+            elif (
+                'sai_router_interface_type_t' == mandatory_attributes[attribute]['type']
+            ):
+                attributes.append('SAI_ROUTER_INTERFACE_TYPE_PORT')
             elif 'sai_object_id_t' == mandatory_attributes[attribute]['type']:
                 parent_obj = mandatory_attributes[attribute]['objects'][0]
                 if parent_obj != obj_type:
