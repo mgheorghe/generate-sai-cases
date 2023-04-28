@@ -6,7 +6,7 @@ import networkx as nx
 from pyvis.network import Network
 
 SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
-SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
+# SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
 
 TEST_TEMPLATE = '''
 from pprint import pprint
@@ -172,7 +172,6 @@ def get_all_attributes(obj_type):
     block_end = '} sai_%s_attr_t;' % obj_name
 
     dictionary = {}
-
     import os
 
     for root, dirs, files in os.walk(SAI_CODE_LOCATION):
@@ -273,11 +272,10 @@ def get_obj_name(obj_type):
     return obj_type.replace('SAI_OBJECT_TYPE_', '').lower()
 
 
-def get_create_command(obj_type):
+def get_create_commands(obj_type):
     obj_name = get_obj_name(obj_type)
-
     command = {'name': obj_name + '_1', 'op': 'create', 'type': obj_type}
-
+    commands = []
     attributes = []
     mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
     for attribute in mandatory_attributes.keys():
@@ -289,63 +287,47 @@ def get_create_command(obj_type):
                 attributes.append('10')
             elif 'sai_uint64_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('10')
-            elif (
-                'sai_bridge_type_t' == mandatory_attributes[attribute]['type']
-            ):  # Fail: SAI_STATUS_NOT_IMPLEMENTED
+            elif 'sai_bridge_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_BRIDGE_TYPE_1Q')
             elif 'sai_meter_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_METER_TYPE_PACKETS')
             elif 'sai_policer_mode_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_POLICER_MODE_SR_TCM')
-            elif (
-                'sai_tam_transport_type_t' == mandatory_attributes[attribute]['type']
-            ):  # Fail# SAI_STATUS_NOT_SUPPORTED
+            elif 'sai_tam_transport_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_TAM_TRANSPORT_TYPE_TCP')
-            elif (
-                'sai_s8_list_t' == mandatory_attributes[attribute]['type']
-            ):  # Error: not sure of the values
+            elif 'sai_s8_list_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('2:10,11')
             elif 'sai_debug_counter_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_DEBUG_COUNTER_TYPE_PORT_IN_DROP_REASONS')
-            elif (
-                'sai_dtel_event_type_t' == mandatory_attributes[attribute]['type']
-            ):  # Fail: SAI_STATUS_NOT_SUPPORTED
+            elif 'sai_dtel_event_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_DTEL_EVENT_TYPE_FLOW_STATE')
             elif 'sai_qos_map_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_QOS_MAP_TYPE_DOT1P_TO_TC')
-            elif (
-                'sai_qos_map_list_t' == mandatory_attributes[attribute]['type']
-            ):  # Error: not sure of the values
+            elif 'sai_qos_map_list_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('2:10,11')
-            elif (
-                'sai_u32_list_t' == mandatory_attributes[attribute]['type']
-            ):  # Error: not sure of the values
+            elif 'sai_u32_list_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('2:10,11')
             elif 'sai_acl_stage_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_ACL_STAGE_INGRESS')
-            elif (
-                'bool' == mandatory_attributes[attribute]['type']
-            ):  # Error: fails for true and false
-                attributes.append('true')
+            elif 'bool' == mandatory_attributes[attribute]['type']:
+                attributes.append('True')
             elif 'sai_next_hop_group_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_UNORDERED_ECMP')
             elif 'sai_buffer_pool_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_BUFFER_POOL_TYPE_INGRESS')
-            elif (
-                'sai_macsec_direction_t' == mandatory_attributes[attribute]['type']
-            ):  # Fail: SAI_STATUS_NOT_IMPLEMENTED
+            elif 'sai_macsec_direction_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_MACSEC_DIRECTION_EGRESS')
             elif 'sai_mac_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('00:00:00:00:00:00')
+                attributes.append('00:00:B1:AE:C5:00')
             elif (
                 'sai_my_sid_entry_endpoint_behavior_t'
                 == mandatory_attributes[attribute]['type']
-            ):  # fails due to unknown reason
+            ):
                 attributes.append('SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_E')
             elif (
                 'sai_next_hop_group_map_type_t'
                 == mandatory_attributes[attribute]['type']
-            ):  # fails due to unknown reason
+            ):
                 attributes.append(
                     'SAI_NEXT_HOP_GROUP_MAP_TYPE_FORWARDING_CLASS_TO_INDEX'
                 )
@@ -356,15 +338,11 @@ def get_create_command(obj_type):
                 attributes.append('SAI_HOSTIF_USER_DEFINED_TRAP_TYPE_END')
             elif 'sai_tunnel_map_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN')
-            elif (
-                'sai_tunnel_type_t' == mandatory_attributes[attribute]['type']
-            ):  # Fail: SAI_STATUS_NOT_IMPLEMENTED
+            elif 'sai_tunnel_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_TUNNEL_TYPE_IPINIP')
             elif 'sai_acl_stage_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_ACL_STAGE_INGRESS')
-            elif (
-                'sai_fdb_entry_type_t' == mandatory_attributes[attribute]['type']
-            ):  # fails due to unknown reason
+            elif 'sai_fdb_entry_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_FDB_ENTRY_TYPE_DYNAMIC')
             elif 'sai_acl_range_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_ACL_RANGE_TYPE_L4_SRC_PORT_RANGE')
@@ -376,13 +354,9 @@ def get_create_command(obj_type):
                 attributes.append('SAI_ISOLATION_GROUP_TYPE_PORT')
             elif 'sai_macsec_direction_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_MACSEC_DIRECTION_EGRESS')
-            elif (
-                'sai_hostif_trap_type_t' == mandatory_attributes[attribute]['type']
-            ):  # fails due to unknown reason
+            elif 'sai_hostif_trap_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_HOSTIF_TRAP_TYPE_START')
-            elif (
-                'sai_packet_action_t' == mandatory_attributes[attribute]['type']
-            ):  # fails due to unknown reason
+            elif 'sai_packet_action_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_PACKET_ACTION_DROP')
             elif 'sai_tam_report_type_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_TAM_REPORT_TYPE_SFLOW')
@@ -391,19 +365,35 @@ def get_create_command(obj_type):
                 == mandatory_attributes[attribute]['type']
             ):
                 attributes.append('SAI_SWITCH_HARDWARE_ACCESS_BUS_MDIO')
+            elif 'sai_ip4_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('255.0.0.0')
+            elif 'sai_ip6_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('FF::0')
+            elif 'sai_stp_port_state_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_STP_PORT_STATE_LEARNING')
+            elif 'sai_object_id_t' == mandatory_attributes[attribute]['type']:
+                parent_obj = mandatory_attributes[attribute]['objects'][0]
+                if parent_obj != obj_type:
+                    attributes.append('$' + get_obj_name(parent_obj) + '_1')
+                    commands.extend(get_create_commands(parent_obj))
+                else:
+                    attributes.append('TODO_circular parent reference')
             else:
                 attributes.append(mandatory_attributes[attribute]['type'])
         else:
             attributes.append('TODO')
     command['attributes'] = attributes
+    commands.append(command)
+    return commands
 
-    return command
 
-
-def get_remove_command(obj_type):
-    command = get_create_command(obj_type)
-    command['op'] = 'remove'
-    return command
+def get_remove_commands(obj_type):
+    commands = get_create_commands(obj_type)
+    cleanup_commands = []
+    for command in reversed(commands):
+        command['op'] = 'remove'
+        cleanup_commands.append(command)
+    return cleanup_commands
 
 
 def camel_case(s):
@@ -430,7 +420,7 @@ def generate_comment(obj_type):
 def generate_pyetes_test(obj_type):
     obj_name = get_obj_name(obj_type)
     test_file_name = 'test_%s.py' % obj_name
-    # print(test_file_name)
+    print(test_file_name)
 
     with io.open(test_file_name, 'wt', encoding='ascii') as test_file:
         test_file.write(
@@ -438,8 +428,8 @@ def generate_pyetes_test(obj_type):
             % {
                 'CLASS_NAME': camel_case(obj_name),
                 'OBJECT_NAME': obj_name,
-                'CREATE_COMMANDS': [get_create_command(obj_type)],
-                'REMOVE_COMMANDS': [get_remove_command(obj_type)],
+                'CREATE_COMMANDS': get_create_commands(obj_type),
+                'REMOVE_COMMANDS': get_remove_commands(obj_type),
                 'COMMENT': generate_comment(obj_type),
             }
         )
