@@ -26,7 +26,7 @@ class TestSaiHostif:
                 'type': 'SAI_OBJECT_TYPE_HOSTIF',
                 'attributes': [
                     'SAI_HOSTIF_ATTR_TYPE',
-                    'sai_hostif_type_t',
+                    'SAI_HOSTIF_TYPE_NETDEV',
                     'SAI_HOSTIF_ATTR_OBJ_ID',
                     '$port_1',
                     'SAI_HOSTIF_ATTR_NAME',
@@ -50,7 +50,7 @@ class TestSaiHostif:
                 'type': 'SAI_OBJECT_TYPE_HOSTIF',
                 'attributes': [
                     'SAI_HOSTIF_ATTR_TYPE',
-                    'sai_hostif_type_t',
+                    'SAI_HOSTIF_TYPE_NETDEV',
                     'SAI_HOSTIF_ATTR_OBJ_ID',
                     '$port_1',
                     'SAI_HOSTIF_ATTR_NAME',

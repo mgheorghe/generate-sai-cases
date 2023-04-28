@@ -6,7 +6,7 @@ import networkx as nx
 from pyvis.network import Network
 
 SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
-SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
+# SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
 
 TEST_TEMPLATE = '''
 from pprint import pprint
@@ -367,6 +367,36 @@ def get_create_commands(obj_type):
                 attributes.append('SAI_SWITCH_HARDWARE_ACCESS_BUS_MDIO')
             elif 'sai_ip4_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('255.0.0.0')
+            elif 'sai_bfd_session_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_BFD_SESSION_TYPE_DEMAND_ACTIVE')
+            elif 'sai_bfd_encapsulation_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_BFD_ENCAPSULATION_TYPE_IP_IN_IP')
+            elif 'sai_bridge_port_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_BRIDGE_PORT_TYPE_PORT')
+            elif 'sai_queue_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_QUEUE_TYPE_ALL')
+            elif 'sai_hostif_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_HOSTIF_TYPE_NETDEV')
+            elif 'sai_hostif_tx_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_HOSTIF_TX_TYPE_PIPELINE_BYPASS')
+            elif 'sai_hostif_table_entry_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_HOSTIF_TABLE_ENTRY_TYPE_PORT')
+            elif 'sai_hostif_table_entry_channel_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_HOSTIF_TABLE_ENTRY_CHANNEL_TYPE_CB')
+            elif 'sai_mirror_session_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_MIRROR_SESSION_TYPE_LOCAL')
+            elif 'sai_erspan_encapsulation_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_ERSPAN_ENCAPSULATION_TYPE_MIRROR_L3_GRE_TUNNEL')
+            elif 'sai_next_hop_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_NEXT_HOP_TYPE_IP')
+            elif 'sai_tam_int_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_TAM_INT_TYPE_IOAM')
+            elif 'sai_tam_int_presence_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_TAM_INT_PRESENCE_TYPE_PB')
+            elif 'sai_tam_telemetry_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_TAM_TELEMETRY_TYPE_NE')
+            elif 'sai_tunnel_term_table_entry_type_t' == mandatory_attributes[attribute]['type']:
+                attributes.append('SAI_TUNNEL_TERM_TABLE_ENTRY_TYPE_P2P')
             elif 'sai_ip6_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('FF::0')
             elif 'sai_stp_port_state_t' == mandatory_attributes[attribute]['type']:

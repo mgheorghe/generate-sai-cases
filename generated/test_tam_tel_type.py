@@ -21,7 +21,7 @@ class TestSaiTamTelType:
                 'type': 'SAI_OBJECT_TYPE_TAM_TEL_TYPE',
                 'attributes': [
                     'SAI_TAM_TEL_TYPE_ATTR_TAM_TELEMETRY_TYPE',
-                    'sai_tam_telemetry_type_t',
+                    'SAI_TAM_TELEMETRY_TYPE_NE',
                     'SAI_TAM_TEL_TYPE_ATTR_REPORT_ID',
                     '$tam_report_1',
                 ],
@@ -41,7 +41,7 @@ class TestSaiTamTelType:
                 'type': 'SAI_OBJECT_TYPE_TAM_TEL_TYPE',
                 'attributes': [
                     'SAI_TAM_TEL_TYPE_ATTR_TAM_TELEMETRY_TYPE',
-                    'sai_tam_telemetry_type_t',
+                    'SAI_TAM_TELEMETRY_TYPE_NE',
                     'SAI_TAM_TEL_TYPE_ATTR_REPORT_ID',
                     '$tam_report_1',
                 ],

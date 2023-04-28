@@ -41,7 +41,7 @@ class TestSaiDtelQueueReport:
                 'type': 'SAI_OBJECT_TYPE_QUEUE',
                 'attributes': [
                     'SAI_QUEUE_ATTR_TYPE',
-                    'sai_queue_type_t',
+                    'SAI_QUEUE_TYPE_ALL',
                     'SAI_QUEUE_ATTR_PORT',
                     '$port_1',
                     'SAI_QUEUE_ATTR_INDEX',
@@ -77,7 +77,7 @@ class TestSaiDtelQueueReport:
                 'type': 'SAI_OBJECT_TYPE_QUEUE',
                 'attributes': [
                     'SAI_QUEUE_ATTR_TYPE',
-                    'sai_queue_type_t',
+                    'SAI_QUEUE_TYPE_ALL',
                     'SAI_QUEUE_ATTR_PORT',
                     '$port_1',
                     'SAI_QUEUE_ATTR_INDEX',

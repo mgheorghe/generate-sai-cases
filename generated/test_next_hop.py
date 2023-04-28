@@ -84,7 +84,7 @@ class TestSaiNextHop:
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'attributes': [
                     'SAI_NEXT_HOP_ATTR_TYPE',
-                    'sai_next_hop_type_t',
+                    'SAI_NEXT_HOP_TYPE_IP',
                     'SAI_NEXT_HOP_ATTR_IP',
                     'sai_ip_address_t',
                     'SAI_NEXT_HOP_ATTR_ROUTER_INTERFACE_ID',
@@ -112,7 +112,7 @@ class TestSaiNextHop:
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'attributes': [
                     'SAI_NEXT_HOP_ATTR_TYPE',
-                    'sai_next_hop_type_t',
+                    'SAI_NEXT_HOP_TYPE_IP',
                     'SAI_NEXT_HOP_ATTR_IP',
                     'sai_ip_address_t',
                     'SAI_NEXT_HOP_ATTR_ROUTER_INTERFACE_ID',

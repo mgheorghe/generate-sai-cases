@@ -78,7 +78,7 @@ class TestSaiBridgePort:
                 'type': 'SAI_OBJECT_TYPE_BRIDGE_PORT',
                 'attributes': [
                     'SAI_BRIDGE_PORT_ATTR_TYPE',
-                    'sai_bridge_port_type_t',
+                    'SAI_BRIDGE_PORT_TYPE_PORT',
                     'SAI_BRIDGE_PORT_ATTR_PORT_ID',
                     '$port_1',
                     'SAI_BRIDGE_PORT_ATTR_VLAN_ID',
@@ -106,7 +106,7 @@ class TestSaiBridgePort:
                 'type': 'SAI_OBJECT_TYPE_BRIDGE_PORT',
                 'attributes': [
                     'SAI_BRIDGE_PORT_ATTR_TYPE',
-                    'sai_bridge_port_type_t',
+                    'SAI_BRIDGE_PORT_TYPE_PORT',
                     'SAI_BRIDGE_PORT_ATTR_PORT_ID',
                     '$port_1',
                     'SAI_BRIDGE_PORT_ATTR_VLAN_ID',

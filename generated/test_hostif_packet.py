@@ -26,7 +26,7 @@ class TestSaiHostifPacket:
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
                 'attributes': [
                     'SAI_HOSTIF_PACKET_ATTR_HOSTIF_TX_TYPE',
-                    'sai_hostif_tx_type_t',
+                    'SAI_HOSTIF_TX_TYPE_PIPELINE_BYPASS',
                     'SAI_HOSTIF_PACKET_ATTR_EGRESS_PORT_OR_LAG',
                     '$port_1',
                 ],
@@ -46,7 +46,7 @@ class TestSaiHostifPacket:
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
                 'attributes': [
                     'SAI_HOSTIF_PACKET_ATTR_HOSTIF_TX_TYPE',
-                    'sai_hostif_tx_type_t',
+                    'SAI_HOSTIF_TX_TYPE_PIPELINE_BYPASS',
                     'SAI_HOSTIF_PACKET_ATTR_EGRESS_PORT_OR_LAG',
                     '$port_1',
                 ],
