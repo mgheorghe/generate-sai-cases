@@ -25,18 +25,6 @@ class TestSaiTunnelMapEntry:
                 'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
             },
             {
-                'name': 'bridge_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
-            },
-            {
-                'name': 'virtual_router_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
-                'attributes': [],
-            },
-            {
                 'name': 'virtual_router_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
@@ -142,18 +130,6 @@ class TestSaiTunnelMapEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
                 'attributes': [],
-            },
-            {
-                'name': 'virtual_router_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
-                'attributes': [],
-            },
-            {
-                'name': 'bridge_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
             },
             {
                 'name': 'bridge_1',

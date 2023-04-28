@@ -6,7 +6,7 @@ import networkx as nx
 from pyvis.network import Network
 
 SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
-# SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
+SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
 
 TEST_TEMPLATE = '''
 from pprint import pprint
@@ -388,7 +388,13 @@ def get_create_commands(obj_type):
             attributes.append('TODO')
     command['attributes'] = attributes
     commands.append(command)
-    return commands
+
+    unique_commands = []
+    for command in commands:
+        if command not in unique_commands:
+            unique_commands.append(command)
+
+    return unique_commands
 
 
 def get_remove_commands(obj_type):

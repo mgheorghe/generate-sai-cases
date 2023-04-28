@@ -21,17 +21,6 @@ class TestSaiDtelQueueReport:
                 ],
             },
             {
-                'name': 'port_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
-            {
                 'name': 'scheduler_group_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_SCHEDULER_GROUP',
@@ -110,17 +99,6 @@ class TestSaiDtelQueueReport:
                     'sai_uint8_t',
                     'SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE',
                     'TODO_circular parent reference',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
                 ],
             },
             {
