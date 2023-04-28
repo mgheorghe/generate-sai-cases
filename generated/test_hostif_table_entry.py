@@ -10,6 +10,54 @@ class TestSaiHostifTableEntry:
     def test_hostif_table_entry_create(self, npu):
         commands = [
             {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'hostif_trap_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP',
+                'attributes': [
+                    'SAI_HOSTIF_TRAP_ATTR_TRAP_TYPE',
+                    'SAI_HOSTIF_TRAP_TYPE_STP',
+                    'SAI_HOSTIF_TRAP_ATTR_PACKET_ACTION',
+                    'SAI_PACKET_ACTION_DROP',
+                ],
+            },
+            {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'hostif_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'attributes': [
+                    'SAI_HOSTIF_ATTR_TYPE',
+                    'sai_hostif_type_t',
+                    'SAI_HOSTIF_ATTR_OBJ_ID',
+                    '$port_1',
+                    'SAI_HOSTIF_ATTR_NAME',
+                    'char',
+                    'SAI_HOSTIF_ATTR_GENETLINK_MCGRP_NAME',
+                    'char',
+                ],
+            },
+            {
                 'name': 'hostif_table_entry_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TABLE_ENTRY',
@@ -17,15 +65,15 @@ class TestSaiHostifTableEntry:
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_TYPE',
                     'sai_hostif_table_entry_type_t',
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_OBJ_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_TRAP_ID',
-                    'sai_object_id_t',
+                    '$hostif_trap_1',
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_CHANNEL_TYPE',
                     'sai_hostif_table_entry_channel_type_t',
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_HOST_IF',
-                    'sai_object_id_t',
+                    '$hostif_1',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -43,15 +91,63 @@ class TestSaiHostifTableEntry:
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_TYPE',
                     'sai_hostif_table_entry_type_t',
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_OBJ_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_TRAP_ID',
-                    'sai_object_id_t',
+                    '$hostif_trap_1',
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_CHANNEL_TYPE',
                     'sai_hostif_table_entry_channel_type_t',
                     'SAI_HOSTIF_TABLE_ENTRY_ATTR_HOST_IF',
-                    'sai_object_id_t',
+                    '$hostif_1',
                 ],
-            }
+            },
+            {
+                'name': 'hostif_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'attributes': [
+                    'SAI_HOSTIF_ATTR_TYPE',
+                    'sai_hostif_type_t',
+                    'SAI_HOSTIF_ATTR_OBJ_ID',
+                    '$port_1',
+                    'SAI_HOSTIF_ATTR_NAME',
+                    'char',
+                    'SAI_HOSTIF_ATTR_GENETLINK_MCGRP_NAME',
+                    'char',
+                ],
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'hostif_trap_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP',
+                'attributes': [
+                    'SAI_HOSTIF_TRAP_ATTR_TRAP_TYPE',
+                    'SAI_HOSTIF_TRAP_TYPE_STP',
+                    'SAI_HOSTIF_TRAP_ATTR_PACKET_ACTION',
+                    'SAI_PACKET_ACTION_DROP',
+                ],
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

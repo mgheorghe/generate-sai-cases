@@ -10,14 +10,20 @@ class TestSaiTamEventAction:
     def test_tam_event_action_create(self, npu):
         commands = [
             {
+                'name': 'tam_report_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_TAM_REPORT',
+                'attributes': ['SAI_TAM_REPORT_ATTR_TYPE', 'SAI_TAM_REPORT_TYPE_SFLOW'],
+            },
+            {
                 'name': 'tam_event_action_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
                 'attributes': [
                     'SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE',
-                    'sai_object_id_t',
+                    '$tam_report_1',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -33,9 +39,15 @@ class TestSaiTamEventAction:
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
                 'attributes': [
                     'SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE',
-                    'sai_object_id_t',
+                    '$tam_report_1',
                 ],
-            }
+            },
+            {
+                'name': 'tam_report_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_TAM_REPORT',
+                'attributes': ['SAI_TAM_REPORT_ATTR_TYPE', 'SAI_TAM_REPORT_TYPE_SFLOW'],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

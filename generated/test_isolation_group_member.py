@@ -10,16 +10,36 @@ class TestSaiIsolationGroupMember:
     def test_isolation_group_member_create(self, npu):
         commands = [
             {
+                'name': 'isolation_group_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
+                'attributes': [
+                    'SAI_ISOLATION_GROUP_ATTR_TYPE',
+                    'SAI_ISOLATION_GROUP_TYPE_PORT',
+                ],
+            },
+            {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
                 'name': 'isolation_group_member_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP_MEMBER',
                 'attributes': [
                     'SAI_ISOLATION_GROUP_MEMBER_ATTR_ISOLATION_GROUP_ID',
-                    'sai_object_id_t',
+                    '$isolation_group_1',
                     'SAI_ISOLATION_GROUP_MEMBER_ATTR_ISOLATION_OBJECT',
-                    'sai_object_id_t',
+                    '$port_1',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -35,11 +55,31 @@ class TestSaiIsolationGroupMember:
                 'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP_MEMBER',
                 'attributes': [
                     'SAI_ISOLATION_GROUP_MEMBER_ATTR_ISOLATION_GROUP_ID',
-                    'sai_object_id_t',
+                    '$isolation_group_1',
                     'SAI_ISOLATION_GROUP_MEMBER_ATTR_ISOLATION_OBJECT',
-                    'sai_object_id_t',
+                    '$port_1',
                 ],
-            }
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'isolation_group_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
+                'attributes': [
+                    'SAI_ISOLATION_GROUP_ATTR_TYPE',
+                    'SAI_ISOLATION_GROUP_TYPE_PORT',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

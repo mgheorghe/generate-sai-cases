@@ -10,16 +10,27 @@ class TestSaiIpsecPort:
     def test_ipsec_port_create(self, npu):
         commands = [
             {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
                 'name': 'ipsec_port_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_IPSEC_PORT',
                 'attributes': [
                     'SAI_IPSEC_PORT_ATTR_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_IPSEC_PORT_ATTR_NATIVE_VLAN_ID',
                     '10',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -35,11 +46,22 @@ class TestSaiIpsecPort:
                 'type': 'SAI_OBJECT_TYPE_IPSEC_PORT',
                 'attributes': [
                     'SAI_IPSEC_PORT_ATTR_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_IPSEC_PORT_ATTR_NATIVE_VLAN_ID',
                     '10',
                 ],
-            }
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

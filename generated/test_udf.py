@@ -10,18 +10,30 @@ class TestSaiUdf:
     def test_udf_create(self, npu):
         commands = [
             {
+                'name': 'udf_match_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_UDF_MATCH',
+                'attributes': [],
+            },
+            {
+                'name': 'udf_group_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_UDF_GROUP',
+                'attributes': ['SAI_UDF_GROUP_ATTR_LENGTH', '10'],
+            },
+            {
                 'name': 'udf_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_UDF',
                 'attributes': [
                     'SAI_UDF_ATTR_MATCH_ID',
-                    'sai_object_id_t',
+                    '$udf_match_1',
                     'SAI_UDF_ATTR_GROUP_ID',
-                    'sai_object_id_t',
+                    '$udf_group_1',
                     'SAI_UDF_ATTR_OFFSET',
                     '10',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -37,13 +49,25 @@ class TestSaiUdf:
                 'type': 'SAI_OBJECT_TYPE_UDF',
                 'attributes': [
                     'SAI_UDF_ATTR_MATCH_ID',
-                    'sai_object_id_t',
+                    '$udf_match_1',
                     'SAI_UDF_ATTR_GROUP_ID',
-                    'sai_object_id_t',
+                    '$udf_group_1',
                     'SAI_UDF_ATTR_OFFSET',
                     '10',
                 ],
-            }
+            },
+            {
+                'name': 'udf_group_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_UDF_GROUP',
+                'attributes': ['SAI_UDF_GROUP_ATTR_LENGTH', '10'],
+            },
+            {
+                'name': 'udf_match_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_UDF_MATCH',
+                'attributes': [],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

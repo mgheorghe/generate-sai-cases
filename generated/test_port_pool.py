@@ -10,16 +10,38 @@ class TestSaiPortPool:
     def test_port_pool_create(self, npu):
         commands = [
             {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'buffer_pool_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
+                'attributes': [
+                    'SAI_BUFFER_POOL_ATTR_TYPE',
+                    'SAI_BUFFER_POOL_TYPE_INGRESS',
+                    'SAI_BUFFER_POOL_ATTR_SIZE',
+                    '10',
+                ],
+            },
+            {
                 'name': 'port_pool_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_PORT_POOL',
                 'attributes': [
                     'SAI_PORT_POOL_ATTR_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_PORT_POOL_ATTR_BUFFER_POOL_ID',
-                    'sai_object_id_t',
+                    '$buffer_pool_1',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -35,11 +57,33 @@ class TestSaiPortPool:
                 'type': 'SAI_OBJECT_TYPE_PORT_POOL',
                 'attributes': [
                     'SAI_PORT_POOL_ATTR_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_PORT_POOL_ATTR_BUFFER_POOL_ID',
-                    'sai_object_id_t',
+                    '$buffer_pool_1',
                 ],
-            }
+            },
+            {
+                'name': 'buffer_pool_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
+                'attributes': [
+                    'SAI_BUFFER_POOL_ATTR_TYPE',
+                    'SAI_BUFFER_POOL_TYPE_INGRESS',
+                    'SAI_BUFFER_POOL_ATTR_SIZE',
+                    '10',
+                ],
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

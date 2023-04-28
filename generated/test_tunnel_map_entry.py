@@ -10,6 +10,39 @@ class TestSaiTunnelMapEntry:
     def test_tunnel_map_entry_create(self, npu):
         commands = [
             {
+                'name': 'tunnel_map_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_TUNNEL_MAP',
+                'attributes': [
+                    'SAI_TUNNEL_MAP_ATTR_TYPE',
+                    'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
+                ],
+            },
+            {
+                'name': 'bridge_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_BRIDGE',
+                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
+            },
+            {
+                'name': 'bridge_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_BRIDGE',
+                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
+            },
+            {
+                'name': 'virtual_router_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'attributes': [],
+            },
+            {
+                'name': 'virtual_router_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'attributes': [],
+            },
+            {
                 'name': 'tunnel_map_entry_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL_MAP_ENTRY',
@@ -17,7 +50,7 @@ class TestSaiTunnelMapEntry:
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_TUNNEL_MAP_TYPE',
                     'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_TUNNEL_MAP',
-                    'sai_object_id_t',
+                    '$tunnel_map_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_OECN_KEY',
                     'sai_uint8_t',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_OECN_VALUE',
@@ -35,13 +68,13 @@ class TestSaiTunnelMapEntry:
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VNI_ID_VALUE',
                     '10',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_BRIDGE_ID_KEY',
-                    'sai_object_id_t',
+                    '$bridge_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_BRIDGE_ID_VALUE',
-                    'sai_object_id_t',
+                    '$bridge_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VIRTUAL_ROUTER_ID_KEY',
-                    'sai_object_id_t',
+                    '$virtual_router_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VIRTUAL_ROUTER_ID_VALUE',
-                    'sai_object_id_t',
+                    '$virtual_router_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VSID_ID_KEY',
                     '10',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VSID_ID_VALUE',
@@ -49,9 +82,9 @@ class TestSaiTunnelMapEntry:
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_PREFIX_AGG_ID_KEY',
                     '10',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_SRV6_VPN_SID_VALUE',
-                    'sai_ip6_t',
+                    'FF::0',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -69,7 +102,7 @@ class TestSaiTunnelMapEntry:
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_TUNNEL_MAP_TYPE',
                     'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_TUNNEL_MAP',
-                    'sai_object_id_t',
+                    '$tunnel_map_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_OECN_KEY',
                     'sai_uint8_t',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_OECN_VALUE',
@@ -87,13 +120,13 @@ class TestSaiTunnelMapEntry:
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VNI_ID_VALUE',
                     '10',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_BRIDGE_ID_KEY',
-                    'sai_object_id_t',
+                    '$bridge_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_BRIDGE_ID_VALUE',
-                    'sai_object_id_t',
+                    '$bridge_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VIRTUAL_ROUTER_ID_KEY',
-                    'sai_object_id_t',
+                    '$virtual_router_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VIRTUAL_ROUTER_ID_VALUE',
-                    'sai_object_id_t',
+                    '$virtual_router_1',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VSID_ID_KEY',
                     '10',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_VSID_ID_VALUE',
@@ -101,9 +134,42 @@ class TestSaiTunnelMapEntry:
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_PREFIX_AGG_ID_KEY',
                     '10',
                     'SAI_TUNNEL_MAP_ENTRY_ATTR_SRV6_VPN_SID_VALUE',
-                    'sai_ip6_t',
+                    'FF::0',
                 ],
-            }
+            },
+            {
+                'name': 'virtual_router_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'attributes': [],
+            },
+            {
+                'name': 'virtual_router_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'attributes': [],
+            },
+            {
+                'name': 'bridge_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_BRIDGE',
+                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
+            },
+            {
+                'name': 'bridge_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_BRIDGE',
+                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
+            },
+            {
+                'name': 'tunnel_map_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_TUNNEL_MAP',
+                'attributes': [
+                    'SAI_TUNNEL_MAP_ATTR_TYPE',
+                    'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

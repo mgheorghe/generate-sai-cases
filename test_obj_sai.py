@@ -355,7 +355,7 @@ def get_create_commands(obj_type):
             elif 'sai_macsec_direction_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_MACSEC_DIRECTION_EGRESS')
             elif 'sai_hostif_trap_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_HOSTIF_TRAP_TYPE_START')
+                attributes.append('SAI_HOSTIF_TRAP_TYPE_STP')
             elif 'sai_packet_action_t' == mandatory_attributes[attribute]['type']:
                 attributes.append('SAI_PACKET_ACTION_DROP')
             elif 'sai_tam_report_type_t' == mandatory_attributes[attribute]['type']:

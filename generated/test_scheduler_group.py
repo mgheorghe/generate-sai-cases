@@ -10,20 +10,31 @@ class TestSaiSchedulerGroup:
     def test_scheduler_group_create(self, npu):
         commands = [
             {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
                 'name': 'scheduler_group_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_SCHEDULER_GROUP',
                 'attributes': [
                     'SAI_SCHEDULER_GROUP_ATTR_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_SCHEDULER_GROUP_ATTR_LEVEL',
                     'sai_uint8_t',
                     'SAI_SCHEDULER_GROUP_ATTR_MAX_CHILDS',
                     'sai_uint8_t',
                     'SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE',
-                    'sai_object_id_t',
+                    'TODO_circular parent reference',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -39,15 +50,26 @@ class TestSaiSchedulerGroup:
                 'type': 'SAI_OBJECT_TYPE_SCHEDULER_GROUP',
                 'attributes': [
                     'SAI_SCHEDULER_GROUP_ATTR_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_SCHEDULER_GROUP_ATTR_LEVEL',
                     'sai_uint8_t',
                     'SAI_SCHEDULER_GROUP_ATTR_MAX_CHILDS',
                     'sai_uint8_t',
                     'SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE',
-                    'sai_object_id_t',
+                    'TODO_circular parent reference',
                 ],
-            }
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

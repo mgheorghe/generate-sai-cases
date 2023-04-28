@@ -10,6 +10,12 @@ class TestSaiIpmcEntry:
     def test_ipmc_entry_create(self, npu):
         commands = [
             {
+                'name': 'rpf_group_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
+                'attributes': [],
+            },
+            {
                 'name': 'ipmc_entry_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
@@ -17,9 +23,9 @@ class TestSaiIpmcEntry:
                     'SAI_IPMC_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                     'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
-                    'sai_object_id_t',
+                    '$rpf_group_1',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -37,9 +43,15 @@ class TestSaiIpmcEntry:
                     'SAI_IPMC_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                     'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
-                    'sai_object_id_t',
+                    '$rpf_group_1',
                 ],
-            }
+            },
+            {
+                'name': 'rpf_group_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
+                'attributes': [],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

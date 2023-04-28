@@ -10,16 +10,38 @@ class TestSaiPortConnector:
     def test_port_connector_create(self, npu):
         commands = [
             {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
                 'name': 'port_connector_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_PORT_CONNECTOR',
                 'attributes': [
                     'SAI_PORT_CONNECTOR_ATTR_SYSTEM_SIDE_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_PORT_CONNECTOR_ATTR_LINE_SIDE_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -35,11 +57,33 @@ class TestSaiPortConnector:
                 'type': 'SAI_OBJECT_TYPE_PORT_CONNECTOR',
                 'attributes': [
                     'SAI_PORT_CONNECTOR_ATTR_SYSTEM_SIDE_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_PORT_CONNECTOR_ATTR_LINE_SIDE_PORT_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                 ],
-            }
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

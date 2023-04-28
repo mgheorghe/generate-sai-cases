@@ -15,7 +15,7 @@ class TestSaiNeighborEntry:
                 'type': 'SAI_OBJECT_TYPE_NEIGHBOR_ENTRY',
                 'attributes': [
                     'SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                 ],
             }
         ]
@@ -33,7 +33,7 @@ class TestSaiNeighborEntry:
                 'type': 'SAI_OBJECT_TYPE_NEIGHBOR_ENTRY',
                 'attributes': [
                     'SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                 ],
             }
         ]

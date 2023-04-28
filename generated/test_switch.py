@@ -15,7 +15,7 @@ class TestSaiSwitch:
                 'type': 'SAI_OBJECT_TYPE_SWITCH',
                 'attributes': [
                     'SAI_SWITCH_ATTR_INIT_SWITCH',
-                    'true',
+                    'True',
                     'SAI_SWITCH_ATTR_HARDWARE_ACCESS_BUS',
                     'SAI_SWITCH_HARDWARE_ACCESS_BUS_MDIO',
                     'SAI_SWITCH_ATTR_PLATFROM_CONTEXT',
@@ -47,7 +47,7 @@ class TestSaiSwitch:
                 'type': 'SAI_OBJECT_TYPE_SWITCH',
                 'attributes': [
                     'SAI_SWITCH_ATTR_INIT_SWITCH',
-                    'true',
+                    'True',
                     'SAI_SWITCH_ATTR_HARDWARE_ACCESS_BUS',
                     'SAI_SWITCH_HARDWARE_ACCESS_BUS_MDIO',
                     'SAI_SWITCH_ATTR_PLATFROM_CONTEXT',

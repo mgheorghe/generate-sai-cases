@@ -10,16 +10,22 @@ class TestSaiMcastFdbEntry:
     def test_mcast_fdb_entry_create(self, npu):
         commands = [
             {
+                'name': 'l2mc_group_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_L2MC_GROUP',
+                'attributes': [],
+            },
+            {
                 'name': 'mcast_fdb_entry_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_MCAST_FDB_ENTRY',
                 'attributes': [
                     'SAI_MCAST_FDB_ENTRY_ATTR_GROUP_ID',
-                    'sai_object_id_t',
+                    '$l2mc_group_1',
                     'SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -35,11 +41,17 @@ class TestSaiMcastFdbEntry:
                 'type': 'SAI_OBJECT_TYPE_MCAST_FDB_ENTRY',
                 'attributes': [
                     'SAI_MCAST_FDB_ENTRY_ATTR_GROUP_ID',
-                    'sai_object_id_t',
+                    '$l2mc_group_1',
                     'SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                 ],
-            }
+            },
+            {
+                'name': 'l2mc_group_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_L2MC_GROUP',
+                'attributes': [],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

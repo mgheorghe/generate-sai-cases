@@ -10,6 +10,17 @@ class TestSaiMirrorSession:
     def test_mirror_session_create(self, npu):
         commands = [
             {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
                 'name': 'mirror_session_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_MIRROR_SESSION',
@@ -17,7 +28,7 @@ class TestSaiMirrorSession:
                     'SAI_MIRROR_SESSION_ATTR_TYPE',
                     'sai_mirror_session_type_t',
                     'SAI_MIRROR_SESSION_ATTR_MONITOR_PORT',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_MIRROR_SESSION_ATTR_ERSPAN_ENCAPSULATION_TYPE',
                     'sai_erspan_encapsulation_type_t',
                     'SAI_MIRROR_SESSION_ATTR_IPHDR_VERSION',
@@ -29,9 +40,9 @@ class TestSaiMirrorSession:
                     'SAI_MIRROR_SESSION_ATTR_DST_IP_ADDRESS',
                     'sai_ip_address_t',
                     'SAI_MIRROR_SESSION_ATTR_SRC_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                     'SAI_MIRROR_SESSION_ATTR_DST_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                     'SAI_MIRROR_SESSION_ATTR_GRE_PROTOCOL_TYPE',
                     '10',
                     'SAI_MIRROR_SESSION_ATTR_MONITOR_PORTLIST',
@@ -41,7 +52,7 @@ class TestSaiMirrorSession:
                     'SAI_MIRROR_SESSION_ATTR_UDP_DST_PORT',
                     '10',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -59,7 +70,7 @@ class TestSaiMirrorSession:
                     'SAI_MIRROR_SESSION_ATTR_TYPE',
                     'sai_mirror_session_type_t',
                     'SAI_MIRROR_SESSION_ATTR_MONITOR_PORT',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_MIRROR_SESSION_ATTR_ERSPAN_ENCAPSULATION_TYPE',
                     'sai_erspan_encapsulation_type_t',
                     'SAI_MIRROR_SESSION_ATTR_IPHDR_VERSION',
@@ -71,9 +82,9 @@ class TestSaiMirrorSession:
                     'SAI_MIRROR_SESSION_ATTR_DST_IP_ADDRESS',
                     'sai_ip_address_t',
                     'SAI_MIRROR_SESSION_ATTR_SRC_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                     'SAI_MIRROR_SESSION_ATTR_DST_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                     'SAI_MIRROR_SESSION_ATTR_GRE_PROTOCOL_TYPE',
                     '10',
                     'SAI_MIRROR_SESSION_ATTR_MONITOR_PORTLIST',
@@ -83,7 +94,18 @@ class TestSaiMirrorSession:
                     'SAI_MIRROR_SESSION_ATTR_UDP_DST_PORT',
                     '10',
                 ],
-            }
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

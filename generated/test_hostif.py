@@ -10,6 +10,17 @@ class TestSaiHostif:
     def test_hostif_create(self, npu):
         commands = [
             {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
                 'name': 'hostif_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF',
@@ -17,13 +28,13 @@ class TestSaiHostif:
                     'SAI_HOSTIF_ATTR_TYPE',
                     'sai_hostif_type_t',
                     'SAI_HOSTIF_ATTR_OBJ_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_HOSTIF_ATTR_NAME',
                     'char',
                     'SAI_HOSTIF_ATTR_GENETLINK_MCGRP_NAME',
                     'char',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -41,13 +52,24 @@ class TestSaiHostif:
                     'SAI_HOSTIF_ATTR_TYPE',
                     'sai_hostif_type_t',
                     'SAI_HOSTIF_ATTR_OBJ_ID',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_HOSTIF_ATTR_NAME',
                     'char',
                     'SAI_HOSTIF_ATTR_GENETLINK_MCGRP_NAME',
                     'char',
                 ],
-            }
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

@@ -15,9 +15,9 @@ class TestSaiFineGrainedHashField:
                 'type': 'SAI_OBJECT_TYPE_FINE_GRAINED_HASH_FIELD',
                 'attributes': [
                     'SAI_FINE_GRAINED_HASH_FIELD_ATTR_IPV4_MASK',
-                    'sai_ip4_t',
+                    '255.0.0.0',
                     'SAI_FINE_GRAINED_HASH_FIELD_ATTR_IPV6_MASK',
-                    'sai_ip6_t',
+                    'FF::0',
                 ],
             }
         ]
@@ -35,9 +35,9 @@ class TestSaiFineGrainedHashField:
                 'type': 'SAI_OBJECT_TYPE_FINE_GRAINED_HASH_FIELD',
                 'attributes': [
                     'SAI_FINE_GRAINED_HASH_FIELD_ATTR_IPV4_MASK',
-                    'sai_ip4_t',
+                    '255.0.0.0',
                     'SAI_FINE_GRAINED_HASH_FIELD_ATTR_IPV6_MASK',
-                    'sai_ip6_t',
+                    'FF::0',
                 ],
             }
         ]

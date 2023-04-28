@@ -10,6 +10,15 @@ class TestSaiTamCollector:
     def test_tam_collector_create(self, npu):
         commands = [
             {
+                'name': 'tam_transport_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
+                'attributes': [
+                    'SAI_TAM_TRANSPORT_ATTR_TRANSPORT_TYPE',
+                    'SAI_TAM_TRANSPORT_TYPE_TCP',
+                ],
+            },
+            {
                 'name': 'tam_collector_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
@@ -19,11 +28,11 @@ class TestSaiTamCollector:
                     'SAI_TAM_COLLECTOR_ATTR_DST_IP',
                     'sai_ip_address_t',
                     'SAI_TAM_COLLECTOR_ATTR_TRANSPORT',
-                    'sai_object_id_t',
+                    '$tam_transport_1',
                     'SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE',
                     'sai_uint8_t',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -43,11 +52,20 @@ class TestSaiTamCollector:
                     'SAI_TAM_COLLECTOR_ATTR_DST_IP',
                     'sai_ip_address_t',
                     'SAI_TAM_COLLECTOR_ATTR_TRANSPORT',
-                    'sai_object_id_t',
+                    '$tam_transport_1',
                     'SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE',
                     'sai_uint8_t',
                 ],
-            }
+            },
+            {
+                'name': 'tam_transport_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
+                'attributes': [
+                    'SAI_TAM_TRANSPORT_ATTR_TRANSPORT_TYPE',
+                    'SAI_TAM_TRANSPORT_TYPE_TCP',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]

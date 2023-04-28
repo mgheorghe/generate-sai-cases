@@ -10,6 +10,29 @@ class TestSaiBfdSession:
     def test_bfd_session_create(self, npu):
         commands = [
             {
+                'name': 'virtual_router_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'attributes': [],
+            },
+            {
+                'name': 'port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'srv6_sidlist_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_SRV6_SIDLIST',
+                'attributes': ['SAI_SRV6_SIDLIST_ATTR_TYPE', 'sai_srv6_sidlist_type_t'],
+            },
+            {
                 'name': 'bfd_session_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
@@ -17,9 +40,9 @@ class TestSaiBfdSession:
                     'SAI_BFD_SESSION_ATTR_TYPE',
                     'sai_bfd_session_type_t',
                     'SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER',
-                    'sai_object_id_t',
+                    '$virtual_router_1',
                     'SAI_BFD_SESSION_ATTR_PORT',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_BFD_SESSION_ATTR_LOCAL_DISCRIMINATOR',
                     '10',
                     'SAI_BFD_SESSION_ATTR_REMOTE_DISCRIMINATOR',
@@ -41,9 +64,9 @@ class TestSaiBfdSession:
                     'SAI_BFD_SESSION_ATTR_TUNNEL_DST_IP_ADDRESS',
                     'sai_ip_address_t',
                     'SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                     'SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                     'SAI_BFD_SESSION_ATTR_MIN_TX',
                     '10',
                     'SAI_BFD_SESSION_ATTR_MIN_RX',
@@ -51,9 +74,9 @@ class TestSaiBfdSession:
                     'SAI_BFD_SESSION_ATTR_MULTIPLIER',
                     'sai_uint8_t',
                     'SAI_BFD_SESSION_ATTR_SRV6_SIDLIST_ID',
-                    'sai_object_id_t',
+                    '$srv6_sidlist_1',
                 ],
-            }
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -71,9 +94,9 @@ class TestSaiBfdSession:
                     'SAI_BFD_SESSION_ATTR_TYPE',
                     'sai_bfd_session_type_t',
                     'SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER',
-                    'sai_object_id_t',
+                    '$virtual_router_1',
                     'SAI_BFD_SESSION_ATTR_PORT',
-                    'sai_object_id_t',
+                    '$port_1',
                     'SAI_BFD_SESSION_ATTR_LOCAL_DISCRIMINATOR',
                     '10',
                     'SAI_BFD_SESSION_ATTR_REMOTE_DISCRIMINATOR',
@@ -95,9 +118,9 @@ class TestSaiBfdSession:
                     'SAI_BFD_SESSION_ATTR_TUNNEL_DST_IP_ADDRESS',
                     'sai_ip_address_t',
                     'SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                     'SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS',
-                    '00:00:00:00:00:00',
+                    '00:00:B1:AE:C5:00',
                     'SAI_BFD_SESSION_ATTR_MIN_TX',
                     '10',
                     'SAI_BFD_SESSION_ATTR_MIN_RX',
@@ -105,9 +128,32 @@ class TestSaiBfdSession:
                     'SAI_BFD_SESSION_ATTR_MULTIPLIER',
                     'sai_uint8_t',
                     'SAI_BFD_SESSION_ATTR_SRV6_SIDLIST_ID',
-                    'sai_object_id_t',
+                    '$srv6_sidlist_1',
                 ],
-            }
+            },
+            {
+                'name': 'srv6_sidlist_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_SRV6_SIDLIST',
+                'attributes': ['SAI_SRV6_SIDLIST_ATTR_TYPE', 'sai_srv6_sidlist_type_t'],
+            },
+            {
+                'name': 'port_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_PORT',
+                'attributes': [
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
+                ],
+            },
+            {
+                'name': 'virtual_router_1',
+                'op': 'remove',
+                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'attributes': [],
+            },
         ]
 
         results = [*npu.process_commands(commands)]
