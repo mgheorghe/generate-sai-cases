@@ -45,6 +45,4 @@ class TestSaiFineGrainedHashField:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_STATUS_SUCCESS' for result in results]
-        ), 'Remove error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Remove error'

@@ -52,7 +52,6 @@ DEFAULT_VALUES = {
     'sai_ip6_t': 'FF::0',
     'sai_stp_port_state_t': 'SAI_STP_PORT_STATE_LEARNING',
     'sai_router_interface_type_t': 'SAI_ROUTER_INTERFACE_TYPE_PORT',
-
 }
 
 

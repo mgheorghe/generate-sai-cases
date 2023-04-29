@@ -87,12 +87,10 @@ run all cases that have mandatory attributes but do not have a parent (depedency
 create depedency graph between SAI objects
 
 ```
-pip install black
-pip install pre-commit
+pip install -r requirements.txt
 
 python test_obj_sai.py
 python -m pre_commit run --all-files
-python -m black --skip-string-normalization ./
 ```
 
 * contribute in https://github.com/opencomputeproject/SAI-Challenger/tree/main/tests/api

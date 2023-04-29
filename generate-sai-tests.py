@@ -61,9 +61,7 @@ def get_all_attributes(obj_type):
                 start_copy = False
                 is_attribute = False
                 attr_block_start = False
-                with io.open(
-                    os.path.join(root, file), 'rt', encoding='utf-8'
-                ) as h_file:
+                with io.open(os.path.join(root, file), 'rt', encoding='utf-8') as h_file:
                     for text_line in h_file:
                         if block_start in text_line:
                             print(os.path.join(root, file))
@@ -73,43 +71,26 @@ def get_all_attributes(obj_type):
                         if start_copy:
                             if attr_block_start:
                                 if '@type' in text_line:
-                                    o_type = text_line.replace(
-                                        '* @type', '').strip()
+                                    o_type = text_line.replace('* @type', '').strip()
                                 if '@flags' in text_line:
-                                    flags = text_line.replace(
-                                        '* @flags', '').strip()
+                                    flags = text_line.replace('* @flags', '').strip()
                                 if '@objects' in text_line:
                                     objects = []
-                                    for parent in (
-                                        text_line.replace('* @objects', '')
-                                        .strip()
-                                        .split(',')
-                                    ):
+                                    for parent in text_line.replace('* @objects', '').strip().split(','):
                                         objects.append(parent.strip())
                                         if flags:
                                             if 'MANDATORY_ON_CREATE' in flags:
                                                 G.add_edge(
-                                                    obj_type.replace(
-                                                        'SAI_OBJECT_TYPE_', ''
-                                                    ),
-                                                    parent.strip().replace(
-                                                        'SAI_OBJECT_TYPE_', ''
-                                                    ),
+                                                    obj_type.replace('SAI_OBJECT_TYPE_', ''),
+                                                    parent.strip().replace('SAI_OBJECT_TYPE_', ''),
                                                 )
                                 if '@allownull' in text_line:
-                                    allownull = text_line.replace(
-                                        '* @allownull', ''
-                                    ).strip()
+                                    allownull = text_line.replace('* @allownull', '').strip()
                                 if '@default' in text_line:
-                                    default = text_line.replace(
-                                        '* @default', ''
-                                    ).strip()
+                                    default = text_line.replace('* @default', '').strip()
 
                             if is_attribute:
-                                attribute = (
-                                    text_line.split('=')[0].replace(
-                                        ',', '').strip()
-                                )
+                                attribute = text_line.split('=')[0].replace(',', '').strip()
                                 if attribute != '':
                                     dictionary[attribute] = {}
                                     dictionary[attribute]['type'] = o_type
@@ -161,8 +142,7 @@ def get_create_commands(obj_type):
     command = {'name': obj_name + '_1', 'op': 'create', 'type': obj_type}
     commands = []
     attributes = []
-    mandatory_attributes = select_mandatory_attributes(
-        get_all_attributes(obj_type))
+    mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
     for attribute in mandatory_attributes.keys():
         attributes.append(attribute)
         if 'type' in mandatory_attributes[attribute].keys():
@@ -206,8 +186,7 @@ def camel_case(s):
 
 
 def generate_comment(obj_type):
-    mandatory_attributes = select_mandatory_attributes(
-        get_all_attributes(obj_type))
+    mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
     if len(mandatory_attributes) == 0:
         return 'object with no attributes'
     else:
