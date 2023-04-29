@@ -46,6 +46,7 @@ class TestSai%(CLASS_NAME)s:
 
 
 def get_object_types():
+    # ^.*(SAI_OBJECT_TYPE_[0-9A-Za-z_]+).*$
     return SAI_OBJECT_TYPES
 
 
