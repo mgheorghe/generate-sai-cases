@@ -5,9 +5,12 @@ from re import sub
 import networkx as nx
 from pyvis.network import Network
 
+from default_values import DEFAULT_VALUES
+from default_values import SAI_OBJECT_TYPES
+
 # give your custom path
 SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
-# SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
+SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
 
 TEST_TEMPLATE = '''
 from pprint import pprint
@@ -41,130 +44,7 @@ class TestSai%(CLASS_NAME)s:
 
 
 def get_object_types():
-    return [
-        'SAI_OBJECT_TYPE___',
-        'SAI_OBJECT_TYPE_ACL_COUNTER',
-        'SAI_OBJECT_TYPE_ACL_ENTRY',
-        'SAI_OBJECT_TYPE_ACL_RANGE',
-        'SAI_OBJECT_TYPE_ACL_TABLE',
-        'SAI_OBJECT_TYPE_ACL_TABLE_GROUP',
-        'SAI_OBJECT_TYPE_ACL_TABLE_GROUP_MEMBER',
-        'SAI_OBJECT_TYPE_ARS',
-        'SAI_OBJECT_TYPE_ARS_PROFILE',
-        'SAI_OBJECT_TYPE_BFD_SESSION',
-        'SAI_OBJECT_TYPE_BRIDGE',
-        'SAI_OBJECT_TYPE_BRIDGE_PORT',
-        'SAI_OBJECT_TYPE_BUFFER_POOL',
-        'SAI_OBJECT_TYPE_BUFFER_PROFILE',
-        'SAI_OBJECT_TYPE_COUNTER',
-        'SAI_OBJECT_TYPE_DASH_ACL_GROUP',
-        'SAI_OBJECT_TYPE_DASH_ACL_RULE',
-        'SAI_OBJECT_TYPE_DEBUG_COUNTER',
-        'SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY',
-        'SAI_OBJECT_TYPE_DTEL',
-        'SAI_OBJECT_TYPE_DTEL_EVENT',
-        'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-        'SAI_OBJECT_TYPE_DTEL_QUEUE_REPORT',
-        'SAI_OBJECT_TYPE_DTEL_REPORT_SESSION',
-        'SAI_OBJECT_TYPE_ENI',
-        'SAI_OBJECT_TYPE_ENI_ETHER_ADDRESS_MAP_ENTRY',
-        'SAI_OBJECT_TYPE_EXTENSIONS_RANGE_END',
-        'SAI_OBJECT_TYPE_EXTENSIONS_RANGE_START',
-        'SAI_OBJECT_TYPE_FDB_ENTRY',
-        'SAI_OBJECT_TYPE_FDB_FLUSH',
-        'SAI_OBJECT_TYPE_FINE_GRAINED_HASH_FIELD',
-        'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-        'SAI_OBJECT_TYPE_HASH',
-        'SAI_OBJECT_TYPE_HOST_INTERFACE',
-        'SAI_OBJECT_TYPE_HOSTIF',
-        'SAI_OBJECT_TYPE_HOSTIF_PACKET',
-        'SAI_OBJECT_TYPE_HOSTIF_TABLE_ENTRY',
-        'SAI_OBJECT_TYPE_HOSTIF_TRAP',
-        'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
-        'SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP',
-        'SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY',
-        'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
-        'SAI_OBJECT_TYPE_INSEG_ENTRY',
-        'SAI_OBJECT_TYPE_IPMC_ENTRY',
-        'SAI_OBJECT_TYPE_IPMC_GROUP',
-        'SAI_OBJECT_TYPE_IPMC_GROUP_MEMBER',
-        'SAI_OBJECT_TYPE_IPSEC',
-        'SAI_OBJECT_TYPE_IPSEC_PORT',
-        'SAI_OBJECT_TYPE_IPSEC_SA',
-        'SAI_OBJECT_TYPE_ISOLATION_GROUP',
-        'SAI_OBJECT_TYPE_ISOLATION_GROUP_MEMBER',
-        'SAI_OBJECT_TYPE_L',
-        'SAI_OBJECT_TYPE_LAG',
-        'SAI_OBJECT_TYPE_LAG_MEMBER',
-        'SAI_OBJECT_TYPE_MACSEC',
-        'SAI_OBJECT_TYPE_MACSEC_FLOW',
-        'SAI_OBJECT_TYPE_MACSEC_PORT',
-        'SAI_OBJECT_TYPE_MACSEC_SA',
-        'SAI_OBJECT_TYPE_MACSEC_SC',
-        'SAI_OBJECT_TYPE_MAX',
-        'SAI_OBJECT_TYPE_MCAST_FDB_ENTRY',
-        'SAI_OBJECT_TYPE_MIRROR_SESSION',
-        'SAI_OBJECT_TYPE_MY_MAC',
-        'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-        'SAI_OBJECT_TYPE_NAT_ENTRY',
-        'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
-        'SAI_OBJECT_TYPE_NEIGHBOR_ENTRY',
-        'SAI_OBJECT_TYPE_NEXT_HOP',
-        'SAI_OBJECT_TYPE_NEXT_HOP_GROUP',
-        'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MAP',
-        'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
-        'SAI_OBJECT_TYPE_NULL',
-        'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
-        'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-        'SAI_OBJECT_TYPE_PA_VALIDATION_ENTRY',
-        'SAI_OBJECT_TYPE_POLICER',
-        'SAI_OBJECT_TYPE_PORT',
-        'SAI_OBJECT_TYPE_PORT_CONNECTOR',
-        'SAI_OBJECT_TYPE_PORT_POOL',
-        'SAI_OBJECT_TYPE_PORT_SERDES',
-        'SAI_OBJECT_TYPE_QOS_MAP',
-        'SAI_OBJECT_TYPE_QUEUE',
-        'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-        'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-        'SAI_OBJECT_TYPE_RPF_GROUP',
-        'SAI_OBJECT_TYPE_RPF_GROUP_MEMBER',
-        'SAI_OBJECT_TYPE_SAMPLEPACKET',
-        'SAI_OBJECT_TYPE_SCHEDULER',
-        'SAI_OBJECT_TYPE_SCHEDULER_GROUP',
-        'SAI_OBJECT_TYPE_SRV',
-        'SAI_OBJECT_TYPE_STP',
-        'SAI_OBJECT_TYPE_STP_PORT',
-        'SAI_OBJECT_TYPE_SWITCH',
-        'SAI_OBJECT_TYPE_SWITCH_TUNNEL',
-        'SAI_OBJECT_TYPE_SYSTEM_PORT',
-        'SAI_OBJECT_TYPE_TABLE_BITMAP_ROUTER_ENTRY',
-        'SAI_OBJECT_TYPE_TABLE_META_TUNNEL_ENTRY',
-        'SAI_OBJECT_TYPE_TAM',
-        'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-        'SAI_OBJECT_TYPE_TAM_EVENT',
-        'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
-        'SAI_OBJECT_TYPE_TAM_EVENT_THRESHOLD',
-        'SAI_OBJECT_TYPE_TAM_INT',
-        'SAI_OBJECT_TYPE_TAM_MATH_FUNC',
-        'SAI_OBJECT_TYPE_TAM_REPORT',
-        'SAI_OBJECT_TYPE_TAM_TEL_TYPE',
-        'SAI_OBJECT_TYPE_TAM_TELEMETRY',
-        'SAI_OBJECT_TYPE_TAM_TRANSPORT',
-        'SAI_OBJECT_TYPE_TUNNEL',
-        'SAI_OBJECT_TYPE_TUNNEL_MAP',
-        'SAI_OBJECT_TYPE_TUNNEL_MAP_ENTRY',
-        'SAI_OBJECT_TYPE_TUNNEL_TERM_TABLE_ENTRY',
-        'SAI_OBJECT_TYPE_UDF',
-        'SAI_OBJECT_TYPE_UDF_GROUP',
-        'SAI_OBJECT_TYPE_UDF_MATCH',
-        'SAI_OBJECT_TYPE_VIP_ENTRY',
-        'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
-        'SAI_OBJECT_TYPE_VLAN',
-        'SAI_OBJECT_TYPE_VLAN_MEMBER',
-        'SAI_OBJECT_TYPE_VNET',
-        'SAI_OBJECT_TYPE_WRED',
-        'SAI_OBJECT_TYPE_XXX',
-    ]
+    return SAI_OBJECT_TYPES
 
 
 def get_all_attributes(obj_type):
@@ -193,9 +73,11 @@ def get_all_attributes(obj_type):
                         if start_copy:
                             if attr_block_start:
                                 if '@type' in text_line:
-                                    o_type = text_line.replace('* @type', '').strip()
+                                    o_type = text_line.replace(
+                                        '* @type', '').strip()
                                 if '@flags' in text_line:
-                                    flags = text_line.replace('* @flags', '').strip()
+                                    flags = text_line.replace(
+                                        '* @flags', '').strip()
                                 if '@objects' in text_line:
                                     objects = []
                                     for parent in (
@@ -225,7 +107,8 @@ def get_all_attributes(obj_type):
 
                             if is_attribute:
                                 attribute = (
-                                    text_line.split('=')[0].replace(',', '').strip()
+                                    text_line.split('=')[0].replace(
+                                        ',', '').strip()
                                 )
                                 if attribute != '':
                                     dictionary[attribute] = {}
@@ -278,152 +161,15 @@ def get_create_commands(obj_type):
     command = {'name': obj_name + '_1', 'op': 'create', 'type': obj_type}
     commands = []
     attributes = []
-    mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
+    mandatory_attributes = select_mandatory_attributes(
+        get_all_attributes(obj_type))
     for attribute in mandatory_attributes.keys():
         attributes.append(attribute)
         if 'type' in mandatory_attributes[attribute].keys():
-            if 'sai_uint16_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('10')
-            elif 'sai_uint32_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('10')
-            elif 'sai_uint64_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('10')
-            elif 'sai_bridge_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_BRIDGE_TYPE_1Q')
-            elif 'sai_meter_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_METER_TYPE_PACKETS')
-            elif 'sai_policer_mode_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_POLICER_MODE_SR_TCM')
-            elif 'sai_tam_transport_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_TAM_TRANSPORT_TYPE_TCP')
-            elif 'sai_s8_list_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('2:10,11')
-            elif 'sai_debug_counter_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_DEBUG_COUNTER_TYPE_PORT_IN_DROP_REASONS')
-            elif 'sai_dtel_event_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_DTEL_EVENT_TYPE_FLOW_STATE')
-            elif 'sai_qos_map_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_QOS_MAP_TYPE_DOT1P_TO_TC')
-            elif 'sai_qos_map_list_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('2:10,11')
-            elif 'sai_u32_list_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('2:10,11')
-            elif 'sai_acl_stage_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_ACL_STAGE_INGRESS')
-            elif 'bool' == mandatory_attributes[attribute]['type']:
-                attributes.append('True')
-            elif 'sai_next_hop_group_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_UNORDERED_ECMP')
-            elif 'sai_buffer_pool_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_BUFFER_POOL_TYPE_INGRESS')
-            elif 'sai_macsec_direction_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_MACSEC_DIRECTION_EGRESS')
-            elif 'sai_mac_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('00:00:B1:AE:C5:00')
-            elif (
-                'sai_my_sid_entry_endpoint_behavior_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_E')
-            elif (
-                'sai_next_hop_group_map_type_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append(
-                    'SAI_NEXT_HOP_GROUP_MAP_TYPE_FORWARDING_CLASS_TO_INDEX'
-                )
-            elif (
-                'sai_hostif_user_defined_trap_type_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_HOSTIF_USER_DEFINED_TRAP_TYPE_END')
-            elif 'sai_tunnel_map_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN')
-            elif 'sai_tunnel_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_TUNNEL_TYPE_IPINIP')
-            elif 'sai_acl_stage_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_ACL_STAGE_INGRESS')
-            elif 'sai_fdb_entry_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_FDB_ENTRY_TYPE_DYNAMIC')
-            elif 'sai_acl_range_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_ACL_RANGE_TYPE_L4_SRC_PORT_RANGE')
-            elif 'sai_u32_range_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('10,20')
-            elif (
-                'sai_isolation_group_type_t' == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_ISOLATION_GROUP_TYPE_PORT')
-            elif 'sai_macsec_direction_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_MACSEC_DIRECTION_EGRESS')
-            elif 'sai_hostif_trap_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_HOSTIF_TRAP_TYPE_STP')
-            elif 'sai_packet_action_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_PACKET_ACTION_DROP')
-            elif 'sai_tam_report_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_TAM_REPORT_TYPE_SFLOW')
-            elif (
-                'sai_switch_hardware_access_bus_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_SWITCH_HARDWARE_ACCESS_BUS_MDIO')
-            elif 'sai_ip4_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('255.0.0.0')
-            elif 'sai_bfd_session_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_BFD_SESSION_TYPE_DEMAND_ACTIVE')
-            elif (
-                'sai_bfd_encapsulation_type_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_BFD_ENCAPSULATION_TYPE_IP_IN_IP')
-            elif 'sai_bridge_port_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_BRIDGE_PORT_TYPE_PORT')
-            elif 'sai_queue_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_QUEUE_TYPE_ALL')
-            elif 'sai_hostif_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_HOSTIF_TYPE_NETDEV')
-            elif 'sai_hostif_tx_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_HOSTIF_TX_TYPE_PIPELINE_BYPASS')
-            elif (
-                'sai_hostif_table_entry_type_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_HOSTIF_TABLE_ENTRY_TYPE_PORT')
-            elif (
-                'sai_hostif_table_entry_channel_type_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_HOSTIF_TABLE_ENTRY_CHANNEL_TYPE_CB')
-            elif 'sai_mirror_session_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_MIRROR_SESSION_TYPE_LOCAL')
-            elif (
-                'sai_erspan_encapsulation_type_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_ERSPAN_ENCAPSULATION_TYPE_MIRROR_L3_GRE_TUNNEL')
-            elif 'sai_next_hop_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_NEXT_HOP_TYPE_IP')
-            elif 'sai_tam_int_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_TAM_INT_TYPE_IOAM')
-            elif (
-                'sai_tam_int_presence_type_t' == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_TAM_INT_PRESENCE_TYPE_PB')
-            elif 'sai_tam_telemetry_type_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_TAM_TELEMETRY_TYPE_NE')
-            elif (
-                'sai_tunnel_term_table_entry_type_t'
-                == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_TUNNEL_TERM_TABLE_ENTRY_TYPE_P2P')
-            elif 'sai_ip6_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('FF::0')
-            elif 'sai_stp_port_state_t' == mandatory_attributes[attribute]['type']:
-                attributes.append('SAI_STP_PORT_STATE_LEARNING')
-            elif (
-                'sai_router_interface_type_t' == mandatory_attributes[attribute]['type']
-            ):
-                attributes.append('SAI_ROUTER_INTERFACE_TYPE_PORT')
-            elif 'sai_object_id_t' == mandatory_attributes[attribute]['type']:
+            attr_type = mandatory_attributes[attribute]['type']
+            if attr_type in DEFAULT_VALUES.keys():
+                attributes.append(DEFAULT_VALUES[attr_type])
+            elif 'sai_object_id_t' == attr_type:
                 parent_obj = mandatory_attributes[attribute]['objects'][0]
                 if parent_obj != obj_type:
                     attributes.append('$' + get_obj_name(parent_obj) + '_1')
@@ -431,7 +177,7 @@ def get_create_commands(obj_type):
                 else:
                     attributes.append('TODO_circular parent reference')
             else:
-                attributes.append(mandatory_attributes[attribute]['type'])
+                attributes.append(attr_type)
         else:
             attributes.append('TODO')
     command['attributes'] = attributes
@@ -460,7 +206,8 @@ def camel_case(s):
 
 
 def generate_comment(obj_type):
-    mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
+    mandatory_attributes = select_mandatory_attributes(
+        get_all_attributes(obj_type))
     if len(mandatory_attributes) == 0:
         return 'object with no attributes'
     else:
