@@ -38,6 +38,65 @@ class TestSaiIngressPriorityGroup:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_ingress_priority_group_attr_buffer_profile_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_ingress_priority_group_attr_buffer_profile_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
+                'atrribute': [
+                    'SAI_INGRESS_PRIORITY_GROUP_ATTR_BUFFER_PROFILE',
+                    'SAI_NULL_OBJECT_ID',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_ingress_priority_group_attr_buffer_profile_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_ingress_priority_group_attr_buffer_profile_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
+                'atrribute': 'SAI_INGRESS_PRIORITY_GROUP_ATTR_BUFFER_PROFILE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+
+    def test_sai_ingress_priority_group_attr_tam_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_ingress_priority_group_attr_tam_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
+                'atrribute': ['SAI_INGRESS_PRIORITY_GROUP_ATTR_TAM', 'empty'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_ingress_priority_group_attr_tam_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_ingress_priority_group_attr_tam_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
+                'atrribute': 'SAI_INGRESS_PRIORITY_GROUP_ATTR_TAM',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'empty' for result in results]), 'Get error'
+
     def test_ingress_priority_group_remove(self, npu):
         commands = [
             {

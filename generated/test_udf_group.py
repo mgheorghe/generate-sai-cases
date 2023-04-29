@@ -22,6 +22,20 @@ class TestSaiUdfGroup:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_udf_group_attr_udf_list_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_udf_group_attr_udf_list_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_UDF_GROUP',
+                'atrribute': 'SAI_UDF_GROUP_ATTR_UDF_LIST',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
     def test_udf_group_remove(self, npu):
         commands = [
             {

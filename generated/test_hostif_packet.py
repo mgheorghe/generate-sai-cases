@@ -38,6 +38,76 @@ class TestSaiHostifPacket:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_hostif_packet_attr_hostif_trap_id_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_packet_attr_hostif_trap_id_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
+                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_HOSTIF_TRAP_ID',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_hostif_packet_attr_ingress_port_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_packet_attr_ingress_port_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
+                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_INGRESS_PORT',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_hostif_packet_attr_ingress_lag_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_packet_attr_ingress_lag_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
+                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_INGRESS_LAG',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_hostif_packet_attr_bridge_id_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_packet_attr_bridge_id_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
+                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_BRIDGE_ID',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_hostif_packet_attr_timestamp_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_packet_attr_timestamp_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
+                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_TIMESTAMP',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
     def test_hostif_packet_remove(self, npu):
         commands = [
             {

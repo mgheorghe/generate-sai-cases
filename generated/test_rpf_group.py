@@ -22,6 +22,34 @@ class TestSaiRpfGroup:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_rpf_group_attr_rpf_interface_count_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_rpf_group_attr_rpf_interface_count_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
+                'atrribute': 'SAI_RPF_GROUP_ATTR_RPF_INTERFACE_COUNT',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_rpf_group_attr_rpf_member_list_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_rpf_group_attr_rpf_member_list_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
+                'atrribute': 'SAI_RPF_GROUP_ATTR_RPF_MEMBER_LIST',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
     def test_rpf_group_remove(self, npu):
         commands = [
             {

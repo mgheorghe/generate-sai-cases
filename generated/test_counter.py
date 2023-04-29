@@ -22,6 +22,34 @@ class TestSaiCounter:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_counter_attr_label_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_counter_attr_label_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_COUNTER',
+                'atrribute': ['SAI_COUNTER_ATTR_LABEL', '""'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_counter_attr_label_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_counter_attr_label_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_COUNTER',
+                'atrribute': 'SAI_COUNTER_ATTR_LABEL',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '""' for result in results]), 'Get error'
+
     def test_counter_remove(self, npu):
         commands = [
             {

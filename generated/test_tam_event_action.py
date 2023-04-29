@@ -31,6 +31,62 @@ class TestSaiTamEventAction:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_tam_event_action_attr_report_type_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tam_event_action_attr_report_type_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
+                'atrribute': ['SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE', 'TODO'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_tam_event_action_attr_report_type_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tam_event_action_attr_report_type_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
+                'atrribute': 'SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_tam_event_action_attr_qos_action_type_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tam_event_action_attr_qos_action_type_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
+                'atrribute': ['SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_tam_event_action_attr_qos_action_type_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tam_event_action_attr_qos_action_type_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
+                'atrribute': 'SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
     def test_tam_event_action_remove(self, npu):
         commands = [
             {

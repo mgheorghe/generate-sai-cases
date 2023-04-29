@@ -25,6 +25,34 @@ class TestSaiMacsecFlow:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_macsec_flow_attr_acl_entry_list_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_flow_attr_acl_entry_list_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_FLOW',
+                'atrribute': 'SAI_MACSEC_FLOW_ATTR_ACL_ENTRY_LIST',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_macsec_flow_attr_sc_list_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_flow_attr_sc_list_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_FLOW',
+                'atrribute': 'SAI_MACSEC_FLOW_ATTR_SC_LIST',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
     def test_macsec_flow_remove(self, npu):
         commands = [
             {

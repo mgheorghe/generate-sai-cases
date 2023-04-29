@@ -38,6 +38,95 @@ class TestSaiMacsecPort:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_macsec_port_attr_ctag_enable_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_port_attr_ctag_enable_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
+                'atrribute': ['SAI_MACSEC_PORT_ATTR_CTAG_ENABLE', 'false'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_macsec_port_attr_ctag_enable_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_port_attr_ctag_enable_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
+                'atrribute': 'SAI_MACSEC_PORT_ATTR_CTAG_ENABLE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
+    def test_sai_macsec_port_attr_stag_enable_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_port_attr_stag_enable_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
+                'atrribute': ['SAI_MACSEC_PORT_ATTR_STAG_ENABLE', 'false'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_macsec_port_attr_stag_enable_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_port_attr_stag_enable_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
+                'atrribute': 'SAI_MACSEC_PORT_ATTR_STAG_ENABLE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
+    def test_sai_macsec_port_attr_switch_switching_mode_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_port_attr_switch_switching_mode_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
+                'atrribute': [
+                    'SAI_MACSEC_PORT_ATTR_SWITCH_SWITCHING_MODE',
+                    'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_macsec_port_attr_switch_switching_mode_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_port_attr_switch_switching_mode_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
+                'atrribute': 'SAI_MACSEC_PORT_ATTR_SWITCH_SWITCHING_MODE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all(
+            [result == 'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH' for result in results]
+        ), 'Get error'
+
     def test_macsec_port_remove(self, npu):
         commands = [
             {

@@ -109,6 +109,39 @@ class TestSaiVlanMember:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_vlan_member_attr_vlan_tagging_mode_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_vlan_member_attr_vlan_tagging_mode_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_VLAN_MEMBER',
+                'atrribute': [
+                    'SAI_VLAN_MEMBER_ATTR_VLAN_TAGGING_MODE',
+                    'SAI_VLAN_TAGGING_MODE_UNTAGGED',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_vlan_member_attr_vlan_tagging_mode_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_vlan_member_attr_vlan_tagging_mode_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_VLAN_MEMBER',
+                'atrribute': 'SAI_VLAN_MEMBER_ATTR_VLAN_TAGGING_MODE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all(
+            [result == 'SAI_VLAN_TAGGING_MODE_UNTAGGED' for result in results]
+        ), 'Get error'
+
     def test_vlan_member_remove(self, npu):
         commands = [
             {

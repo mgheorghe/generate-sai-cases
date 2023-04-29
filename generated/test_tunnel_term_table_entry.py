@@ -98,6 +98,51 @@ class TestSaiTunnelTermTableEntry:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_tunnel_term_table_entry_attr_ip_addr_family_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tunnel_term_table_entry_attr_ip_addr_family_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TUNNEL_TERM_TABLE_ENTRY',
+                'atrribute': 'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IP_ADDR_FAMILY',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_tunnel_term_table_entry_attr_ipsec_verified_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tunnel_term_table_entry_attr_ipsec_verified_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TUNNEL_TERM_TABLE_ENTRY',
+                'atrribute': [
+                    'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IPSEC_VERIFIED',
+                    'true',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_tunnel_term_table_entry_attr_ipsec_verified_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tunnel_term_table_entry_attr_ipsec_verified_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TUNNEL_TERM_TABLE_ENTRY',
+                'atrribute': 'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IPSEC_VERIFIED',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'true' for result in results]), 'Get error'
+
     def test_tunnel_term_table_entry_remove(self, npu):
         commands = [
             {

@@ -14,7 +14,45 @@ SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
 SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
 SAI_CODE_LOCATION = r'C:/github-mgheorghe/SAI'
 
-TEST_TEMPLATE = '''
+TEST_TEMPLATE_GET = '''
+
+    def test_%(ATTR_NAME)s_get(self, dpu):
+
+        commands = [
+            {
+                "name": "%(ATTR_NAME)s_get",
+                "op": "get",
+                "type": "%(OBJECT_TYPE)s",
+                "atrribute": "%(ATTRIBUTE)s"
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+        assert all([result == '%(EXPECTED_VALUE)s' for result in results]), 'Get error'
+
+'''
+
+TEST_TEMPLATE_SET = '''
+
+    def test_%(ATTR_NAME)s_set(self, dpu):
+
+        commands = [
+            {
+                "name": "%(ATTR_NAME)s_set",
+                "op": "get",
+                "type": "%(OBJECT_TYPE)s",
+                "atrribute": ["%(ATTRIBUTE)s", '%(EXPECTED_VALUE)s']
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+'''
+
+TEST_TEMPLATE_CREATE = '''
 from pprint import pprint
 
 import pytest
@@ -32,6 +70,9 @@ class TestSai%(CLASS_NAME)s:
         print('======= SAI commands RETURN values create =======')
         pprint(results)
         assert all(results), 'Create error'
+
+'''
+TEST_TEMPLATE_REMOVE = '''
 
     def test_%(OBJECT_NAME)s_remove(self, npu):
 
@@ -221,22 +262,60 @@ def generate_comment(obj_type):
             return 'object with parent %s' % (' '.join(parents))
 
 
+def get_attribute_expected_value(attribute):
+    if attribute['default'] is not None:
+        return attribute['default']
+    else:
+        return 'TODO'
+
+
 def generate_pyetes_test(obj_type):
     obj_name = get_obj_name(obj_type)
     test_file_name = 'test_%s.py' % obj_name
     # print(test_file_name)
 
     with io.open('generated/' + test_file_name, 'wt', encoding='ascii') as test_file:
-        test_file.write(
-            TEST_TEMPLATE
-            % {
-                'CLASS_NAME': camel_case(obj_name),
-                'OBJECT_NAME': obj_name,
-                'CREATE_COMMANDS': get_create_commands(obj_type),
-                'REMOVE_COMMANDS': get_remove_commands(obj_type),
-                'COMMENT': generate_comment(obj_type),
-            }
-        )
+        TEST_CODE = ''
+
+        TEST_CODE += TEST_TEMPLATE_CREATE % {
+            'CLASS_NAME': camel_case(obj_name),
+            'OBJECT_NAME': obj_name,
+            'CREATE_COMMANDS': get_create_commands(obj_type),
+            'COMMENT': generate_comment(obj_type),
+        }
+        obj = SAI_DATA[obj_type]
+        for attribute in SAI_DATA[obj_type].keys():
+            if obj[attribute]['flags'] is not None:
+                if 'READ_ONLY' in obj[attribute]['flags']:
+                    TEST_CODE += TEST_TEMPLATE_GET % {
+                        'ATTR_NAME': get_obj_name(attribute),
+                        'OBJECT_TYPE': obj_type,
+                        'ATTRIBUTE': attribute,
+                        'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),
+                    }
+                elif 'CREATE_AND_SET' in obj[attribute]['flags']:
+                    TEST_CODE += TEST_TEMPLATE_SET % {
+                        'ATTR_NAME': get_obj_name(attribute),
+                        'OBJECT_TYPE': obj_type,
+                        'ATTRIBUTE': attribute,
+                        'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),
+                    }
+                    TEST_CODE += TEST_TEMPLATE_GET % {
+                        'ATTR_NAME': get_obj_name(attribute),
+                        'OBJECT_TYPE': obj_type,
+                        'ATTRIBUTE': attribute,
+                        'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),
+                    }
+                else:
+                    # TODO: see if any other case that can be tested exists
+                    pass
+
+        TEST_CODE += TEST_TEMPLATE_REMOVE % {
+            'OBJECT_NAME': obj_name,
+            'REMOVE_COMMANDS': get_remove_commands(obj_type),
+        }
+
+        test_file.write(TEST_CODE)
 
 
 def create_depedency_graph():

@@ -124,6 +124,197 @@ class TestSaiNextHopGroupMember:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_next_hop_group_member_attr_next_hop_id_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_next_hop_id_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': ['SAI_NEXT_HOP_GROUP_MEMBER_ATTR_NEXT_HOP_ID', 'TODO'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_next_hop_id_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_next_hop_id_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': 'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_NEXT_HOP_ID',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_weight_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_weight_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': ['SAI_NEXT_HOP_GROUP_MEMBER_ATTR_WEIGHT', '1'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_weight_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_weight_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': 'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_WEIGHT',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '1' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_observed_role_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_observed_role_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': 'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_OBSERVED_ROLE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_monitored_object_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_monitored_object_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': [
+                    'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_MONITORED_OBJECT',
+                    'SAI_NULL_OBJECT_ID',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_monitored_object_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_monitored_object_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': 'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_MONITORED_OBJECT',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_sequence_id_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_sequence_id_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': ['SAI_NEXT_HOP_GROUP_MEMBER_ATTR_SEQUENCE_ID', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_sequence_id_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_sequence_id_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': 'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_SEQUENCE_ID',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_counter_id_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_counter_id_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': [
+                    'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_COUNTER_ID',
+                    'SAI_NULL_OBJECT_ID',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_counter_id_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_counter_id_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': 'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_COUNTER_ID',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_ars_alternate_path_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_ars_alternate_path_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': [
+                    'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_ARS_ALTERNATE_PATH',
+                    'false',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_next_hop_group_member_attr_ars_alternate_path_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_next_hop_group_member_attr_ars_alternate_path_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER',
+                'atrribute': 'SAI_NEXT_HOP_GROUP_MEMBER_ATTR_ARS_ALTERNATE_PATH',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
     def test_next_hop_group_member_remove(self, npu):
         commands = [
             {

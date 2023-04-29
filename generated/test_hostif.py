@@ -42,6 +42,92 @@ class TestSaiHostif:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_hostif_attr_oper_status_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_attr_oper_status_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'atrribute': ['SAI_HOSTIF_ATTR_OPER_STATUS', 'false'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_hostif_attr_oper_status_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_attr_oper_status_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'atrribute': 'SAI_HOSTIF_ATTR_OPER_STATUS',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
+    def test_sai_hostif_attr_queue_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_attr_queue_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'atrribute': ['SAI_HOSTIF_ATTR_QUEUE', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_hostif_attr_queue_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_attr_queue_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'atrribute': 'SAI_HOSTIF_ATTR_QUEUE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
+    def test_sai_hostif_attr_vlan_tag_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_attr_vlan_tag_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'atrribute': ['SAI_HOSTIF_ATTR_VLAN_TAG', 'SAI_HOSTIF_VLAN_TAG_STRIP'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_hostif_attr_vlan_tag_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_hostif_attr_vlan_tag_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'atrribute': 'SAI_HOSTIF_ATTR_VLAN_TAG',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all(
+            [result == 'SAI_HOSTIF_VLAN_TAG_STRIP' for result in results]
+        ), 'Get error'
+
     def test_hostif_remove(self, npu):
         commands = [
             {

@@ -22,6 +22,155 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_nat_zone_counter_attr_nat_type_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_nat_type_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': [
+                    'SAI_NAT_ZONE_COUNTER_ATTR_NAT_TYPE',
+                    'SAI_NAT_TYPE_NONE',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_nat_type_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_nat_type_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_NAT_TYPE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_NAT_TYPE_NONE' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_zone_id_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_zone_id_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': ['SAI_NAT_ZONE_COUNTER_ATTR_ZONE_ID', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_zone_id_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_zone_id_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_ZONE_ID',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_discard_packet_count_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_discard_packet_count_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': ['SAI_NAT_ZONE_COUNTER_ATTR_DISCARD_PACKET_COUNT', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_discard_packet_count_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_discard_packet_count_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_DISCARD_PACKET_COUNT',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_translation_needed_packet_count_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_translation_needed_packet_count_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': [
+                    'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATION_NEEDED_PACKET_COUNT',
+                    '0',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_translation_needed_packet_count_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_translation_needed_packet_count_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATION_NEEDED_PACKET_COUNT',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_translations_packet_count_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_translations_packet_count_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': [
+                    'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATIONS_PACKET_COUNT',
+                    '0',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_nat_zone_counter_attr_translations_packet_count_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_nat_zone_counter_attr_translations_packet_count_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
+                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATIONS_PACKET_COUNT',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
     def test_nat_zone_counter_remove(self, npu):
         commands = [
             {

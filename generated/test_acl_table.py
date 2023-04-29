@@ -22,6 +22,48 @@ class TestSaiAclTable:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_acl_table_attr_entry_list_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_acl_table_attr_entry_list_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_ACL_TABLE',
+                'atrribute': 'SAI_ACL_TABLE_ATTR_ENTRY_LIST',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_acl_table_attr_available_acl_entry_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_acl_table_attr_available_acl_entry_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_ACL_TABLE',
+                'atrribute': 'SAI_ACL_TABLE_ATTR_AVAILABLE_ACL_ENTRY',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_acl_table_attr_available_acl_counter_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_acl_table_attr_available_acl_counter_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_ACL_TABLE',
+                'atrribute': 'SAI_ACL_TABLE_ATTR_AVAILABLE_ACL_COUNTER',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
     def test_acl_table_remove(self, npu):
         commands = [
             {

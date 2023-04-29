@@ -117,6 +117,34 @@ class TestSaiStpPort:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_stp_port_attr_state_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_stp_port_attr_state_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_STP_PORT',
+                'atrribute': ['SAI_STP_PORT_ATTR_STATE', 'TODO'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_stp_port_attr_state_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_stp_port_attr_state_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_STP_PORT',
+                'atrribute': 'SAI_STP_PORT_ATTR_STATE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
     def test_stp_port_remove(self, npu):
         commands = [
             {

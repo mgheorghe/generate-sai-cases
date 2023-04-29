@@ -29,6 +29,62 @@ class TestSaiTamEvent:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_tam_event_attr_threshold_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tam_event_attr_threshold_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
+                'atrribute': ['SAI_TAM_EVENT_ATTR_THRESHOLD', 'SAI_NULL_OBJECT_ID'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_tam_event_attr_threshold_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tam_event_attr_threshold_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
+                'atrribute': 'SAI_TAM_EVENT_ATTR_THRESHOLD',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+
+    def test_sai_tam_event_attr_dscp_value_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tam_event_attr_dscp_value_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
+                'atrribute': ['SAI_TAM_EVENT_ATTR_DSCP_VALUE', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_tam_event_attr_dscp_value_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_tam_event_attr_dscp_value_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
+                'atrribute': 'SAI_TAM_EVENT_ATTR_DSCP_VALUE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
     def test_tam_event_remove(self, npu):
         commands = [
             {

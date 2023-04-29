@@ -38,6 +38,39 @@ class TestSaiPortConnector:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_port_connector_attr_failover_mode_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_port_connector_attr_failover_mode_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_PORT_CONNECTOR',
+                'atrribute': [
+                    'SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE',
+                    'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_port_connector_attr_failover_mode_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_port_connector_attr_failover_mode_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_PORT_CONNECTOR',
+                'atrribute': 'SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all(
+            [result == 'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE' for result in results]
+        ), 'Get error'
+
     def test_port_connector_remove(self, npu):
         commands = [
             {

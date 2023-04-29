@@ -25,6 +25,20 @@ class TestSaiAclTableGroup:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_acl_table_group_attr_member_list_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_acl_table_group_attr_member_list_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_ACL_TABLE_GROUP',
+                'atrribute': 'SAI_ACL_TABLE_GROUP_ATTR_MEMBER_LIST',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
     def test_acl_table_group_remove(self, npu):
         commands = [
             {

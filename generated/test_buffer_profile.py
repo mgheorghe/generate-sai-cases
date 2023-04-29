@@ -44,6 +44,174 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_buffer_profile_attr_reserved_buffer_size_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_reserved_buffer_size_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': ['SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE', 'TODO'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_reserved_buffer_size_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_reserved_buffer_size_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_shared_dynamic_th_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_shared_dynamic_th_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': ['SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH', 'TODO'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_shared_dynamic_th_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_shared_dynamic_th_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_shared_static_th_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_shared_static_th_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': ['SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH', 'TODO'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_shared_static_th_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_shared_static_th_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_xoff_th_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_xoff_th_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XOFF_TH', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_xoff_th_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_xoff_th_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XOFF_TH',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_xon_th_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_xon_th_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XON_TH', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_xon_th_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_xon_th_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XON_TH',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_xon_offset_th_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_xon_offset_th_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_buffer_profile_attr_xon_offset_th_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_buffer_profile_attr_xon_offset_th_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
+                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
     def test_buffer_profile_remove(self, npu):
         commands = [
             {

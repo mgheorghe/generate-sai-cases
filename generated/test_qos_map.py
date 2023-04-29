@@ -27,6 +27,34 @@ class TestSaiQosMap:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_qos_map_attr_map_to_value_list_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_qos_map_attr_map_to_value_list_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_QOS_MAP',
+                'atrribute': ['SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST', 'TODO'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_qos_map_attr_map_to_value_list_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_qos_map_attr_map_to_value_list_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_QOS_MAP',
+                'atrribute': 'SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
     def test_qos_map_remove(self, npu):
         commands = [
             {

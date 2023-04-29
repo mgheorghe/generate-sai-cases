@@ -22,6 +22,183 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_dtel_int_session_attr_max_hop_count_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_max_hop_count_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': ['SAI_DTEL_INT_SESSION_ATTR_MAX_HOP_COUNT', '8'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_max_hop_count_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_max_hop_count_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_MAX_HOP_COUNT',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '8' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_switch_id_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_switch_id_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': ['SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_ID', 'false'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_switch_id_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_switch_id_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_ID',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_switch_ports_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_switch_ports_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': [
+                    'SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_PORTS',
+                    'false',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_switch_ports_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_switch_ports_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_PORTS',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_ingress_timestamp_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_ingress_timestamp_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': [
+                    'SAI_DTEL_INT_SESSION_ATTR_COLLECT_INGRESS_TIMESTAMP',
+                    'false',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_ingress_timestamp_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_ingress_timestamp_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_INGRESS_TIMESTAMP',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_egress_timestamp_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_egress_timestamp_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': [
+                    'SAI_DTEL_INT_SESSION_ATTR_COLLECT_EGRESS_TIMESTAMP',
+                    'false',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_egress_timestamp_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_egress_timestamp_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_EGRESS_TIMESTAMP',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_queue_info_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_queue_info_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': ['SAI_DTEL_INT_SESSION_ATTR_COLLECT_QUEUE_INFO', 'false'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_dtel_int_session_attr_collect_queue_info_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_dtel_int_session_attr_collect_queue_info_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
+                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_QUEUE_INFO',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'false' for result in results]), 'Get error'
+
     def test_dtel_int_session_remove(self, npu):
         commands = [
             {

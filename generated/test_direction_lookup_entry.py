@@ -22,6 +22,42 @@ class TestSaiDirectionLookupEntry:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_direction_lookup_entry_attr_action_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_direction_lookup_entry_attr_action_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY',
+                'atrribute': [
+                    'SAI_DIRECTION_LOOKUP_ENTRY_ATTR_ACTION',
+                    'SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION',
+                ],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_direction_lookup_entry_attr_action_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_direction_lookup_entry_attr_action_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY',
+                'atrribute': 'SAI_DIRECTION_LOOKUP_ENTRY_ATTR_ACTION',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all(
+            [
+                result == 'SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION'
+                for result in results
+            ]
+        ), 'Get error'
+
     def test_direction_lookup_entry_remove(self, npu):
         commands = [
             {

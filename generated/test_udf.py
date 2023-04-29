@@ -41,6 +41,62 @@ class TestSaiUdf:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_udf_attr_base_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_udf_attr_base_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_UDF',
+                'atrribute': ['SAI_UDF_ATTR_BASE', 'SAI_UDF_BASE_L2'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_udf_attr_base_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_udf_attr_base_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_UDF',
+                'atrribute': 'SAI_UDF_ATTR_BASE',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_UDF_BASE_L2' for result in results]), 'Get error'
+
+    def test_sai_udf_attr_hash_mask_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_udf_attr_hash_mask_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_UDF',
+                'atrribute': ['SAI_UDF_ATTR_HASH_MASK', 'const'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_udf_attr_hash_mask_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_udf_attr_hash_mask_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_UDF',
+                'atrribute': 'SAI_UDF_ATTR_HASH_MASK',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'const' for result in results]), 'Get error'
+
     def test_udf_remove(self, npu):
         commands = [
             {

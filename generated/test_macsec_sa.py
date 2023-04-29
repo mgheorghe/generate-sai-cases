@@ -61,6 +61,76 @@ class TestSaiMacsecSa:
         pprint(results)
         assert all(results), 'Create error'
 
+    def test_sai_macsec_sa_attr_configured_egress_xpn_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_sa_attr_configured_egress_xpn_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_SA',
+                'atrribute': ['SAI_MACSEC_SA_ATTR_CONFIGURED_EGRESS_XPN', '0'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_macsec_sa_attr_configured_egress_xpn_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_sa_attr_configured_egress_xpn_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_SA',
+                'atrribute': 'SAI_MACSEC_SA_ATTR_CONFIGURED_EGRESS_XPN',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '0' for result in results]), 'Get error'
+
+    def test_sai_macsec_sa_attr_current_xpn_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_sa_attr_current_xpn_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_SA',
+                'atrribute': 'SAI_MACSEC_SA_ATTR_CURRENT_XPN',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'TODO' for result in results]), 'Get error'
+
+    def test_sai_macsec_sa_attr_minimum_ingress_xpn_set(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_sa_attr_minimum_ingress_xpn_set',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_SA',
+                'atrribute': ['SAI_MACSEC_SA_ATTR_MINIMUM_INGRESS_XPN', '1'],
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+
+    def test_sai_macsec_sa_attr_minimum_ingress_xpn_get(self, dpu):
+        commands = [
+            {
+                'name': 'sai_macsec_sa_attr_minimum_ingress_xpn_get',
+                'op': 'get',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_SA',
+                'atrribute': 'SAI_MACSEC_SA_ATTR_MINIMUM_INGRESS_XPN',
+            }
+        ]
+        results = [*dpu.process_commands(commands)]
+        print('======= SAI commands RETURN values get =======')
+        pprint(results)
+        assert all([result == '1' for result in results]), 'Get error'
+
     def test_macsec_sa_remove(self, npu):
         commands = [
             {
