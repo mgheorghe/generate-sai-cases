@@ -1,16 +1,18 @@
 import io
+import json
+import os
 import pprint
-from re import sub
+import re
 
-import networkx as nx
+import networkx
 from pyvis.network import Network
 
-from default_values import DEFAULT_VALUES
-from default_values import SAI_OBJECT_TYPES
+from default_values import DEFAULT_VALUES, SAI_OBJECT_TYPES
 
 # give your custom path
 SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
 SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
+SAI_CODE_LOCATION = r'C:/github-mgheorghe/SAI'
 
 TEST_TEMPLATE = '''
 from pprint import pprint
@@ -47,87 +49,104 @@ def get_object_types():
     return SAI_OBJECT_TYPES
 
 
-def get_all_attributes(obj_type):
-    obj_name = get_obj_name(obj_type)
-    block_start = 'typedef enum _sai_%s_attr_t' % obj_name
-    block_end = '} sai_%s_attr_t;' % obj_name
-
-    dictionary = {}
-    import os
-
+def get_header_files_paths():
+    header_files = []
     for root, dirs, files in os.walk(SAI_CODE_LOCATION):
         for file in files:
             if file.endswith('.h'):
-                start_copy = False
-                is_attribute = False
-                attr_block_start = False
-                with io.open(os.path.join(root, file), 'rt', encoding='utf-8') as h_file:
-                    for text_line in h_file:
-                        if block_start in text_line:
-                            print(os.path.join(root, file))
-                            start_copy = True
-                        if block_end in text_line:
-                            start_copy = False
-                        if start_copy:
-                            if attr_block_start:
-                                if '@type' in text_line:
-                                    o_type = text_line.replace('* @type', '').strip()
-                                if '@flags' in text_line:
-                                    flags = text_line.replace('* @flags', '').strip()
-                                if '@objects' in text_line:
-                                    objects = []
-                                    for parent in text_line.replace('* @objects', '').strip().split(','):
-                                        objects.append(parent.strip())
-                                        if flags:
-                                            if 'MANDATORY_ON_CREATE' in flags:
-                                                G.add_edge(
-                                                    obj_type.replace('SAI_OBJECT_TYPE_', ''),
-                                                    parent.strip().replace('SAI_OBJECT_TYPE_', ''),
-                                                )
-                                if '@allownull' in text_line:
-                                    allownull = text_line.replace('* @allownull', '').strip()
-                                if '@default' in text_line:
-                                    default = text_line.replace('* @default', '').strip()
+                header_files.append(os.path.join(root, file))
+    return header_files
 
-                            if is_attribute:
-                                attribute = text_line.split('=')[0].replace(',', '').strip()
-                                if attribute != '':
-                                    dictionary[attribute] = {}
-                                    dictionary[attribute]['type'] = o_type
-                                    dictionary[attribute]['flags'] = flags
-                                    dictionary[attribute]['objects'] = objects
-                                    dictionary[attribute]['allownull'] = allownull
-                                    dictionary[attribute]['default'] = default
-                                    # print(attribute)
-                                    # print(dictionary[attribute])
-                                o_type = None
-                                flags = None
-                                objects = None
-                                allownull = None
-                                default = None
-                                is_attribute = False
 
-                            if '/**' in text_line:
-                                attr_block_start = True
-                                o_type = None
-                                flags = None
-                                objects = None
-                                allownull = None
-                                default = None
-                            if '*/' in text_line:
-                                attr_block_start = False
-                                is_attribute = True
+def parse_sai_header_files():
+    dictionary = {}
+    object_types = get_object_types()
+
+    header_files_paths = get_header_files_paths()
+
+    for obj_type in object_types:
+        dictionary[obj_type] = {}
+        obj_name = get_obj_name(obj_type)
+        block_start = 'typedef enum _sai_%s_attr_t' % obj_name
+        block_end = '} sai_%s_attr_t;' % obj_name
+
+        for h_file_path in header_files_paths:
+            start_copy = False
+            is_attribute = False
+            attr_block_start = False
+            with io.open(h_file_path, 'rt', encoding='utf-8') as h_file:
+                for text_line in h_file:
+                    if block_start in text_line:
+                        print(h_file_path)
+                        start_copy = True
+                    if block_end in text_line:
+                        start_copy = False
+                    if start_copy:
+                        if attr_block_start:
+                            if '@type' in text_line:
+                                o_types = []
+                                for o_type in (
+                                    text_line.replace('* @type', '').strip().split(' ')
+                                ):
+                                    o_types.append(o_type.strip())
+                            if '@flags' in text_line:
+                                flags = []
+                                for flag in text_line.replace('* @flags', '').split(
+                                    '|'
+                                ):
+                                    flags.append(flag.strip())
+                            if '@objects' in text_line:
+                                objects = []
+                                for parent in text_line.replace('* @objects', '').split(
+                                    ','
+                                ):
+                                    objects.append(parent.strip())
+                            if '@allownull' in text_line:
+                                allownull = text_line.replace(
+                                    '* @allownull', ''
+                                ).strip()
+                            if '@default' in text_line:
+                                default = text_line.replace('* @default', '').strip()
+
+                        if is_attribute:
+                            attribute = text_line.split('=')[0].replace(',', '').strip()
+                            if attribute != '':
+                                dictionary[obj_type][attribute] = {}
+                                dictionary[obj_type][attribute]['type'] = o_type
+                                dictionary[obj_type][attribute]['flags'] = flags
+                                dictionary[obj_type][attribute]['objects'] = objects
+                                dictionary[obj_type][attribute]['allownull'] = allownull
+                                dictionary[obj_type][attribute]['default'] = default
+                                # print(attribute)
+                                # print(dictionary[attribute])
+                            o_type = None
+                            flags = None
+                            objects = None
+                            allownull = None
+                            default = None
+                            is_attribute = False
+
+                        if '/**' in text_line:
+                            attr_block_start = True
+                            o_type = None
+                            flags = None
+                            objects = None
+                            allownull = None
+                            default = None
+                        if '*/' in text_line:
+                            attr_block_start = False
+                            is_attribute = True
 
     # pprint.pprint(dictionary)
     return dictionary
 
 
-def select_mandatory_attributes(all_attributes):
+def select_mandatory_attributes(obj_type):
     mandatory = {}
-    for attribute in all_attributes.keys():
-        if all_attributes[attribute]['flags'] is not None:
-            if 'MANDATORY_ON_CREATE' in all_attributes[attribute]['flags']:
-                mandatory[attribute] = all_attributes[attribute]
+    for attribute in SAI_DATA[obj_type].keys():
+        if SAI_DATA[obj_type][attribute]['flags'] is not None:
+            if 'MANDATORY_ON_CREATE' in SAI_DATA[obj_type][attribute]['flags']:
+                mandatory[attribute] = SAI_DATA[obj_type][attribute]
 
     pprint.pprint(mandatory)
     return mandatory
@@ -142,7 +161,7 @@ def get_create_commands(obj_type):
     command = {'name': obj_name + '_1', 'op': 'create', 'type': obj_type}
     commands = []
     attributes = []
-    mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
+    mandatory_attributes = select_mandatory_attributes(obj_type)
     for attribute in mandatory_attributes.keys():
         attributes.append(attribute)
         if 'type' in mandatory_attributes[attribute].keys():
@@ -181,12 +200,12 @@ def get_remove_commands(obj_type):
 
 
 def camel_case(s):
-    s = sub(r'(_|-)+', ' ', s).title().replace(' ', '')
+    s = re.sub(r'(_|-)+', ' ', s).title().replace(' ', '')
     return s
 
 
 def generate_comment(obj_type):
-    mandatory_attributes = select_mandatory_attributes(get_all_attributes(obj_type))
+    mandatory_attributes = select_mandatory_attributes(obj_type)
     if len(mandatory_attributes) == 0:
         return 'object with no attributes'
     else:
@@ -206,7 +225,7 @@ def generate_pyetes_test(obj_type):
     test_file_name = 'test_%s.py' % obj_name
     print(test_file_name)
 
-    with io.open(test_file_name, 'wt', encoding='ascii') as test_file:
+    with io.open('generated/' + test_file_name, 'wt', encoding='ascii') as test_file:
         test_file.write(
             TEST_TEMPLATE
             % {
@@ -219,15 +238,34 @@ def generate_pyetes_test(obj_type):
         )
 
 
-object_dict = {}
-object_types = get_object_types()
+def create_depedency_graph():
+    G = networkx.DiGraph()
+    nt = Network('1300px', '2500px', notebook=True)
+    for obj_type in SAI_DATA.keys():
+        obj = SAI_DATA[obj_type]
+        G.add_node(obj_type.replace('SAI_OBJECT_TYPE_', ''))
+        for attribute in obj.keys():
+            flags = obj[attribute]['flags']
+            if flags is not None:
+                if 'MANDATORY_ON_CREATE' in flags:
+                    objects = obj[attribute]['objects']
+                    if objects is not None:
+                        G.add_edge(
+                            obj_type.replace('SAI_OBJECT_TYPE_', ''),
+                            obj[attribute]['objects'][0].replace(
+                                'SAI_OBJECT_TYPE_', ''
+                            ),
+                        )
+    nt.from_nx(G)
+    nt.show('nx.html')
 
-G = nx.DiGraph()
-nt = Network('1300px', '2500px', notebook=True)
 
-for obj_type in object_types:
-    G.add_node(obj_type.replace('SAI_OBJECT_TYPE_', ''))
+SAI_DATA = parse_sai_header_files()
+
+with io.open('sai_api_structure.json', 'wt', encoding='ascii') as json_f:
+    json.dump(SAI_DATA, json_f, indent=2)
+
+create_depedency_graph()
+
+for obj_type in SAI_DATA.keys():
     generate_pyetes_test(obj_type)
-
-nt.from_nx(G)
-nt.show('nx.html')

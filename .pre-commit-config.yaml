@@ -21,4 +21,5 @@ repos:
   rev: 23.3.0
   hooks:
   - id: black
-    args: ["--line-length=160", "--skip-string-normalization"]
+    args:  ["--skip-string-normalization"]
+#["--line-length=160",

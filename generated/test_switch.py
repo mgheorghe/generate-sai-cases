@@ -21,9 +21,9 @@ class TestSaiSwitch:
                     'SAI_SWITCH_ATTR_PLATFROM_CONTEXT',
                     '10',
                     'SAI_SWITCH_ATTR_REGISTER_READ',
-                    'sai_pointer_t sai_switch_register_read_fn',
+                    'sai_switch_register_read_fn',
                     'SAI_SWITCH_ATTR_REGISTER_WRITE',
-                    'sai_pointer_t sai_switch_register_write_fn',
+                    'sai_switch_register_write_fn',
                     'SAI_SWITCH_ATTR_SWITCH_ID',
                     '10',
                     'SAI_SWITCH_ATTR_MAX_SYSTEM_CORES',
@@ -53,9 +53,9 @@ class TestSaiSwitch:
                     'SAI_SWITCH_ATTR_PLATFROM_CONTEXT',
                     '10',
                     'SAI_SWITCH_ATTR_REGISTER_READ',
-                    'sai_pointer_t sai_switch_register_read_fn',
+                    'sai_switch_register_read_fn',
                     'SAI_SWITCH_ATTR_REGISTER_WRITE',
-                    'sai_pointer_t sai_switch_register_write_fn',
+                    'sai_switch_register_write_fn',
                     'SAI_SWITCH_ATTR_SWITCH_ID',
                     '10',
                     'SAI_SWITCH_ATTR_MAX_SYSTEM_CORES',
@@ -69,4 +69,6 @@ class TestSaiSwitch:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Remove error'
+        assert all(
+            [result == 'SAI_STATUS_SUCCESS' for result in results]
+        ), 'Remove error'
