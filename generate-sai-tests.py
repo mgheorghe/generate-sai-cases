@@ -224,7 +224,7 @@ def generate_comment(obj_type):
 def generate_pyetes_test(obj_type):
     obj_name = get_obj_name(obj_type)
     test_file_name = 'test_%s.py' % obj_name
-    print(test_file_name)
+    # print(test_file_name)
 
     with io.open('generated/' + test_file_name, 'wt', encoding='ascii') as test_file:
         test_file.write(
@@ -241,7 +241,7 @@ def generate_pyetes_test(obj_type):
 
 def create_depedency_graph():
     G = networkx.DiGraph()
-    nt = Network('1300px', '2500px', notebook=True)
+    nt = Network('1300px', '2500px', notebook=True, directed=True)
     for obj_type in SAI_DATA.keys():
         obj = SAI_DATA[obj_type]
         G.add_node(obj_type.replace('SAI_OBJECT_TYPE_', ''))
@@ -251,12 +251,16 @@ def create_depedency_graph():
                 if 'MANDATORY_ON_CREATE' in flags:
                     objects = obj[attribute]['objects']
                     if objects is not None:
-                        G.add_edge(
-                            obj_type.replace('SAI_OBJECT_TYPE_', ''),
-                            obj[attribute]['objects'][0].replace(
-                                'SAI_OBJECT_TYPE_', ''
-                            ),
+                        node1 = obj_type.replace('SAI_OBJECT_TYPE_', '')
+                        node2 = obj[attribute]['objects'][0].replace(
+                            'SAI_OBJECT_TYPE_', ''
                         )
+                        if node1 == node2:
+                            node2 = obj[attribute]['objects'][1].replace(
+                                'SAI_OBJECT_TYPE_', ''
+                            )
+                        G.add_edge(node1, node2)
+
     nt.from_nx(G)
     nt.show('nx.html')
 
