@@ -33,7 +33,7 @@ class TestSaiOutboundRoutingEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -69,7 +69,7 @@ class TestSaiOutboundRoutingEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -83,7 +83,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DST_VNET_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -97,7 +97,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_IP', '0.0.0.0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -111,7 +111,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
@@ -125,7 +125,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP', '0.0.0.0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -139,7 +139,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
@@ -156,7 +156,7 @@ class TestSaiOutboundRoutingEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -170,7 +170,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP_MASK',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
@@ -184,7 +184,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP', '0.0.0.0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -198,7 +198,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
@@ -215,7 +215,7 @@ class TestSaiOutboundRoutingEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -229,7 +229,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP_MASK',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
@@ -246,7 +246,7 @@ class TestSaiOutboundRoutingEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -260,7 +260,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_UNDERLAY_DIP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
@@ -277,7 +277,7 @@ class TestSaiOutboundRoutingEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -291,7 +291,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_UNDERLAY_SIP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
@@ -308,7 +308,7 @@ class TestSaiOutboundRoutingEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -322,7 +322,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DASH_ENCAPSULATION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -338,7 +338,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_TUNNEL_KEY', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -352,7 +352,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_TUNNEL_KEY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -369,7 +369,7 @@ class TestSaiOutboundRoutingEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -383,7 +383,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_COUNTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -397,7 +397,7 @@ class TestSaiOutboundRoutingEntry:
                 'atrribute': 'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

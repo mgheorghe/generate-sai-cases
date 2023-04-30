@@ -52,7 +52,7 @@ class TestSaiBufferProfile:
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -66,7 +66,7 @@ class TestSaiBufferProfile:
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -80,7 +80,7 @@ class TestSaiBufferProfile:
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -94,7 +94,7 @@ class TestSaiBufferProfile:
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -108,7 +108,7 @@ class TestSaiBufferProfile:
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -122,7 +122,7 @@ class TestSaiBufferProfile:
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -136,7 +136,7 @@ class TestSaiBufferProfile:
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XOFF_TH', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -150,7 +150,7 @@ class TestSaiBufferProfile:
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XOFF_TH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -164,7 +164,7 @@ class TestSaiBufferProfile:
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XON_TH', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -178,7 +178,7 @@ class TestSaiBufferProfile:
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XON_TH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -192,7 +192,7 @@ class TestSaiBufferProfile:
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -206,7 +206,7 @@ class TestSaiBufferProfile:
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

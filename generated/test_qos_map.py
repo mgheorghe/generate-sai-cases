@@ -35,7 +35,7 @@ class TestSaiQosMap:
                 'atrribute': ['SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -49,7 +49,7 @@ class TestSaiQosMap:
                 'atrribute': 'SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

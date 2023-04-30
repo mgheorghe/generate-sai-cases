@@ -35,7 +35,7 @@ class TestSaiBufferPool:
                 'atrribute': 'SAI_BUFFER_POOL_ATTR_SHARED_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -49,7 +49,7 @@ class TestSaiBufferPool:
                 'atrribute': ['SAI_BUFFER_POOL_ATTR_SIZE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -63,7 +63,7 @@ class TestSaiBufferPool:
                 'atrribute': 'SAI_BUFFER_POOL_ATTR_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -77,7 +77,7 @@ class TestSaiBufferPool:
                 'atrribute': ['SAI_BUFFER_POOL_ATTR_TAM', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -91,7 +91,7 @@ class TestSaiBufferPool:
                 'atrribute': 'SAI_BUFFER_POOL_ATTR_TAM',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -105,7 +105,7 @@ class TestSaiBufferPool:
                 'atrribute': ['SAI_BUFFER_POOL_ATTR_XOFF_SIZE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -119,7 +119,7 @@ class TestSaiBufferPool:
                 'atrribute': 'SAI_BUFFER_POOL_ATTR_XOFF_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -136,7 +136,7 @@ class TestSaiBufferPool:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -150,7 +150,7 @@ class TestSaiBufferPool:
                 'atrribute': 'SAI_BUFFER_POOL_ATTR_WRED_PROFILE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'

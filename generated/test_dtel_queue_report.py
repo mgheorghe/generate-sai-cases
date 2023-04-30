@@ -71,7 +71,7 @@ class TestSaiDtelQueueReport:
                 'atrribute': ['SAI_DTEL_QUEUE_REPORT_ATTR_DEPTH_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -85,7 +85,7 @@ class TestSaiDtelQueueReport:
                 'atrribute': 'SAI_DTEL_QUEUE_REPORT_ATTR_DEPTH_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -99,7 +99,7 @@ class TestSaiDtelQueueReport:
                 'atrribute': ['SAI_DTEL_QUEUE_REPORT_ATTR_LATENCY_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -113,7 +113,7 @@ class TestSaiDtelQueueReport:
                 'atrribute': 'SAI_DTEL_QUEUE_REPORT_ATTR_LATENCY_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -127,7 +127,7 @@ class TestSaiDtelQueueReport:
                 'atrribute': ['SAI_DTEL_QUEUE_REPORT_ATTR_BREACH_QUOTA', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -141,7 +141,7 @@ class TestSaiDtelQueueReport:
                 'atrribute': 'SAI_DTEL_QUEUE_REPORT_ATTR_BREACH_QUOTA',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -155,7 +155,7 @@ class TestSaiDtelQueueReport:
                 'atrribute': ['SAI_DTEL_QUEUE_REPORT_ATTR_TAIL_DROP', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -169,7 +169,7 @@ class TestSaiDtelQueueReport:
                 'atrribute': 'SAI_DTEL_QUEUE_REPORT_ATTR_TAIL_DROP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'

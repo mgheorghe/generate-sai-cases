@@ -30,7 +30,7 @@ class TestSaiCounter:
                 'atrribute': ['SAI_COUNTER_ATTR_LABEL', '""'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiCounter:
                 'atrribute': 'SAI_COUNTER_ATTR_LABEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '""' for result in results]), 'Get error'

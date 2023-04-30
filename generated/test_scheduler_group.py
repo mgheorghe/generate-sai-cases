@@ -50,7 +50,7 @@ class TestSaiSchedulerGroup:
                 'atrribute': 'SAI_SCHEDULER_GROUP_ATTR_CHILD_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -64,7 +64,7 @@ class TestSaiSchedulerGroup:
                 'atrribute': 'SAI_SCHEDULER_GROUP_ATTR_CHILD_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -81,7 +81,7 @@ class TestSaiSchedulerGroup:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -95,7 +95,7 @@ class TestSaiSchedulerGroup:
                 'atrribute': 'SAI_SCHEDULER_GROUP_ATTR_SCHEDULER_PROFILE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -109,7 +109,7 @@ class TestSaiSchedulerGroup:
                 'atrribute': ['SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -123,7 +123,7 @@ class TestSaiSchedulerGroup:
                 'atrribute': 'SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

@@ -33,7 +33,7 @@ class TestSaiEniEtherAddressMapEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiEniEtherAddressMapEntry:
                 'atrribute': 'SAI_ENI_ETHER_ADDRESS_MAP_ENTRY_ATTR_ENI_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'

@@ -77,7 +77,7 @@ class TestSaiRouterInterface:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -91,7 +91,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_SRC_MAC_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -110,7 +110,7 @@ class TestSaiRouterInterface:
                 'atrribute': ['SAI_ROUTER_INTERFACE_ATTR_ADMIN_V4_STATE', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -124,7 +124,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_ADMIN_V4_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -138,7 +138,7 @@ class TestSaiRouterInterface:
                 'atrribute': ['SAI_ROUTER_INTERFACE_ATTR_ADMIN_V6_STATE', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -152,7 +152,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_ADMIN_V6_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -166,7 +166,7 @@ class TestSaiRouterInterface:
                 'atrribute': ['SAI_ROUTER_INTERFACE_ATTR_MTU', '1514'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -180,7 +180,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_MTU',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1514' for result in results]), 'Get error'
@@ -197,7 +197,7 @@ class TestSaiRouterInterface:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -211,7 +211,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_INGRESS_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -228,7 +228,7 @@ class TestSaiRouterInterface:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -242,7 +242,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_EGRESS_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -259,7 +259,7 @@ class TestSaiRouterInterface:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -273,7 +273,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_NEIGHBOR_MISS_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -289,7 +289,7 @@ class TestSaiRouterInterface:
                 'atrribute': ['SAI_ROUTER_INTERFACE_ATTR_V4_MCAST_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -303,7 +303,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_V4_MCAST_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -317,7 +317,7 @@ class TestSaiRouterInterface:
                 'atrribute': ['SAI_ROUTER_INTERFACE_ATTR_V6_MCAST_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -331,7 +331,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_V6_MCAST_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -348,7 +348,7 @@ class TestSaiRouterInterface:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -362,7 +362,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_LOOPBACK_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -378,7 +378,7 @@ class TestSaiRouterInterface:
                 'atrribute': ['SAI_ROUTER_INTERFACE_ATTR_NAT_ZONE_ID', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -392,7 +392,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_NAT_ZONE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -409,7 +409,7 @@ class TestSaiRouterInterface:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -423,7 +423,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_DISABLE_DECREMENT_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -437,7 +437,7 @@ class TestSaiRouterInterface:
                 'atrribute': ['SAI_ROUTER_INTERFACE_ATTR_ADMIN_MPLS_STATE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -451,7 +451,7 @@ class TestSaiRouterInterface:
                 'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_ADMIN_MPLS_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'

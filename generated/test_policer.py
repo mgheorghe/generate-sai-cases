@@ -35,7 +35,7 @@ class TestSaiPolicer:
                 'atrribute': ['SAI_POLICER_ATTR_CBS', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -49,7 +49,7 @@ class TestSaiPolicer:
                 'atrribute': 'SAI_POLICER_ATTR_CBS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -63,7 +63,7 @@ class TestSaiPolicer:
                 'atrribute': ['SAI_POLICER_ATTR_CIR', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -77,7 +77,7 @@ class TestSaiPolicer:
                 'atrribute': 'SAI_POLICER_ATTR_CIR',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -91,7 +91,7 @@ class TestSaiPolicer:
                 'atrribute': ['SAI_POLICER_ATTR_PBS', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -105,7 +105,7 @@ class TestSaiPolicer:
                 'atrribute': 'SAI_POLICER_ATTR_PBS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -119,7 +119,7 @@ class TestSaiPolicer:
                 'atrribute': ['SAI_POLICER_ATTR_PIR', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -133,7 +133,7 @@ class TestSaiPolicer:
                 'atrribute': 'SAI_POLICER_ATTR_PIR',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -150,7 +150,7 @@ class TestSaiPolicer:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -164,7 +164,7 @@ class TestSaiPolicer:
                 'atrribute': 'SAI_POLICER_ATTR_GREEN_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -183,7 +183,7 @@ class TestSaiPolicer:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -197,7 +197,7 @@ class TestSaiPolicer:
                 'atrribute': 'SAI_POLICER_ATTR_YELLOW_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -216,7 +216,7 @@ class TestSaiPolicer:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -230,7 +230,7 @@ class TestSaiPolicer:
                 'atrribute': 'SAI_POLICER_ATTR_RED_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -249,7 +249,7 @@ class TestSaiPolicer:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -263,7 +263,7 @@ class TestSaiPolicer:
                 'atrribute': 'SAI_POLICER_ATTR_ENABLE_COUNTER_PACKET_ACTION_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'

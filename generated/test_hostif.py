@@ -50,7 +50,7 @@ class TestSaiHostif:
                 'atrribute': ['SAI_HOSTIF_ATTR_OPER_STATUS', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -64,7 +64,7 @@ class TestSaiHostif:
                 'atrribute': 'SAI_HOSTIF_ATTR_OPER_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -78,7 +78,7 @@ class TestSaiHostif:
                 'atrribute': ['SAI_HOSTIF_ATTR_QUEUE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -92,7 +92,7 @@ class TestSaiHostif:
                 'atrribute': 'SAI_HOSTIF_ATTR_QUEUE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -106,7 +106,7 @@ class TestSaiHostif:
                 'atrribute': ['SAI_HOSTIF_ATTR_VLAN_TAG', 'SAI_HOSTIF_VLAN_TAG_STRIP'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -120,7 +120,7 @@ class TestSaiHostif:
                 'atrribute': 'SAI_HOSTIF_ATTR_VLAN_TAG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(

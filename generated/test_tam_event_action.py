@@ -39,7 +39,7 @@ class TestSaiTamEventAction:
                 'atrribute': ['SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -53,7 +53,7 @@ class TestSaiTamEventAction:
                 'atrribute': 'SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -67,7 +67,7 @@ class TestSaiTamEventAction:
                 'atrribute': ['SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -81,7 +81,7 @@ class TestSaiTamEventAction:
                 'atrribute': 'SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

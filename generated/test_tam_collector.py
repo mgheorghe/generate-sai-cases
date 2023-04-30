@@ -48,7 +48,7 @@ class TestSaiTamCollector:
                 'atrribute': ['SAI_TAM_COLLECTOR_ATTR_SRC_IP', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -62,7 +62,7 @@ class TestSaiTamCollector:
                 'atrribute': 'SAI_TAM_COLLECTOR_ATTR_SRC_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -76,7 +76,7 @@ class TestSaiTamCollector:
                 'atrribute': ['SAI_TAM_COLLECTOR_ATTR_DST_IP', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -90,7 +90,7 @@ class TestSaiTamCollector:
                 'atrribute': 'SAI_TAM_COLLECTOR_ATTR_DST_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -104,7 +104,7 @@ class TestSaiTamCollector:
                 'atrribute': ['SAI_TAM_COLLECTOR_ATTR_LOCALHOST', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -118,7 +118,7 @@ class TestSaiTamCollector:
                 'atrribute': 'SAI_TAM_COLLECTOR_ATTR_LOCALHOST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -135,7 +135,7 @@ class TestSaiTamCollector:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -149,7 +149,7 @@ class TestSaiTamCollector:
                 'atrribute': 'SAI_TAM_COLLECTOR_ATTR_VIRTUAL_ROUTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -163,7 +163,7 @@ class TestSaiTamCollector:
                 'atrribute': ['SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -177,7 +177,7 @@ class TestSaiTamCollector:
                 'atrribute': 'SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -191,7 +191,7 @@ class TestSaiTamCollector:
                 'atrribute': ['SAI_TAM_COLLECTOR_ATTR_TRANSPORT', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -205,7 +205,7 @@ class TestSaiTamCollector:
                 'atrribute': 'SAI_TAM_COLLECTOR_ATTR_TRANSPORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -219,7 +219,7 @@ class TestSaiTamCollector:
                 'atrribute': ['SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -233,7 +233,7 @@ class TestSaiTamCollector:
                 'atrribute': 'SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

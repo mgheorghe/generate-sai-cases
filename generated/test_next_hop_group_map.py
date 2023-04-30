@@ -33,7 +33,7 @@ class TestSaiNextHopGroupMap:
                 'atrribute': ['SAI_NEXT_HOP_GROUP_MAP_ATTR_MAP_TO_VALUE_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiNextHopGroupMap:
                 'atrribute': 'SAI_NEXT_HOP_GROUP_MAP_ATTR_MAP_TO_VALUE_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'

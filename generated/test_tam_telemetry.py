@@ -33,7 +33,7 @@ class TestSaiTamTelemetry:
                 'atrribute': ['SAI_TAM_TELEMETRY_ATTR_TAM_TYPE_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiTamTelemetry:
                 'atrribute': 'SAI_TAM_TELEMETRY_ATTR_TAM_TYPE_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -64,7 +64,7 @@ class TestSaiTamTelemetry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -78,7 +78,7 @@ class TestSaiTamTelemetry:
                 'atrribute': 'SAI_TAM_TELEMETRY_ATTR_TAM_REPORTING_UNIT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -94,7 +94,7 @@ class TestSaiTamTelemetry:
                 'atrribute': ['SAI_TAM_TELEMETRY_ATTR_REPORTING_INTERVAL', '1'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -108,7 +108,7 @@ class TestSaiTamTelemetry:
                 'atrribute': 'SAI_TAM_TELEMETRY_ATTR_REPORTING_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1' for result in results]), 'Get error'

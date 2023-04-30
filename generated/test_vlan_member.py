@@ -120,7 +120,7 @@ class TestSaiVlanMember:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -134,7 +134,7 @@ class TestSaiVlanMember:
                 'atrribute': 'SAI_VLAN_MEMBER_ATTR_VLAN_TAGGING_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(

@@ -54,7 +54,7 @@ class TestSaiDashAclRule:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -68,7 +68,7 @@ class TestSaiDashAclRule:
                 'atrribute': 'SAI_DASH_ACL_RULE_ATTR_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -87,7 +87,7 @@ class TestSaiDashAclRule:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -101,7 +101,7 @@ class TestSaiDashAclRule:
                 'atrribute': 'SAI_DASH_ACL_RULE_ATTR_COUNTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -115,7 +115,7 @@ class TestSaiDashAclRule:
                 'atrribute': 'SAI_DASH_ACL_RULE_ATTR_IP_ADDR_FAMILY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

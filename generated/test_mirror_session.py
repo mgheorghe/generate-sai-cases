@@ -68,7 +68,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_MONITOR_PORT', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -82,7 +82,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_MONITOR_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -96,7 +96,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_TRUNCATE_SIZE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -110,7 +110,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_TRUNCATE_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -124,7 +124,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_SAMPLE_RATE', '1'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -138,7 +138,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_SAMPLE_RATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1' for result in results]), 'Get error'
@@ -155,7 +155,7 @@ class TestSaiMirrorSession:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -169,7 +169,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_CONGESTION_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -188,7 +188,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_TC', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -202,7 +202,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_TC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -216,7 +216,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_VLAN_TPID', '0x8100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -230,7 +230,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_VLAN_TPID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0x8100' for result in results]), 'Get error'
@@ -244,7 +244,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_VLAN_ID', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -258,7 +258,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_VLAN_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -272,7 +272,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_VLAN_PRI', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -286,7 +286,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_VLAN_PRI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -300,7 +300,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_VLAN_CFI', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -314,7 +314,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_VLAN_CFI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -328,7 +328,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_VLAN_HEADER_VALID', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -342,7 +342,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_VLAN_HEADER_VALID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -356,7 +356,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_IPHDR_VERSION', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -370,7 +370,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_IPHDR_VERSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -384,7 +384,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_TOS', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -398,7 +398,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_TOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -412,7 +412,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_TTL', '255'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -426,7 +426,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
@@ -440,7 +440,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_SRC_IP_ADDRESS', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -454,7 +454,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_SRC_IP_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -468,7 +468,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_DST_IP_ADDRESS', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -482,7 +482,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_DST_IP_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -496,7 +496,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_SRC_MAC_ADDRESS', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -510,7 +510,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_SRC_MAC_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -524,7 +524,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_DST_MAC_ADDRESS', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -538,7 +538,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_DST_MAC_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -552,7 +552,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_GRE_PROTOCOL_TYPE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -566,7 +566,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_GRE_PROTOCOL_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -580,7 +580,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_MONITOR_PORTLIST', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -594,7 +594,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_MONITOR_PORTLIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -608,7 +608,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_POLICER', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -622,7 +622,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_POLICER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -636,7 +636,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_UDP_SRC_PORT', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -650,7 +650,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_UDP_SRC_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -664,7 +664,7 @@ class TestSaiMirrorSession:
                 'atrribute': ['SAI_MIRROR_SESSION_ATTR_UDP_DST_PORT', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -678,7 +678,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_UDP_DST_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -695,7 +695,7 @@ class TestSaiMirrorSession:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -709,7 +709,7 @@ class TestSaiMirrorSession:
                 'atrribute': 'SAI_MIRROR_SESSION_ATTR_COUNTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'

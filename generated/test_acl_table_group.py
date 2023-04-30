@@ -33,7 +33,7 @@ class TestSaiAclTableGroup:
                 'atrribute': 'SAI_ACL_TABLE_GROUP_ATTR_MEMBER_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

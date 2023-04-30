@@ -30,7 +30,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_ALGO', 'SAI_ARS_PROFILE_ALGO_EWMA'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_ALGO',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -60,7 +60,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_SAMPLING_INTERVAL', '16'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -74,7 +74,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_SAMPLING_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
@@ -88,7 +88,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_ARS_RANDOM_SEED', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -102,7 +102,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_ARS_RANDOM_SEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -116,7 +116,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_ECMP_ARS_MAX_GROUPS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -130,7 +130,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_ECMP_ARS_MAX_MEMBERS_PER_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -144,7 +144,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_LAG_ARS_MAX_GROUPS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -158,7 +158,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_LAG_ARS_MAX_MEMBERS_PER_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -172,7 +172,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -186,7 +186,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -200,7 +200,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST_WEIGHT', '16'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -214,7 +214,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST_WEIGHT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
@@ -228,7 +228,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -242,7 +242,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -256,7 +256,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE_WEIGHT', '16'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -270,7 +270,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE_WEIGHT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
@@ -284,7 +284,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_CURRENT', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -298,7 +298,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_CURRENT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -312,7 +312,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_EXPONENT', '2'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -326,7 +326,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_EXPONENT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '2' for result in results]), 'Get error'
@@ -340,7 +340,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BANDS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -354,7 +354,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -368,7 +368,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -382,7 +382,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -396,7 +396,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -410,7 +410,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -424,7 +424,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -438,7 +438,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -452,7 +452,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -466,7 +466,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -480,7 +480,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -494,7 +494,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -508,7 +508,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -522,7 +522,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -536,7 +536,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -550,7 +550,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -564,7 +564,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -578,7 +578,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -592,7 +592,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -606,7 +606,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -620,7 +620,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -634,7 +634,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -648,7 +648,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -662,7 +662,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -676,7 +676,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -690,7 +690,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -704,7 +704,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -718,7 +718,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -732,7 +732,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -746,7 +746,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -760,7 +760,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -774,7 +774,7 @@ class TestSaiArsProfile:
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -788,7 +788,7 @@ class TestSaiArsProfile:
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

@@ -106,7 +106,7 @@ class TestSaiTunnelTermTableEntry:
                 'atrribute': 'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IP_ADDR_FAMILY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -123,7 +123,7 @@ class TestSaiTunnelTermTableEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -137,7 +137,7 @@ class TestSaiTunnelTermTableEntry:
                 'atrribute': 'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IPSEC_VERIFIED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'

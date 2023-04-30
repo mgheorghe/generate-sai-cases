@@ -30,7 +30,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_GREEN_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_GREEN_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -58,7 +58,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_GREEN_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -72,7 +72,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_GREEN_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -86,7 +86,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_GREEN_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -100,7 +100,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_GREEN_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -114,7 +114,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_GREEN_DROP_PROBABILITY', '100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -128,7 +128,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_GREEN_DROP_PROBABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '100' for result in results]), 'Get error'
@@ -142,7 +142,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_YELLOW_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -156,7 +156,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_YELLOW_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -170,7 +170,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -184,7 +184,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -198,7 +198,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -212,7 +212,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -226,7 +226,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_YELLOW_DROP_PROBABILITY', '100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -240,7 +240,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_YELLOW_DROP_PROBABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '100' for result in results]), 'Get error'
@@ -254,7 +254,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_RED_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -268,7 +268,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_RED_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -282,7 +282,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_RED_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -296,7 +296,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_RED_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -310,7 +310,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_RED_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -324,7 +324,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_RED_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -338,7 +338,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_RED_DROP_PROBABILITY', '100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -352,7 +352,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_RED_DROP_PROBABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '100' for result in results]), 'Get error'
@@ -366,7 +366,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_WEIGHT', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -380,7 +380,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_WEIGHT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -394,7 +394,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_MARK_MODE', 'SAI_ECN_MARK_MODE_NONE'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -408,7 +408,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_MARK_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -424,7 +424,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_GREEN_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -438,7 +438,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_GREEN_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -452,7 +452,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_GREEN_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -466,7 +466,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_GREEN_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -480,7 +480,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_GREEN_MARK_PROBABILITY', '100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -494,7 +494,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_GREEN_MARK_PROBABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '100' for result in results]), 'Get error'
@@ -508,7 +508,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_YELLOW_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -522,7 +522,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_YELLOW_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -536,7 +536,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_YELLOW_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -550,7 +550,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_YELLOW_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -564,7 +564,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_YELLOW_MARK_PROBABILITY', '100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -578,7 +578,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_YELLOW_MARK_PROBABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '100' for result in results]), 'Get error'
@@ -592,7 +592,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_RED_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -606,7 +606,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_RED_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -620,7 +620,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_RED_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -634,7 +634,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_RED_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -648,7 +648,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_RED_MARK_PROBABILITY', '100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -662,7 +662,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_RED_MARK_PROBABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '100' for result in results]), 'Get error'
@@ -676,7 +676,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MIN_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -690,7 +690,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MIN_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -704,7 +704,7 @@ class TestSaiWred:
                 'atrribute': ['SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MAX_THRESHOLD', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -718,7 +718,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MAX_THRESHOLD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -735,7 +735,7 @@ class TestSaiWred:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -749,7 +749,7 @@ class TestSaiWred:
                 'atrribute': 'SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MARK_PROBABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '100' for result in results]), 'Get error'

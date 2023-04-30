@@ -90,7 +90,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -104,7 +104,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_TTL_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -120,7 +120,7 @@ class TestSaiTunnel:
                 'atrribute': ['SAI_TUNNEL_ATTR_ENCAP_TTL_VAL', '255'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -134,7 +134,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_TTL_VAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
@@ -151,7 +151,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -165,7 +165,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_DSCP_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -181,7 +181,7 @@ class TestSaiTunnel:
                 'atrribute': ['SAI_TUNNEL_ATTR_ENCAP_DSCP_VAL', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -195,7 +195,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_DSCP_VAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -209,7 +209,7 @@ class TestSaiTunnel:
                 'atrribute': ['SAI_TUNNEL_ATTR_ENCAP_GRE_KEY', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -223,7 +223,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_GRE_KEY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -240,7 +240,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -254,7 +254,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_DECAP_TTL_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -273,7 +273,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -287,7 +287,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_DECAP_DSCP_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -303,7 +303,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_TERM_TABLE_ENTRY_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -320,7 +320,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -334,7 +334,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_LOOPBACK_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -353,7 +353,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -367,7 +367,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -386,7 +386,7 @@ class TestSaiTunnel:
                 'atrribute': ['SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -400,7 +400,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -414,7 +414,7 @@ class TestSaiTunnel:
                 'atrribute': ['SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MASK', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -428,7 +428,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MASK',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -442,7 +442,7 @@ class TestSaiTunnel:
                 'atrribute': ['SAI_TUNNEL_ATTR_SA_INDEX', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -456,7 +456,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_SA_INDEX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -470,7 +470,7 @@ class TestSaiTunnel:
                 'atrribute': ['SAI_TUNNEL_ATTR_IPSEC_SA_PORT_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -484,7 +484,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_IPSEC_SA_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -501,7 +501,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -515,7 +515,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -532,7 +532,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -546,7 +546,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -563,7 +563,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -577,7 +577,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -594,7 +594,7 @@ class TestSaiTunnel:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -608,7 +608,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -622,7 +622,7 @@ class TestSaiTunnel:
                 'atrribute': ['SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_SECURITY', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -636,7 +636,7 @@ class TestSaiTunnel:
                 'atrribute': 'SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_SECURITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'

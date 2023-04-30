@@ -36,7 +36,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_PRIORITY', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -50,7 +50,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -64,7 +64,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ADMIN_STATE', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -78,7 +78,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ADMIN_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -92,7 +92,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -106,7 +106,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -120,7 +120,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD3', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -134,7 +134,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD3',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -148,7 +148,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD2', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -162,7 +162,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD2',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -176,7 +176,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD1', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -190,7 +190,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD1',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -204,7 +204,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD0', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -218,7 +218,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD0',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -232,7 +232,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -246,7 +246,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -260,7 +260,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD3', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -274,7 +274,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD3',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -288,7 +288,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD2', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -302,7 +302,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD2',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -316,7 +316,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD1', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -330,7 +330,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD1',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -344,7 +344,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD0', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -358,7 +358,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD0',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -372,7 +372,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_IPV6', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -386,7 +386,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_IPV6',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -400,7 +400,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_IPV6', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -414,7 +414,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_IPV6',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -428,7 +428,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_SRC_MAC', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -442,7 +442,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_SRC_MAC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -456,7 +456,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_DST_MAC', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -470,7 +470,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_DST_MAC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -484,7 +484,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_SRC_IP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -498,7 +498,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_SRC_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -512,7 +512,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_DST_IP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -526,7 +526,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_DST_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -540,7 +540,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_IP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -554,7 +554,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -568,7 +568,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_IP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -582,7 +582,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -596,7 +596,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_IN_PORTS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -610,7 +610,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_IN_PORTS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -624,7 +624,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_OUT_PORTS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -638,7 +638,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_OUT_PORTS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -652,7 +652,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_IN_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -666,7 +666,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_IN_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -680,7 +680,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_OUT_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -694,7 +694,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_OUT_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -708,7 +708,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_SRC_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -722,7 +722,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_SRC_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -736,7 +736,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_ID', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -750,7 +750,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -764,7 +764,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_PRI', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -778,7 +778,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_PRI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -792,7 +792,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_CFI', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -806,7 +806,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_CFI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -820,7 +820,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_ID', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -834,7 +834,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -848,7 +848,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_PRI', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -862,7 +862,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_PRI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -876,7 +876,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_CFI', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -890,7 +890,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_CFI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -904,7 +904,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_L4_SRC_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -918,7 +918,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_L4_SRC_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -932,7 +932,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_L4_DST_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -946,7 +946,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_L4_DST_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -960,7 +960,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_L4_SRC_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -974,7 +974,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_L4_SRC_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -988,7 +988,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_L4_DST_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1002,7 +1002,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_L4_DST_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1016,7 +1016,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ETHER_TYPE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1030,7 +1030,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ETHER_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1044,7 +1044,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_ETHER_TYPE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1058,7 +1058,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_ETHER_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1072,7 +1072,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_IP_PROTOCOL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1086,7 +1086,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_IP_PROTOCOL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1100,7 +1100,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_INNER_IP_PROTOCOL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1114,7 +1114,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_INNER_IP_PROTOCOL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1128,7 +1128,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_IP_IDENTIFICATION', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1142,7 +1142,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_IP_IDENTIFICATION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1156,7 +1156,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_DSCP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1170,7 +1170,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_DSCP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1184,7 +1184,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ECN', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1198,7 +1198,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ECN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1212,7 +1212,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_TTL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1226,7 +1226,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1240,7 +1240,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_TOS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1254,7 +1254,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_TOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1268,7 +1268,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_IP_FLAGS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1282,7 +1282,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_IP_FLAGS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1296,7 +1296,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_TCP_FLAGS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1310,7 +1310,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_TCP_FLAGS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1324,7 +1324,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ACL_IP_TYPE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1338,7 +1338,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ACL_IP_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1352,7 +1352,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ACL_IP_FRAG', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1366,7 +1366,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ACL_IP_FRAG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1380,7 +1380,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_IPV6_FLOW_LABEL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1394,7 +1394,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_IPV6_FLOW_LABEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1408,7 +1408,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_TC', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1422,7 +1422,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_TC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1436,7 +1436,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ICMP_TYPE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1450,7 +1450,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ICMP_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1464,7 +1464,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ICMP_CODE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1478,7 +1478,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ICMP_CODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1492,7 +1492,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ICMPV6_TYPE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1506,7 +1506,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ICMPV6_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1520,7 +1520,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ICMPV6_CODE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1534,7 +1534,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ICMPV6_CODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1548,7 +1548,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_PACKET_VLAN', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1562,7 +1562,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_PACKET_VLAN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1576,7 +1576,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_TUNNEL_VNI', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1590,7 +1590,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_TUNNEL_VNI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1604,7 +1604,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_HAS_VLAN_TAG', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1618,7 +1618,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_HAS_VLAN_TAG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1632,7 +1632,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MACSEC_SCI', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1646,7 +1646,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MACSEC_SCI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1660,7 +1660,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_LABEL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1674,7 +1674,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_LABEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1688,7 +1688,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_TTL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1702,7 +1702,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1716,7 +1716,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_EXP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1730,7 +1730,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_EXP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1744,7 +1744,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_BOS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1758,7 +1758,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_BOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1772,7 +1772,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_LABEL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1786,7 +1786,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_LABEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1800,7 +1800,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_TTL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1814,7 +1814,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1828,7 +1828,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_EXP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1842,7 +1842,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_EXP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1856,7 +1856,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_BOS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1870,7 +1870,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_BOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1884,7 +1884,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_LABEL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1898,7 +1898,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_LABEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1912,7 +1912,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_TTL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1926,7 +1926,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1940,7 +1940,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_EXP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1954,7 +1954,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_EXP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1968,7 +1968,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_BOS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1982,7 +1982,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_BOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -1996,7 +1996,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_LABEL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2010,7 +2010,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_LABEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2024,7 +2024,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_TTL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2038,7 +2038,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2052,7 +2052,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_EXP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2066,7 +2066,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_EXP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2080,7 +2080,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_BOS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2094,7 +2094,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_BOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2108,7 +2108,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_LABEL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2122,7 +2122,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_LABEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2136,7 +2136,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_TTL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2150,7 +2150,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2164,7 +2164,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_EXP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2178,7 +2178,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_EXP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2192,7 +2192,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_BOS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2206,7 +2206,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_BOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2220,7 +2220,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_FDB_DST_USER_META', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2234,7 +2234,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_FDB_DST_USER_META',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2251,7 +2251,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2265,7 +2265,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ROUTE_DST_USER_META',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2282,7 +2282,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2296,7 +2296,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_NEIGHBOR_DST_USER_META',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2310,7 +2310,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_PORT_USER_META', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2324,7 +2324,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_PORT_USER_META',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2338,7 +2338,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_VLAN_USER_META', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2352,7 +2352,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_VLAN_USER_META',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2366,7 +2366,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ACL_USER_META', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2380,7 +2380,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ACL_USER_META',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2397,7 +2397,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2411,7 +2411,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_FDB_NPU_META_DST_HIT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2428,7 +2428,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2442,7 +2442,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_NEIGHBOR_NPU_META_DST_HIT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2459,7 +2459,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2473,7 +2473,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ROUTE_NPU_META_DST_HIT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2487,7 +2487,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_BTH_OPCODE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2501,7 +2501,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_BTH_OPCODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2515,7 +2515,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_AETH_SYNDROME', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2529,7 +2529,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_AETH_SYNDROME',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2546,7 +2546,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2560,7 +2560,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_USER_DEFINED_FIELD_GROUP_MIN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2577,7 +2577,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2591,7 +2591,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_USER_DEFINED_FIELD_GROUP_MAX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2605,7 +2605,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_ACL_RANGE_TYPE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2619,7 +2619,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_ACL_RANGE_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2633,7 +2633,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_IPV6_NEXT_HEADER', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2647,7 +2647,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_IPV6_NEXT_HEADER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2661,7 +2661,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_GRE_KEY', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2675,7 +2675,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_GRE_KEY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2689,7 +2689,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_FIELD_TAM_INT_TYPE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2703,7 +2703,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_FIELD_TAM_INT_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2717,7 +2717,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_REDIRECT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2731,7 +2731,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_REDIRECT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2745,7 +2745,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_ENDPOINT_IP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2759,7 +2759,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_ENDPOINT_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2773,7 +2773,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_REDIRECT_LIST', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2787,7 +2787,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_REDIRECT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2801,7 +2801,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_PACKET_ACTION', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2815,7 +2815,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2829,7 +2829,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_FLOOD', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2843,7 +2843,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_FLOOD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2857,7 +2857,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_COUNTER', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2871,7 +2871,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_COUNTER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2885,7 +2885,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_MIRROR_INGRESS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2899,7 +2899,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_MIRROR_INGRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2913,7 +2913,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_MIRROR_EGRESS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2927,7 +2927,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_MIRROR_EGRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2941,7 +2941,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_POLICER', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2955,7 +2955,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_POLICER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2969,7 +2969,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_DECREMENT_TTL', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2983,7 +2983,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_DECREMENT_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -2997,7 +2997,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_TC', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3011,7 +3011,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_TC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3025,7 +3025,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_PACKET_COLOR', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3039,7 +3039,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_PACKET_COLOR',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3056,7 +3056,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3070,7 +3070,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_INNER_VLAN_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3087,7 +3087,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3101,7 +3101,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_INNER_VLAN_PRI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3118,7 +3118,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3132,7 +3132,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_OUTER_VLAN_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3149,7 +3149,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3163,7 +3163,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_OUTER_VLAN_PRI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3177,7 +3177,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_ADD_VLAN_ID', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3191,7 +3191,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_ADD_VLAN_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3205,7 +3205,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_ADD_VLAN_PRI', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3219,7 +3219,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_ADD_VLAN_PRI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3233,7 +3233,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_MAC', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3247,7 +3247,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_MAC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3261,7 +3261,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_MAC', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3275,7 +3275,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_MAC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3289,7 +3289,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_IP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3303,7 +3303,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3317,7 +3317,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_IP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3331,7 +3331,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3345,7 +3345,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_IPV6', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3359,7 +3359,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_IPV6',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3373,7 +3373,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_IPV6', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3387,7 +3387,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_IPV6',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3401,7 +3401,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_DSCP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3415,7 +3415,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_DSCP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3429,7 +3429,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_ECN', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3443,7 +3443,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_ECN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3457,7 +3457,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_L4_SRC_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3471,7 +3471,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_L4_SRC_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3485,7 +3485,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_L4_DST_PORT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3499,7 +3499,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_L4_DST_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3516,7 +3516,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3530,7 +3530,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_INGRESS_SAMPLEPACKET_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3547,7 +3547,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3561,7 +3561,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_EGRESS_SAMPLEPACKET_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3578,7 +3578,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3592,7 +3592,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_ACL_META_DATA',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3609,7 +3609,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3623,7 +3623,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_EGRESS_BLOCK_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3637,7 +3637,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_USER_TRAP_ID', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3651,7 +3651,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_USER_TRAP_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3665,7 +3665,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_DO_NOT_LEARN', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3679,7 +3679,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_DO_NOT_LEARN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3693,7 +3693,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_ACL_DTEL_FLOW_OP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3707,7 +3707,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_ACL_DTEL_FLOW_OP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3721,7 +3721,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_DTEL_INT_SESSION', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3735,7 +3735,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_DTEL_INT_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3752,7 +3752,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3766,7 +3766,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_DTEL_DROP_REPORT_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3783,7 +3783,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3797,7 +3797,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_DTEL_TAIL_DROP_REPORT_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3814,7 +3814,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3828,7 +3828,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_DTEL_FLOW_SAMPLE_PERCENT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3845,7 +3845,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3859,7 +3859,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_DTEL_REPORT_ALL_PACKETS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3873,7 +3873,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_NO_NAT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3887,7 +3887,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_NO_NAT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3901,7 +3901,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_INT_INSERT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3915,7 +3915,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_INT_INSERT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3929,7 +3929,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_INT_DELETE', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3943,7 +3943,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_INT_DELETE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3957,7 +3957,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_FLOW', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3971,7 +3971,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_FLOW',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -3985,7 +3985,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_DROPS', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3999,7 +3999,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_DROPS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4016,7 +4016,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4030,7 +4030,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_TAIL_DROPS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4044,7 +4044,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_TAM_INT_OBJECT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4058,7 +4058,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_TAM_INT_OBJECT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4075,7 +4075,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4089,7 +4089,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_ISOLATION_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4103,7 +4103,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_MACSEC_FLOW', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4117,7 +4117,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_MACSEC_FLOW',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4131,7 +4131,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_LAG_HASH_ID', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4145,7 +4145,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_LAG_HASH_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4159,7 +4159,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_ECMP_HASH_ID', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4173,7 +4173,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_ECMP_HASH_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4187,7 +4187,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_VRF', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4201,7 +4201,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_VRF',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4218,7 +4218,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4232,7 +4232,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_FORWARDING_CLASS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4249,7 +4249,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4263,7 +4263,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_ARS_MONITORING',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4277,7 +4277,7 @@ class TestSaiAclEntry:
                 'atrribute': ['SAI_ACL_ENTRY_ATTR_ACTION_SET_ARS_OBJECT', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4291,7 +4291,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_SET_ARS_OBJECT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
@@ -4308,7 +4308,7 @@ class TestSaiAclEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4322,7 +4322,7 @@ class TestSaiAclEntry:
                 'atrribute': 'SAI_ACL_ENTRY_ATTR_ACTION_DISABLE_ARS_FORWARDING',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'

@@ -49,7 +49,7 @@ class TestSaiPortConnector:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -63,7 +63,7 @@ class TestSaiPortConnector:
                 'atrribute': 'SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(

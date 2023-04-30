@@ -30,7 +30,7 @@ class TestSaiGenericProgrammable:
                 'atrribute': ['SAI_GENERIC_PROGRAMMABLE_ATTR_ENTRY', 'vendor'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiGenericProgrammable:
                 'atrribute': 'SAI_GENERIC_PROGRAMMABLE_ATTR_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'vendor' for result in results]), 'Get error'
@@ -61,7 +61,7 @@ class TestSaiGenericProgrammable:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -75,7 +75,7 @@ class TestSaiGenericProgrammable:
                 'atrribute': 'SAI_GENERIC_PROGRAMMABLE_ATTR_COUNTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'

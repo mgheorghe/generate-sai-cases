@@ -30,7 +30,7 @@ class TestSaiTam:
                 'atrribute': ['SAI_TAM_ATTR_TELEMETRY_OBJECTS_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiTam:
                 'atrribute': 'SAI_TAM_ATTR_TELEMETRY_OBJECTS_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -58,7 +58,7 @@ class TestSaiTam:
                 'atrribute': ['SAI_TAM_ATTR_EVENT_OBJECTS_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -72,7 +72,7 @@ class TestSaiTam:
                 'atrribute': 'SAI_TAM_ATTR_EVENT_OBJECTS_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -86,7 +86,7 @@ class TestSaiTam:
                 'atrribute': ['SAI_TAM_ATTR_INT_OBJECTS_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -100,7 +100,7 @@ class TestSaiTam:
                 'atrribute': 'SAI_TAM_ATTR_INT_OBJECTS_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'

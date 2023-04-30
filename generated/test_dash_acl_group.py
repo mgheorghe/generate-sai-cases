@@ -33,7 +33,7 @@ class TestSaiDashAclGroup:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiDashAclGroup:
                 'atrribute': 'SAI_DASH_ACL_GROUP_ATTR_IP_ADDR_FAMILY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(

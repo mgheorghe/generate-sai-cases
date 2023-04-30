@@ -46,7 +46,7 @@ class TestSaiIpsecPort:
                 'atrribute': ['SAI_IPSEC_PORT_ATTR_CTAG_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -60,7 +60,7 @@ class TestSaiIpsecPort:
                 'atrribute': 'SAI_IPSEC_PORT_ATTR_CTAG_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -74,7 +74,7 @@ class TestSaiIpsecPort:
                 'atrribute': ['SAI_IPSEC_PORT_ATTR_STAG_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -88,7 +88,7 @@ class TestSaiIpsecPort:
                 'atrribute': 'SAI_IPSEC_PORT_ATTR_STAG_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -105,7 +105,7 @@ class TestSaiIpsecPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -119,7 +119,7 @@ class TestSaiIpsecPort:
                 'atrribute': 'SAI_IPSEC_PORT_ATTR_VRF_FROM_PACKET_VLAN_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -136,7 +136,7 @@ class TestSaiIpsecPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -150,7 +150,7 @@ class TestSaiIpsecPort:
                 'atrribute': 'SAI_IPSEC_PORT_ATTR_SWITCH_SWITCHING_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(

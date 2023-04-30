@@ -35,7 +35,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -49,7 +49,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_OPER_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -63,7 +63,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_BREAKOUT_MODE_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -77,7 +77,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_CURRENT_BREAKOUT_MODE_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -91,7 +91,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_NUMBER_OF_QUEUES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -105,7 +105,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_QUEUE_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -119,7 +119,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_NUMBER_OF_SCHEDULER_GROUPS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -133,7 +133,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_SCHEDULER_GROUP_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -147,7 +147,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_MAXIMUM_HEADROOM_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -161,7 +161,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_SPEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -175,7 +175,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_FEC_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -189,7 +189,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_FEC_MODE_EXTENDED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -203,7 +203,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_HALF_DUPLEX_SPEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -217,7 +217,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_AUTO_NEG_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -231,7 +231,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_FLOW_CONTROL_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -245,7 +245,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_ASYMMETRIC_PAUSE_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -259,7 +259,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_MEDIA_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -273,7 +273,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_SPEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -287,7 +287,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_FEC_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -301,7 +301,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_FEC_MODE_EXTENDED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -315,7 +315,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_HALF_DUPLEX_SPEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -329,7 +329,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_AUTO_NEG_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -343,7 +343,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_FLOW_CONTROL_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -357,7 +357,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_ASYMMETRIC_PAUSE_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -371,7 +371,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_MEDIA_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -385,7 +385,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_REMOTE_ADVERTISED_OUI_CODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -399,7 +399,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_NUMBER_OF_INGRESS_PRIORITY_GROUPS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -413,7 +413,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_INGRESS_PRIORITY_GROUP_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -427,7 +427,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EYE_VALUES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -441,7 +441,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_OPER_SPEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -455,7 +455,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_SPEED', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -469,7 +469,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SPEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -483,7 +483,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_AUTO_NEG_MODE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -497,7 +497,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_AUTO_NEG_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -511,7 +511,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ADMIN_STATE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -525,7 +525,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADMIN_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -542,7 +542,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -556,7 +556,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_MEDIA_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -572,7 +572,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ADVERTISED_SPEED', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -586,7 +586,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_SPEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -600,7 +600,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ADVERTISED_FEC_MODE', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -614,7 +614,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_FEC_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -628,7 +628,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ADVERTISED_FEC_MODE_EXTENDED', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -642,7 +642,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_FEC_MODE_EXTENDED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -656,7 +656,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ADVERTISED_HALF_DUPLEX_SPEED', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -670,7 +670,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_HALF_DUPLEX_SPEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -684,7 +684,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ADVERTISED_AUTO_NEG_MODE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -698,7 +698,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_AUTO_NEG_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -715,7 +715,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -729,7 +729,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_FLOW_CONTROL_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -748,7 +748,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -762,7 +762,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_ASYMMETRIC_PAUSE_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -779,7 +779,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -793,7 +793,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_MEDIA_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -809,7 +809,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ADVERTISED_OUI_CODE', '0x6A737D'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -823,7 +823,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_OUI_CODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0x6A737D' for result in results]), 'Get error'
@@ -837,7 +837,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PORT_VLAN_ID', '1'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -851,7 +851,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PORT_VLAN_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1' for result in results]), 'Get error'
@@ -865,7 +865,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_DEFAULT_VLAN_PRIORITY', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -879,7 +879,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_DEFAULT_VLAN_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -893,7 +893,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_DROP_UNTAGGED', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -907,7 +907,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_DROP_UNTAGGED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -921,7 +921,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_DROP_TAGGED', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -935,7 +935,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_DROP_TAGGED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -952,7 +952,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -966,7 +966,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_INTERNAL_LOOPBACK_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -982,7 +982,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_USE_EXTENDED_FEC', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -996,7 +996,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_USE_EXTENDED_FEC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -1010,7 +1010,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_FEC_MODE', 'SAI_PORT_FEC_MODE_NONE'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1024,7 +1024,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FEC_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1043,7 +1043,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1057,7 +1057,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FEC_MODE_EXTENDED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1073,7 +1073,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_UPDATE_DSCP', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1087,7 +1087,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_UPDATE_DSCP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -1101,7 +1101,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_MTU', '1514'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1115,7 +1115,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_MTU',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1514' for result in results]), 'Get error'
@@ -1132,7 +1132,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1146,7 +1146,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FLOOD_STORM_CONTROL_POLICER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1163,7 +1163,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1177,7 +1177,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_BROADCAST_STORM_CONTROL_POLICER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1194,7 +1194,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1208,7 +1208,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_MULTICAST_STORM_CONTROL_POLICER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1225,7 +1225,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1239,7 +1239,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_GLOBAL_FLOW_CONTROL_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1255,7 +1255,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_INGRESS_ACL', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1269,7 +1269,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_INGRESS_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1283,7 +1283,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_EGRESS_ACL', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1297,7 +1297,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EGRESS_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1311,7 +1311,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_INGRESS_MACSEC_ACL', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1325,7 +1325,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_INGRESS_MACSEC_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1339,7 +1339,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_EGRESS_MACSEC_ACL', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1353,7 +1353,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EGRESS_MACSEC_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1367,7 +1367,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_MACSEC_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1381,7 +1381,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_INGRESS_MIRROR_SESSION', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1395,7 +1395,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_INGRESS_MIRROR_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -1409,7 +1409,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_EGRESS_MIRROR_SESSION', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1423,7 +1423,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EGRESS_MIRROR_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -1440,7 +1440,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1454,7 +1454,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_INGRESS_SAMPLEPACKET_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1471,7 +1471,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1485,7 +1485,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EGRESS_SAMPLEPACKET_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1499,7 +1499,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_INGRESS_SAMPLE_MIRROR_SESSION', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1513,7 +1513,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_INGRESS_SAMPLE_MIRROR_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -1527,7 +1527,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_EGRESS_SAMPLE_MIRROR_SESSION', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1541,7 +1541,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EGRESS_SAMPLE_MIRROR_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -1555,7 +1555,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_POLICER_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1569,7 +1569,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_POLICER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1583,7 +1583,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_QOS_DEFAULT_TC', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1597,7 +1597,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_DEFAULT_TC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -1614,7 +1614,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1628,7 +1628,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_DOT1P_TO_TC_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1645,7 +1645,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1659,7 +1659,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_DOT1P_TO_COLOR_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1673,7 +1673,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1687,7 +1687,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1704,7 +1704,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1718,7 +1718,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_DSCP_TO_COLOR_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1735,7 +1735,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1749,7 +1749,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_TC_TO_QUEUE_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1766,7 +1766,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1780,7 +1780,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1797,7 +1797,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1811,7 +1811,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1828,7 +1828,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1842,7 +1842,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_TC_TO_PRIORITY_GROUP_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1859,7 +1859,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1873,7 +1873,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_PRIORITY_GROUP_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1890,7 +1890,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1904,7 +1904,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_QUEUE_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1921,7 +1921,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1935,7 +1935,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_SCHEDULER_PROFILE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1949,7 +1949,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_QOS_INGRESS_BUFFER_PROFILE_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1963,7 +1963,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_INGRESS_BUFFER_PROFILE_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -1977,7 +1977,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_QOS_EGRESS_BUFFER_PROFILE_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1991,7 +1991,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_EGRESS_BUFFER_PROFILE_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -2008,7 +2008,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2022,7 +2022,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -2041,7 +2041,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2055,7 +2055,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -2069,7 +2069,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_RX', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2083,7 +2083,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_RX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -2097,7 +2097,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_TX', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2111,7 +2111,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_TX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -2125,7 +2125,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_META_DATA', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2139,7 +2139,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_META_DATA',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -2153,7 +2153,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_EGRESS_BLOCK_PORT_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2167,7 +2167,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EGRESS_BLOCK_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -2181,7 +2181,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_HW_PROFILE_ID', 'vendor'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2195,7 +2195,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_HW_PROFILE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'vendor' for result in results]), 'Get error'
@@ -2209,7 +2209,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_EEE_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2223,7 +2223,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EEE_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -2237,7 +2237,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_EEE_IDLE_TIME', '2500'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2251,7 +2251,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EEE_IDLE_TIME',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '2500' for result in results]), 'Get error'
@@ -2265,7 +2265,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_EEE_WAKE_TIME', '5'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2279,7 +2279,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_EEE_WAKE_TIME',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '5' for result in results]), 'Get error'
@@ -2293,7 +2293,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PORT_POOL_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2307,7 +2307,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ISOLATION_GROUP', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2321,7 +2321,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ISOLATION_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2335,7 +2335,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PKT_TX_ENABLE', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2349,7 +2349,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PKT_TX_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -2363,7 +2363,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_TAM_OBJECT', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2377,7 +2377,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_TAM_OBJECT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -2391,7 +2391,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_SERDES_PREEMPHASIS', 'internal'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2405,7 +2405,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SERDES_PREEMPHASIS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -2419,7 +2419,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_SERDES_IDRIVER', 'internal'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2433,7 +2433,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SERDES_IDRIVER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -2447,7 +2447,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_SERDES_IPREDRIVER', 'internal'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2461,7 +2461,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SERDES_IPREDRIVER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -2475,7 +2475,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_LINK_TRAINING_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2489,7 +2489,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_LINK_TRAINING_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -2503,7 +2503,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PTP_MODE', 'SAI_PORT_PTP_MODE_NONE'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2517,7 +2517,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PTP_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -2536,7 +2536,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2550,7 +2550,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_INTERFACE_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -2566,7 +2566,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ADVERTISED_INTERFACE_TYPE', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2580,7 +2580,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ADVERTISED_INTERFACE_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -2594,7 +2594,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PRBS_POLYNOMIAL', 'internal'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2608,7 +2608,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRBS_POLYNOMIAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -2622,7 +2622,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PORT_SERDES_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -2636,7 +2636,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_LINK_TRAINING_FAILURE_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2650,7 +2650,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_LINK_TRAINING_RX_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2667,7 +2667,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2681,7 +2681,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRBS_CONFIG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -2697,7 +2697,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRBS_LOCK_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2711,7 +2711,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRBS_LOCK_LOSS_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2725,7 +2725,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRBS_RX_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2739,7 +2739,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRBS_RX_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2753,7 +2753,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_AUTO_NEG_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2767,7 +2767,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_DISABLE_DECREMENT_TTL', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2781,7 +2781,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_DISABLE_DECREMENT_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -2798,7 +2798,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2812,7 +2812,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_MPLS_EXP_TO_TC_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2829,7 +2829,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2843,7 +2843,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2860,7 +2860,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2874,7 +2874,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2888,7 +2888,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_TPID', '0x8100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2902,7 +2902,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_TPID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0x8100' for result in results]), 'Get error'
@@ -2916,7 +2916,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ERR_STATUS_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2930,7 +2930,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FABRIC_ATTACHED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2944,7 +2944,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FABRIC_ATTACHED_SWITCH_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2958,7 +2958,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FABRIC_ATTACHED_SWITCH_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2972,7 +2972,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FABRIC_ATTACHED_PORT_INDEX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2986,7 +2986,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FABRIC_REACHABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3000,7 +3000,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SYSTEM_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3014,7 +3014,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_AUTO_NEG_FEC_MODE_OVERRIDE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3028,7 +3028,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_AUTO_NEG_FEC_MODE_OVERRIDE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3045,7 +3045,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3059,7 +3059,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_LOOPBACK_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -3075,7 +3075,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_MDIX_MODE_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3092,7 +3092,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3106,7 +3106,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_MDIX_MODE_CONFIG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -3125,7 +3125,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3139,7 +3139,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_AUTO_NEG_CONFIG_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -3155,7 +3155,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_1000X_SGMII_SLAVE_AUTODETECT', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3169,7 +3169,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_1000X_SGMII_SLAVE_AUTODETECT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3186,7 +3186,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3200,7 +3200,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_MODULE_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -3216,7 +3216,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_DUAL_MEDIA', 'SAI_PORT_DUAL_MEDIA_NONE'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3230,7 +3230,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_DUAL_MEDIA',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -3246,7 +3246,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_AUTO_NEG_FEC_MODE_EXTENDED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3260,7 +3260,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_IPG', '96'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3274,7 +3274,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_IPG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '96' for result in results]), 'Get error'
@@ -3288,7 +3288,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_GLOBAL_FLOW_CONTROL_FORWARD', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3302,7 +3302,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_GLOBAL_FLOW_CONTROL_FORWARD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3316,7 +3316,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_FORWARD', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3330,7 +3330,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_FORWARD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3347,7 +3347,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3361,7 +3361,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3378,7 +3378,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3392,7 +3392,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3406,7 +3406,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_IPSEC_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3420,7 +3420,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PFC_TC_DLD_INTERVAL_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3434,7 +3434,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PFC_TC_DLD_INTERVAL', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3448,7 +3448,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PFC_TC_DLD_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -3462,7 +3462,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PFC_TC_DLR_INTERVAL_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3476,7 +3476,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_PFC_TC_DLR_INTERVAL', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3490,7 +3490,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PFC_TC_DLR_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -3504,7 +3504,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_SUPPORTED_LINK_TRAINING_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3518,7 +3518,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_RX_SIGNAL_DETECT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3532,7 +3532,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_RX_LOCK_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3546,7 +3546,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_PCS_RX_LINK_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3560,7 +3560,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FEC_ALIGNMENT_LOCK',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3574,7 +3574,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_FABRIC_ISOLATE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3588,7 +3588,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_FABRIC_ISOLATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3602,7 +3602,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_MAX_FEC_SYMBOL_ERRORS_DETECTABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3616,7 +3616,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ARS_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3630,7 +3630,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ARS_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3644,7 +3644,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ARS_PORT_LOAD_SCALING_FACTOR', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3658,7 +3658,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ARS_PORT_LOAD_SCALING_FACTOR',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -3672,7 +3672,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ARS_PORT_LOAD_PAST_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3686,7 +3686,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ARS_PORT_LOAD_PAST_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3700,7 +3700,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ARS_PORT_LOAD_FUTURE_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3714,7 +3714,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ARS_PORT_LOAD_FUTURE_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3728,7 +3728,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ARS_ALTERNATE_PATH', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3742,7 +3742,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ARS_ALTERNATE_PATH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3756,7 +3756,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_JSON_FORMATTED_DEBUG_DATA',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3773,7 +3773,7 @@ class TestSaiPort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3787,7 +3787,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ECMP_HASH_ALGORITHM',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -3803,7 +3803,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ECMP_HASH_SEED', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3817,7 +3817,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ECMP_HASH_SEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -3831,7 +3831,7 @@ class TestSaiPort:
                 'atrribute': ['SAI_PORT_ATTR_ECMP_HASH_OFFSET', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3845,7 +3845,7 @@ class TestSaiPort:
                 'atrribute': 'SAI_PORT_ATTR_ECMP_HASH_OFFSET',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

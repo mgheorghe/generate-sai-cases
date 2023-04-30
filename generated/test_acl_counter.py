@@ -36,7 +36,7 @@ class TestSaiAclCounter:
                 'atrribute': ['SAI_ACL_COUNTER_ATTR_PACKETS', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -50,7 +50,7 @@ class TestSaiAclCounter:
                 'atrribute': 'SAI_ACL_COUNTER_ATTR_PACKETS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -64,7 +64,7 @@ class TestSaiAclCounter:
                 'atrribute': ['SAI_ACL_COUNTER_ATTR_BYTES', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -78,7 +78,7 @@ class TestSaiAclCounter:
                 'atrribute': 'SAI_ACL_COUNTER_ATTR_BYTES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -92,7 +92,7 @@ class TestSaiAclCounter:
                 'atrribute': ['SAI_ACL_COUNTER_ATTR_LABEL', '""'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -106,7 +106,7 @@ class TestSaiAclCounter:
                 'atrribute': 'SAI_ACL_COUNTER_ATTR_LABEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '""' for result in results]), 'Get error'

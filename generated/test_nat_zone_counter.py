@@ -33,7 +33,7 @@ class TestSaiNatZoneCounter:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiNatZoneCounter:
                 'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_NAT_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NAT_TYPE_NONE' for result in results]), 'Get error'
@@ -61,7 +61,7 @@ class TestSaiNatZoneCounter:
                 'atrribute': ['SAI_NAT_ZONE_COUNTER_ATTR_ZONE_ID', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -75,7 +75,7 @@ class TestSaiNatZoneCounter:
                 'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_ZONE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -89,7 +89,7 @@ class TestSaiNatZoneCounter:
                 'atrribute': ['SAI_NAT_ZONE_COUNTER_ATTR_DISCARD_PACKET_COUNT', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -103,7 +103,7 @@ class TestSaiNatZoneCounter:
                 'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_DISCARD_PACKET_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -120,7 +120,7 @@ class TestSaiNatZoneCounter:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -134,7 +134,7 @@ class TestSaiNatZoneCounter:
                 'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATION_NEEDED_PACKET_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -151,7 +151,7 @@ class TestSaiNatZoneCounter:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -165,7 +165,7 @@ class TestSaiNatZoneCounter:
                 'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATIONS_PACKET_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

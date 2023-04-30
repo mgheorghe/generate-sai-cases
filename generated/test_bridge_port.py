@@ -109,7 +109,7 @@ class TestSaiBridgePort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -123,7 +123,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_TAGGING_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -139,7 +139,7 @@ class TestSaiBridgePort:
                 'atrribute': ['SAI_BRIDGE_PORT_ATTR_BRIDGE_ID', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -153,7 +153,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_BRIDGE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -170,7 +170,7 @@ class TestSaiBridgePort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -184,7 +184,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_FDB_LEARNING_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -200,7 +200,7 @@ class TestSaiBridgePort:
                 'atrribute': ['SAI_BRIDGE_PORT_ATTR_MAX_LEARNED_ADDRESSES', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -214,7 +214,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_MAX_LEARNED_ADDRESSES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -233,7 +233,7 @@ class TestSaiBridgePort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -249,7 +249,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_FDB_LEARNING_LIMIT_VIOLATION_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -265,7 +265,7 @@ class TestSaiBridgePort:
                 'atrribute': ['SAI_BRIDGE_PORT_ATTR_ADMIN_STATE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -279,7 +279,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_ADMIN_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -293,7 +293,7 @@ class TestSaiBridgePort:
                 'atrribute': ['SAI_BRIDGE_PORT_ATTR_INGRESS_FILTERING', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -307,7 +307,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_INGRESS_FILTERING',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -321,7 +321,7 @@ class TestSaiBridgePort:
                 'atrribute': ['SAI_BRIDGE_PORT_ATTR_EGRESS_FILTERING', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -335,7 +335,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_EGRESS_FILTERING',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -352,7 +352,7 @@ class TestSaiBridgePort:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -366,7 +366,7 @@ class TestSaiBridgePort:
                 'atrribute': 'SAI_BRIDGE_PORT_ATTR_ISOLATION_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'

@@ -30,7 +30,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_INT_ENDPOINT_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_INT_ENDPOINT_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -58,7 +58,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_INT_TRANSIT_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -72,7 +72,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_INT_TRANSIT_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -86,7 +86,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_POSTCARD_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -100,7 +100,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_POSTCARD_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -114,7 +114,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_DROP_REPORT_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -128,7 +128,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_DROP_REPORT_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -142,7 +142,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_QUEUE_REPORT_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -156,7 +156,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_QUEUE_REPORT_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -170,7 +170,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_SWITCH_ID', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -184,7 +184,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_SWITCH_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -198,7 +198,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_FLOW_STATE_CLEAR_CYCLE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -212,7 +212,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_FLOW_STATE_CLEAR_CYCLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -226,7 +226,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_LATENCY_SENSITIVITY', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -240,7 +240,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_LATENCY_SENSITIVITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -254,7 +254,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_SINK_PORT_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -268,7 +268,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_SINK_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -282,7 +282,7 @@ class TestSaiDtel:
                 'atrribute': ['SAI_DTEL_ATTR_INT_L4_DSCP', 'disabled'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -296,7 +296,7 @@ class TestSaiDtel:
                 'atrribute': 'SAI_DTEL_ATTR_INT_L4_DSCP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'

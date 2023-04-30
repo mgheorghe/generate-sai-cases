@@ -30,7 +30,7 @@ class TestSaiSamplepacket:
                 'atrribute': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiSamplepacket:
                 'atrribute': 'SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

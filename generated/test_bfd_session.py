@@ -92,7 +92,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -106,7 +106,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -120,7 +120,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_PORT', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -134,7 +134,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -148,7 +148,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_TC', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -162,7 +162,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_TC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -176,7 +176,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_VLAN_TPID', '0x8100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -190,7 +190,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_VLAN_TPID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0x8100' for result in results]), 'Get error'
@@ -204,7 +204,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_VLAN_PRI', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -218,7 +218,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_VLAN_PRI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -232,7 +232,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_VLAN_CFI', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -246,7 +246,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_VLAN_CFI',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -260,7 +260,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_IPHDR_VERSION', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -274,7 +274,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_IPHDR_VERSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -288,7 +288,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_TOS', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -302,7 +302,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_TOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -316,7 +316,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_TTL', '255'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -330,7 +330,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
@@ -344,7 +344,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_TUNNEL_TOS', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -358,7 +358,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_TUNNEL_TOS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -372,7 +372,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_TUNNEL_TTL', '255'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -386,7 +386,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_TUNNEL_TTL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
@@ -400,7 +400,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -414,7 +414,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -428,7 +428,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -442,7 +442,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -456,7 +456,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_ECHO_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -470,7 +470,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_ECHO_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -484,7 +484,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_MIN_TX', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -498,7 +498,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_MIN_TX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -512,7 +512,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_MIN_RX', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -526,7 +526,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_MIN_RX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -540,7 +540,7 @@ class TestSaiBfdSession:
                 'atrribute': ['SAI_BFD_SESSION_ATTR_MULTIPLIER', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -554,7 +554,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_MULTIPLIER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -568,7 +568,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_REMOTE_MIN_TX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -582,7 +582,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_REMOTE_MIN_RX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -596,7 +596,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -610,7 +610,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_NEGOTIATED_TX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -624,7 +624,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_NEGOTIATED_RX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -638,7 +638,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_LOCAL_DIAG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -652,7 +652,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_REMOTE_DIAG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -666,7 +666,7 @@ class TestSaiBfdSession:
                 'atrribute': 'SAI_BFD_SESSION_ATTR_REMOTE_MULTIPLIER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

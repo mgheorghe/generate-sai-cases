@@ -30,7 +30,7 @@ class TestSaiDtelReportSession:
                 'atrribute': ['SAI_DTEL_REPORT_SESSION_ATTR_SRC_IP', '0.0.0.0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiDtelReportSession:
                 'atrribute': 'SAI_DTEL_REPORT_SESSION_ATTR_SRC_IP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
@@ -58,7 +58,7 @@ class TestSaiDtelReportSession:
                 'atrribute': ['SAI_DTEL_REPORT_SESSION_ATTR_DST_IP_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -72,7 +72,7 @@ class TestSaiDtelReportSession:
                 'atrribute': 'SAI_DTEL_REPORT_SESSION_ATTR_DST_IP_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -89,7 +89,7 @@ class TestSaiDtelReportSession:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -103,7 +103,7 @@ class TestSaiDtelReportSession:
                 'atrribute': 'SAI_DTEL_REPORT_SESSION_ATTR_VIRTUAL_ROUTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -117,7 +117,7 @@ class TestSaiDtelReportSession:
                 'atrribute': ['SAI_DTEL_REPORT_SESSION_ATTR_TRUNCATE_SIZE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -131,7 +131,7 @@ class TestSaiDtelReportSession:
                 'atrribute': 'SAI_DTEL_REPORT_SESSION_ATTR_TRUNCATE_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -145,7 +145,7 @@ class TestSaiDtelReportSession:
                 'atrribute': ['SAI_DTEL_REPORT_SESSION_ATTR_UDP_DST_PORT', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -159,7 +159,7 @@ class TestSaiDtelReportSession:
                 'atrribute': 'SAI_DTEL_REPORT_SESSION_ATTR_UDP_DST_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

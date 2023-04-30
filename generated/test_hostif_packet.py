@@ -46,7 +46,7 @@ class TestSaiHostifPacket:
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_HOSTIF_TRAP_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -60,7 +60,7 @@ class TestSaiHostifPacket:
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_INGRESS_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -74,7 +74,7 @@ class TestSaiHostifPacket:
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_INGRESS_LAG',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -88,7 +88,7 @@ class TestSaiHostifPacket:
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_BRIDGE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -102,7 +102,7 @@ class TestSaiHostifPacket:
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_TIMESTAMP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

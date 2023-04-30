@@ -26,7 +26,7 @@ TEST_TEMPLATE_GET = '''
                 "atrribute": "%(ATTRIBUTE)s"
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
         assert all([result == '%(EXPECTED_VALUE)s' for result in results]), 'Get error'
@@ -45,7 +45,7 @@ TEST_TEMPLATE_SET = '''
                 "atrribute": ["%(ATTRIBUTE)s", '%(EXPECTED_VALUE)s']
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'

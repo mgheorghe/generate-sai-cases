@@ -33,7 +33,7 @@ class TestSaiNeighborEntry:
                 'atrribute': ['SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -64,7 +64,7 @@ class TestSaiNeighborEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -78,7 +78,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -97,7 +97,7 @@ class TestSaiNeighborEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -111,7 +111,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_USER_TRAP_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -125,7 +125,7 @@ class TestSaiNeighborEntry:
                 'atrribute': ['SAI_NEIGHBOR_ENTRY_ATTR_NO_HOST_ROUTE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -139,7 +139,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_NO_HOST_ROUTE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -153,7 +153,7 @@ class TestSaiNeighborEntry:
                 'atrribute': ['SAI_NEIGHBOR_ENTRY_ATTR_META_DATA', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -167,7 +167,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_META_DATA',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -184,7 +184,7 @@ class TestSaiNeighborEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -198,7 +198,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_COUNTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -212,7 +212,7 @@ class TestSaiNeighborEntry:
                 'atrribute': ['SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX', 'internal'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -226,7 +226,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -240,7 +240,7 @@ class TestSaiNeighborEntry:
                 'atrribute': ['SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_IMPOSE_INDEX', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -254,7 +254,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_IMPOSE_INDEX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -268,7 +268,7 @@ class TestSaiNeighborEntry:
                 'atrribute': ['SAI_NEIGHBOR_ENTRY_ATTR_IS_LOCAL', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -282,7 +282,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_IS_LOCAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -296,7 +296,7 @@ class TestSaiNeighborEntry:
                 'atrribute': 'SAI_NEIGHBOR_ENTRY_ATTR_IP_ADDR_FAMILY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

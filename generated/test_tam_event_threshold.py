@@ -30,7 +30,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': ['SAI_TAM_EVENT_THRESHOLD_ATTR_HIGH_WATERMARK', '90'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': 'SAI_TAM_EVENT_THRESHOLD_ATTR_HIGH_WATERMARK',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '90' for result in results]), 'Get error'
@@ -58,7 +58,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': ['SAI_TAM_EVENT_THRESHOLD_ATTR_LOW_WATERMARK', '10'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -72,7 +72,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': 'SAI_TAM_EVENT_THRESHOLD_ATTR_LOW_WATERMARK',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '10' for result in results]), 'Get error'
@@ -86,7 +86,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': ['SAI_TAM_EVENT_THRESHOLD_ATTR_LATENCY', '10'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -100,7 +100,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': 'SAI_TAM_EVENT_THRESHOLD_ATTR_LATENCY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '10' for result in results]), 'Get error'
@@ -114,7 +114,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': ['SAI_TAM_EVENT_THRESHOLD_ATTR_RATE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -128,7 +128,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': 'SAI_TAM_EVENT_THRESHOLD_ATTR_RATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -142,7 +142,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': ['SAI_TAM_EVENT_THRESHOLD_ATTR_ABS_VALUE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -156,7 +156,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': 'SAI_TAM_EVENT_THRESHOLD_ATTR_ABS_VALUE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -173,7 +173,7 @@ class TestSaiTamEventThreshold:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -187,7 +187,7 @@ class TestSaiTamEventThreshold:
                 'atrribute': 'SAI_TAM_EVENT_THRESHOLD_ATTR_UNIT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(

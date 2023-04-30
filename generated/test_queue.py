@@ -65,7 +65,7 @@ class TestSaiQueue:
                 'atrribute': ['SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -79,7 +79,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -93,7 +93,7 @@ class TestSaiQueue:
                 'atrribute': ['SAI_QUEUE_ATTR_WRED_PROFILE_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -107,7 +107,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_WRED_PROFILE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -121,7 +121,7 @@ class TestSaiQueue:
                 'atrribute': ['SAI_QUEUE_ATTR_BUFFER_PROFILE_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -135,7 +135,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_BUFFER_PROFILE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -152,7 +152,7 @@ class TestSaiQueue:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -166,7 +166,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_SCHEDULER_PROFILE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -180,7 +180,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_PAUSE_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -194,7 +194,7 @@ class TestSaiQueue:
                 'atrribute': ['SAI_QUEUE_ATTR_ENABLE_PFC_DLDR', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -208,7 +208,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_ENABLE_PFC_DLDR',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -222,7 +222,7 @@ class TestSaiQueue:
                 'atrribute': ['SAI_QUEUE_ATTR_PFC_DLR_INIT', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -236,7 +236,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_PFC_DLR_INIT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -250,7 +250,7 @@ class TestSaiQueue:
                 'atrribute': ['SAI_QUEUE_ATTR_TAM_OBJECT', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -264,7 +264,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_TAM_OBJECT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -281,7 +281,7 @@ class TestSaiQueue:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -295,7 +295,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_PFC_DLR_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -311,7 +311,7 @@ class TestSaiQueue:
                 'atrribute': 'SAI_QUEUE_ATTR_PFC_CONTINUOUS_DEADLOCK_STATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

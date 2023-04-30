@@ -52,7 +52,7 @@ class TestSaiLagMember:
                 'atrribute': ['SAI_LAG_MEMBER_ATTR_EGRESS_DISABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -66,7 +66,7 @@ class TestSaiLagMember:
                 'atrribute': 'SAI_LAG_MEMBER_ATTR_EGRESS_DISABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -80,7 +80,7 @@ class TestSaiLagMember:
                 'atrribute': ['SAI_LAG_MEMBER_ATTR_INGRESS_DISABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -94,7 +94,7 @@ class TestSaiLagMember:
                 'atrribute': 'SAI_LAG_MEMBER_ATTR_INGRESS_DISABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'

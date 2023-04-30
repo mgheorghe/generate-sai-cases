@@ -41,7 +41,7 @@ class TestSaiMcastFdbEntry:
                 'atrribute': ['SAI_MCAST_FDB_ENTRY_ATTR_GROUP_ID', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -55,7 +55,7 @@ class TestSaiMcastFdbEntry:
                 'atrribute': 'SAI_MCAST_FDB_ENTRY_ATTR_GROUP_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -69,7 +69,7 @@ class TestSaiMcastFdbEntry:
                 'atrribute': ['SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -83,7 +83,7 @@ class TestSaiMcastFdbEntry:
                 'atrribute': 'SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -97,7 +97,7 @@ class TestSaiMcastFdbEntry:
                 'atrribute': ['SAI_MCAST_FDB_ENTRY_ATTR_META_DATA', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -111,7 +111,7 @@ class TestSaiMcastFdbEntry:
                 'atrribute': 'SAI_MCAST_FDB_ENTRY_ATTR_META_DATA',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

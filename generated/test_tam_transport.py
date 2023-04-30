@@ -33,7 +33,7 @@ class TestSaiTamTransport:
                 'atrribute': ['SAI_TAM_TRANSPORT_ATTR_SRC_PORT', '31337'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiTamTransport:
                 'atrribute': 'SAI_TAM_TRANSPORT_ATTR_SRC_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '31337' for result in results]), 'Get error'
@@ -61,7 +61,7 @@ class TestSaiTamTransport:
                 'atrribute': ['SAI_TAM_TRANSPORT_ATTR_DST_PORT', '31337'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -75,7 +75,7 @@ class TestSaiTamTransport:
                 'atrribute': 'SAI_TAM_TRANSPORT_ATTR_DST_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '31337' for result in results]), 'Get error'
@@ -92,7 +92,7 @@ class TestSaiTamTransport:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -106,7 +106,7 @@ class TestSaiTamTransport:
                 'atrribute': 'SAI_TAM_TRANSPORT_ATTR_TRANSPORT_AUTH_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -122,7 +122,7 @@ class TestSaiTamTransport:
                 'atrribute': ['SAI_TAM_TRANSPORT_ATTR_MTU', '1500'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -136,7 +136,7 @@ class TestSaiTamTransport:
                 'atrribute': 'SAI_TAM_TRANSPORT_ATTR_MTU',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1500' for result in results]), 'Get error'

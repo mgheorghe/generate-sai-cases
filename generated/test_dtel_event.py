@@ -36,7 +36,7 @@ class TestSaiDtelEvent:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -50,7 +50,7 @@ class TestSaiDtelEvent:
                 'atrribute': 'SAI_DTEL_EVENT_ATTR_REPORT_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -64,7 +64,7 @@ class TestSaiDtelEvent:
                 'atrribute': ['SAI_DTEL_EVENT_ATTR_DSCP_VALUE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -78,7 +78,7 @@ class TestSaiDtelEvent:
                 'atrribute': 'SAI_DTEL_EVENT_ATTR_DSCP_VALUE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

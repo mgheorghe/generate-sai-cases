@@ -41,7 +41,7 @@ class TestSaiIpmcEntry:
                 'atrribute': ['SAI_IPMC_ENTRY_ATTR_PACKET_ACTION', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -55,7 +55,7 @@ class TestSaiIpmcEntry:
                 'atrribute': 'SAI_IPMC_ENTRY_ATTR_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -72,7 +72,7 @@ class TestSaiIpmcEntry:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -86,7 +86,7 @@ class TestSaiIpmcEntry:
                 'atrribute': 'SAI_IPMC_ENTRY_ATTR_OUTPUT_GROUP_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -100,7 +100,7 @@ class TestSaiIpmcEntry:
                 'atrribute': ['SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -114,7 +114,7 @@ class TestSaiIpmcEntry:
                 'atrribute': 'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -128,7 +128,7 @@ class TestSaiIpmcEntry:
                 'atrribute': ['SAI_IPMC_ENTRY_ATTR_COUNTER_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -142,7 +142,7 @@ class TestSaiIpmcEntry:
                 'atrribute': 'SAI_IPMC_ENTRY_ATTR_COUNTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'

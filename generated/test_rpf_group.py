@@ -30,7 +30,7 @@ class TestSaiRpfGroup:
                 'atrribute': 'SAI_RPF_GROUP_ATTR_RPF_INTERFACE_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiRpfGroup:
                 'atrribute': 'SAI_RPF_GROUP_ATTR_RPF_MEMBER_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

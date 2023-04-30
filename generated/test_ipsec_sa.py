@@ -55,7 +55,7 @@ class TestSaiIpsecSa:
                 'atrribute': 'SAI_IPSEC_SA_ATTR_OCTET_COUNT_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -69,7 +69,7 @@ class TestSaiIpsecSa:
                 'atrribute': ['SAI_IPSEC_SA_ATTR_EXTERNAL_SA_INDEX', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -83,7 +83,7 @@ class TestSaiIpsecSa:
                 'atrribute': 'SAI_IPSEC_SA_ATTR_EXTERNAL_SA_INDEX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -97,7 +97,7 @@ class TestSaiIpsecSa:
                 'atrribute': 'SAI_IPSEC_SA_ATTR_SA_INDEX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -111,7 +111,7 @@ class TestSaiIpsecSa:
                 'atrribute': ['SAI_IPSEC_SA_ATTR_IPSEC_PORT_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -125,7 +125,7 @@ class TestSaiIpsecSa:
                 'atrribute': 'SAI_IPSEC_SA_ATTR_IPSEC_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -142,7 +142,7 @@ class TestSaiIpsecSa:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -156,7 +156,7 @@ class TestSaiIpsecSa:
                 'atrribute': 'SAI_IPSEC_SA_ATTR_IPSEC_REPLAY_PROTECTION_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -170,7 +170,7 @@ class TestSaiIpsecSa:
                 'atrribute': ['SAI_IPSEC_SA_ATTR_IPSEC_REPLAY_PROTECTION_WINDOW', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -184,7 +184,7 @@ class TestSaiIpsecSa:
                 'atrribute': 'SAI_IPSEC_SA_ATTR_IPSEC_REPLAY_PROTECTION_WINDOW',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -198,7 +198,7 @@ class TestSaiIpsecSa:
                 'atrribute': ['SAI_IPSEC_SA_ATTR_EGRESS_ESN', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -212,7 +212,7 @@ class TestSaiIpsecSa:
                 'atrribute': 'SAI_IPSEC_SA_ATTR_EGRESS_ESN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -226,7 +226,7 @@ class TestSaiIpsecSa:
                 'atrribute': ['SAI_IPSEC_SA_ATTR_MINIMUM_INGRESS_ESN', '1'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -240,7 +240,7 @@ class TestSaiIpsecSa:
                 'atrribute': 'SAI_IPSEC_SA_ATTR_MINIMUM_INGRESS_ESN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1' for result in results]), 'Get error'

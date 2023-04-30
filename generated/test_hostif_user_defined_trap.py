@@ -36,7 +36,7 @@ class TestSaiHostifUserDefinedTrap:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -50,7 +50,7 @@ class TestSaiHostifUserDefinedTrap:
                 'atrribute': 'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -72,7 +72,7 @@ class TestSaiHostifUserDefinedTrap:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -86,7 +86,7 @@ class TestSaiHostifUserDefinedTrap:
                 'atrribute': 'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(

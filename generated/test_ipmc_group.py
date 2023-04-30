@@ -30,7 +30,7 @@ class TestSaiIpmcGroup:
                 'atrribute': 'SAI_IPMC_GROUP_ATTR_IPMC_OUTPUT_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiIpmcGroup:
                 'atrribute': 'SAI_IPMC_GROUP_ATTR_IPMC_MEMBER_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'

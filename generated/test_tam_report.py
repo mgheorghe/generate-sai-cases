@@ -30,7 +30,7 @@ class TestSaiTamReport:
                 'atrribute': ['SAI_TAM_REPORT_ATTR_TYPE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -44,7 +44,7 @@ class TestSaiTamReport:
                 'atrribute': 'SAI_TAM_REPORT_ATTR_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -58,7 +58,7 @@ class TestSaiTamReport:
                 'atrribute': ['SAI_TAM_REPORT_ATTR_QUOTA', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -72,7 +72,7 @@ class TestSaiTamReport:
                 'atrribute': 'SAI_TAM_REPORT_ATTR_QUOTA',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -86,7 +86,7 @@ class TestSaiTamReport:
                 'atrribute': ['SAI_TAM_REPORT_ATTR_REPORT_INTERVAL', '1000'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -100,7 +100,7 @@ class TestSaiTamReport:
                 'atrribute': 'SAI_TAM_REPORT_ATTR_REPORT_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1000' for result in results]), 'Get error'
@@ -114,7 +114,7 @@ class TestSaiTamReport:
                 'atrribute': ['SAI_TAM_REPORT_ATTR_ENTERPRISE_NUMBER', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -128,7 +128,7 @@ class TestSaiTamReport:
                 'atrribute': 'SAI_TAM_REPORT_ATTR_ENTERPRISE_NUMBER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -142,7 +142,7 @@ class TestSaiTamReport:
                 'atrribute': ['SAI_TAM_REPORT_ATTR_TEMPLATE_REPORT_INTERVAL', '15'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -156,7 +156,7 @@ class TestSaiTamReport:
                 'atrribute': 'SAI_TAM_REPORT_ATTR_TEMPLATE_REPORT_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '15' for result in results]), 'Get error'

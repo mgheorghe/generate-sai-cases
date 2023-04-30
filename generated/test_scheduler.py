@@ -33,7 +33,7 @@ class TestSaiScheduler:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -47,7 +47,7 @@ class TestSaiScheduler:
                 'atrribute': 'SAI_SCHEDULER_ATTR_SCHEDULING_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -63,7 +63,7 @@ class TestSaiScheduler:
                 'atrribute': ['SAI_SCHEDULER_ATTR_SCHEDULING_WEIGHT', '1'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -77,7 +77,7 @@ class TestSaiScheduler:
                 'atrribute': 'SAI_SCHEDULER_ATTR_SCHEDULING_WEIGHT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1' for result in results]), 'Get error'
@@ -91,7 +91,7 @@ class TestSaiScheduler:
                 'atrribute': ['SAI_SCHEDULER_ATTR_METER_TYPE', 'SAI_METER_TYPE_BYTES'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -105,7 +105,7 @@ class TestSaiScheduler:
                 'atrribute': 'SAI_SCHEDULER_ATTR_METER_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -121,7 +121,7 @@ class TestSaiScheduler:
                 'atrribute': ['SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -135,7 +135,7 @@ class TestSaiScheduler:
                 'atrribute': 'SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -149,7 +149,7 @@ class TestSaiScheduler:
                 'atrribute': ['SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_BURST_RATE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -163,7 +163,7 @@ class TestSaiScheduler:
                 'atrribute': 'SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_BURST_RATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -177,7 +177,7 @@ class TestSaiScheduler:
                 'atrribute': ['SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_RATE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -191,7 +191,7 @@ class TestSaiScheduler:
                 'atrribute': 'SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_RATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -205,7 +205,7 @@ class TestSaiScheduler:
                 'atrribute': ['SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_BURST_RATE', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -219,7 +219,7 @@ class TestSaiScheduler:
                 'atrribute': 'SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_BURST_RATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'

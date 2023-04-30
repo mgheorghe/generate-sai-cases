@@ -47,7 +47,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_ACTIVE_PORTS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -61,7 +61,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_NUMBER_OF_SUPPORTED_PORTS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -75,7 +75,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -89,7 +89,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PORT_MAX_MTU',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -103,7 +103,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_CPU_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -117,7 +117,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_VIRTUAL_ROUTERS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -131,7 +131,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FDB_TABLE_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -145,7 +145,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_L3_NEIGHBOR_TABLE_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -159,7 +159,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_L3_ROUTE_TABLE_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -173,7 +173,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_MEMBERS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -187,7 +187,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_LAGS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -201,7 +201,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_MEMBERS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -215,7 +215,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_ECMP_GROUPS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -229,7 +229,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_UNICAST_QUEUES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -243,7 +243,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_MULTICAST_QUEUES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -257,7 +257,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_QUEUES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -271,7 +271,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_CPU_QUEUES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -285,7 +285,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ON_LINK_ROUTE_SUPPORTED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -299,7 +299,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_OPER_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -313,7 +313,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_NUMBER_OF_TEMP_SENSORS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -327,7 +327,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_TEMP_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -341,7 +341,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_TEMP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -355,7 +355,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVERAGE_TEMP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -369,7 +369,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_TABLE_MINIMUM_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -383,7 +383,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_TABLE_MAXIMUM_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -397,7 +397,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -411,7 +411,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_ENTRY_MAXIMUM_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -425,7 +425,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_TABLE_GROUP_MINIMUM_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -439,7 +439,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_TABLE_GROUP_MAXIMUM_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -453,7 +453,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FDB_DST_USER_META_DATA_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -467,7 +467,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ROUTE_DST_USER_META_DATA_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -481,7 +481,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NEIGHBOR_DST_USER_META_DATA_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -495,7 +495,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PORT_USER_META_DATA_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -509,7 +509,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_VLAN_USER_META_DATA_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -523,7 +523,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_USER_META_DATA_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -537,7 +537,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_USER_TRAP_ID_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -551,7 +551,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_DEFAULT_VLAN_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -565,7 +565,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -579,7 +579,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_STP_INSTANCE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -593,7 +593,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_DEFAULT_VIRTUAL_ROUTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -607,7 +607,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_DEFAULT_OVERRIDE_VIRTUAL_ROUTER_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -621,7 +621,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_DEFAULT_1Q_BRIDGE_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -635,7 +635,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_INGRESS_ACL', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -649,7 +649,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_INGRESS_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -663,7 +663,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_EGRESS_ACL', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -677,7 +677,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_EGRESS_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -691,7 +691,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_TRAFFIC_CLASSES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -707,7 +707,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_SCHEDULER_GROUP_HIERARCHY_LEVELS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -723,7 +723,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_SCHEDULER_GROUPS_PER_HIERARCHY_LEVEL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -739,7 +739,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_CHILDS_PER_SCHEDULER_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -753,7 +753,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_TOTAL_BUFFER_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -767,7 +767,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_INGRESS_BUFFER_POOL_NUM',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -781,7 +781,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_EGRESS_BUFFER_POOL_NUM',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -795,7 +795,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_IPV4_ROUTE_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -809,7 +809,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_IPV6_ROUTE_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -823,7 +823,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_IPV4_NEXTHOP_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -837,7 +837,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_IPV6_NEXTHOP_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -851,7 +851,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_IPV4_NEIGHBOR_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -865,7 +865,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_IPV6_NEIGHBOR_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -879,7 +879,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_NEXT_HOP_GROUP_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -893,7 +893,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_NEXT_HOP_GROUP_MEMBER_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -907,7 +907,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_FDB_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -921,7 +921,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_L2MC_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -935,7 +935,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_IPMC_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -949,7 +949,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_SNAT_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -963,7 +963,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_DNAT_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -977,7 +977,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_DOUBLE_NAT_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -991,7 +991,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_ACL_TABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1005,7 +1005,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_ACL_TABLE_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1019,7 +1019,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_MY_SID_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1033,7 +1033,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -1047,7 +1047,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_HASH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -1061,7 +1061,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_HASH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -1075,7 +1075,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_RESTART_WARM', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1089,7 +1089,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_RESTART_WARM',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -1103,7 +1103,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_WARM_RECOVER', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1117,7 +1117,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_WARM_RECOVER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -1131,7 +1131,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_RESTART_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1145,7 +1145,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MIN_PLANNED_RESTART_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1159,7 +1159,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NV_STORAGE_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1173,7 +1173,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_ACL_ACTION_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1187,7 +1187,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_ACL_RANGE_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1201,7 +1201,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_CAPABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1215,7 +1215,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MCAST_SNOOPING_CAPABILITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -1232,7 +1232,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1246,7 +1246,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SWITCHING_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1265,7 +1265,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_BCAST_CPU_FLOOD_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1279,7 +1279,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_BCAST_CPU_FLOOD_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -1293,7 +1293,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_MCAST_CPU_FLOOD_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1307,7 +1307,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MCAST_CPU_FLOOD_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -1321,7 +1321,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_SRC_MAC_ADDRESS', 'vendor'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1335,7 +1335,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SRC_MAC_ADDRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'vendor' for result in results]), 'Get error'
@@ -1349,7 +1349,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_MAX_LEARNED_ADDRESSES', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1363,7 +1363,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_LEARNED_ADDRESSES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -1377,7 +1377,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_FDB_AGING_TIME', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1391,7 +1391,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FDB_AGING_TIME',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -1408,7 +1408,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1422,7 +1422,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FDB_UNICAST_MISS_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1441,7 +1441,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1455,7 +1455,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FDB_BROADCAST_MISS_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1474,7 +1474,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1488,7 +1488,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FDB_MULTICAST_MISS_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1507,7 +1507,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1521,7 +1521,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_ALGORITHM',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1537,7 +1537,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_SEED', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1551,7 +1551,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_SEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -1565,7 +1565,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_OFFSET', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1579,7 +1579,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_OFFSET',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -1593,7 +1593,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_ECMP_DEFAULT_SYMMETRIC_HASH', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1607,7 +1607,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_DEFAULT_SYMMETRIC_HASH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -1621,7 +1621,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_ECMP_HASH_IPV4', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1635,7 +1635,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_HASH_IPV4',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1652,7 +1652,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1666,7 +1666,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_HASH_IPV4_IN_IPV4',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1680,7 +1680,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_ECMP_HASH_IPV6', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1694,7 +1694,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_HASH_IPV6',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1711,7 +1711,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1725,7 +1725,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_ALGORITHM',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -1741,7 +1741,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_SEED', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1755,7 +1755,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_SEED',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -1769,7 +1769,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_OFFSET', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1783,7 +1783,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_OFFSET',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -1797,7 +1797,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_LAG_DEFAULT_SYMMETRIC_HASH', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1811,7 +1811,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_DEFAULT_SYMMETRIC_HASH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -1825,7 +1825,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_LAG_HASH_IPV4', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1839,7 +1839,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_HASH_IPV4',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1856,7 +1856,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1870,7 +1870,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_HASH_IPV4_IN_IPV4',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1884,7 +1884,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_LAG_HASH_IPV6', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1898,7 +1898,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_LAG_HASH_IPV6',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -1912,7 +1912,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_COUNTER_REFRESH_INTERVAL', '1'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1926,7 +1926,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_COUNTER_REFRESH_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '1' for result in results]), 'Get error'
@@ -1940,7 +1940,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_QOS_DEFAULT_TC', '0'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1954,7 +1954,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_DEFAULT_TC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
@@ -1971,7 +1971,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -1985,7 +1985,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_DOT1P_TO_TC_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2002,7 +2002,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2016,7 +2016,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_DOT1P_TO_COLOR_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2033,7 +2033,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2047,7 +2047,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_DSCP_TO_TC_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2064,7 +2064,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2078,7 +2078,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_DSCP_TO_COLOR_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2095,7 +2095,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2109,7 +2109,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_TC_TO_QUEUE_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2126,7 +2126,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2140,7 +2140,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2157,7 +2157,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2171,7 +2171,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -2185,7 +2185,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_SWITCH_SHELL_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2199,7 +2199,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SWITCH_SHELL_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -2213,7 +2213,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_SWITCH_STATE_CHANGE_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2227,7 +2227,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SWITCH_STATE_CHANGE_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -2241,7 +2241,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_SWITCH_SHUTDOWN_REQUEST_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2255,7 +2255,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SWITCH_SHUTDOWN_REQUEST_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -2269,7 +2269,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_FDB_EVENT_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2283,7 +2283,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FDB_EVENT_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -2297,7 +2297,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_PORT_STATE_CHANGE_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2311,7 +2311,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PORT_STATE_CHANGE_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -2325,7 +2325,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_PACKET_EVENT_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2339,7 +2339,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PACKET_EVENT_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -2353,7 +2353,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_FAST_API_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2367,7 +2367,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FAST_API_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -2381,7 +2381,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_MIRROR_TC', '255'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2395,7 +2395,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MIRROR_TC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
@@ -2409,7 +2409,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_STAGE_INGRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2423,7 +2423,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_STAGE_EGRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2437,7 +2437,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SRV6_MAX_SID_DEPTH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2451,7 +2451,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SRV6_TLV_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2465,7 +2465,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_NUM_LOSSLESS_QUEUES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2479,7 +2479,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_QUEUE_PFC_DEADLOCK_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2493,7 +2493,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QUEUE_PFC_DEADLOCK_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -2510,7 +2510,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2524,7 +2524,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PFC_DLR_PACKET_ACTION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -2540,7 +2540,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PFC_TC_DLD_INTERVAL_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2554,7 +2554,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_PFC_TC_DLD_INTERVAL', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2568,7 +2568,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PFC_TC_DLD_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -2582,7 +2582,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PFC_TC_DLR_INTERVAL_RANGE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2596,7 +2596,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_PFC_TC_DLR_INTERVAL', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2610,7 +2610,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PFC_TC_DLR_INTERVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -2624,7 +2624,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SUPPORTED_PROTECTED_OBJECT_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2638,7 +2638,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_TPID_OUTER_VLAN', '0x88A8'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2652,7 +2652,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_TPID_OUTER_VLAN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0x88A8' for result in results]), 'Get error'
@@ -2666,7 +2666,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_TPID_INNER_VLAN', '0x8100'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2680,7 +2680,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_TPID_INNER_VLAN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0x8100' for result in results]), 'Get error'
@@ -2694,7 +2694,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_CRC_CHECK_ENABLE', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2708,7 +2708,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_CRC_CHECK_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -2722,7 +2722,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_CRC_RECALCULATION_ENABLE', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2736,7 +2736,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_CRC_RECALCULATION_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -2753,7 +2753,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2767,7 +2767,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_BFD_SESSION_STATE_CHANGE_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -2781,7 +2781,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_BFD_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2795,7 +2795,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_BFD_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2809,7 +2809,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SUPPORTED_IPV4_BFD_SESSION_OFFLOAD_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2823,7 +2823,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SUPPORTED_IPV6_BFD_SESSION_OFFLOAD_TYPE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2837,7 +2837,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MIN_BFD_RX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2851,7 +2851,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MIN_BFD_TX',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2865,7 +2865,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_ECN_ECT_THRESHOLD_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2879,7 +2879,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECN_ECT_THRESHOLD_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -2893,7 +2893,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC', 'vendor'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2907,7 +2907,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'vendor' for result in results]), 'Get error'
@@ -2921,7 +2921,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_VXLAN_DEFAULT_PORT', '4789'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -2935,7 +2935,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_VXLAN_DEFAULT_PORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '4789' for result in results]), 'Get error'
@@ -2949,7 +2949,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_MIRROR_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2963,7 +2963,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_SAMPLED_MIRROR_SESSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2977,7 +2977,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SUPPORTED_EXTENDED_STATS_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -2991,7 +2991,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_UNINIT_DATA_PLANE_ON_REMOVAL', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3005,7 +3005,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_UNINIT_DATA_PLANE_ON_REMOVAL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -3019,7 +3019,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_TAM_OBJECT_ID', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3033,7 +3033,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_TAM_OBJECT_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -3047,7 +3047,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_TAM_EVENT_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3061,7 +3061,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_TAM_EVENT_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -3075,7 +3075,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SUPPORTED_OBJECT_TYPE_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3089,7 +3089,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_PRE_SHUTDOWN', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3103,7 +3103,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PRE_SHUTDOWN',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3120,7 +3120,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3134,7 +3134,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NAT_ZONE_COUNTER_OBJECT_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3148,7 +3148,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_NAT_ENABLE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3162,7 +3162,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NAT_ENABLE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3176,7 +3176,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_REGISTER_READ', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3190,7 +3190,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_REGISTER_READ',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3204,7 +3204,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_REGISTER_WRITE', 'TODO'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3218,7 +3218,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_REGISTER_WRITE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3232,7 +3232,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_EXECUTE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3246,7 +3246,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_EXECUTE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3260,7 +3260,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_FIRMWARE_BROADCAST_STOP', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3274,7 +3274,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FIRMWARE_BROADCAST_STOP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3291,7 +3291,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3305,7 +3305,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FIRMWARE_VERIFY_AND_INIT_SWITCH',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -3319,7 +3319,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FIRMWARE_STATUS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3333,7 +3333,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FIRMWARE_MAJOR_VERSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3347,7 +3347,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FIRMWARE_MINOR_VERSION',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3361,7 +3361,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PORT_CONNECTOR_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3377,7 +3377,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PROPOGATE_PORT_STATE_FROM_LINE_TO_SYSTEM_PORT_SUPPORT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3391,7 +3391,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_MACSEC_OBJECT_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3405,7 +3405,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MACSEC_OBJECT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -3422,7 +3422,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3436,7 +3436,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_TC_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3453,7 +3453,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3467,7 +3467,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3484,7 +3484,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3498,7 +3498,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3512,7 +3512,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_SYSTEM_PORTS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3526,7 +3526,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SYSTEM_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -3540,7 +3540,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NUMBER_OF_FABRIC_PORTS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3554,7 +3554,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FABRIC_PORT_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'internal' for result in results]), 'Get error'
@@ -3568,7 +3568,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PACKET_DMA_MEMORY_POOL_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3585,7 +3585,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3599,7 +3599,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_FAILOVER_CONFIG_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
@@ -3618,7 +3618,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SUPPORTED_FAILOVER_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3632,7 +3632,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_TUNNEL_OBJECTS_LIST', 'empty'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3646,7 +3646,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_TUNNEL_OBJECTS_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
@@ -3660,7 +3660,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PACKET_AVAILABLE_DMA_MEMORY_POOL_SIZE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3674,7 +3674,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_PRE_INGRESS_ACL', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3688,7 +3688,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_PRE_INGRESS_ACL',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3702,7 +3702,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_SNAPT_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3716,7 +3716,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_DNAPT_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3730,7 +3730,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_DOUBLE_NAPT_ENTRY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3744,7 +3744,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MY_MAC_TABLE_MINIMUM_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3758,7 +3758,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MY_MAC_TABLE_MAXIMUM_PRIORITY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3772,7 +3772,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MY_MAC_LIST',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3786,7 +3786,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_INSTALLED_MY_MAC_ENTRIES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3800,7 +3800,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_AVAILABLE_MY_MAC_ENTRIES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3814,7 +3814,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_NUMBER_OF_FORWARDING_CLASSES',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -3831,7 +3831,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3845,7 +3845,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3862,7 +3862,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3876,7 +3876,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3890,7 +3890,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_IPSEC_OBJECT_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3904,7 +3904,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_IPSEC_OBJECT_ID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -3918,7 +3918,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_IPSEC_SA_TAG_TPID', '0xFFFE'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3932,7 +3932,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_IPSEC_SA_TAG_TPID',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '0xFFFE' for result in results]), 'Get error'
@@ -3946,7 +3946,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_IPSEC_SA_STATUS_CHANGE_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3960,7 +3960,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_IPSEC_SA_STATUS_CHANGE_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -3974,7 +3974,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_NAT_EVENT_NOTIFY', 'NULL'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -3988,7 +3988,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_NAT_EVENT_NOTIFY',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'NULL' for result in results]), 'Get error'
@@ -4002,7 +4002,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_MAX_ECMP_MEMBER_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -4016,7 +4016,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_ECMP_MEMBER_COUNT', '64'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4030,7 +4030,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ECMP_MEMBER_COUNT',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '64' for result in results]), 'Get error'
@@ -4044,7 +4044,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_ARS_PROFILE', 'SAI_NULL_OBJECT_ID'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4058,7 +4058,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ARS_PROFILE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
@@ -4072,7 +4072,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_ACL_STAGE_POST_INGRESS',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
@@ -4086,7 +4086,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_CREDIT_WD', 'true'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4100,7 +4100,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_CREDIT_WD',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
@@ -4114,7 +4114,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_CREDIT_WD_TIMER', '500'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4128,7 +4128,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_CREDIT_WD_TIMER',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == '500' for result in results]), 'Get error'
@@ -4142,7 +4142,7 @@ class TestSaiSwitch:
                 'atrribute': ['SAI_SWITCH_ATTR_SWITCH_ISOLATE', 'false'],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4156,7 +4156,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_SWITCH_ISOLATE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
@@ -4173,7 +4173,7 @@ class TestSaiSwitch:
                 ],
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
@@ -4187,7 +4187,7 @@ class TestSaiSwitch:
                 'atrribute': 'SAI_SWITCH_ATTR_HOSTIF_OPER_STATUS_UPDATE_MODE',
             }
         ]
-        results = [*dpu.process_commands(commands)]
+        results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert all(
