@@ -6,7 +6,6 @@ import pytest
 class TestSaiPort:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_port_create(self, npu):
         commands = [
             {

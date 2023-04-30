@@ -6,7 +6,6 @@ import pytest
 class TestSaiNatZoneCounter:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_nat_zone_counter_create(self, npu):
         commands = [
             {

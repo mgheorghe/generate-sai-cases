@@ -6,7 +6,6 @@ import pytest
 class TestSaiNeighborEntry:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_neighbor_entry_create(self, npu):
         commands = [
             {

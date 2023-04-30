@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamTransport:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_transport_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiVnet:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_vnet_create(self, npu):
         commands = [
             {

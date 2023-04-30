@@ -6,7 +6,6 @@ import pytest
 class TestSaiHostifUserDefinedTrap:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_hostif_user_defined_trap_create(self, npu):
         commands = [
             {

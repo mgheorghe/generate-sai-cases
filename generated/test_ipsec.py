@@ -6,7 +6,6 @@ import pytest
 class TestSaiIpsec:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_ipsec_create(self, npu):
         commands = [
             {

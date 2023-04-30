@@ -6,7 +6,6 @@ import pytest
 class TestSaiDtelQueueReport:
     # object with parent SAI_OBJECT_TYPE_QUEUE
 
-    @pytest.mark.dependency(scope='session')
     def test_dtel_queue_report_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiTunnel:
     # object with parent SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_ROUTER_INTERFACE
 
-    @pytest.mark.dependency(scope='session')
     def test_tunnel_create(self, npu):
         commands = [
             {

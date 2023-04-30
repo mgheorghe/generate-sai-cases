@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamEvent:
     # object with parent SAI_OBJECT_TYPE_TAM_EVENT_ACTION SAI_OBJECT_TYPE_TAM_COLLECTOR
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_event_create(self, npu):
         commands = [
             {

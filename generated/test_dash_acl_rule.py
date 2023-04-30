@@ -6,7 +6,6 @@ import pytest
 class TestSaiDashAclRule:
     # object with parent SAI_OBJECT_TYPE_DASH_ACL_GROUP
 
-    @pytest.mark.dependency(scope='session')
     def test_dash_acl_rule_create(self, npu):
         commands = [
             {

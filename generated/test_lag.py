@@ -6,7 +6,6 @@ import pytest
 class TestSaiLag:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_lag_create(self, npu):
         commands = [
             {

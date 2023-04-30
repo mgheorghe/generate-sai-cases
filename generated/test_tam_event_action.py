@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamEventAction:
     # object with parent SAI_OBJECT_TYPE_TAM_REPORT
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_event_action_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiSwitchTunnel:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_switch_tunnel_create(self, npu):
         commands = [
             {

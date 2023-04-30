@@ -6,7 +6,6 @@ import pytest
 class TestSaiBridgePort:
     # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_TUNNEL SAI_OBJECT_TYPE_BRIDGE
 
-    @pytest.mark.dependency(scope='session')
     def test_bridge_port_create(self, npu):
         commands = [
             {

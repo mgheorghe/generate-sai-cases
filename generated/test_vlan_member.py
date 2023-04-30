@@ -6,7 +6,6 @@ import pytest
 class TestSaiVlanMember:
     # object with parent SAI_OBJECT_TYPE_VLAN SAI_OBJECT_TYPE_BRIDGE_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_vlan_member_create(self, npu):
         commands = [
             {

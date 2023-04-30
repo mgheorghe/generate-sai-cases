@@ -6,7 +6,6 @@ import pytest
 class TestSaiPortSerdes:
     # object with parent SAI_OBJECT_TYPE_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_port_serdes_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiMyMac:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_my_mac_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiHash:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_hash_create(self, npu):
         commands = [
             {

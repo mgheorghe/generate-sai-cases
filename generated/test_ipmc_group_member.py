@@ -6,7 +6,6 @@ import pytest
 class TestSaiIpmcGroupMember:
     # object with parent SAI_OBJECT_TYPE_IPMC_GROUP SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_TUNNEL
 
-    @pytest.mark.dependency(scope='session')
     def test_ipmc_group_member_create(self, npu):
         commands = [
             {

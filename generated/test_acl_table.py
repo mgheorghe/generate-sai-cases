@@ -6,7 +6,6 @@ import pytest
 class TestSaiAclTable:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_acl_table_create(self, npu):
         commands = [
             {

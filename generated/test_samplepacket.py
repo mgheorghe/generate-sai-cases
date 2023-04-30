@@ -6,7 +6,6 @@ import pytest
 class TestSaiSamplepacket:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_samplepacket_create(self, npu):
         commands = [
             {

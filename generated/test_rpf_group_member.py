@@ -6,7 +6,6 @@ import pytest
 class TestSaiRpfGroupMember:
     # object with parent SAI_OBJECT_TYPE_RPF_GROUP SAI_OBJECT_TYPE_ROUTER_INTERFACE
 
-    @pytest.mark.dependency(scope='session')
     def test_rpf_group_member_create(self, npu):
         commands = [
             {

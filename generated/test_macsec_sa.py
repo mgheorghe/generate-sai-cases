@@ -6,7 +6,6 @@ import pytest
 class TestSaiMacsecSa:
     # object with parent SAI_OBJECT_TYPE_MACSEC_SC
 
-    @pytest.mark.dependency(scope='session')
     def test_macsec_sa_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiFdbFlush:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_fdb_flush_create(self, npu):
         commands = [
             {

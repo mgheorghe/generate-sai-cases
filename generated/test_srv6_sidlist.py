@@ -6,7 +6,6 @@ import pytest
 class TestSaiSrv6Sidlist:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_srv6_sidlist_create(self, npu):
         commands = [
             {

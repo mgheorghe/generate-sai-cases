@@ -6,7 +6,6 @@ import pytest
 class TestSaiTunnelMapEntry:
     # object with parent SAI_OBJECT_TYPE_TUNNEL_MAP SAI_OBJECT_TYPE_BRIDGE SAI_OBJECT_TYPE_BRIDGE SAI_OBJECT_TYPE_VIRTUAL_ROUTER SAI_OBJECT_TYPE_VIRTUAL_ROUTER
 
-    @pytest.mark.dependency(scope='session')
     def test_tunnel_map_entry_create(self, npu):
         commands = [
             {

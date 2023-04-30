@@ -6,7 +6,6 @@ import pytest
 class TestSaiL2McGroup:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_l2mc_group_create(self, npu):
         commands = [
             {

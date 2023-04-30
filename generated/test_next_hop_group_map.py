@@ -6,7 +6,6 @@ import pytest
 class TestSaiNextHopGroupMap:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_next_hop_group_map_create(self, npu):
         commands = [
             {

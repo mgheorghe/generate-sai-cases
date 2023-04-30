@@ -6,7 +6,6 @@ import pytest
 class TestSaiInsegEntry:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_inseg_entry_create(self, npu):
         commands = [
             {

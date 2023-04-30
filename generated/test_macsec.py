@@ -6,7 +6,6 @@ import pytest
 class TestSaiMacsec:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_macsec_create(self, npu):
         commands = [
             {

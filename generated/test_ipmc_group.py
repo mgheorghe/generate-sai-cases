@@ -6,7 +6,6 @@ import pytest
 class TestSaiIpmcGroup:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_ipmc_group_create(self, npu):
         commands = [
             {

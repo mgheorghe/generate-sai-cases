@@ -6,7 +6,6 @@ import pytest
 class TestSaiUdfGroup:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_udf_group_create(self, npu):
         commands = [
             {

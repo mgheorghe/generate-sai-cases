@@ -6,7 +6,6 @@ import pytest
 class TestSaiMcastFdbEntry:
     # object with parent SAI_OBJECT_TYPE_L2MC_GROUP
 
-    @pytest.mark.dependency(scope='session')
     def test_mcast_fdb_entry_create(self, npu):
         commands = [
             {

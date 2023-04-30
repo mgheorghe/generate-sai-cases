@@ -6,7 +6,6 @@ import pytest
 class TestSaiPolicer:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_policer_create(self, npu):
         commands = [
             {

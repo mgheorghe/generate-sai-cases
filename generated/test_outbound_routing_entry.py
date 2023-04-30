@@ -6,7 +6,6 @@ import pytest
 class TestSaiOutboundRoutingEntry:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_outbound_routing_entry_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiMacsecPort:
     # object with parent SAI_OBJECT_TYPE_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_macsec_port_create(self, npu):
         commands = [
             {

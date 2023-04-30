@@ -6,7 +6,6 @@ import pytest
 class TestSaiExtensionsRangeStart:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_extensions_range_start_create(self, npu):
         commands = [
             {

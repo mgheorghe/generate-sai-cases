@@ -6,7 +6,6 @@ import pytest
 class TestSaiBufferProfile:
     # object with parent SAI_OBJECT_TYPE_BUFFER_POOL
 
-    @pytest.mark.dependency(scope='session')
     def test_buffer_profile_create(self, npu):
         commands = [
             {

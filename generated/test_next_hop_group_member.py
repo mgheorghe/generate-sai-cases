@@ -6,7 +6,6 @@ import pytest
 class TestSaiNextHopGroupMember:
     # object with parent SAI_OBJECT_TYPE_NEXT_HOP_GROUP SAI_OBJECT_TYPE_NEXT_HOP SAI_OBJECT_TYPE_NEXT_HOP_GROUP
 
-    @pytest.mark.dependency(scope='session')
     def test_next_hop_group_member_create(self, npu):
         commands = [
             {

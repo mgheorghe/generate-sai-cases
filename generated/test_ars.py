@@ -6,7 +6,6 @@ import pytest
 class TestSaiArs:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_ars_create(self, npu):
         commands = [
             {

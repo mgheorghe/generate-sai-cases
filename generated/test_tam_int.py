@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamInt:
     # object with parent SAI_OBJECT_TYPE_TAM_REPORT
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_int_create(self, npu):
         commands = [
             {

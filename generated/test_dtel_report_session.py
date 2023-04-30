@@ -6,7 +6,6 @@ import pytest
 class TestSaiDtelReportSession:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_dtel_report_session_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiNatEntry:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_nat_entry_create(self, npu):
         commands = [
             {

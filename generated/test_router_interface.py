@@ -6,7 +6,6 @@ import pytest
 class TestSaiRouterInterface:
     # object with parent SAI_OBJECT_TYPE_VIRTUAL_ROUTER SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT SAI_OBJECT_TYPE_VLAN SAI_OBJECT_TYPE_BRIDGE
 
-    @pytest.mark.dependency(scope='session')
     def test_router_interface_create(self, npu):
         commands = [
             {

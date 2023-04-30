@@ -6,7 +6,6 @@ import pytest
 class TestSaiIpsecPort:
     # object with parent SAI_OBJECT_TYPE_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_ipsec_port_create(self, npu):
         commands = [
             {

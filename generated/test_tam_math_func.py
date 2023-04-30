@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamMathFunc:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_math_func_create(self, npu):
         commands = [
             {

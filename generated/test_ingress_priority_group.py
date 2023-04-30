@@ -6,7 +6,6 @@ import pytest
 class TestSaiIngressPriorityGroup:
     # object with parent SAI_OBJECT_TYPE_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_ingress_priority_group_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiOutboundCaToPaEntry:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_outbound_ca_to_pa_entry_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiPaValidationEntry:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_pa_validation_entry_create(self, npu):
         commands = [
             {

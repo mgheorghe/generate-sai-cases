@@ -6,7 +6,6 @@ import pytest
 class TestSaiUdfMatch:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_udf_match_create(self, npu):
         commands = [
             {

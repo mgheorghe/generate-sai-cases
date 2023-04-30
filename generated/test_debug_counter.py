@@ -6,7 +6,6 @@ import pytest
 class TestSaiDebugCounter:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_debug_counter_create(self, npu):
         commands = [
             {

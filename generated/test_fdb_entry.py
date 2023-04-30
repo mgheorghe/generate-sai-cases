@@ -6,7 +6,6 @@ import pytest
 class TestSaiFdbEntry:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_fdb_entry_create(self, npu):
         commands = [
             {

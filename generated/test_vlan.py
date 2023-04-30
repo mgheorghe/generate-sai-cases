@@ -6,7 +6,6 @@ import pytest
 class TestSaiVlan:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_vlan_create(self, npu):
         commands = [
             {

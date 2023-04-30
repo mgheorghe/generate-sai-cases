@@ -6,7 +6,6 @@ import pytest
 class TestSaiMax:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_max_create(self, npu):
         commands = [
             {

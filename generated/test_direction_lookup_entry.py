@@ -6,7 +6,6 @@ import pytest
 class TestSaiDirectionLookupEntry:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_direction_lookup_entry_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiBridge:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_bridge_create(self, npu):
         commands = [
             {

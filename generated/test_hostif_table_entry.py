@@ -6,7 +6,6 @@ import pytest
 class TestSaiHostifTableEntry:
     # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_HOSTIF_TRAP SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP SAI_OBJECT_TYPE_HOSTIF
 
-    @pytest.mark.dependency(scope='session')
     def test_hostif_table_entry_create(self, npu):
         commands = [
             {

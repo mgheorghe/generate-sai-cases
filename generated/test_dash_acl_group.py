@@ -6,7 +6,6 @@ import pytest
 class TestSaiDashAclGroup:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_dash_acl_group_create(self, npu):
         commands = [
             {

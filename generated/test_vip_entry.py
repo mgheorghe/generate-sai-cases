@@ -6,7 +6,6 @@ import pytest
 class TestSaiVipEntry:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_vip_entry_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiAclEntry:
     # object with parent SAI_OBJECT_TYPE_ACL_TABLE
 
-    @pytest.mark.dependency(scope='session')
     def test_acl_entry_create(self, npu):
         commands = [
             {

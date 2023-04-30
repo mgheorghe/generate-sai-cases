@@ -61,7 +61,6 @@ import pytest
 class TestSai%(CLASS_NAME)s:
     # %(COMMENT)s
 
-    @pytest.mark.dependency(scope='session')
     def test_%(OBJECT_NAME)s_create(self, npu):
 
         commands = %(CREATE_COMMANDS)s

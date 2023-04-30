@@ -6,7 +6,6 @@ import pytest
 class TestSaiGenericProgrammable:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_generic_programmable_create(self, npu):
         commands = [
             {

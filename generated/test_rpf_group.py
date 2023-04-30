@@ -6,7 +6,6 @@ import pytest
 class TestSaiRpfGroup:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_rpf_group_create(self, npu):
         commands = [
             {

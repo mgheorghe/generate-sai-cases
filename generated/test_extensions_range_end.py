@@ -6,7 +6,6 @@ import pytest
 class TestSaiExtensionsRangeEnd:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_extensions_range_end_create(self, npu):
         commands = [
             {

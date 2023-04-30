@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamEventThreshold:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_event_threshold_create(self, npu):
         commands = [
             {

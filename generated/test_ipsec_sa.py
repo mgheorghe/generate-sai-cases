@@ -6,7 +6,6 @@ import pytest
 class TestSaiIpsecSa:
     # object with parent SAI_OBJECT_TYPE_IPSEC
 
-    @pytest.mark.dependency(scope='session')
     def test_ipsec_sa_create(self, npu):
         commands = [
             {

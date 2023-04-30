@@ -6,7 +6,6 @@ import pytest
 class TestSaiL2McGroupMember:
     # object with parent SAI_OBJECT_TYPE_L2MC_GROUP SAI_OBJECT_TYPE_BRIDGE_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_l2mc_group_member_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamReport:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_report_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiTableBitmapRouterEntry:
     # object with parent SAI_OBJECT_TYPE_NEXT_HOP SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_HOSTIF_TRAP
 
-    @pytest.mark.dependency(scope='session')
     def test_table_bitmap_router_entry_create(self, npu):
         commands = [
             {

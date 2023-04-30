@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamCollector:
     # object with parent SAI_OBJECT_TYPE_TAM_TRANSPORT
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_collector_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiBfdSession:
     # object with parent SAI_OBJECT_TYPE_VIRTUAL_ROUTER SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_SRV6_SIDLIST
 
-    @pytest.mark.dependency(scope='session')
     def test_bfd_session_create(self, npu):
         commands = [
             {

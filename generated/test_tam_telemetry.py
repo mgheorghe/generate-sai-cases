@@ -6,7 +6,6 @@ import pytest
 class TestSaiTamTelemetry:
     # object with parent SAI_OBJECT_TYPE_TAM_COLLECTOR
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_telemetry_create(self, npu):
         commands = [
             {

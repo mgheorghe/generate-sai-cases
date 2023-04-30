@@ -6,7 +6,6 @@ import pytest
 class TestSaiMirrorSession:
     # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_mirror_session_create(self, npu):
         commands = [
             {

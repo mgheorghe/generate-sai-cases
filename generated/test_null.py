@@ -6,7 +6,6 @@ import pytest
 class TestSaiNull:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_null_create(self, npu):
         commands = [
             {

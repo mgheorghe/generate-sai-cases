@@ -6,7 +6,6 @@ import pytest
 class TestSaiQosMap:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_qos_map_create(self, npu):
         commands = [
             {

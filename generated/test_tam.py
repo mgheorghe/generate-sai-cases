@@ -6,7 +6,6 @@ import pytest
 class TestSaiTam:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_tam_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiIsolationGroupMember:
     # object with parent SAI_OBJECT_TYPE_ISOLATION_GROUP SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_BRIDGE_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_isolation_group_member_create(self, npu):
         commands = [
             {

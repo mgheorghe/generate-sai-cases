@@ -6,7 +6,6 @@ import pytest
 class TestSaiSystemPort:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_system_port_create(self, npu):
         commands = [
             {

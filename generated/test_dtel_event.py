@@ -6,7 +6,6 @@ import pytest
 class TestSaiDtelEvent:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_dtel_event_create(self, npu):
         commands = [
             {

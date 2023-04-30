@@ -6,7 +6,6 @@ import pytest
 class TestSaiSchedulerGroup:
     # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_SCHEDULER_GROUP SAI_OBJECT_TYPE_PORT
 
-    @pytest.mark.dependency(scope='session')
     def test_scheduler_group_create(self, npu):
         commands = [
             {

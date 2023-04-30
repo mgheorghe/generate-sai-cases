@@ -6,7 +6,6 @@ import pytest
 class TestSaiCounter:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_counter_create(self, npu):
         commands = [
             {

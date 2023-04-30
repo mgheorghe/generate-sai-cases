@@ -6,7 +6,6 @@ import pytest
 class TestSaiTableMetaTunnelEntry:
     # object with parent SAI_OBJECT_TYPE_TUNNEL
 
-    @pytest.mark.dependency(scope='session')
     def test_table_meta_tunnel_entry_create(self, npu):
         commands = [
             {

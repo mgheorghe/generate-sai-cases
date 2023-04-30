@@ -6,7 +6,6 @@ import pytest
 class TestSaiTunnelTermTableEntry:
     # object with parent SAI_OBJECT_TYPE_VIRTUAL_ROUTER SAI_OBJECT_TYPE_TUNNEL
 
-    @pytest.mark.dependency(scope='session')
     def test_tunnel_term_table_entry_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiIsolationGroup:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_isolation_group_create(self, npu):
         commands = [
             {

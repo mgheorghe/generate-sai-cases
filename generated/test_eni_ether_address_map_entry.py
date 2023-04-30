@@ -6,7 +6,6 @@ import pytest
 class TestSaiEniEtherAddressMapEntry:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_eni_ether_address_map_entry_create(self, npu):
         commands = [
             {

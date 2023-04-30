@@ -6,7 +6,6 @@ import pytest
 class TestSaiFineGrainedHashField:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_fine_grained_hash_field_create(self, npu):
         commands = [
             {

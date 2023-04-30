@@ -6,7 +6,6 @@ import pytest
 class TestSaiIpmcEntry:
     # object with parent SAI_OBJECT_TYPE_RPF_GROUP
 
-    @pytest.mark.dependency(scope='session')
     def test_ipmc_entry_create(self, npu):
         commands = [
             {

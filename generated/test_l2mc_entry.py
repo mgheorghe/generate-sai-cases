@@ -6,7 +6,6 @@ import pytest
 class TestSaiL2McEntry:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_l2mc_entry_create(self, npu):
         commands = [
             {

@@ -6,7 +6,6 @@ import pytest
 class TestSaiNextHop:
     # object with parent SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_TUNNEL SAI_OBJECT_TYPE_SRV6_SIDLIST
 
-    @pytest.mark.dependency(scope='session')
     def test_next_hop_create(self, npu):
         commands = [
             {

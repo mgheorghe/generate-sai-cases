@@ -6,7 +6,6 @@ import pytest
 class TestSaiHostInterface:
     # object with no attributes
 
-    @pytest.mark.dependency(scope='session')
     def test_host_interface_create(self, npu):
         commands = [
             {

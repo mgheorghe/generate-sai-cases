@@ -6,7 +6,6 @@ import pytest
 class TestSaiUdf:
     # object with parent SAI_OBJECT_TYPE_UDF_MATCH SAI_OBJECT_TYPE_UDF_GROUP
 
-    @pytest.mark.dependency(scope='session')
     def test_udf_create(self, npu):
         commands = [
             {

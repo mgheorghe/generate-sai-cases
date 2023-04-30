@@ -6,7 +6,6 @@ import pytest
 class TestSaiPortPool:
     # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_BUFFER_POOL
 
-    @pytest.mark.dependency(scope='session')
     def test_port_pool_create(self, npu):
         commands = [
             {

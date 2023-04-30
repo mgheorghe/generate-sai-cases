@@ -6,7 +6,6 @@ import pytest
 class TestSaiMySidEntry:
     # object with no parents
 
-    @pytest.mark.dependency(scope='session')
     def test_my_sid_entry_create(self, npu):
         commands = [
             {
