@@ -24,7 +24,7 @@ class TestSaiHostifUserDefinedTrap:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_hostif_user_defined_trap_attr_trap_priority_set(self, dpu):
+    def test_sai_hostif_user_defined_trap_attr_trap_priority_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_user_defined_trap_attr_trap_priority_set',
@@ -41,7 +41,7 @@ class TestSaiHostifUserDefinedTrap:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_user_defined_trap_attr_trap_priority_get(self, dpu):
+    def test_sai_hostif_user_defined_trap_attr_trap_priority_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_user_defined_trap_attr_trap_priority_get',
@@ -60,7 +60,7 @@ class TestSaiHostifUserDefinedTrap:
             ]
         ), 'Get error'
 
-    def test_sai_hostif_user_defined_trap_attr_trap_group_set(self, dpu):
+    def test_sai_hostif_user_defined_trap_attr_trap_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_user_defined_trap_attr_trap_group_set',
@@ -77,7 +77,7 @@ class TestSaiHostifUserDefinedTrap:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_user_defined_trap_attr_trap_group_get(self, dpu):
+    def test_sai_hostif_user_defined_trap_attr_trap_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_user_defined_trap_attr_trap_group_get',

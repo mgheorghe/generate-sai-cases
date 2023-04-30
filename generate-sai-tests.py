@@ -16,7 +16,7 @@ SAI_CODE_LOCATION = r'C:/github-mgheorghe/SAI'
 
 TEST_TEMPLATE_GET = '''
 
-    def test_%(ATTR_NAME)s_get(self, dpu):
+    def test_%(ATTR_NAME)s_get(self, npu):
 
         commands = [
             {
@@ -35,7 +35,7 @@ TEST_TEMPLATE_GET = '''
 
 TEST_TEMPLATE_SET = '''
 
-    def test_%(ATTR_NAME)s_set(self, dpu):
+    def test_%(ATTR_NAME)s_set(self, npu):
 
         commands = [
             {

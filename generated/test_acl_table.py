@@ -21,7 +21,7 @@ class TestSaiAclTable:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_acl_table_attr_entry_list_get(self, dpu):
+    def test_sai_acl_table_attr_entry_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_table_attr_entry_list_get',
@@ -35,7 +35,7 @@ class TestSaiAclTable:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_acl_table_attr_available_acl_entry_get(self, dpu):
+    def test_sai_acl_table_attr_available_acl_entry_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_table_attr_available_acl_entry_get',
@@ -49,7 +49,7 @@ class TestSaiAclTable:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_acl_table_attr_available_acl_counter_get(self, dpu):
+    def test_sai_acl_table_attr_available_acl_counter_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_table_attr_available_acl_counter_get',

@@ -26,7 +26,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_hostif_trap_attr_packet_action_set(self, dpu):
+    def test_sai_hostif_trap_attr_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_packet_action_set',
@@ -40,7 +40,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_packet_action_get(self, dpu):
+    def test_sai_hostif_trap_attr_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_packet_action_get',
@@ -54,7 +54,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_trap_priority_set(self, dpu):
+    def test_sai_hostif_trap_attr_trap_priority_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_trap_priority_set',
@@ -71,7 +71,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_trap_priority_get(self, dpu):
+    def test_sai_hostif_trap_attr_trap_priority_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_trap_priority_get',
@@ -90,7 +90,7 @@ class TestSaiHostifTrap:
             ]
         ), 'Get error'
 
-    def test_sai_hostif_trap_attr_exclude_port_list_set(self, dpu):
+    def test_sai_hostif_trap_attr_exclude_port_list_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_exclude_port_list_set',
@@ -104,7 +104,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_exclude_port_list_get(self, dpu):
+    def test_sai_hostif_trap_attr_exclude_port_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_exclude_port_list_get',
@@ -118,7 +118,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_trap_group_set(self, dpu):
+    def test_sai_hostif_trap_attr_trap_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_trap_group_set',
@@ -135,7 +135,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_trap_group_get(self, dpu):
+    def test_sai_hostif_trap_attr_trap_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_trap_group_get',
@@ -154,7 +154,7 @@ class TestSaiHostifTrap:
             ]
         ), 'Get error'
 
-    def test_sai_hostif_trap_attr_mirror_session_set(self, dpu):
+    def test_sai_hostif_trap_attr_mirror_session_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_mirror_session_set',
@@ -168,7 +168,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_mirror_session_get(self, dpu):
+    def test_sai_hostif_trap_attr_mirror_session_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_mirror_session_get',
@@ -182,7 +182,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_counter_id_set(self, dpu):
+    def test_sai_hostif_trap_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_counter_id_set',
@@ -196,7 +196,7 @@ class TestSaiHostifTrap:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_attr_counter_id_get(self, dpu):
+    def test_sai_hostif_trap_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_attr_counter_id_get',

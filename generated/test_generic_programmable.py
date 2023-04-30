@@ -21,7 +21,7 @@ class TestSaiGenericProgrammable:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_generic_programmable_attr_entry_set(self, dpu):
+    def test_sai_generic_programmable_attr_entry_set(self, npu):
         commands = [
             {
                 'name': 'sai_generic_programmable_attr_entry_set',
@@ -35,7 +35,7 @@ class TestSaiGenericProgrammable:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_generic_programmable_attr_entry_get(self, dpu):
+    def test_sai_generic_programmable_attr_entry_get(self, npu):
         commands = [
             {
                 'name': 'sai_generic_programmable_attr_entry_get',
@@ -49,7 +49,7 @@ class TestSaiGenericProgrammable:
         pprint(results)
         assert all([result == 'vendor' for result in results]), 'Get error'
 
-    def test_sai_generic_programmable_attr_counter_id_set(self, dpu):
+    def test_sai_generic_programmable_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_generic_programmable_attr_counter_id_set',
@@ -66,7 +66,7 @@ class TestSaiGenericProgrammable:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_generic_programmable_attr_counter_id_get(self, dpu):
+    def test_sai_generic_programmable_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_generic_programmable_attr_counter_id_get',

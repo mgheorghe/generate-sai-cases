@@ -21,7 +21,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_ars_profile_attr_algo_set(self, dpu):
+    def test_sai_ars_profile_attr_algo_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_algo_set',
@@ -35,7 +35,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_algo_get(self, dpu):
+    def test_sai_ars_profile_attr_algo_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_algo_get',
@@ -51,7 +51,7 @@ class TestSaiArsProfile:
             [result == 'SAI_ARS_PROFILE_ALGO_EWMA' for result in results]
         ), 'Get error'
 
-    def test_sai_ars_profile_attr_sampling_interval_set(self, dpu):
+    def test_sai_ars_profile_attr_sampling_interval_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_sampling_interval_set',
@@ -65,7 +65,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_sampling_interval_get(self, dpu):
+    def test_sai_ars_profile_attr_sampling_interval_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_sampling_interval_get',
@@ -79,7 +79,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_ars_random_seed_set(self, dpu):
+    def test_sai_ars_profile_attr_ars_random_seed_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_ars_random_seed_set',
@@ -93,7 +93,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_ars_random_seed_get(self, dpu):
+    def test_sai_ars_profile_attr_ars_random_seed_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_ars_random_seed_get',
@@ -107,7 +107,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_ecmp_ars_max_groups_get(self, dpu):
+    def test_sai_ars_profile_attr_ecmp_ars_max_groups_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_ecmp_ars_max_groups_get',
@@ -121,7 +121,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_ecmp_ars_max_members_per_group_get(self, dpu):
+    def test_sai_ars_profile_attr_ecmp_ars_max_members_per_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_ecmp_ars_max_members_per_group_get',
@@ -135,7 +135,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_lag_ars_max_groups_get(self, dpu):
+    def test_sai_ars_profile_attr_lag_ars_max_groups_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_lag_ars_max_groups_get',
@@ -149,7 +149,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_lag_ars_max_members_per_group_get(self, dpu):
+    def test_sai_ars_profile_attr_lag_ars_max_members_per_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_lag_ars_max_members_per_group_get',
@@ -163,7 +163,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_past_set(self, dpu):
+    def test_sai_ars_profile_attr_port_load_past_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_past_set',
@@ -177,7 +177,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_past_get(self, dpu):
+    def test_sai_ars_profile_attr_port_load_past_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_past_get',
@@ -191,7 +191,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_past_weight_set(self, dpu):
+    def test_sai_ars_profile_attr_port_load_past_weight_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_past_weight_set',
@@ -205,7 +205,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_past_weight_get(self, dpu):
+    def test_sai_ars_profile_attr_port_load_past_weight_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_past_weight_get',
@@ -219,7 +219,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_future_set(self, dpu):
+    def test_sai_ars_profile_attr_port_load_future_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_future_set',
@@ -233,7 +233,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_future_get(self, dpu):
+    def test_sai_ars_profile_attr_port_load_future_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_future_get',
@@ -247,7 +247,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_future_weight_set(self, dpu):
+    def test_sai_ars_profile_attr_port_load_future_weight_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_future_weight_set',
@@ -261,7 +261,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_future_weight_get(self, dpu):
+    def test_sai_ars_profile_attr_port_load_future_weight_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_future_weight_get',
@@ -275,7 +275,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_current_set(self, dpu):
+    def test_sai_ars_profile_attr_port_load_current_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_current_set',
@@ -289,7 +289,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_current_get(self, dpu):
+    def test_sai_ars_profile_attr_port_load_current_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_current_get',
@@ -303,7 +303,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_exponent_set(self, dpu):
+    def test_sai_ars_profile_attr_port_load_exponent_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_exponent_set',
@@ -317,7 +317,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_port_load_exponent_get(self, dpu):
+    def test_sai_ars_profile_attr_port_load_exponent_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_port_load_exponent_get',
@@ -331,7 +331,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '2' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_bands_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_bands_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_bands_get',
@@ -345,7 +345,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_0_min_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_0_min_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_0_min_threshold_set',
@@ -359,7 +359,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_0_min_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_0_min_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_0_min_threshold_get',
@@ -373,7 +373,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_0_max_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_0_max_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_0_max_threshold_set',
@@ -387,7 +387,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_0_max_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_0_max_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_0_max_threshold_get',
@@ -401,7 +401,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_1_min_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_1_min_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_1_min_threshold_set',
@@ -415,7 +415,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_1_min_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_1_min_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_1_min_threshold_get',
@@ -429,7 +429,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_1_max_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_1_max_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_1_max_threshold_set',
@@ -443,7 +443,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_1_max_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_1_max_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_1_max_threshold_get',
@@ -457,7 +457,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_2_min_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_2_min_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_2_min_threshold_set',
@@ -471,7 +471,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_2_min_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_2_min_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_2_min_threshold_get',
@@ -485,7 +485,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_2_max_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_2_max_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_2_max_threshold_set',
@@ -499,7 +499,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_2_max_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_2_max_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_2_max_threshold_get',
@@ -513,7 +513,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_3_min_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_3_min_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_3_min_threshold_set',
@@ -527,7 +527,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_3_min_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_3_min_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_3_min_threshold_get',
@@ -541,7 +541,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_3_max_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_3_max_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_3_max_threshold_set',
@@ -555,7 +555,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_3_max_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_3_max_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_3_max_threshold_get',
@@ -569,7 +569,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_4_min_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_4_min_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_4_min_threshold_set',
@@ -583,7 +583,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_4_min_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_4_min_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_4_min_threshold_get',
@@ -597,7 +597,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_4_max_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_4_max_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_4_max_threshold_set',
@@ -611,7 +611,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_4_max_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_4_max_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_4_max_threshold_get',
@@ -625,7 +625,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_5_min_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_5_min_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_5_min_threshold_set',
@@ -639,7 +639,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_5_min_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_5_min_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_5_min_threshold_get',
@@ -653,7 +653,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_5_max_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_5_max_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_5_max_threshold_set',
@@ -667,7 +667,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_5_max_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_5_max_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_5_max_threshold_get',
@@ -681,7 +681,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_6_min_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_6_min_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_6_min_threshold_set',
@@ -695,7 +695,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_6_min_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_6_min_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_6_min_threshold_get',
@@ -709,7 +709,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_6_max_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_6_max_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_6_max_threshold_set',
@@ -723,7 +723,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_6_max_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_6_max_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_6_max_threshold_get',
@@ -737,7 +737,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_7_min_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_7_min_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_7_min_threshold_set',
@@ -751,7 +751,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_7_min_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_7_min_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_7_min_threshold_get',
@@ -765,7 +765,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_7_max_threshold_set(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_7_max_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_7_max_threshold_set',
@@ -779,7 +779,7 @@ class TestSaiArsProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_profile_attr_quant_band_7_max_threshold_get(self, dpu):
+    def test_sai_ars_profile_attr_quant_band_7_max_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_profile_attr_quant_band_7_max_threshold_get',

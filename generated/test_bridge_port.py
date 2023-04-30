@@ -97,7 +97,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_bridge_port_attr_tagging_mode_set(self, dpu):
+    def test_sai_bridge_port_attr_tagging_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_tagging_mode_set',
@@ -114,7 +114,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_tagging_mode_get(self, dpu):
+    def test_sai_bridge_port_attr_tagging_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_tagging_mode_get',
@@ -130,7 +130,7 @@ class TestSaiBridgePort:
             [result == 'SAI_BRIDGE_PORT_TAGGING_MODE_TAGGED' for result in results]
         ), 'Get error'
 
-    def test_sai_bridge_port_attr_bridge_id_set(self, dpu):
+    def test_sai_bridge_port_attr_bridge_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_bridge_id_set',
@@ -144,7 +144,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_bridge_id_get(self, dpu):
+    def test_sai_bridge_port_attr_bridge_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_bridge_id_get',
@@ -158,7 +158,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_fdb_learning_mode_set(self, dpu):
+    def test_sai_bridge_port_attr_fdb_learning_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_fdb_learning_mode_set',
@@ -175,7 +175,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_fdb_learning_mode_get(self, dpu):
+    def test_sai_bridge_port_attr_fdb_learning_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_fdb_learning_mode_get',
@@ -191,7 +191,7 @@ class TestSaiBridgePort:
             [result == 'SAI_BRIDGE_PORT_FDB_LEARNING_MODE_HW' for result in results]
         ), 'Get error'
 
-    def test_sai_bridge_port_attr_max_learned_addresses_set(self, dpu):
+    def test_sai_bridge_port_attr_max_learned_addresses_set(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_max_learned_addresses_set',
@@ -205,7 +205,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_max_learned_addresses_get(self, dpu):
+    def test_sai_bridge_port_attr_max_learned_addresses_get(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_max_learned_addresses_get',
@@ -220,7 +220,7 @@ class TestSaiBridgePort:
         assert all([result == '0' for result in results]), 'Get error'
 
     def test_sai_bridge_port_attr_fdb_learning_limit_violation_packet_action_set(
-        self, dpu
+        self, npu
     ):
         commands = [
             {
@@ -239,7 +239,7 @@ class TestSaiBridgePort:
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
     def test_sai_bridge_port_attr_fdb_learning_limit_violation_packet_action_get(
-        self, dpu
+        self, npu
     ):
         commands = [
             {
@@ -256,7 +256,7 @@ class TestSaiBridgePort:
             [result == 'SAI_PACKET_ACTION_DROP' for result in results]
         ), 'Get error'
 
-    def test_sai_bridge_port_attr_admin_state_set(self, dpu):
+    def test_sai_bridge_port_attr_admin_state_set(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_admin_state_set',
@@ -270,7 +270,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_admin_state_get(self, dpu):
+    def test_sai_bridge_port_attr_admin_state_get(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_admin_state_get',
@@ -284,7 +284,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_ingress_filtering_set(self, dpu):
+    def test_sai_bridge_port_attr_ingress_filtering_set(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_ingress_filtering_set',
@@ -298,7 +298,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_ingress_filtering_get(self, dpu):
+    def test_sai_bridge_port_attr_ingress_filtering_get(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_ingress_filtering_get',
@@ -312,7 +312,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_egress_filtering_set(self, dpu):
+    def test_sai_bridge_port_attr_egress_filtering_set(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_egress_filtering_set',
@@ -326,7 +326,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_egress_filtering_get(self, dpu):
+    def test_sai_bridge_port_attr_egress_filtering_get(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_egress_filtering_get',
@@ -340,7 +340,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_isolation_group_set(self, dpu):
+    def test_sai_bridge_port_attr_isolation_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_isolation_group_set',
@@ -357,7 +357,7 @@ class TestSaiBridgePort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bridge_port_attr_isolation_group_get(self, dpu):
+    def test_sai_bridge_port_attr_isolation_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_bridge_port_attr_isolation_group_get',

@@ -21,7 +21,7 @@ class TestSaiL2McGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_l2mc_group_attr_l2mc_output_count_get(self, dpu):
+    def test_sai_l2mc_group_attr_l2mc_output_count_get(self, npu):
         commands = [
             {
                 'name': 'sai_l2mc_group_attr_l2mc_output_count_get',
@@ -35,7 +35,7 @@ class TestSaiL2McGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_l2mc_group_attr_l2mc_member_list_get(self, dpu):
+    def test_sai_l2mc_group_attr_l2mc_member_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_l2mc_group_attr_l2mc_member_list_get',

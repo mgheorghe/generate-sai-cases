@@ -24,7 +24,7 @@ class TestSaiL2McEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_l2mc_entry_attr_packet_action_set(self, dpu):
+    def test_sai_l2mc_entry_attr_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_l2mc_entry_attr_packet_action_set',
@@ -38,7 +38,7 @@ class TestSaiL2McEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_l2mc_entry_attr_packet_action_get(self, dpu):
+    def test_sai_l2mc_entry_attr_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_l2mc_entry_attr_packet_action_get',
@@ -52,7 +52,7 @@ class TestSaiL2McEntry:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_l2mc_entry_attr_output_group_id_set(self, dpu):
+    def test_sai_l2mc_entry_attr_output_group_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_l2mc_entry_attr_output_group_id_set',
@@ -69,7 +69,7 @@ class TestSaiL2McEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_l2mc_entry_attr_output_group_id_get(self, dpu):
+    def test_sai_l2mc_entry_attr_output_group_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_l2mc_entry_attr_output_group_id_get',

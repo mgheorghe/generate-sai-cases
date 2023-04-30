@@ -27,7 +27,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_acl_entry_attr_priority_set(self, dpu):
+    def test_sai_acl_entry_attr_priority_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_priority_set',
@@ -41,7 +41,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_priority_get(self, dpu):
+    def test_sai_acl_entry_attr_priority_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_priority_get',
@@ -55,7 +55,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_admin_state_set(self, dpu):
+    def test_sai_acl_entry_attr_admin_state_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_admin_state_set',
@@ -69,7 +69,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_admin_state_get(self, dpu):
+    def test_sai_acl_entry_attr_admin_state_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_admin_state_get',
@@ -83,7 +83,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_set(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_set',
@@ -97,7 +97,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_get(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_get',
@@ -111,7 +111,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_word3_set(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_word3_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_word3_set',
@@ -125,7 +125,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_word3_get(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_word3_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_word3_get',
@@ -139,7 +139,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_word2_set(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_word2_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_word2_set',
@@ -153,7 +153,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_word2_get(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_word2_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_word2_get',
@@ -167,7 +167,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_word1_set(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_word1_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_word1_set',
@@ -181,7 +181,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_word1_get(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_word1_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_word1_get',
@@ -195,7 +195,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_word0_set(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_word0_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_word0_set',
@@ -209,7 +209,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ipv6_word0_get(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ipv6_word0_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ipv6_word0_get',
@@ -223,7 +223,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_set(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_set',
@@ -237,7 +237,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_get(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_get',
@@ -251,7 +251,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_word3_set(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_word3_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_word3_set',
@@ -265,7 +265,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_word3_get(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_word3_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_word3_get',
@@ -279,7 +279,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_word2_set(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_word2_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_word2_set',
@@ -293,7 +293,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_word2_get(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_word2_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_word2_get',
@@ -307,7 +307,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_word1_set(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_word1_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_word1_set',
@@ -321,7 +321,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_word1_get(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_word1_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_word1_get',
@@ -335,7 +335,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_word0_set(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_word0_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_word0_set',
@@ -349,7 +349,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ipv6_word0_get(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ipv6_word0_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ipv6_word0_get',
@@ -363,7 +363,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_src_ipv6_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_src_ipv6_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_src_ipv6_set',
@@ -377,7 +377,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_src_ipv6_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_src_ipv6_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_src_ipv6_get',
@@ -391,7 +391,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_dst_ipv6_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_dst_ipv6_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_dst_ipv6_set',
@@ -405,7 +405,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_dst_ipv6_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_dst_ipv6_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_dst_ipv6_get',
@@ -419,7 +419,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_mac_set(self, dpu):
+    def test_sai_acl_entry_attr_field_src_mac_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_mac_set',
@@ -433,7 +433,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_mac_get(self, dpu):
+    def test_sai_acl_entry_attr_field_src_mac_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_mac_get',
@@ -447,7 +447,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_mac_set(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_mac_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_mac_set',
@@ -461,7 +461,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_mac_get(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_mac_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_mac_get',
@@ -475,7 +475,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ip_set(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ip_set',
@@ -489,7 +489,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_ip_get(self, dpu):
+    def test_sai_acl_entry_attr_field_src_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_ip_get',
@@ -503,7 +503,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ip_set(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ip_set',
@@ -517,7 +517,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dst_ip_get(self, dpu):
+    def test_sai_acl_entry_attr_field_dst_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dst_ip_get',
@@ -531,7 +531,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_src_ip_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_src_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_src_ip_set',
@@ -545,7 +545,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_src_ip_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_src_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_src_ip_get',
@@ -559,7 +559,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_dst_ip_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_dst_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_dst_ip_set',
@@ -573,7 +573,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_dst_ip_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_dst_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_dst_ip_get',
@@ -587,7 +587,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_in_ports_set(self, dpu):
+    def test_sai_acl_entry_attr_field_in_ports_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_in_ports_set',
@@ -601,7 +601,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_in_ports_get(self, dpu):
+    def test_sai_acl_entry_attr_field_in_ports_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_in_ports_get',
@@ -615,7 +615,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_out_ports_set(self, dpu):
+    def test_sai_acl_entry_attr_field_out_ports_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_out_ports_set',
@@ -629,7 +629,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_out_ports_get(self, dpu):
+    def test_sai_acl_entry_attr_field_out_ports_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_out_ports_get',
@@ -643,7 +643,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_in_port_set(self, dpu):
+    def test_sai_acl_entry_attr_field_in_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_in_port_set',
@@ -657,7 +657,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_in_port_get(self, dpu):
+    def test_sai_acl_entry_attr_field_in_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_in_port_get',
@@ -671,7 +671,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_out_port_set(self, dpu):
+    def test_sai_acl_entry_attr_field_out_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_out_port_set',
@@ -685,7 +685,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_out_port_get(self, dpu):
+    def test_sai_acl_entry_attr_field_out_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_out_port_get',
@@ -699,7 +699,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_port_set(self, dpu):
+    def test_sai_acl_entry_attr_field_src_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_port_set',
@@ -713,7 +713,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_src_port_get(self, dpu):
+    def test_sai_acl_entry_attr_field_src_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_src_port_get',
@@ -727,7 +727,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_outer_vlan_id_set(self, dpu):
+    def test_sai_acl_entry_attr_field_outer_vlan_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_outer_vlan_id_set',
@@ -741,7 +741,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_outer_vlan_id_get(self, dpu):
+    def test_sai_acl_entry_attr_field_outer_vlan_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_outer_vlan_id_get',
@@ -755,7 +755,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_outer_vlan_pri_set(self, dpu):
+    def test_sai_acl_entry_attr_field_outer_vlan_pri_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_outer_vlan_pri_set',
@@ -769,7 +769,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_outer_vlan_pri_get(self, dpu):
+    def test_sai_acl_entry_attr_field_outer_vlan_pri_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_outer_vlan_pri_get',
@@ -783,7 +783,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_outer_vlan_cfi_set(self, dpu):
+    def test_sai_acl_entry_attr_field_outer_vlan_cfi_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_outer_vlan_cfi_set',
@@ -797,7 +797,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_outer_vlan_cfi_get(self, dpu):
+    def test_sai_acl_entry_attr_field_outer_vlan_cfi_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_outer_vlan_cfi_get',
@@ -811,7 +811,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_vlan_id_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_vlan_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_vlan_id_set',
@@ -825,7 +825,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_vlan_id_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_vlan_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_vlan_id_get',
@@ -839,7 +839,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_vlan_pri_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_vlan_pri_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_vlan_pri_set',
@@ -853,7 +853,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_vlan_pri_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_vlan_pri_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_vlan_pri_get',
@@ -867,7 +867,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_vlan_cfi_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_vlan_cfi_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_vlan_cfi_set',
@@ -881,7 +881,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_vlan_cfi_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_vlan_cfi_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_vlan_cfi_get',
@@ -895,7 +895,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_l4_src_port_set(self, dpu):
+    def test_sai_acl_entry_attr_field_l4_src_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_l4_src_port_set',
@@ -909,7 +909,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_l4_src_port_get(self, dpu):
+    def test_sai_acl_entry_attr_field_l4_src_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_l4_src_port_get',
@@ -923,7 +923,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_l4_dst_port_set(self, dpu):
+    def test_sai_acl_entry_attr_field_l4_dst_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_l4_dst_port_set',
@@ -937,7 +937,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_l4_dst_port_get(self, dpu):
+    def test_sai_acl_entry_attr_field_l4_dst_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_l4_dst_port_get',
@@ -951,7 +951,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_l4_src_port_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_l4_src_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_l4_src_port_set',
@@ -965,7 +965,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_l4_src_port_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_l4_src_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_l4_src_port_get',
@@ -979,7 +979,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_l4_dst_port_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_l4_dst_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_l4_dst_port_set',
@@ -993,7 +993,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_l4_dst_port_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_l4_dst_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_l4_dst_port_get',
@@ -1007,7 +1007,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ether_type_set(self, dpu):
+    def test_sai_acl_entry_attr_field_ether_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ether_type_set',
@@ -1021,7 +1021,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ether_type_get(self, dpu):
+    def test_sai_acl_entry_attr_field_ether_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ether_type_get',
@@ -1035,7 +1035,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_ether_type_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_ether_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_ether_type_set',
@@ -1049,7 +1049,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_ether_type_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_ether_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_ether_type_get',
@@ -1063,7 +1063,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ip_protocol_set(self, dpu):
+    def test_sai_acl_entry_attr_field_ip_protocol_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ip_protocol_set',
@@ -1077,7 +1077,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ip_protocol_get(self, dpu):
+    def test_sai_acl_entry_attr_field_ip_protocol_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ip_protocol_get',
@@ -1091,7 +1091,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_ip_protocol_set(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_ip_protocol_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_ip_protocol_set',
@@ -1105,7 +1105,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_inner_ip_protocol_get(self, dpu):
+    def test_sai_acl_entry_attr_field_inner_ip_protocol_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_inner_ip_protocol_get',
@@ -1119,7 +1119,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ip_identification_set(self, dpu):
+    def test_sai_acl_entry_attr_field_ip_identification_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ip_identification_set',
@@ -1133,7 +1133,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ip_identification_get(self, dpu):
+    def test_sai_acl_entry_attr_field_ip_identification_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ip_identification_get',
@@ -1147,7 +1147,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dscp_set(self, dpu):
+    def test_sai_acl_entry_attr_field_dscp_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dscp_set',
@@ -1161,7 +1161,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_dscp_get(self, dpu):
+    def test_sai_acl_entry_attr_field_dscp_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_dscp_get',
@@ -1175,7 +1175,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ecn_set(self, dpu):
+    def test_sai_acl_entry_attr_field_ecn_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ecn_set',
@@ -1189,7 +1189,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ecn_get(self, dpu):
+    def test_sai_acl_entry_attr_field_ecn_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ecn_get',
@@ -1203,7 +1203,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ttl_set(self, dpu):
+    def test_sai_acl_entry_attr_field_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ttl_set',
@@ -1217,7 +1217,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ttl_get(self, dpu):
+    def test_sai_acl_entry_attr_field_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ttl_get',
@@ -1231,7 +1231,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tos_set(self, dpu):
+    def test_sai_acl_entry_attr_field_tos_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tos_set',
@@ -1245,7 +1245,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tos_get(self, dpu):
+    def test_sai_acl_entry_attr_field_tos_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tos_get',
@@ -1259,7 +1259,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ip_flags_set(self, dpu):
+    def test_sai_acl_entry_attr_field_ip_flags_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ip_flags_set',
@@ -1273,7 +1273,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ip_flags_get(self, dpu):
+    def test_sai_acl_entry_attr_field_ip_flags_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ip_flags_get',
@@ -1287,7 +1287,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tcp_flags_set(self, dpu):
+    def test_sai_acl_entry_attr_field_tcp_flags_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tcp_flags_set',
@@ -1301,7 +1301,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tcp_flags_get(self, dpu):
+    def test_sai_acl_entry_attr_field_tcp_flags_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tcp_flags_get',
@@ -1315,7 +1315,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_acl_ip_type_set(self, dpu):
+    def test_sai_acl_entry_attr_field_acl_ip_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_acl_ip_type_set',
@@ -1329,7 +1329,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_acl_ip_type_get(self, dpu):
+    def test_sai_acl_entry_attr_field_acl_ip_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_acl_ip_type_get',
@@ -1343,7 +1343,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_acl_ip_frag_set(self, dpu):
+    def test_sai_acl_entry_attr_field_acl_ip_frag_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_acl_ip_frag_set',
@@ -1357,7 +1357,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_acl_ip_frag_get(self, dpu):
+    def test_sai_acl_entry_attr_field_acl_ip_frag_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_acl_ip_frag_get',
@@ -1371,7 +1371,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ipv6_flow_label_set(self, dpu):
+    def test_sai_acl_entry_attr_field_ipv6_flow_label_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ipv6_flow_label_set',
@@ -1385,7 +1385,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ipv6_flow_label_get(self, dpu):
+    def test_sai_acl_entry_attr_field_ipv6_flow_label_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ipv6_flow_label_get',
@@ -1399,7 +1399,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tc_set(self, dpu):
+    def test_sai_acl_entry_attr_field_tc_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tc_set',
@@ -1413,7 +1413,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tc_get(self, dpu):
+    def test_sai_acl_entry_attr_field_tc_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tc_get',
@@ -1427,7 +1427,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_icmp_type_set(self, dpu):
+    def test_sai_acl_entry_attr_field_icmp_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_icmp_type_set',
@@ -1441,7 +1441,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_icmp_type_get(self, dpu):
+    def test_sai_acl_entry_attr_field_icmp_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_icmp_type_get',
@@ -1455,7 +1455,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_icmp_code_set(self, dpu):
+    def test_sai_acl_entry_attr_field_icmp_code_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_icmp_code_set',
@@ -1469,7 +1469,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_icmp_code_get(self, dpu):
+    def test_sai_acl_entry_attr_field_icmp_code_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_icmp_code_get',
@@ -1483,7 +1483,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_icmpv6_type_set(self, dpu):
+    def test_sai_acl_entry_attr_field_icmpv6_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_icmpv6_type_set',
@@ -1497,7 +1497,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_icmpv6_type_get(self, dpu):
+    def test_sai_acl_entry_attr_field_icmpv6_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_icmpv6_type_get',
@@ -1511,7 +1511,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_icmpv6_code_set(self, dpu):
+    def test_sai_acl_entry_attr_field_icmpv6_code_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_icmpv6_code_set',
@@ -1525,7 +1525,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_icmpv6_code_get(self, dpu):
+    def test_sai_acl_entry_attr_field_icmpv6_code_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_icmpv6_code_get',
@@ -1539,7 +1539,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_packet_vlan_set(self, dpu):
+    def test_sai_acl_entry_attr_field_packet_vlan_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_packet_vlan_set',
@@ -1553,7 +1553,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_packet_vlan_get(self, dpu):
+    def test_sai_acl_entry_attr_field_packet_vlan_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_packet_vlan_get',
@@ -1567,7 +1567,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tunnel_vni_set(self, dpu):
+    def test_sai_acl_entry_attr_field_tunnel_vni_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tunnel_vni_set',
@@ -1581,7 +1581,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tunnel_vni_get(self, dpu):
+    def test_sai_acl_entry_attr_field_tunnel_vni_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tunnel_vni_get',
@@ -1595,7 +1595,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_has_vlan_tag_set(self, dpu):
+    def test_sai_acl_entry_attr_field_has_vlan_tag_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_has_vlan_tag_set',
@@ -1609,7 +1609,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_has_vlan_tag_get(self, dpu):
+    def test_sai_acl_entry_attr_field_has_vlan_tag_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_has_vlan_tag_get',
@@ -1623,7 +1623,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_macsec_sci_set(self, dpu):
+    def test_sai_acl_entry_attr_field_macsec_sci_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_macsec_sci_set',
@@ -1637,7 +1637,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_macsec_sci_get(self, dpu):
+    def test_sai_acl_entry_attr_field_macsec_sci_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_macsec_sci_get',
@@ -1651,7 +1651,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label0_label_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label0_label_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label0_label_set',
@@ -1665,7 +1665,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label0_label_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label0_label_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label0_label_get',
@@ -1679,7 +1679,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label0_ttl_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label0_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label0_ttl_set',
@@ -1693,7 +1693,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label0_ttl_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label0_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label0_ttl_get',
@@ -1707,7 +1707,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label0_exp_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label0_exp_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label0_exp_set',
@@ -1721,7 +1721,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label0_exp_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label0_exp_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label0_exp_get',
@@ -1735,7 +1735,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label0_bos_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label0_bos_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label0_bos_set',
@@ -1749,7 +1749,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label0_bos_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label0_bos_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label0_bos_get',
@@ -1763,7 +1763,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label1_label_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label1_label_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label1_label_set',
@@ -1777,7 +1777,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label1_label_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label1_label_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label1_label_get',
@@ -1791,7 +1791,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label1_ttl_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label1_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label1_ttl_set',
@@ -1805,7 +1805,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label1_ttl_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label1_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label1_ttl_get',
@@ -1819,7 +1819,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label1_exp_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label1_exp_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label1_exp_set',
@@ -1833,7 +1833,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label1_exp_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label1_exp_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label1_exp_get',
@@ -1847,7 +1847,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label1_bos_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label1_bos_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label1_bos_set',
@@ -1861,7 +1861,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label1_bos_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label1_bos_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label1_bos_get',
@@ -1875,7 +1875,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label2_label_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label2_label_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label2_label_set',
@@ -1889,7 +1889,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label2_label_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label2_label_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label2_label_get',
@@ -1903,7 +1903,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label2_ttl_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label2_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label2_ttl_set',
@@ -1917,7 +1917,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label2_ttl_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label2_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label2_ttl_get',
@@ -1931,7 +1931,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label2_exp_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label2_exp_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label2_exp_set',
@@ -1945,7 +1945,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label2_exp_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label2_exp_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label2_exp_get',
@@ -1959,7 +1959,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label2_bos_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label2_bos_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label2_bos_set',
@@ -1973,7 +1973,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label2_bos_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label2_bos_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label2_bos_get',
@@ -1987,7 +1987,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label3_label_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label3_label_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label3_label_set',
@@ -2001,7 +2001,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label3_label_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label3_label_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label3_label_get',
@@ -2015,7 +2015,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label3_ttl_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label3_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label3_ttl_set',
@@ -2029,7 +2029,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label3_ttl_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label3_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label3_ttl_get',
@@ -2043,7 +2043,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label3_exp_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label3_exp_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label3_exp_set',
@@ -2057,7 +2057,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label3_exp_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label3_exp_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label3_exp_get',
@@ -2071,7 +2071,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label3_bos_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label3_bos_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label3_bos_set',
@@ -2085,7 +2085,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label3_bos_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label3_bos_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label3_bos_get',
@@ -2099,7 +2099,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label4_label_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label4_label_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label4_label_set',
@@ -2113,7 +2113,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label4_label_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label4_label_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label4_label_get',
@@ -2127,7 +2127,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label4_ttl_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label4_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label4_ttl_set',
@@ -2141,7 +2141,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label4_ttl_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label4_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label4_ttl_get',
@@ -2155,7 +2155,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label4_exp_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label4_exp_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label4_exp_set',
@@ -2169,7 +2169,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label4_exp_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label4_exp_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label4_exp_get',
@@ -2183,7 +2183,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label4_bos_set(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label4_bos_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label4_bos_set',
@@ -2197,7 +2197,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_mpls_label4_bos_get(self, dpu):
+    def test_sai_acl_entry_attr_field_mpls_label4_bos_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_mpls_label4_bos_get',
@@ -2211,7 +2211,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_fdb_dst_user_meta_set(self, dpu):
+    def test_sai_acl_entry_attr_field_fdb_dst_user_meta_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_fdb_dst_user_meta_set',
@@ -2225,7 +2225,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_fdb_dst_user_meta_get(self, dpu):
+    def test_sai_acl_entry_attr_field_fdb_dst_user_meta_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_fdb_dst_user_meta_get',
@@ -2239,7 +2239,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_route_dst_user_meta_set(self, dpu):
+    def test_sai_acl_entry_attr_field_route_dst_user_meta_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_route_dst_user_meta_set',
@@ -2256,7 +2256,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_route_dst_user_meta_get(self, dpu):
+    def test_sai_acl_entry_attr_field_route_dst_user_meta_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_route_dst_user_meta_get',
@@ -2270,7 +2270,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_neighbor_dst_user_meta_set(self, dpu):
+    def test_sai_acl_entry_attr_field_neighbor_dst_user_meta_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_neighbor_dst_user_meta_set',
@@ -2287,7 +2287,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_neighbor_dst_user_meta_get(self, dpu):
+    def test_sai_acl_entry_attr_field_neighbor_dst_user_meta_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_neighbor_dst_user_meta_get',
@@ -2301,7 +2301,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_port_user_meta_set(self, dpu):
+    def test_sai_acl_entry_attr_field_port_user_meta_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_port_user_meta_set',
@@ -2315,7 +2315,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_port_user_meta_get(self, dpu):
+    def test_sai_acl_entry_attr_field_port_user_meta_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_port_user_meta_get',
@@ -2329,7 +2329,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_vlan_user_meta_set(self, dpu):
+    def test_sai_acl_entry_attr_field_vlan_user_meta_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_vlan_user_meta_set',
@@ -2343,7 +2343,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_vlan_user_meta_get(self, dpu):
+    def test_sai_acl_entry_attr_field_vlan_user_meta_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_vlan_user_meta_get',
@@ -2357,7 +2357,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_acl_user_meta_set(self, dpu):
+    def test_sai_acl_entry_attr_field_acl_user_meta_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_acl_user_meta_set',
@@ -2371,7 +2371,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_acl_user_meta_get(self, dpu):
+    def test_sai_acl_entry_attr_field_acl_user_meta_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_acl_user_meta_get',
@@ -2385,7 +2385,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_fdb_npu_meta_dst_hit_set(self, dpu):
+    def test_sai_acl_entry_attr_field_fdb_npu_meta_dst_hit_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_fdb_npu_meta_dst_hit_set',
@@ -2402,7 +2402,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_fdb_npu_meta_dst_hit_get(self, dpu):
+    def test_sai_acl_entry_attr_field_fdb_npu_meta_dst_hit_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_fdb_npu_meta_dst_hit_get',
@@ -2416,7 +2416,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_neighbor_npu_meta_dst_hit_set(self, dpu):
+    def test_sai_acl_entry_attr_field_neighbor_npu_meta_dst_hit_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_neighbor_npu_meta_dst_hit_set',
@@ -2433,7 +2433,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_neighbor_npu_meta_dst_hit_get(self, dpu):
+    def test_sai_acl_entry_attr_field_neighbor_npu_meta_dst_hit_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_neighbor_npu_meta_dst_hit_get',
@@ -2447,7 +2447,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_route_npu_meta_dst_hit_set(self, dpu):
+    def test_sai_acl_entry_attr_field_route_npu_meta_dst_hit_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_route_npu_meta_dst_hit_set',
@@ -2464,7 +2464,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_route_npu_meta_dst_hit_get(self, dpu):
+    def test_sai_acl_entry_attr_field_route_npu_meta_dst_hit_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_route_npu_meta_dst_hit_get',
@@ -2478,7 +2478,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_bth_opcode_set(self, dpu):
+    def test_sai_acl_entry_attr_field_bth_opcode_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_bth_opcode_set',
@@ -2492,7 +2492,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_bth_opcode_get(self, dpu):
+    def test_sai_acl_entry_attr_field_bth_opcode_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_bth_opcode_get',
@@ -2506,7 +2506,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_aeth_syndrome_set(self, dpu):
+    def test_sai_acl_entry_attr_field_aeth_syndrome_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_aeth_syndrome_set',
@@ -2520,7 +2520,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_aeth_syndrome_get(self, dpu):
+    def test_sai_acl_entry_attr_field_aeth_syndrome_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_aeth_syndrome_get',
@@ -2534,7 +2534,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_user_defined_field_group_min_set(self, dpu):
+    def test_sai_acl_entry_attr_user_defined_field_group_min_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_user_defined_field_group_min_set',
@@ -2551,7 +2551,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_user_defined_field_group_min_get(self, dpu):
+    def test_sai_acl_entry_attr_user_defined_field_group_min_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_user_defined_field_group_min_get',
@@ -2565,7 +2565,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_user_defined_field_group_max_set(self, dpu):
+    def test_sai_acl_entry_attr_user_defined_field_group_max_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_user_defined_field_group_max_set',
@@ -2582,7 +2582,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_user_defined_field_group_max_get(self, dpu):
+    def test_sai_acl_entry_attr_user_defined_field_group_max_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_user_defined_field_group_max_get',
@@ -2596,7 +2596,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_acl_range_type_set(self, dpu):
+    def test_sai_acl_entry_attr_field_acl_range_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_acl_range_type_set',
@@ -2610,7 +2610,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_acl_range_type_get(self, dpu):
+    def test_sai_acl_entry_attr_field_acl_range_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_acl_range_type_get',
@@ -2624,7 +2624,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ipv6_next_header_set(self, dpu):
+    def test_sai_acl_entry_attr_field_ipv6_next_header_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ipv6_next_header_set',
@@ -2638,7 +2638,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_ipv6_next_header_get(self, dpu):
+    def test_sai_acl_entry_attr_field_ipv6_next_header_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_ipv6_next_header_get',
@@ -2652,7 +2652,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_gre_key_set(self, dpu):
+    def test_sai_acl_entry_attr_field_gre_key_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_gre_key_set',
@@ -2666,7 +2666,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_gre_key_get(self, dpu):
+    def test_sai_acl_entry_attr_field_gre_key_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_gre_key_get',
@@ -2680,7 +2680,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tam_int_type_set(self, dpu):
+    def test_sai_acl_entry_attr_field_tam_int_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tam_int_type_set',
@@ -2694,7 +2694,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_field_tam_int_type_get(self, dpu):
+    def test_sai_acl_entry_attr_field_tam_int_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_field_tam_int_type_get',
@@ -2708,7 +2708,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_redirect_set(self, dpu):
+    def test_sai_acl_entry_attr_action_redirect_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_redirect_set',
@@ -2722,7 +2722,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_redirect_get(self, dpu):
+    def test_sai_acl_entry_attr_action_redirect_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_redirect_get',
@@ -2736,7 +2736,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_endpoint_ip_set(self, dpu):
+    def test_sai_acl_entry_attr_action_endpoint_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_endpoint_ip_set',
@@ -2750,7 +2750,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_endpoint_ip_get(self, dpu):
+    def test_sai_acl_entry_attr_action_endpoint_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_endpoint_ip_get',
@@ -2764,7 +2764,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_redirect_list_set(self, dpu):
+    def test_sai_acl_entry_attr_action_redirect_list_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_redirect_list_set',
@@ -2778,7 +2778,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_redirect_list_get(self, dpu):
+    def test_sai_acl_entry_attr_action_redirect_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_redirect_list_get',
@@ -2792,7 +2792,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_packet_action_set(self, dpu):
+    def test_sai_acl_entry_attr_action_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_packet_action_set',
@@ -2806,7 +2806,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_packet_action_get(self, dpu):
+    def test_sai_acl_entry_attr_action_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_packet_action_get',
@@ -2820,7 +2820,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_flood_set(self, dpu):
+    def test_sai_acl_entry_attr_action_flood_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_flood_set',
@@ -2834,7 +2834,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_flood_get(self, dpu):
+    def test_sai_acl_entry_attr_action_flood_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_flood_get',
@@ -2848,7 +2848,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_counter_set(self, dpu):
+    def test_sai_acl_entry_attr_action_counter_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_counter_set',
@@ -2862,7 +2862,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_counter_get(self, dpu):
+    def test_sai_acl_entry_attr_action_counter_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_counter_get',
@@ -2876,7 +2876,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_mirror_ingress_set(self, dpu):
+    def test_sai_acl_entry_attr_action_mirror_ingress_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_mirror_ingress_set',
@@ -2890,7 +2890,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_mirror_ingress_get(self, dpu):
+    def test_sai_acl_entry_attr_action_mirror_ingress_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_mirror_ingress_get',
@@ -2904,7 +2904,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_mirror_egress_set(self, dpu):
+    def test_sai_acl_entry_attr_action_mirror_egress_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_mirror_egress_set',
@@ -2918,7 +2918,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_mirror_egress_get(self, dpu):
+    def test_sai_acl_entry_attr_action_mirror_egress_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_mirror_egress_get',
@@ -2932,7 +2932,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_policer_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_policer_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_policer_set',
@@ -2946,7 +2946,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_policer_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_policer_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_policer_get',
@@ -2960,7 +2960,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_decrement_ttl_set(self, dpu):
+    def test_sai_acl_entry_attr_action_decrement_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_decrement_ttl_set',
@@ -2974,7 +2974,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_decrement_ttl_get(self, dpu):
+    def test_sai_acl_entry_attr_action_decrement_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_decrement_ttl_get',
@@ -2988,7 +2988,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_tc_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_tc_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_tc_set',
@@ -3002,7 +3002,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_tc_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_tc_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_tc_get',
@@ -3016,7 +3016,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_packet_color_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_packet_color_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_packet_color_set',
@@ -3030,7 +3030,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_packet_color_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_packet_color_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_packet_color_get',
@@ -3044,7 +3044,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_inner_vlan_id_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_inner_vlan_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_inner_vlan_id_set',
@@ -3061,7 +3061,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_inner_vlan_id_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_inner_vlan_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_inner_vlan_id_get',
@@ -3075,7 +3075,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_inner_vlan_pri_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_inner_vlan_pri_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_inner_vlan_pri_set',
@@ -3092,7 +3092,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_inner_vlan_pri_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_inner_vlan_pri_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_inner_vlan_pri_get',
@@ -3106,7 +3106,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_outer_vlan_id_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_outer_vlan_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_outer_vlan_id_set',
@@ -3123,7 +3123,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_outer_vlan_id_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_outer_vlan_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_outer_vlan_id_get',
@@ -3137,7 +3137,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_outer_vlan_pri_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_outer_vlan_pri_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_outer_vlan_pri_set',
@@ -3154,7 +3154,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_outer_vlan_pri_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_outer_vlan_pri_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_outer_vlan_pri_get',
@@ -3168,7 +3168,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_add_vlan_id_set(self, dpu):
+    def test_sai_acl_entry_attr_action_add_vlan_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_add_vlan_id_set',
@@ -3182,7 +3182,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_add_vlan_id_get(self, dpu):
+    def test_sai_acl_entry_attr_action_add_vlan_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_add_vlan_id_get',
@@ -3196,7 +3196,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_add_vlan_pri_set(self, dpu):
+    def test_sai_acl_entry_attr_action_add_vlan_pri_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_add_vlan_pri_set',
@@ -3210,7 +3210,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_add_vlan_pri_get(self, dpu):
+    def test_sai_acl_entry_attr_action_add_vlan_pri_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_add_vlan_pri_get',
@@ -3224,7 +3224,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_src_mac_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_src_mac_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_src_mac_set',
@@ -3238,7 +3238,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_src_mac_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_src_mac_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_src_mac_get',
@@ -3252,7 +3252,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_dst_mac_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_dst_mac_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_dst_mac_set',
@@ -3266,7 +3266,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_dst_mac_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_dst_mac_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_dst_mac_get',
@@ -3280,7 +3280,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_src_ip_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_src_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_src_ip_set',
@@ -3294,7 +3294,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_src_ip_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_src_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_src_ip_get',
@@ -3308,7 +3308,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_dst_ip_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_dst_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_dst_ip_set',
@@ -3322,7 +3322,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_dst_ip_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_dst_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_dst_ip_get',
@@ -3336,7 +3336,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_src_ipv6_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_src_ipv6_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_src_ipv6_set',
@@ -3350,7 +3350,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_src_ipv6_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_src_ipv6_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_src_ipv6_get',
@@ -3364,7 +3364,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_dst_ipv6_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_dst_ipv6_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_dst_ipv6_set',
@@ -3378,7 +3378,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_dst_ipv6_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_dst_ipv6_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_dst_ipv6_get',
@@ -3392,7 +3392,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_dscp_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_dscp_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_dscp_set',
@@ -3406,7 +3406,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_dscp_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_dscp_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_dscp_get',
@@ -3420,7 +3420,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_ecn_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_ecn_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_ecn_set',
@@ -3434,7 +3434,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_ecn_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_ecn_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_ecn_get',
@@ -3448,7 +3448,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_l4_src_port_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_l4_src_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_l4_src_port_set',
@@ -3462,7 +3462,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_l4_src_port_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_l4_src_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_l4_src_port_get',
@@ -3476,7 +3476,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_l4_dst_port_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_l4_dst_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_l4_dst_port_set',
@@ -3490,7 +3490,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_l4_dst_port_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_l4_dst_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_l4_dst_port_get',
@@ -3504,7 +3504,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_ingress_samplepacket_enable_set(self, dpu):
+    def test_sai_acl_entry_attr_action_ingress_samplepacket_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_ingress_samplepacket_enable_set',
@@ -3521,7 +3521,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_ingress_samplepacket_enable_get(self, dpu):
+    def test_sai_acl_entry_attr_action_ingress_samplepacket_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_ingress_samplepacket_enable_get',
@@ -3535,7 +3535,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_egress_samplepacket_enable_set(self, dpu):
+    def test_sai_acl_entry_attr_action_egress_samplepacket_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_egress_samplepacket_enable_set',
@@ -3552,7 +3552,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_egress_samplepacket_enable_get(self, dpu):
+    def test_sai_acl_entry_attr_action_egress_samplepacket_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_egress_samplepacket_enable_get',
@@ -3566,7 +3566,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_acl_meta_data_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_acl_meta_data_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_acl_meta_data_set',
@@ -3583,7 +3583,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_acl_meta_data_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_acl_meta_data_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_acl_meta_data_get',
@@ -3597,7 +3597,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_egress_block_port_list_set(self, dpu):
+    def test_sai_acl_entry_attr_action_egress_block_port_list_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_egress_block_port_list_set',
@@ -3614,7 +3614,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_egress_block_port_list_get(self, dpu):
+    def test_sai_acl_entry_attr_action_egress_block_port_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_egress_block_port_list_get',
@@ -3628,7 +3628,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_user_trap_id_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_user_trap_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_user_trap_id_set',
@@ -3642,7 +3642,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_user_trap_id_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_user_trap_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_user_trap_id_get',
@@ -3656,7 +3656,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_do_not_learn_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_do_not_learn_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_do_not_learn_set',
@@ -3670,7 +3670,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_do_not_learn_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_do_not_learn_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_do_not_learn_get',
@@ -3684,7 +3684,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_acl_dtel_flow_op_set(self, dpu):
+    def test_sai_acl_entry_attr_action_acl_dtel_flow_op_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_acl_dtel_flow_op_set',
@@ -3698,7 +3698,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_acl_dtel_flow_op_get(self, dpu):
+    def test_sai_acl_entry_attr_action_acl_dtel_flow_op_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_acl_dtel_flow_op_get',
@@ -3712,7 +3712,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_int_session_set(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_int_session_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_int_session_set',
@@ -3726,7 +3726,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_int_session_get(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_int_session_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_int_session_get',
@@ -3740,7 +3740,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_drop_report_enable_set(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_drop_report_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_drop_report_enable_set',
@@ -3757,7 +3757,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_drop_report_enable_get(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_drop_report_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_drop_report_enable_get',
@@ -3771,7 +3771,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_tail_drop_report_enable_set(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_tail_drop_report_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_tail_drop_report_enable_set',
@@ -3788,7 +3788,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_tail_drop_report_enable_get(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_tail_drop_report_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_tail_drop_report_enable_get',
@@ -3802,7 +3802,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_flow_sample_percent_set(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_flow_sample_percent_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_flow_sample_percent_set',
@@ -3819,7 +3819,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_flow_sample_percent_get(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_flow_sample_percent_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_flow_sample_percent_get',
@@ -3833,7 +3833,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_report_all_packets_set(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_report_all_packets_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_report_all_packets_set',
@@ -3850,7 +3850,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_dtel_report_all_packets_get(self, dpu):
+    def test_sai_acl_entry_attr_action_dtel_report_all_packets_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_dtel_report_all_packets_get',
@@ -3864,7 +3864,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_no_nat_set(self, dpu):
+    def test_sai_acl_entry_attr_action_no_nat_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_no_nat_set',
@@ -3878,7 +3878,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_no_nat_get(self, dpu):
+    def test_sai_acl_entry_attr_action_no_nat_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_no_nat_get',
@@ -3892,7 +3892,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_insert_set(self, dpu):
+    def test_sai_acl_entry_attr_action_int_insert_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_insert_set',
@@ -3906,7 +3906,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_insert_get(self, dpu):
+    def test_sai_acl_entry_attr_action_int_insert_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_insert_get',
@@ -3920,7 +3920,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_delete_set(self, dpu):
+    def test_sai_acl_entry_attr_action_int_delete_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_delete_set',
@@ -3934,7 +3934,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_delete_get(self, dpu):
+    def test_sai_acl_entry_attr_action_int_delete_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_delete_get',
@@ -3948,7 +3948,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_report_flow_set(self, dpu):
+    def test_sai_acl_entry_attr_action_int_report_flow_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_report_flow_set',
@@ -3962,7 +3962,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_report_flow_get(self, dpu):
+    def test_sai_acl_entry_attr_action_int_report_flow_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_report_flow_get',
@@ -3976,7 +3976,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_report_drops_set(self, dpu):
+    def test_sai_acl_entry_attr_action_int_report_drops_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_report_drops_set',
@@ -3990,7 +3990,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_report_drops_get(self, dpu):
+    def test_sai_acl_entry_attr_action_int_report_drops_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_report_drops_get',
@@ -4004,7 +4004,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_report_tail_drops_set(self, dpu):
+    def test_sai_acl_entry_attr_action_int_report_tail_drops_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_report_tail_drops_set',
@@ -4021,7 +4021,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_int_report_tail_drops_get(self, dpu):
+    def test_sai_acl_entry_attr_action_int_report_tail_drops_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_int_report_tail_drops_get',
@@ -4035,7 +4035,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_tam_int_object_set(self, dpu):
+    def test_sai_acl_entry_attr_action_tam_int_object_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_tam_int_object_set',
@@ -4049,7 +4049,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_tam_int_object_get(self, dpu):
+    def test_sai_acl_entry_attr_action_tam_int_object_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_tam_int_object_get',
@@ -4063,7 +4063,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_isolation_group_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_isolation_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_isolation_group_set',
@@ -4080,7 +4080,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_isolation_group_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_isolation_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_isolation_group_get',
@@ -4094,7 +4094,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_macsec_flow_set(self, dpu):
+    def test_sai_acl_entry_attr_action_macsec_flow_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_macsec_flow_set',
@@ -4108,7 +4108,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_macsec_flow_get(self, dpu):
+    def test_sai_acl_entry_attr_action_macsec_flow_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_macsec_flow_get',
@@ -4122,7 +4122,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_lag_hash_id_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_lag_hash_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_lag_hash_id_set',
@@ -4136,7 +4136,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_lag_hash_id_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_lag_hash_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_lag_hash_id_get',
@@ -4150,7 +4150,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_ecmp_hash_id_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_ecmp_hash_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_ecmp_hash_id_set',
@@ -4164,7 +4164,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_ecmp_hash_id_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_ecmp_hash_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_ecmp_hash_id_get',
@@ -4178,7 +4178,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_vrf_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_vrf_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_vrf_set',
@@ -4192,7 +4192,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_vrf_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_vrf_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_vrf_get',
@@ -4206,7 +4206,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_forwarding_class_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_forwarding_class_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_forwarding_class_set',
@@ -4223,7 +4223,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_forwarding_class_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_forwarding_class_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_forwarding_class_get',
@@ -4237,7 +4237,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_ars_monitoring_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_ars_monitoring_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_ars_monitoring_set',
@@ -4254,7 +4254,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_ars_monitoring_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_ars_monitoring_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_ars_monitoring_get',
@@ -4268,7 +4268,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_ars_object_set(self, dpu):
+    def test_sai_acl_entry_attr_action_set_ars_object_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_ars_object_set',
@@ -4282,7 +4282,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_set_ars_object_get(self, dpu):
+    def test_sai_acl_entry_attr_action_set_ars_object_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_set_ars_object_get',
@@ -4296,7 +4296,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'disabled' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_disable_ars_forwarding_set(self, dpu):
+    def test_sai_acl_entry_attr_action_disable_ars_forwarding_set(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_disable_ars_forwarding_set',
@@ -4313,7 +4313,7 @@ class TestSaiAclEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_acl_entry_attr_action_disable_ars_forwarding_get(self, dpu):
+    def test_sai_acl_entry_attr_action_disable_ars_forwarding_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_entry_attr_action_disable_ars_forwarding_get',

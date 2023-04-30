@@ -21,7 +21,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_underlay_dip_set(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_underlay_dip_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_underlay_dip_set',
@@ -38,7 +38,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_underlay_dip_get(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_underlay_dip_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_underlay_dip_get',
@@ -52,7 +52,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_overlay_dmac_set(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_overlay_dmac_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_overlay_dmac_set',
@@ -69,7 +69,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_overlay_dmac_get(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_overlay_dmac_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_overlay_dmac_get',
@@ -83,7 +83,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all([result == '0:0:0:0:0:0' for result in results]), 'Get error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_set(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_set',
@@ -100,7 +100,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_get(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_get',
@@ -114,7 +114,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_counter_id_set(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_counter_id_set',
@@ -131,7 +131,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_counter_id_get(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_counter_id_get',
@@ -145,7 +145,7 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_outbound_ca_to_pa_entry_attr_ip_addr_family_get(self, dpu):
+    def test_sai_outbound_ca_to_pa_entry_attr_ip_addr_family_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_ca_to_pa_entry_attr_ip_addr_family_get',

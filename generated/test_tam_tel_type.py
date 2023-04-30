@@ -32,7 +32,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_tam_tel_type_attr_int_switch_identifier_set(self, dpu):
+    def test_sai_tam_tel_type_attr_int_switch_identifier_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_int_switch_identifier_set',
@@ -46,7 +46,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_int_switch_identifier_get(self, dpu):
+    def test_sai_tam_tel_type_attr_int_switch_identifier_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_int_switch_identifier_get',
@@ -60,7 +60,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_port_stats_set(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_port_stats_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_port_stats_set',
@@ -77,7 +77,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_port_stats_get(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_port_stats_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_port_stats_get',
@@ -91,7 +91,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_port_stats_ingress_set(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_port_stats_ingress_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_port_stats_ingress_set',
@@ -108,7 +108,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_port_stats_ingress_get(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_port_stats_ingress_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_port_stats_ingress_get',
@@ -122,7 +122,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_port_stats_egress_set(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_port_stats_egress_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_port_stats_egress_set',
@@ -139,7 +139,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_port_stats_egress_get(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_port_stats_egress_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_port_stats_egress_get',
@@ -153,7 +153,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_virtual_queue_stats_set(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_virtual_queue_stats_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_virtual_queue_stats_set',
@@ -170,7 +170,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_virtual_queue_stats_get(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_virtual_queue_stats_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_virtual_queue_stats_get',
@@ -184,7 +184,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_output_queue_stats_set(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_output_queue_stats_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_output_queue_stats_set',
@@ -201,7 +201,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_output_queue_stats_get(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_output_queue_stats_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_output_queue_stats_get',
@@ -215,7 +215,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_mmu_stats_set(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_mmu_stats_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_mmu_stats_set',
@@ -229,7 +229,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_mmu_stats_get(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_mmu_stats_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_mmu_stats_get',
@@ -243,7 +243,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_fabric_stats_set(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_fabric_stats_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_fabric_stats_set',
@@ -260,7 +260,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_fabric_stats_get(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_fabric_stats_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_fabric_stats_get',
@@ -274,7 +274,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_filter_stats_set(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_filter_stats_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_filter_stats_set',
@@ -291,7 +291,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_switch_enable_filter_stats_get(self, dpu):
+    def test_sai_tam_tel_type_attr_switch_enable_filter_stats_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_switch_enable_filter_stats_get',
@@ -306,7 +306,7 @@ class TestSaiTamTelType:
         assert all([result == 'false' for result in results]), 'Get error'
 
     def test_sai_tam_tel_type_attr_switch_enable_resource_utilization_stats_set(
-        self, dpu
+        self, npu
     ):
         commands = [
             {
@@ -325,7 +325,7 @@ class TestSaiTamTelType:
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
     def test_sai_tam_tel_type_attr_switch_enable_resource_utilization_stats_get(
-        self, dpu
+        self, npu
     ):
         commands = [
             {
@@ -340,7 +340,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_fabric_q_set(self, dpu):
+    def test_sai_tam_tel_type_attr_fabric_q_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_fabric_q_set',
@@ -354,7 +354,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_fabric_q_get(self, dpu):
+    def test_sai_tam_tel_type_attr_fabric_q_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_fabric_q_get',
@@ -368,7 +368,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_ne_enable_set(self, dpu):
+    def test_sai_tam_tel_type_attr_ne_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_ne_enable_set',
@@ -382,7 +382,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_ne_enable_get(self, dpu):
+    def test_sai_tam_tel_type_attr_ne_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_ne_enable_get',
@@ -396,7 +396,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_dscp_value_set(self, dpu):
+    def test_sai_tam_tel_type_attr_dscp_value_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_dscp_value_set',
@@ -410,7 +410,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_dscp_value_get(self, dpu):
+    def test_sai_tam_tel_type_attr_dscp_value_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_dscp_value_get',
@@ -424,7 +424,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_math_func_set(self, dpu):
+    def test_sai_tam_tel_type_attr_math_func_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_math_func_set',
@@ -438,7 +438,7 @@ class TestSaiTamTelType:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_tel_type_attr_math_func_get(self, dpu):
+    def test_sai_tam_tel_type_attr_math_func_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_tel_type_attr_math_func_get',

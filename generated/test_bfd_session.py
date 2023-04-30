@@ -83,7 +83,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_bfd_session_attr_virtual_router_set(self, dpu):
+    def test_sai_bfd_session_attr_virtual_router_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_virtual_router_set',
@@ -97,7 +97,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_virtual_router_get(self, dpu):
+    def test_sai_bfd_session_attr_virtual_router_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_virtual_router_get',
@@ -111,7 +111,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_port_set(self, dpu):
+    def test_sai_bfd_session_attr_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_port_set',
@@ -125,7 +125,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_port_get(self, dpu):
+    def test_sai_bfd_session_attr_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_port_get',
@@ -139,7 +139,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_tc_set(self, dpu):
+    def test_sai_bfd_session_attr_tc_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_tc_set',
@@ -153,7 +153,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_tc_get(self, dpu):
+    def test_sai_bfd_session_attr_tc_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_tc_get',
@@ -167,7 +167,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_vlan_tpid_set(self, dpu):
+    def test_sai_bfd_session_attr_vlan_tpid_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_vlan_tpid_set',
@@ -181,7 +181,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_vlan_tpid_get(self, dpu):
+    def test_sai_bfd_session_attr_vlan_tpid_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_vlan_tpid_get',
@@ -195,7 +195,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == '0x8100' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_vlan_pri_set(self, dpu):
+    def test_sai_bfd_session_attr_vlan_pri_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_vlan_pri_set',
@@ -209,7 +209,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_vlan_pri_get(self, dpu):
+    def test_sai_bfd_session_attr_vlan_pri_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_vlan_pri_get',
@@ -223,7 +223,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_vlan_cfi_set(self, dpu):
+    def test_sai_bfd_session_attr_vlan_cfi_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_vlan_cfi_set',
@@ -237,7 +237,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_vlan_cfi_get(self, dpu):
+    def test_sai_bfd_session_attr_vlan_cfi_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_vlan_cfi_get',
@@ -251,7 +251,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_iphdr_version_set(self, dpu):
+    def test_sai_bfd_session_attr_iphdr_version_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_iphdr_version_set',
@@ -265,7 +265,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_iphdr_version_get(self, dpu):
+    def test_sai_bfd_session_attr_iphdr_version_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_iphdr_version_get',
@@ -279,7 +279,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_tos_set(self, dpu):
+    def test_sai_bfd_session_attr_tos_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_tos_set',
@@ -293,7 +293,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_tos_get(self, dpu):
+    def test_sai_bfd_session_attr_tos_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_tos_get',
@@ -307,7 +307,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_ttl_set(self, dpu):
+    def test_sai_bfd_session_attr_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_ttl_set',
@@ -321,7 +321,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_ttl_get(self, dpu):
+    def test_sai_bfd_session_attr_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_ttl_get',
@@ -335,7 +335,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_tunnel_tos_set(self, dpu):
+    def test_sai_bfd_session_attr_tunnel_tos_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_tunnel_tos_set',
@@ -349,7 +349,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_tunnel_tos_get(self, dpu):
+    def test_sai_bfd_session_attr_tunnel_tos_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_tunnel_tos_get',
@@ -363,7 +363,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_tunnel_ttl_set(self, dpu):
+    def test_sai_bfd_session_attr_tunnel_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_tunnel_ttl_set',
@@ -377,7 +377,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_tunnel_ttl_get(self, dpu):
+    def test_sai_bfd_session_attr_tunnel_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_tunnel_ttl_get',
@@ -391,7 +391,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_src_mac_address_set(self, dpu):
+    def test_sai_bfd_session_attr_src_mac_address_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_src_mac_address_set',
@@ -405,7 +405,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_src_mac_address_get(self, dpu):
+    def test_sai_bfd_session_attr_src_mac_address_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_src_mac_address_get',
@@ -419,7 +419,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_dst_mac_address_set(self, dpu):
+    def test_sai_bfd_session_attr_dst_mac_address_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_dst_mac_address_set',
@@ -433,7 +433,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_dst_mac_address_get(self, dpu):
+    def test_sai_bfd_session_attr_dst_mac_address_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_dst_mac_address_get',
@@ -447,7 +447,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_echo_enable_set(self, dpu):
+    def test_sai_bfd_session_attr_echo_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_echo_enable_set',
@@ -461,7 +461,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_echo_enable_get(self, dpu):
+    def test_sai_bfd_session_attr_echo_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_echo_enable_get',
@@ -475,7 +475,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_min_tx_set(self, dpu):
+    def test_sai_bfd_session_attr_min_tx_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_min_tx_set',
@@ -489,7 +489,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_min_tx_get(self, dpu):
+    def test_sai_bfd_session_attr_min_tx_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_min_tx_get',
@@ -503,7 +503,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_min_rx_set(self, dpu):
+    def test_sai_bfd_session_attr_min_rx_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_min_rx_set',
@@ -517,7 +517,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_min_rx_get(self, dpu):
+    def test_sai_bfd_session_attr_min_rx_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_min_rx_get',
@@ -531,7 +531,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_multiplier_set(self, dpu):
+    def test_sai_bfd_session_attr_multiplier_set(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_multiplier_set',
@@ -545,7 +545,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_multiplier_get(self, dpu):
+    def test_sai_bfd_session_attr_multiplier_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_multiplier_get',
@@ -559,7 +559,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_remote_min_tx_get(self, dpu):
+    def test_sai_bfd_session_attr_remote_min_tx_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_remote_min_tx_get',
@@ -573,7 +573,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_remote_min_rx_get(self, dpu):
+    def test_sai_bfd_session_attr_remote_min_rx_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_remote_min_rx_get',
@@ -587,7 +587,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_state_get(self, dpu):
+    def test_sai_bfd_session_attr_state_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_state_get',
@@ -601,7 +601,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_negotiated_tx_get(self, dpu):
+    def test_sai_bfd_session_attr_negotiated_tx_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_negotiated_tx_get',
@@ -615,7 +615,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_negotiated_rx_get(self, dpu):
+    def test_sai_bfd_session_attr_negotiated_rx_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_negotiated_rx_get',
@@ -629,7 +629,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_local_diag_get(self, dpu):
+    def test_sai_bfd_session_attr_local_diag_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_local_diag_get',
@@ -643,7 +643,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_remote_diag_get(self, dpu):
+    def test_sai_bfd_session_attr_remote_diag_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_remote_diag_get',
@@ -657,7 +657,7 @@ class TestSaiBfdSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_bfd_session_attr_remote_multiplier_get(self, dpu):
+    def test_sai_bfd_session_attr_remote_multiplier_get(self, npu):
         commands = [
             {
                 'name': 'sai_bfd_session_attr_remote_multiplier_get',

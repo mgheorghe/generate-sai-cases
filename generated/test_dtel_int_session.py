@@ -21,7 +21,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_dtel_int_session_attr_max_hop_count_set(self, dpu):
+    def test_sai_dtel_int_session_attr_max_hop_count_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_max_hop_count_set',
@@ -35,7 +35,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_max_hop_count_get(self, dpu):
+    def test_sai_dtel_int_session_attr_max_hop_count_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_max_hop_count_get',
@@ -49,7 +49,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == '8' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_switch_id_set(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_switch_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_switch_id_set',
@@ -63,7 +63,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_switch_id_get(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_switch_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_switch_id_get',
@@ -77,7 +77,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_switch_ports_set(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_switch_ports_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_switch_ports_set',
@@ -94,7 +94,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_switch_ports_get(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_switch_ports_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_switch_ports_get',
@@ -108,7 +108,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_ingress_timestamp_set(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_ingress_timestamp_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_ingress_timestamp_set',
@@ -125,7 +125,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_ingress_timestamp_get(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_ingress_timestamp_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_ingress_timestamp_get',
@@ -139,7 +139,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_egress_timestamp_set(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_egress_timestamp_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_egress_timestamp_set',
@@ -156,7 +156,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_egress_timestamp_get(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_egress_timestamp_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_egress_timestamp_get',
@@ -170,7 +170,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_queue_info_set(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_queue_info_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_queue_info_set',
@@ -184,7 +184,7 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_int_session_attr_collect_queue_info_get(self, dpu):
+    def test_sai_dtel_int_session_attr_collect_queue_info_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_int_session_attr_collect_queue_info_get',

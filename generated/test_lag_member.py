@@ -43,7 +43,7 @@ class TestSaiLagMember:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_lag_member_attr_egress_disable_set(self, dpu):
+    def test_sai_lag_member_attr_egress_disable_set(self, npu):
         commands = [
             {
                 'name': 'sai_lag_member_attr_egress_disable_set',
@@ -57,7 +57,7 @@ class TestSaiLagMember:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_lag_member_attr_egress_disable_get(self, dpu):
+    def test_sai_lag_member_attr_egress_disable_get(self, npu):
         commands = [
             {
                 'name': 'sai_lag_member_attr_egress_disable_get',
@@ -71,7 +71,7 @@ class TestSaiLagMember:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_lag_member_attr_ingress_disable_set(self, dpu):
+    def test_sai_lag_member_attr_ingress_disable_set(self, npu):
         commands = [
             {
                 'name': 'sai_lag_member_attr_ingress_disable_set',
@@ -85,7 +85,7 @@ class TestSaiLagMember:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_lag_member_attr_ingress_disable_get(self, dpu):
+    def test_sai_lag_member_attr_ingress_disable_get(self, npu):
         commands = [
             {
                 'name': 'sai_lag_member_attr_ingress_disable_get',

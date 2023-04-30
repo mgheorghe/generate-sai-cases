@@ -24,7 +24,7 @@ class TestSaiTamTransport:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_tam_transport_attr_src_port_set(self, dpu):
+    def test_sai_tam_transport_attr_src_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_transport_attr_src_port_set',
@@ -38,7 +38,7 @@ class TestSaiTamTransport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_transport_attr_src_port_get(self, dpu):
+    def test_sai_tam_transport_attr_src_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_transport_attr_src_port_get',
@@ -52,7 +52,7 @@ class TestSaiTamTransport:
         pprint(results)
         assert all([result == '31337' for result in results]), 'Get error'
 
-    def test_sai_tam_transport_attr_dst_port_set(self, dpu):
+    def test_sai_tam_transport_attr_dst_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_transport_attr_dst_port_set',
@@ -66,7 +66,7 @@ class TestSaiTamTransport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_transport_attr_dst_port_get(self, dpu):
+    def test_sai_tam_transport_attr_dst_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_transport_attr_dst_port_get',
@@ -80,7 +80,7 @@ class TestSaiTamTransport:
         pprint(results)
         assert all([result == '31337' for result in results]), 'Get error'
 
-    def test_sai_tam_transport_attr_transport_auth_type_set(self, dpu):
+    def test_sai_tam_transport_attr_transport_auth_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_transport_attr_transport_auth_type_set',
@@ -97,7 +97,7 @@ class TestSaiTamTransport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_transport_attr_transport_auth_type_get(self, dpu):
+    def test_sai_tam_transport_attr_transport_auth_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_transport_attr_transport_auth_type_get',
@@ -113,7 +113,7 @@ class TestSaiTamTransport:
             [result == 'SAI_TAM_TRANSPORT_AUTH_TYPE_NONE' for result in results]
         ), 'Get error'
 
-    def test_sai_tam_transport_attr_mtu_set(self, dpu):
+    def test_sai_tam_transport_attr_mtu_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_transport_attr_mtu_set',
@@ -127,7 +127,7 @@ class TestSaiTamTransport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_transport_attr_mtu_get(self, dpu):
+    def test_sai_tam_transport_attr_mtu_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_transport_attr_mtu_get',

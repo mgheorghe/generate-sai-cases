@@ -21,7 +21,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_nat_zone_counter_attr_nat_type_set(self, dpu):
+    def test_sai_nat_zone_counter_attr_nat_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_nat_type_set',
@@ -38,7 +38,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_nat_type_get(self, dpu):
+    def test_sai_nat_zone_counter_attr_nat_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_nat_type_get',
@@ -52,7 +52,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == 'SAI_NAT_TYPE_NONE' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_zone_id_set(self, dpu):
+    def test_sai_nat_zone_counter_attr_zone_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_zone_id_set',
@@ -66,7 +66,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_zone_id_get(self, dpu):
+    def test_sai_nat_zone_counter_attr_zone_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_zone_id_get',
@@ -80,7 +80,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_discard_packet_count_set(self, dpu):
+    def test_sai_nat_zone_counter_attr_discard_packet_count_set(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_discard_packet_count_set',
@@ -94,7 +94,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_discard_packet_count_get(self, dpu):
+    def test_sai_nat_zone_counter_attr_discard_packet_count_get(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_discard_packet_count_get',
@@ -108,7 +108,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_translation_needed_packet_count_set(self, dpu):
+    def test_sai_nat_zone_counter_attr_translation_needed_packet_count_set(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_translation_needed_packet_count_set',
@@ -125,7 +125,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_translation_needed_packet_count_get(self, dpu):
+    def test_sai_nat_zone_counter_attr_translation_needed_packet_count_get(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_translation_needed_packet_count_get',
@@ -139,7 +139,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_translations_packet_count_set(self, dpu):
+    def test_sai_nat_zone_counter_attr_translations_packet_count_set(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_translations_packet_count_set',
@@ -156,7 +156,7 @@ class TestSaiNatZoneCounter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_nat_zone_counter_attr_translations_packet_count_get(self, dpu):
+    def test_sai_nat_zone_counter_attr_translations_packet_count_get(self, npu):
         commands = [
             {
                 'name': 'sai_nat_zone_counter_attr_translations_packet_count_get',

@@ -21,7 +21,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_tam_event_threshold_attr_high_watermark_set(self, dpu):
+    def test_sai_tam_event_threshold_attr_high_watermark_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_high_watermark_set',
@@ -35,7 +35,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_high_watermark_get(self, dpu):
+    def test_sai_tam_event_threshold_attr_high_watermark_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_high_watermark_get',
@@ -49,7 +49,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == '90' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_low_watermark_set(self, dpu):
+    def test_sai_tam_event_threshold_attr_low_watermark_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_low_watermark_set',
@@ -63,7 +63,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_low_watermark_get(self, dpu):
+    def test_sai_tam_event_threshold_attr_low_watermark_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_low_watermark_get',
@@ -77,7 +77,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == '10' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_latency_set(self, dpu):
+    def test_sai_tam_event_threshold_attr_latency_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_latency_set',
@@ -91,7 +91,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_latency_get(self, dpu):
+    def test_sai_tam_event_threshold_attr_latency_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_latency_get',
@@ -105,7 +105,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == '10' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_rate_set(self, dpu):
+    def test_sai_tam_event_threshold_attr_rate_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_rate_set',
@@ -119,7 +119,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_rate_get(self, dpu):
+    def test_sai_tam_event_threshold_attr_rate_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_rate_get',
@@ -133,7 +133,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_abs_value_set(self, dpu):
+    def test_sai_tam_event_threshold_attr_abs_value_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_abs_value_set',
@@ -147,7 +147,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_abs_value_get(self, dpu):
+    def test_sai_tam_event_threshold_attr_abs_value_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_abs_value_get',
@@ -161,7 +161,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_unit_set(self, dpu):
+    def test_sai_tam_event_threshold_attr_unit_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_unit_set',
@@ -178,7 +178,7 @@ class TestSaiTamEventThreshold:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_event_threshold_attr_unit_get(self, dpu):
+    def test_sai_tam_event_threshold_attr_unit_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_threshold_attr_unit_get',

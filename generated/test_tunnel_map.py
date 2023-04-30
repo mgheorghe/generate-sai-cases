@@ -24,7 +24,7 @@ class TestSaiTunnelMap:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_tunnel_map_attr_entry_list_get(self, dpu):
+    def test_sai_tunnel_map_attr_entry_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_tunnel_map_attr_entry_list_get',

@@ -26,7 +26,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_policer_attr_cbs_set(self, dpu):
+    def test_sai_policer_attr_cbs_set(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_cbs_set',
@@ -40,7 +40,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_cbs_get(self, dpu):
+    def test_sai_policer_attr_cbs_get(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_cbs_get',
@@ -54,7 +54,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_cir_set(self, dpu):
+    def test_sai_policer_attr_cir_set(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_cir_set',
@@ -68,7 +68,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_cir_get(self, dpu):
+    def test_sai_policer_attr_cir_get(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_cir_get',
@@ -82,7 +82,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_pbs_set(self, dpu):
+    def test_sai_policer_attr_pbs_set(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_pbs_set',
@@ -96,7 +96,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_pbs_get(self, dpu):
+    def test_sai_policer_attr_pbs_get(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_pbs_get',
@@ -110,7 +110,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_pir_set(self, dpu):
+    def test_sai_policer_attr_pir_set(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_pir_set',
@@ -124,7 +124,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_pir_get(self, dpu):
+    def test_sai_policer_attr_pir_get(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_pir_get',
@@ -138,7 +138,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_green_packet_action_set(self, dpu):
+    def test_sai_policer_attr_green_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_green_packet_action_set',
@@ -155,7 +155,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_green_packet_action_get(self, dpu):
+    def test_sai_policer_attr_green_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_green_packet_action_get',
@@ -171,7 +171,7 @@ class TestSaiPolicer:
             [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
         ), 'Get error'
 
-    def test_sai_policer_attr_yellow_packet_action_set(self, dpu):
+    def test_sai_policer_attr_yellow_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_yellow_packet_action_set',
@@ -188,7 +188,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_yellow_packet_action_get(self, dpu):
+    def test_sai_policer_attr_yellow_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_yellow_packet_action_get',
@@ -204,7 +204,7 @@ class TestSaiPolicer:
             [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
         ), 'Get error'
 
-    def test_sai_policer_attr_red_packet_action_set(self, dpu):
+    def test_sai_policer_attr_red_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_red_packet_action_set',
@@ -221,7 +221,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_red_packet_action_get(self, dpu):
+    def test_sai_policer_attr_red_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_red_packet_action_get',
@@ -237,7 +237,7 @@ class TestSaiPolicer:
             [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
         ), 'Get error'
 
-    def test_sai_policer_attr_enable_counter_packet_action_list_set(self, dpu):
+    def test_sai_policer_attr_enable_counter_packet_action_list_set(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_enable_counter_packet_action_list_set',
@@ -254,7 +254,7 @@ class TestSaiPolicer:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_policer_attr_enable_counter_packet_action_list_get(self, dpu):
+    def test_sai_policer_attr_enable_counter_packet_action_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_policer_attr_enable_counter_packet_action_list_get',

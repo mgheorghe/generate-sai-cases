@@ -37,7 +37,7 @@ class TestSaiHostifPacket:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_hostif_packet_attr_hostif_trap_id_get(self, dpu):
+    def test_sai_hostif_packet_attr_hostif_trap_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_packet_attr_hostif_trap_id_get',
@@ -51,7 +51,7 @@ class TestSaiHostifPacket:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_hostif_packet_attr_ingress_port_get(self, dpu):
+    def test_sai_hostif_packet_attr_ingress_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_packet_attr_ingress_port_get',
@@ -65,7 +65,7 @@ class TestSaiHostifPacket:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_hostif_packet_attr_ingress_lag_get(self, dpu):
+    def test_sai_hostif_packet_attr_ingress_lag_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_packet_attr_ingress_lag_get',
@@ -79,7 +79,7 @@ class TestSaiHostifPacket:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_hostif_packet_attr_bridge_id_get(self, dpu):
+    def test_sai_hostif_packet_attr_bridge_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_packet_attr_bridge_id_get',
@@ -93,7 +93,7 @@ class TestSaiHostifPacket:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_hostif_packet_attr_timestamp_get(self, dpu):
+    def test_sai_hostif_packet_attr_timestamp_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_packet_attr_timestamp_get',

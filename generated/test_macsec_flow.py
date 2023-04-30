@@ -24,7 +24,7 @@ class TestSaiMacsecFlow:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_macsec_flow_attr_acl_entry_list_get(self, dpu):
+    def test_sai_macsec_flow_attr_acl_entry_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_flow_attr_acl_entry_list_get',
@@ -38,7 +38,7 @@ class TestSaiMacsecFlow:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_macsec_flow_attr_sc_list_get(self, dpu):
+    def test_sai_macsec_flow_attr_sc_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_flow_attr_sc_list_get',

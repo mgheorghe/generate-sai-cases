@@ -24,7 +24,7 @@ class TestSaiAclTableGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_acl_table_group_attr_member_list_get(self, dpu):
+    def test_sai_acl_table_group_attr_member_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_acl_table_group_attr_member_list_get',

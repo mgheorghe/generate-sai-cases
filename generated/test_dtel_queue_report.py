@@ -62,7 +62,7 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_dtel_queue_report_attr_depth_threshold_set(self, dpu):
+    def test_sai_dtel_queue_report_attr_depth_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_queue_report_attr_depth_threshold_set',
@@ -76,7 +76,7 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_queue_report_attr_depth_threshold_get(self, dpu):
+    def test_sai_dtel_queue_report_attr_depth_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_queue_report_attr_depth_threshold_get',
@@ -90,7 +90,7 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_dtel_queue_report_attr_latency_threshold_set(self, dpu):
+    def test_sai_dtel_queue_report_attr_latency_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_queue_report_attr_latency_threshold_set',
@@ -104,7 +104,7 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_queue_report_attr_latency_threshold_get(self, dpu):
+    def test_sai_dtel_queue_report_attr_latency_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_queue_report_attr_latency_threshold_get',
@@ -118,7 +118,7 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_dtel_queue_report_attr_breach_quota_set(self, dpu):
+    def test_sai_dtel_queue_report_attr_breach_quota_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_queue_report_attr_breach_quota_set',
@@ -132,7 +132,7 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_queue_report_attr_breach_quota_get(self, dpu):
+    def test_sai_dtel_queue_report_attr_breach_quota_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_queue_report_attr_breach_quota_get',
@@ -146,7 +146,7 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_dtel_queue_report_attr_tail_drop_set(self, dpu):
+    def test_sai_dtel_queue_report_attr_tail_drop_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_queue_report_attr_tail_drop_set',
@@ -160,7 +160,7 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_queue_report_attr_tail_drop_get(self, dpu):
+    def test_sai_dtel_queue_report_attr_tail_drop_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_queue_report_attr_tail_drop_get',

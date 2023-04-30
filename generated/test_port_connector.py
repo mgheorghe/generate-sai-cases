@@ -37,7 +37,7 @@ class TestSaiPortConnector:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_port_connector_attr_failover_mode_set(self, dpu):
+    def test_sai_port_connector_attr_failover_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_port_connector_attr_failover_mode_set',
@@ -54,7 +54,7 @@ class TestSaiPortConnector:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_port_connector_attr_failover_mode_get(self, dpu):
+    def test_sai_port_connector_attr_failover_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_port_connector_attr_failover_mode_get',

@@ -21,7 +21,7 @@ class TestSaiCounter:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_counter_attr_label_set(self, dpu):
+    def test_sai_counter_attr_label_set(self, npu):
         commands = [
             {
                 'name': 'sai_counter_attr_label_set',
@@ -35,7 +35,7 @@ class TestSaiCounter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_counter_attr_label_get(self, dpu):
+    def test_sai_counter_attr_label_get(self, npu):
         commands = [
             {
                 'name': 'sai_counter_attr_label_get',

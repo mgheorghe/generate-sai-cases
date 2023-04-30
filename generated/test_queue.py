@@ -56,7 +56,7 @@ class TestSaiQueue:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_queue_attr_parent_scheduler_node_set(self, dpu):
+    def test_sai_queue_attr_parent_scheduler_node_set(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_parent_scheduler_node_set',
@@ -70,7 +70,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_parent_scheduler_node_get(self, dpu):
+    def test_sai_queue_attr_parent_scheduler_node_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_parent_scheduler_node_get',
@@ -84,7 +84,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_wred_profile_id_set(self, dpu):
+    def test_sai_queue_attr_wred_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_wred_profile_id_set',
@@ -98,7 +98,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_wred_profile_id_get(self, dpu):
+    def test_sai_queue_attr_wred_profile_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_wred_profile_id_get',
@@ -112,7 +112,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_buffer_profile_id_set(self, dpu):
+    def test_sai_queue_attr_buffer_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_buffer_profile_id_set',
@@ -126,7 +126,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_buffer_profile_id_get(self, dpu):
+    def test_sai_queue_attr_buffer_profile_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_buffer_profile_id_get',
@@ -140,7 +140,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_scheduler_profile_id_set(self, dpu):
+    def test_sai_queue_attr_scheduler_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_scheduler_profile_id_set',
@@ -157,7 +157,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_scheduler_profile_id_get(self, dpu):
+    def test_sai_queue_attr_scheduler_profile_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_scheduler_profile_id_get',
@@ -171,7 +171,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_pause_status_get(self, dpu):
+    def test_sai_queue_attr_pause_status_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_pause_status_get',
@@ -185,7 +185,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_enable_pfc_dldr_set(self, dpu):
+    def test_sai_queue_attr_enable_pfc_dldr_set(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_enable_pfc_dldr_set',
@@ -199,7 +199,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_enable_pfc_dldr_get(self, dpu):
+    def test_sai_queue_attr_enable_pfc_dldr_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_enable_pfc_dldr_get',
@@ -213,7 +213,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_pfc_dlr_init_set(self, dpu):
+    def test_sai_queue_attr_pfc_dlr_init_set(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_pfc_dlr_init_set',
@@ -227,7 +227,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_pfc_dlr_init_get(self, dpu):
+    def test_sai_queue_attr_pfc_dlr_init_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_pfc_dlr_init_get',
@@ -241,7 +241,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_tam_object_set(self, dpu):
+    def test_sai_queue_attr_tam_object_set(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_tam_object_set',
@@ -255,7 +255,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_tam_object_get(self, dpu):
+    def test_sai_queue_attr_tam_object_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_tam_object_get',
@@ -269,7 +269,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_pfc_dlr_packet_action_set(self, dpu):
+    def test_sai_queue_attr_pfc_dlr_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_pfc_dlr_packet_action_set',
@@ -286,7 +286,7 @@ class TestSaiQueue:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_queue_attr_pfc_dlr_packet_action_get(self, dpu):
+    def test_sai_queue_attr_pfc_dlr_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_pfc_dlr_packet_action_get',
@@ -302,7 +302,7 @@ class TestSaiQueue:
             [result == 'SAI_PACKET_ACTION_DROP' for result in results]
         ), 'Get error'
 
-    def test_sai_queue_attr_pfc_continuous_deadlock_state_get(self, dpu):
+    def test_sai_queue_attr_pfc_continuous_deadlock_state_get(self, npu):
         commands = [
             {
                 'name': 'sai_queue_attr_pfc_continuous_deadlock_state_get',

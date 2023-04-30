@@ -37,7 +37,7 @@ class TestSaiIpsecPort:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_ipsec_port_attr_ctag_enable_set(self, dpu):
+    def test_sai_ipsec_port_attr_ctag_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_ipsec_port_attr_ctag_enable_set',
@@ -51,7 +51,7 @@ class TestSaiIpsecPort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ipsec_port_attr_ctag_enable_get(self, dpu):
+    def test_sai_ipsec_port_attr_ctag_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_ipsec_port_attr_ctag_enable_get',
@@ -65,7 +65,7 @@ class TestSaiIpsecPort:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_ipsec_port_attr_stag_enable_set(self, dpu):
+    def test_sai_ipsec_port_attr_stag_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_ipsec_port_attr_stag_enable_set',
@@ -79,7 +79,7 @@ class TestSaiIpsecPort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ipsec_port_attr_stag_enable_get(self, dpu):
+    def test_sai_ipsec_port_attr_stag_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_ipsec_port_attr_stag_enable_get',
@@ -93,7 +93,7 @@ class TestSaiIpsecPort:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_ipsec_port_attr_vrf_from_packet_vlan_enable_set(self, dpu):
+    def test_sai_ipsec_port_attr_vrf_from_packet_vlan_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_ipsec_port_attr_vrf_from_packet_vlan_enable_set',
@@ -110,7 +110,7 @@ class TestSaiIpsecPort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ipsec_port_attr_vrf_from_packet_vlan_enable_get(self, dpu):
+    def test_sai_ipsec_port_attr_vrf_from_packet_vlan_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_ipsec_port_attr_vrf_from_packet_vlan_enable_get',
@@ -124,7 +124,7 @@ class TestSaiIpsecPort:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_ipsec_port_attr_switch_switching_mode_set(self, dpu):
+    def test_sai_ipsec_port_attr_switch_switching_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_ipsec_port_attr_switch_switching_mode_set',
@@ -141,7 +141,7 @@ class TestSaiIpsecPort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ipsec_port_attr_switch_switching_mode_get(self, dpu):
+    def test_sai_ipsec_port_attr_switch_switching_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_ipsec_port_attr_switch_switching_mode_get',

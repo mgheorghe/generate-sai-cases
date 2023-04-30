@@ -21,7 +21,7 @@ class TestSaiHostifTrapGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_hostif_trap_group_attr_admin_state_set(self, dpu):
+    def test_sai_hostif_trap_group_attr_admin_state_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_group_attr_admin_state_set',
@@ -35,7 +35,7 @@ class TestSaiHostifTrapGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_group_attr_admin_state_get(self, dpu):
+    def test_sai_hostif_trap_group_attr_admin_state_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_group_attr_admin_state_get',
@@ -49,7 +49,7 @@ class TestSaiHostifTrapGroup:
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_group_attr_queue_set(self, dpu):
+    def test_sai_hostif_trap_group_attr_queue_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_group_attr_queue_set',
@@ -63,7 +63,7 @@ class TestSaiHostifTrapGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_group_attr_queue_get(self, dpu):
+    def test_sai_hostif_trap_group_attr_queue_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_group_attr_queue_get',
@@ -77,7 +77,7 @@ class TestSaiHostifTrapGroup:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_group_attr_policer_set(self, dpu):
+    def test_sai_hostif_trap_group_attr_policer_set(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_group_attr_policer_set',
@@ -94,7 +94,7 @@ class TestSaiHostifTrapGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_hostif_trap_group_attr_policer_get(self, dpu):
+    def test_sai_hostif_trap_group_attr_policer_get(self, npu):
         commands = [
             {
                 'name': 'sai_hostif_trap_group_attr_policer_get',

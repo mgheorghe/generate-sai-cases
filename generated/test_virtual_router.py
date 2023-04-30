@@ -21,7 +21,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_virtual_router_attr_admin_v4_state_set(self, dpu):
+    def test_sai_virtual_router_attr_admin_v4_state_set(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_admin_v4_state_set',
@@ -35,7 +35,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_admin_v4_state_get(self, dpu):
+    def test_sai_virtual_router_attr_admin_v4_state_get(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_admin_v4_state_get',
@@ -49,7 +49,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_admin_v6_state_set(self, dpu):
+    def test_sai_virtual_router_attr_admin_v6_state_set(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_admin_v6_state_set',
@@ -63,7 +63,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_admin_v6_state_get(self, dpu):
+    def test_sai_virtual_router_attr_admin_v6_state_get(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_admin_v6_state_get',
@@ -77,7 +77,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_src_mac_address_set(self, dpu):
+    def test_sai_virtual_router_attr_src_mac_address_set(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_src_mac_address_set',
@@ -94,7 +94,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_src_mac_address_get(self, dpu):
+    def test_sai_virtual_router_attr_src_mac_address_get(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_src_mac_address_get',
@@ -113,7 +113,7 @@ class TestSaiVirtualRouter:
             ]
         ), 'Get error'
 
-    def test_sai_virtual_router_attr_violation_ttl1_packet_action_set(self, dpu):
+    def test_sai_virtual_router_attr_violation_ttl1_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_violation_ttl1_packet_action_set',
@@ -130,7 +130,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_violation_ttl1_packet_action_get(self, dpu):
+    def test_sai_virtual_router_attr_violation_ttl1_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_violation_ttl1_packet_action_get',
@@ -146,7 +146,7 @@ class TestSaiVirtualRouter:
             [result == 'SAI_PACKET_ACTION_TRAP' for result in results]
         ), 'Get error'
 
-    def test_sai_virtual_router_attr_violation_ip_options_packet_action_set(self, dpu):
+    def test_sai_virtual_router_attr_violation_ip_options_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_violation_ip_options_packet_action_set',
@@ -163,7 +163,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_violation_ip_options_packet_action_get(self, dpu):
+    def test_sai_virtual_router_attr_violation_ip_options_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_violation_ip_options_packet_action_get',
@@ -179,7 +179,7 @@ class TestSaiVirtualRouter:
             [result == 'SAI_PACKET_ACTION_TRAP' for result in results]
         ), 'Get error'
 
-    def test_sai_virtual_router_attr_unknown_l3_multicast_packet_action_set(self, dpu):
+    def test_sai_virtual_router_attr_unknown_l3_multicast_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_unknown_l3_multicast_packet_action_set',
@@ -196,7 +196,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_unknown_l3_multicast_packet_action_get(self, dpu):
+    def test_sai_virtual_router_attr_unknown_l3_multicast_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_unknown_l3_multicast_packet_action_get',
@@ -212,7 +212,7 @@ class TestSaiVirtualRouter:
             [result == 'SAI_PACKET_ACTION_DROP' for result in results]
         ), 'Get error'
 
-    def test_sai_virtual_router_attr_label_set(self, dpu):
+    def test_sai_virtual_router_attr_label_set(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_label_set',
@@ -226,7 +226,7 @@ class TestSaiVirtualRouter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_virtual_router_attr_label_get(self, dpu):
+    def test_sai_virtual_router_attr_label_get(self, npu):
         commands = [
             {
                 'name': 'sai_virtual_router_attr_label_get',

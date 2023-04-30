@@ -21,7 +21,7 @@ class TestSaiArs:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_ars_attr_mode_set(self, dpu):
+    def test_sai_ars_attr_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_mode_set',
@@ -35,7 +35,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_mode_get(self, dpu):
+    def test_sai_ars_attr_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_mode_get',
@@ -51,7 +51,7 @@ class TestSaiArs:
             [result == 'SAI_ARS_MODE_FLOWLET_QUALITY' for result in results]
         ), 'Get error'
 
-    def test_sai_ars_attr_idle_time_set(self, dpu):
+    def test_sai_ars_attr_idle_time_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_idle_time_set',
@@ -65,7 +65,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_idle_time_get(self, dpu):
+    def test_sai_ars_attr_idle_time_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_idle_time_get',
@@ -79,7 +79,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == '256' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_max_flows_set(self, dpu):
+    def test_sai_ars_attr_max_flows_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_max_flows_set',
@@ -93,7 +93,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_max_flows_get(self, dpu):
+    def test_sai_ars_attr_max_flows_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_max_flows_get',
@@ -107,7 +107,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == '512' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_mon_enable_set(self, dpu):
+    def test_sai_ars_attr_mon_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_mon_enable_set',
@@ -121,7 +121,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_mon_enable_get(self, dpu):
+    def test_sai_ars_attr_mon_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_mon_enable_get',
@@ -135,7 +135,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_samplepacket_enable_set(self, dpu):
+    def test_sai_ars_attr_samplepacket_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_samplepacket_enable_set',
@@ -149,7 +149,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_samplepacket_enable_get(self, dpu):
+    def test_sai_ars_attr_samplepacket_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_samplepacket_enable_get',
@@ -163,7 +163,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_max_alt_memebers_per_group_set(self, dpu):
+    def test_sai_ars_attr_max_alt_memebers_per_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_max_alt_memebers_per_group_set',
@@ -177,7 +177,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_max_alt_memebers_per_group_get(self, dpu):
+    def test_sai_ars_attr_max_alt_memebers_per_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_max_alt_memebers_per_group_get',
@@ -191,7 +191,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_max_primary_memebers_per_group_set(self, dpu):
+    def test_sai_ars_attr_max_primary_memebers_per_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_max_primary_memebers_per_group_set',
@@ -205,7 +205,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_max_primary_memebers_per_group_get(self, dpu):
+    def test_sai_ars_attr_max_primary_memebers_per_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_max_primary_memebers_per_group_get',
@@ -219,7 +219,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_primary_path_quality_threshold_set(self, dpu):
+    def test_sai_ars_attr_primary_path_quality_threshold_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_primary_path_quality_threshold_set',
@@ -233,7 +233,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_primary_path_quality_threshold_get(self, dpu):
+    def test_sai_ars_attr_primary_path_quality_threshold_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_primary_path_quality_threshold_get',
@@ -247,7 +247,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == '16' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_alternate_path_cost_set(self, dpu):
+    def test_sai_ars_attr_alternate_path_cost_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_alternate_path_cost_set',
@@ -261,7 +261,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_alternate_path_cost_get(self, dpu):
+    def test_sai_ars_attr_alternate_path_cost_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_alternate_path_cost_get',
@@ -275,7 +275,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_alternate_path_bias_set(self, dpu):
+    def test_sai_ars_attr_alternate_path_bias_set(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_alternate_path_bias_set',
@@ -289,7 +289,7 @@ class TestSaiArs:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ars_attr_alternate_path_bias_get(self, dpu):
+    def test_sai_ars_attr_alternate_path_bias_get(self, npu):
         commands = [
             {
                 'name': 'sai_ars_attr_alternate_path_bias_get',

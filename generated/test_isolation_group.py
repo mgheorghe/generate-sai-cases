@@ -24,7 +24,7 @@ class TestSaiIsolationGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_isolation_group_attr_isolation_member_list_get(self, dpu):
+    def test_sai_isolation_group_attr_isolation_member_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_isolation_group_attr_isolation_member_list_get',

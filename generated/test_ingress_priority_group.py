@@ -37,7 +37,7 @@ class TestSaiIngressPriorityGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_ingress_priority_group_attr_buffer_profile_set(self, dpu):
+    def test_sai_ingress_priority_group_attr_buffer_profile_set(self, npu):
         commands = [
             {
                 'name': 'sai_ingress_priority_group_attr_buffer_profile_set',
@@ -54,7 +54,7 @@ class TestSaiIngressPriorityGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ingress_priority_group_attr_buffer_profile_get(self, dpu):
+    def test_sai_ingress_priority_group_attr_buffer_profile_get(self, npu):
         commands = [
             {
                 'name': 'sai_ingress_priority_group_attr_buffer_profile_get',
@@ -68,7 +68,7 @@ class TestSaiIngressPriorityGroup:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_ingress_priority_group_attr_tam_set(self, dpu):
+    def test_sai_ingress_priority_group_attr_tam_set(self, npu):
         commands = [
             {
                 'name': 'sai_ingress_priority_group_attr_tam_set',
@@ -82,7 +82,7 @@ class TestSaiIngressPriorityGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_ingress_priority_group_attr_tam_get(self, dpu):
+    def test_sai_ingress_priority_group_attr_tam_get(self, npu):
         commands = [
             {
                 'name': 'sai_ingress_priority_group_attr_tam_get',

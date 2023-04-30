@@ -24,7 +24,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_my_sid_entry_attr_endpoint_behavior_set(self, dpu):
+    def test_sai_my_sid_entry_attr_endpoint_behavior_set(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_endpoint_behavior_set',
@@ -38,7 +38,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_endpoint_behavior_get(self, dpu):
+    def test_sai_my_sid_entry_attr_endpoint_behavior_get(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_endpoint_behavior_get',
@@ -52,7 +52,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_endpoint_behavior_flavor_set(self, dpu):
+    def test_sai_my_sid_entry_attr_endpoint_behavior_flavor_set(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_endpoint_behavior_flavor_set',
@@ -69,7 +69,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_endpoint_behavior_flavor_get(self, dpu):
+    def test_sai_my_sid_entry_attr_endpoint_behavior_flavor_get(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_endpoint_behavior_flavor_get',
@@ -88,7 +88,7 @@ class TestSaiMySidEntry:
             ]
         ), 'Get error'
 
-    def test_sai_my_sid_entry_attr_packet_action_set(self, dpu):
+    def test_sai_my_sid_entry_attr_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_packet_action_set',
@@ -105,7 +105,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_packet_action_get(self, dpu):
+    def test_sai_my_sid_entry_attr_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_packet_action_get',
@@ -121,7 +121,7 @@ class TestSaiMySidEntry:
             [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
         ), 'Get error'
 
-    def test_sai_my_sid_entry_attr_trap_priority_set(self, dpu):
+    def test_sai_my_sid_entry_attr_trap_priority_set(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_trap_priority_set',
@@ -135,7 +135,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_trap_priority_get(self, dpu):
+    def test_sai_my_sid_entry_attr_trap_priority_get(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_trap_priority_get',
@@ -149,7 +149,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_next_hop_id_set(self, dpu):
+    def test_sai_my_sid_entry_attr_next_hop_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_next_hop_id_set',
@@ -166,7 +166,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_next_hop_id_get(self, dpu):
+    def test_sai_my_sid_entry_attr_next_hop_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_next_hop_id_get',
@@ -180,7 +180,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_tunnel_id_set(self, dpu):
+    def test_sai_my_sid_entry_attr_tunnel_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_tunnel_id_set',
@@ -194,7 +194,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_tunnel_id_get(self, dpu):
+    def test_sai_my_sid_entry_attr_tunnel_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_tunnel_id_get',
@@ -208,7 +208,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_vrf_set(self, dpu):
+    def test_sai_my_sid_entry_attr_vrf_set(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_vrf_set',
@@ -222,7 +222,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_vrf_get(self, dpu):
+    def test_sai_my_sid_entry_attr_vrf_get(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_vrf_get',
@@ -236,7 +236,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_counter_id_set(self, dpu):
+    def test_sai_my_sid_entry_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_counter_id_set',
@@ -250,7 +250,7 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_my_sid_entry_attr_counter_id_get(self, dpu):
+    def test_sai_my_sid_entry_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_my_sid_entry_attr_counter_id_get',

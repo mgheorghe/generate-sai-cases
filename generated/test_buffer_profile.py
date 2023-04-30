@@ -43,7 +43,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_buffer_profile_attr_reserved_buffer_size_set(self, dpu):
+    def test_sai_buffer_profile_attr_reserved_buffer_size_set(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_reserved_buffer_size_set',
@@ -57,7 +57,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_reserved_buffer_size_get(self, dpu):
+    def test_sai_buffer_profile_attr_reserved_buffer_size_get(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_reserved_buffer_size_get',
@@ -71,7 +71,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_shared_dynamic_th_set(self, dpu):
+    def test_sai_buffer_profile_attr_shared_dynamic_th_set(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_shared_dynamic_th_set',
@@ -85,7 +85,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_shared_dynamic_th_get(self, dpu):
+    def test_sai_buffer_profile_attr_shared_dynamic_th_get(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_shared_dynamic_th_get',
@@ -99,7 +99,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_shared_static_th_set(self, dpu):
+    def test_sai_buffer_profile_attr_shared_static_th_set(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_shared_static_th_set',
@@ -113,7 +113,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_shared_static_th_get(self, dpu):
+    def test_sai_buffer_profile_attr_shared_static_th_get(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_shared_static_th_get',
@@ -127,7 +127,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_xoff_th_set(self, dpu):
+    def test_sai_buffer_profile_attr_xoff_th_set(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_xoff_th_set',
@@ -141,7 +141,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_xoff_th_get(self, dpu):
+    def test_sai_buffer_profile_attr_xoff_th_get(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_xoff_th_get',
@@ -155,7 +155,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_xon_th_set(self, dpu):
+    def test_sai_buffer_profile_attr_xon_th_set(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_xon_th_set',
@@ -169,7 +169,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_xon_th_get(self, dpu):
+    def test_sai_buffer_profile_attr_xon_th_get(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_xon_th_get',
@@ -183,7 +183,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_xon_offset_th_set(self, dpu):
+    def test_sai_buffer_profile_attr_xon_offset_th_set(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_xon_offset_th_set',
@@ -197,7 +197,7 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_buffer_profile_attr_xon_offset_th_get(self, dpu):
+    def test_sai_buffer_profile_attr_xon_offset_th_get(self, npu):
         commands = [
             {
                 'name': 'sai_buffer_profile_attr_xon_offset_th_get',

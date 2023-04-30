@@ -21,7 +21,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_fdb_entry_attr_type_set(self, dpu):
+    def test_sai_fdb_entry_attr_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_type_set',
@@ -35,7 +35,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_type_get(self, dpu):
+    def test_sai_fdb_entry_attr_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_type_get',
@@ -49,7 +49,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_packet_action_set(self, dpu):
+    def test_sai_fdb_entry_attr_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_packet_action_set',
@@ -66,7 +66,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_packet_action_get(self, dpu):
+    def test_sai_fdb_entry_attr_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_packet_action_get',
@@ -82,7 +82,7 @@ class TestSaiFdbEntry:
             [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
         ), 'Get error'
 
-    def test_sai_fdb_entry_attr_user_trap_id_set(self, dpu):
+    def test_sai_fdb_entry_attr_user_trap_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_user_trap_id_set',
@@ -96,7 +96,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_user_trap_id_get(self, dpu):
+    def test_sai_fdb_entry_attr_user_trap_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_user_trap_id_get',
@@ -110,7 +110,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_bridge_port_id_set(self, dpu):
+    def test_sai_fdb_entry_attr_bridge_port_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_bridge_port_id_set',
@@ -127,7 +127,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_bridge_port_id_get(self, dpu):
+    def test_sai_fdb_entry_attr_bridge_port_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_bridge_port_id_get',
@@ -141,7 +141,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_meta_data_set(self, dpu):
+    def test_sai_fdb_entry_attr_meta_data_set(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_meta_data_set',
@@ -155,7 +155,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_meta_data_get(self, dpu):
+    def test_sai_fdb_entry_attr_meta_data_get(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_meta_data_get',
@@ -169,7 +169,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_endpoint_ip_set(self, dpu):
+    def test_sai_fdb_entry_attr_endpoint_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_endpoint_ip_set',
@@ -183,7 +183,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_endpoint_ip_get(self, dpu):
+    def test_sai_fdb_entry_attr_endpoint_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_endpoint_ip_get',
@@ -197,7 +197,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_counter_id_set(self, dpu):
+    def test_sai_fdb_entry_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_counter_id_set',
@@ -211,7 +211,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_counter_id_get(self, dpu):
+    def test_sai_fdb_entry_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_counter_id_get',
@@ -225,7 +225,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_allow_mac_move_set(self, dpu):
+    def test_sai_fdb_entry_attr_allow_mac_move_set(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_allow_mac_move_set',
@@ -239,7 +239,7 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_fdb_entry_attr_allow_mac_move_get(self, dpu):
+    def test_sai_fdb_entry_attr_allow_mac_move_get(self, npu):
         commands = [
             {
                 'name': 'sai_fdb_entry_attr_allow_mac_move_get',

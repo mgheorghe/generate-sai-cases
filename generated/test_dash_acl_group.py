@@ -21,7 +21,7 @@ class TestSaiDashAclGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_dash_acl_group_attr_ip_addr_family_set(self, dpu):
+    def test_sai_dash_acl_group_attr_ip_addr_family_set(self, npu):
         commands = [
             {
                 'name': 'sai_dash_acl_group_attr_ip_addr_family_set',
@@ -38,7 +38,7 @@ class TestSaiDashAclGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dash_acl_group_attr_ip_addr_family_get(self, dpu):
+    def test_sai_dash_acl_group_attr_ip_addr_family_get(self, npu):
         commands = [
             {
                 'name': 'sai_dash_acl_group_attr_ip_addr_family_get',

@@ -21,7 +21,7 @@ class TestSaiVlan:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_vlan_attr_member_list_get(self, dpu):
+    def test_sai_vlan_attr_member_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_member_list_get',
@@ -35,7 +35,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_max_learned_addresses_set(self, dpu):
+    def test_sai_vlan_attr_max_learned_addresses_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_max_learned_addresses_set',
@@ -49,7 +49,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_max_learned_addresses_get(self, dpu):
+    def test_sai_vlan_attr_max_learned_addresses_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_max_learned_addresses_get',
@@ -63,7 +63,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_stp_instance_set(self, dpu):
+    def test_sai_vlan_attr_stp_instance_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_stp_instance_set',
@@ -80,7 +80,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_stp_instance_get(self, dpu):
+    def test_sai_vlan_attr_stp_instance_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_stp_instance_get',
@@ -99,7 +99,7 @@ class TestSaiVlan:
             ]
         ), 'Get error'
 
-    def test_sai_vlan_attr_learn_disable_set(self, dpu):
+    def test_sai_vlan_attr_learn_disable_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_learn_disable_set',
@@ -113,7 +113,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_learn_disable_get(self, dpu):
+    def test_sai_vlan_attr_learn_disable_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_learn_disable_get',
@@ -127,7 +127,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_ipv4_mcast_lookup_key_type_set(self, dpu):
+    def test_sai_vlan_attr_ipv4_mcast_lookup_key_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_ipv4_mcast_lookup_key_type_set',
@@ -144,7 +144,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_ipv4_mcast_lookup_key_type_get(self, dpu):
+    def test_sai_vlan_attr_ipv4_mcast_lookup_key_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_ipv4_mcast_lookup_key_type_get',
@@ -160,7 +160,7 @@ class TestSaiVlan:
             [result == 'SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA' for result in results]
         ), 'Get error'
 
-    def test_sai_vlan_attr_ipv6_mcast_lookup_key_type_set(self, dpu):
+    def test_sai_vlan_attr_ipv6_mcast_lookup_key_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_ipv6_mcast_lookup_key_type_set',
@@ -177,7 +177,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_ipv6_mcast_lookup_key_type_get(self, dpu):
+    def test_sai_vlan_attr_ipv6_mcast_lookup_key_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_ipv6_mcast_lookup_key_type_get',
@@ -193,7 +193,7 @@ class TestSaiVlan:
             [result == 'SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA' for result in results]
         ), 'Get error'
 
-    def test_sai_vlan_attr_unknown_non_ip_mcast_output_group_id_set(self, dpu):
+    def test_sai_vlan_attr_unknown_non_ip_mcast_output_group_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_non_ip_mcast_output_group_id_set',
@@ -210,7 +210,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_non_ip_mcast_output_group_id_get(self, dpu):
+    def test_sai_vlan_attr_unknown_non_ip_mcast_output_group_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_non_ip_mcast_output_group_id_get',
@@ -224,7 +224,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_ipv4_mcast_output_group_id_set(self, dpu):
+    def test_sai_vlan_attr_unknown_ipv4_mcast_output_group_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_ipv4_mcast_output_group_id_set',
@@ -241,7 +241,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_ipv4_mcast_output_group_id_get(self, dpu):
+    def test_sai_vlan_attr_unknown_ipv4_mcast_output_group_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_ipv4_mcast_output_group_id_get',
@@ -255,7 +255,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_ipv6_mcast_output_group_id_set(self, dpu):
+    def test_sai_vlan_attr_unknown_ipv6_mcast_output_group_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_ipv6_mcast_output_group_id_set',
@@ -272,7 +272,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_ipv6_mcast_output_group_id_get(self, dpu):
+    def test_sai_vlan_attr_unknown_ipv6_mcast_output_group_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_ipv6_mcast_output_group_id_get',
@@ -286,7 +286,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_linklocal_mcast_output_group_id_set(self, dpu):
+    def test_sai_vlan_attr_unknown_linklocal_mcast_output_group_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_linklocal_mcast_output_group_id_set',
@@ -303,7 +303,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_linklocal_mcast_output_group_id_get(self, dpu):
+    def test_sai_vlan_attr_unknown_linklocal_mcast_output_group_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_linklocal_mcast_output_group_id_get',
@@ -317,7 +317,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_ingress_acl_set(self, dpu):
+    def test_sai_vlan_attr_ingress_acl_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_ingress_acl_set',
@@ -331,7 +331,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_ingress_acl_get(self, dpu):
+    def test_sai_vlan_attr_ingress_acl_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_ingress_acl_get',
@@ -345,7 +345,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_egress_acl_set(self, dpu):
+    def test_sai_vlan_attr_egress_acl_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_egress_acl_set',
@@ -359,7 +359,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_egress_acl_get(self, dpu):
+    def test_sai_vlan_attr_egress_acl_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_egress_acl_get',
@@ -373,7 +373,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_meta_data_set(self, dpu):
+    def test_sai_vlan_attr_meta_data_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_meta_data_set',
@@ -387,7 +387,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_meta_data_get(self, dpu):
+    def test_sai_vlan_attr_meta_data_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_meta_data_get',
@@ -401,7 +401,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_unicast_flood_control_type_set(self, dpu):
+    def test_sai_vlan_attr_unknown_unicast_flood_control_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_unicast_flood_control_type_set',
@@ -418,7 +418,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_unicast_flood_control_type_get(self, dpu):
+    def test_sai_vlan_attr_unknown_unicast_flood_control_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_unicast_flood_control_type_get',
@@ -434,7 +434,7 @@ class TestSaiVlan:
             [result == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL' for result in results]
         ), 'Get error'
 
-    def test_sai_vlan_attr_unknown_unicast_flood_group_set(self, dpu):
+    def test_sai_vlan_attr_unknown_unicast_flood_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_unicast_flood_group_set',
@@ -451,7 +451,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_unicast_flood_group_get(self, dpu):
+    def test_sai_vlan_attr_unknown_unicast_flood_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_unicast_flood_group_get',
@@ -465,7 +465,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_multicast_flood_control_type_set(self, dpu):
+    def test_sai_vlan_attr_unknown_multicast_flood_control_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_multicast_flood_control_type_set',
@@ -482,7 +482,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_multicast_flood_control_type_get(self, dpu):
+    def test_sai_vlan_attr_unknown_multicast_flood_control_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_multicast_flood_control_type_get',
@@ -498,7 +498,7 @@ class TestSaiVlan:
             [result == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL' for result in results]
         ), 'Get error'
 
-    def test_sai_vlan_attr_unknown_multicast_flood_group_set(self, dpu):
+    def test_sai_vlan_attr_unknown_multicast_flood_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_multicast_flood_group_set',
@@ -515,7 +515,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_unknown_multicast_flood_group_get(self, dpu):
+    def test_sai_vlan_attr_unknown_multicast_flood_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_unknown_multicast_flood_group_get',
@@ -529,7 +529,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_broadcast_flood_control_type_set(self, dpu):
+    def test_sai_vlan_attr_broadcast_flood_control_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_broadcast_flood_control_type_set',
@@ -546,7 +546,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_broadcast_flood_control_type_get(self, dpu):
+    def test_sai_vlan_attr_broadcast_flood_control_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_broadcast_flood_control_type_get',
@@ -562,7 +562,7 @@ class TestSaiVlan:
             [result == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL' for result in results]
         ), 'Get error'
 
-    def test_sai_vlan_attr_broadcast_flood_group_set(self, dpu):
+    def test_sai_vlan_attr_broadcast_flood_group_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_broadcast_flood_group_set',
@@ -579,7 +579,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_broadcast_flood_group_get(self, dpu):
+    def test_sai_vlan_attr_broadcast_flood_group_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_broadcast_flood_group_get',
@@ -593,7 +593,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_custom_igmp_snooping_enable_set(self, dpu):
+    def test_sai_vlan_attr_custom_igmp_snooping_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_custom_igmp_snooping_enable_set',
@@ -607,7 +607,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_custom_igmp_snooping_enable_get(self, dpu):
+    def test_sai_vlan_attr_custom_igmp_snooping_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_custom_igmp_snooping_enable_get',
@@ -621,7 +621,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_tam_object_set(self, dpu):
+    def test_sai_vlan_attr_tam_object_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_tam_object_set',
@@ -635,7 +635,7 @@ class TestSaiVlan:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_attr_tam_object_get(self, dpu):
+    def test_sai_vlan_attr_tam_object_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_attr_tam_object_get',

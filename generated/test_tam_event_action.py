@@ -30,7 +30,7 @@ class TestSaiTamEventAction:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_tam_event_action_attr_report_type_set(self, dpu):
+    def test_sai_tam_event_action_attr_report_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_action_attr_report_type_set',
@@ -44,7 +44,7 @@ class TestSaiTamEventAction:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_event_action_attr_report_type_get(self, dpu):
+    def test_sai_tam_event_action_attr_report_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_action_attr_report_type_get',
@@ -58,7 +58,7 @@ class TestSaiTamEventAction:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_tam_event_action_attr_qos_action_type_set(self, dpu):
+    def test_sai_tam_event_action_attr_qos_action_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_action_attr_qos_action_type_set',
@@ -72,7 +72,7 @@ class TestSaiTamEventAction:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_event_action_attr_qos_action_type_get(self, dpu):
+    def test_sai_tam_event_action_attr_qos_action_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_event_action_attr_qos_action_type_get',

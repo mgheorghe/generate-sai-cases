@@ -103,7 +103,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_next_hop_attr_tunnel_vni_set(self, dpu):
+    def test_sai_next_hop_attr_tunnel_vni_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_tunnel_vni_set',
@@ -117,7 +117,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_tunnel_vni_get(self, dpu):
+    def test_sai_next_hop_attr_tunnel_vni_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_tunnel_vni_get',
@@ -131,7 +131,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_tunnel_mac_set(self, dpu):
+    def test_sai_next_hop_attr_tunnel_mac_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_tunnel_mac_set',
@@ -148,7 +148,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_tunnel_mac_get(self, dpu):
+    def test_sai_next_hop_attr_tunnel_mac_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_tunnel_mac_get',
@@ -167,7 +167,7 @@ class TestSaiNextHop:
             ]
         ), 'Get error'
 
-    def test_sai_next_hop_attr_counter_id_set(self, dpu):
+    def test_sai_next_hop_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_counter_id_set',
@@ -181,7 +181,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_counter_id_get(self, dpu):
+    def test_sai_next_hop_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_counter_id_get',
@@ -195,7 +195,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_disable_decrement_ttl_set(self, dpu):
+    def test_sai_next_hop_attr_disable_decrement_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_disable_decrement_ttl_set',
@@ -209,7 +209,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_disable_decrement_ttl_get(self, dpu):
+    def test_sai_next_hop_attr_disable_decrement_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_disable_decrement_ttl_get',
@@ -223,7 +223,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_type_set(self, dpu):
+    def test_sai_next_hop_attr_outseg_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_type_set',
@@ -237,7 +237,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_type_get(self, dpu):
+    def test_sai_next_hop_attr_outseg_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_type_get',
@@ -253,7 +253,7 @@ class TestSaiNextHop:
             [result == 'SAI_OUTSEG_TYPE_SWAP' for result in results]
         ), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_ttl_mode_set(self, dpu):
+    def test_sai_next_hop_attr_outseg_ttl_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_ttl_mode_set',
@@ -270,7 +270,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_ttl_mode_get(self, dpu):
+    def test_sai_next_hop_attr_outseg_ttl_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_ttl_mode_get',
@@ -286,7 +286,7 @@ class TestSaiNextHop:
             [result == 'SAI_OUTSEG_TTL_MODE_UNIFORM' for result in results]
         ), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_ttl_value_set(self, dpu):
+    def test_sai_next_hop_attr_outseg_ttl_value_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_ttl_value_set',
@@ -300,7 +300,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_ttl_value_get(self, dpu):
+    def test_sai_next_hop_attr_outseg_ttl_value_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_ttl_value_get',
@@ -314,7 +314,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_exp_mode_set(self, dpu):
+    def test_sai_next_hop_attr_outseg_exp_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_exp_mode_set',
@@ -331,7 +331,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_exp_mode_get(self, dpu):
+    def test_sai_next_hop_attr_outseg_exp_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_exp_mode_get',
@@ -347,7 +347,7 @@ class TestSaiNextHop:
             [result == 'SAI_OUTSEG_EXP_MODE_UNIFORM' for result in results]
         ), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_exp_value_set(self, dpu):
+    def test_sai_next_hop_attr_outseg_exp_value_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_exp_value_set',
@@ -361,7 +361,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_outseg_exp_value_get(self, dpu):
+    def test_sai_next_hop_attr_outseg_exp_value_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_outseg_exp_value_get',
@@ -375,7 +375,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_set(self, dpu):
+    def test_sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_set',
@@ -392,7 +392,7 @@ class TestSaiNextHop:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_get(self, dpu):
+    def test_sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_get',

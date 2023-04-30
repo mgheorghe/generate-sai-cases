@@ -41,7 +41,7 @@ class TestSaiSchedulerGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_scheduler_group_attr_child_count_get(self, dpu):
+    def test_sai_scheduler_group_attr_child_count_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_group_attr_child_count_get',
@@ -55,7 +55,7 @@ class TestSaiSchedulerGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_scheduler_group_attr_child_list_get(self, dpu):
+    def test_sai_scheduler_group_attr_child_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_group_attr_child_list_get',
@@ -69,7 +69,7 @@ class TestSaiSchedulerGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_scheduler_group_attr_scheduler_profile_id_set(self, dpu):
+    def test_sai_scheduler_group_attr_scheduler_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_group_attr_scheduler_profile_id_set',
@@ -86,7 +86,7 @@ class TestSaiSchedulerGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_group_attr_scheduler_profile_id_get(self, dpu):
+    def test_sai_scheduler_group_attr_scheduler_profile_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_group_attr_scheduler_profile_id_get',
@@ -100,7 +100,7 @@ class TestSaiSchedulerGroup:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_scheduler_group_attr_parent_node_set(self, dpu):
+    def test_sai_scheduler_group_attr_parent_node_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_group_attr_parent_node_set',
@@ -114,7 +114,7 @@ class TestSaiSchedulerGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_group_attr_parent_node_get(self, dpu):
+    def test_sai_scheduler_group_attr_parent_node_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_group_attr_parent_node_get',

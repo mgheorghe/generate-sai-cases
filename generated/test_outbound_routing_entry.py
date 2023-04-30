@@ -21,7 +21,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_outbound_routing_entry_attr_action_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_action_set',
@@ -38,7 +38,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_action_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_action_get',
@@ -57,7 +57,7 @@ class TestSaiOutboundRoutingEntry:
             ]
         ), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_dst_vnet_id_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_dst_vnet_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_dst_vnet_id_set',
@@ -74,7 +74,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_dst_vnet_id_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_dst_vnet_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_dst_vnet_id_get',
@@ -88,7 +88,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_ip_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_ip_set',
@@ -102,7 +102,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_ip_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_ip_get',
@@ -116,7 +116,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_dip_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_dip_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_dip_set',
@@ -130,7 +130,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_dip_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_dip_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_dip_get',
@@ -144,7 +144,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_dip_mask_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_dip_mask_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_dip_mask_set',
@@ -161,7 +161,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_dip_mask_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_dip_mask_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_dip_mask_get',
@@ -175,7 +175,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_sip_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_sip_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_sip_set',
@@ -189,7 +189,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_sip_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_sip_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_sip_get',
@@ -203,7 +203,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_sip_mask_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_sip_mask_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_sip_mask_set',
@@ -220,7 +220,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_overlay_sip_mask_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_overlay_sip_mask_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_overlay_sip_mask_get',
@@ -234,7 +234,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_underlay_dip_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_underlay_dip_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_underlay_dip_set',
@@ -251,7 +251,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_underlay_dip_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_underlay_dip_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_underlay_dip_get',
@@ -265,7 +265,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_underlay_sip_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_underlay_sip_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_underlay_sip_set',
@@ -282,7 +282,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_underlay_sip_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_underlay_sip_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_underlay_sip_get',
@@ -296,7 +296,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_dash_encapsulation_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_dash_encapsulation_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_dash_encapsulation_set',
@@ -313,7 +313,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_dash_encapsulation_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_dash_encapsulation_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_dash_encapsulation_get',
@@ -329,7 +329,7 @@ class TestSaiOutboundRoutingEntry:
             [result == 'SAI_DASH_ENCAPSULATION_VXLAN' for result in results]
         ), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_tunnel_key_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_tunnel_key_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_tunnel_key_set',
@@ -343,7 +343,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_tunnel_key_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_tunnel_key_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_tunnel_key_get',
@@ -357,7 +357,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_counter_id_set(self, dpu):
+    def test_sai_outbound_routing_entry_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_counter_id_set',
@@ -374,7 +374,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_counter_id_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_counter_id_get',
@@ -388,7 +388,7 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_outbound_routing_entry_attr_ip_addr_family_get(self, dpu):
+    def test_sai_outbound_routing_entry_attr_ip_addr_family_get(self, npu):
         commands = [
             {
                 'name': 'sai_outbound_routing_entry_attr_ip_addr_family_get',

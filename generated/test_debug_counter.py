@@ -24,7 +24,7 @@ class TestSaiDebugCounter:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_debug_counter_attr_index_get(self, dpu):
+    def test_sai_debug_counter_attr_index_get(self, npu):
         commands = [
             {
                 'name': 'sai_debug_counter_attr_index_get',
@@ -38,7 +38,7 @@ class TestSaiDebugCounter:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_debug_counter_attr_in_drop_reason_list_set(self, dpu):
+    def test_sai_debug_counter_attr_in_drop_reason_list_set(self, npu):
         commands = [
             {
                 'name': 'sai_debug_counter_attr_in_drop_reason_list_set',
@@ -52,7 +52,7 @@ class TestSaiDebugCounter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_debug_counter_attr_in_drop_reason_list_get(self, dpu):
+    def test_sai_debug_counter_attr_in_drop_reason_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_debug_counter_attr_in_drop_reason_list_get',
@@ -66,7 +66,7 @@ class TestSaiDebugCounter:
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
 
-    def test_sai_debug_counter_attr_out_drop_reason_list_set(self, dpu):
+    def test_sai_debug_counter_attr_out_drop_reason_list_set(self, npu):
         commands = [
             {
                 'name': 'sai_debug_counter_attr_out_drop_reason_list_set',
@@ -80,7 +80,7 @@ class TestSaiDebugCounter:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_debug_counter_attr_out_drop_reason_list_get(self, dpu):
+    def test_sai_debug_counter_attr_out_drop_reason_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_debug_counter_attr_out_drop_reason_list_get',

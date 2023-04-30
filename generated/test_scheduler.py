@@ -21,7 +21,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_scheduler_attr_scheduling_type_set(self, dpu):
+    def test_sai_scheduler_attr_scheduling_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_scheduling_type_set',
@@ -38,7 +38,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_scheduling_type_get(self, dpu):
+    def test_sai_scheduler_attr_scheduling_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_scheduling_type_get',
@@ -54,7 +54,7 @@ class TestSaiScheduler:
             [result == 'SAI_SCHEDULING_TYPE_WRR' for result in results]
         ), 'Get error'
 
-    def test_sai_scheduler_attr_scheduling_weight_set(self, dpu):
+    def test_sai_scheduler_attr_scheduling_weight_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_scheduling_weight_set',
@@ -68,7 +68,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_scheduling_weight_get(self, dpu):
+    def test_sai_scheduler_attr_scheduling_weight_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_scheduling_weight_get',
@@ -82,7 +82,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == '1' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_meter_type_set(self, dpu):
+    def test_sai_scheduler_attr_meter_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_meter_type_set',
@@ -96,7 +96,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_meter_type_get(self, dpu):
+    def test_sai_scheduler_attr_meter_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_meter_type_get',
@@ -112,7 +112,7 @@ class TestSaiScheduler:
             [result == 'SAI_METER_TYPE_BYTES' for result in results]
         ), 'Get error'
 
-    def test_sai_scheduler_attr_min_bandwidth_rate_set(self, dpu):
+    def test_sai_scheduler_attr_min_bandwidth_rate_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_min_bandwidth_rate_set',
@@ -126,7 +126,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_min_bandwidth_rate_get(self, dpu):
+    def test_sai_scheduler_attr_min_bandwidth_rate_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_min_bandwidth_rate_get',
@@ -140,7 +140,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_min_bandwidth_burst_rate_set(self, dpu):
+    def test_sai_scheduler_attr_min_bandwidth_burst_rate_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_min_bandwidth_burst_rate_set',
@@ -154,7 +154,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_min_bandwidth_burst_rate_get(self, dpu):
+    def test_sai_scheduler_attr_min_bandwidth_burst_rate_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_min_bandwidth_burst_rate_get',
@@ -168,7 +168,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_max_bandwidth_rate_set(self, dpu):
+    def test_sai_scheduler_attr_max_bandwidth_rate_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_max_bandwidth_rate_set',
@@ -182,7 +182,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_max_bandwidth_rate_get(self, dpu):
+    def test_sai_scheduler_attr_max_bandwidth_rate_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_max_bandwidth_rate_get',
@@ -196,7 +196,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_max_bandwidth_burst_rate_set(self, dpu):
+    def test_sai_scheduler_attr_max_bandwidth_burst_rate_set(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_max_bandwidth_burst_rate_set',
@@ -210,7 +210,7 @@ class TestSaiScheduler:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_scheduler_attr_max_bandwidth_burst_rate_get(self, dpu):
+    def test_sai_scheduler_attr_max_bandwidth_burst_rate_get(self, npu):
         commands = [
             {
                 'name': 'sai_scheduler_attr_max_bandwidth_burst_rate_get',

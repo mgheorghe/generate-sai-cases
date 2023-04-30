@@ -21,7 +21,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_dtel_report_session_attr_src_ip_set(self, dpu):
+    def test_sai_dtel_report_session_attr_src_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_src_ip_set',
@@ -35,7 +35,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_src_ip_get(self, dpu):
+    def test_sai_dtel_report_session_attr_src_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_src_ip_get',
@@ -49,7 +49,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == '0.0.0.0' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_dst_ip_list_set(self, dpu):
+    def test_sai_dtel_report_session_attr_dst_ip_list_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_dst_ip_list_set',
@@ -63,7 +63,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_dst_ip_list_get(self, dpu):
+    def test_sai_dtel_report_session_attr_dst_ip_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_dst_ip_list_get',
@@ -77,7 +77,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == 'empty' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_virtual_router_id_set(self, dpu):
+    def test_sai_dtel_report_session_attr_virtual_router_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_virtual_router_id_set',
@@ -94,7 +94,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_virtual_router_id_get(self, dpu):
+    def test_sai_dtel_report_session_attr_virtual_router_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_virtual_router_id_get',
@@ -108,7 +108,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_truncate_size_set(self, dpu):
+    def test_sai_dtel_report_session_attr_truncate_size_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_truncate_size_set',
@@ -122,7 +122,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_truncate_size_get(self, dpu):
+    def test_sai_dtel_report_session_attr_truncate_size_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_truncate_size_get',
@@ -136,7 +136,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_udp_dst_port_set(self, dpu):
+    def test_sai_dtel_report_session_attr_udp_dst_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_udp_dst_port_set',
@@ -150,7 +150,7 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_dtel_report_session_attr_udp_dst_port_get(self, dpu):
+    def test_sai_dtel_report_session_attr_udp_dst_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_dtel_report_session_attr_udp_dst_port_get',

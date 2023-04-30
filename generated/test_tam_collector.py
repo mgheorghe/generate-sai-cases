@@ -39,7 +39,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_tam_collector_attr_src_ip_set(self, dpu):
+    def test_sai_tam_collector_attr_src_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_src_ip_set',
@@ -53,7 +53,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_src_ip_get(self, dpu):
+    def test_sai_tam_collector_attr_src_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_src_ip_get',
@@ -67,7 +67,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_dst_ip_set(self, dpu):
+    def test_sai_tam_collector_attr_dst_ip_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_dst_ip_set',
@@ -81,7 +81,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_dst_ip_get(self, dpu):
+    def test_sai_tam_collector_attr_dst_ip_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_dst_ip_get',
@@ -95,7 +95,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_localhost_set(self, dpu):
+    def test_sai_tam_collector_attr_localhost_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_localhost_set',
@@ -109,7 +109,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_localhost_get(self, dpu):
+    def test_sai_tam_collector_attr_localhost_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_localhost_get',
@@ -123,7 +123,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_virtual_router_id_set(self, dpu):
+    def test_sai_tam_collector_attr_virtual_router_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_virtual_router_id_set',
@@ -140,7 +140,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_virtual_router_id_get(self, dpu):
+    def test_sai_tam_collector_attr_virtual_router_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_virtual_router_id_get',
@@ -154,7 +154,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_truncate_size_set(self, dpu):
+    def test_sai_tam_collector_attr_truncate_size_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_truncate_size_set',
@@ -168,7 +168,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_truncate_size_get(self, dpu):
+    def test_sai_tam_collector_attr_truncate_size_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_truncate_size_get',
@@ -182,7 +182,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_transport_set(self, dpu):
+    def test_sai_tam_collector_attr_transport_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_transport_set',
@@ -196,7 +196,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_transport_get(self, dpu):
+    def test_sai_tam_collector_attr_transport_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_transport_get',
@@ -210,7 +210,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_dscp_value_set(self, dpu):
+    def test_sai_tam_collector_attr_dscp_value_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_dscp_value_set',
@@ -224,7 +224,7 @@ class TestSaiTamCollector:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_collector_attr_dscp_value_get(self, dpu):
+    def test_sai_tam_collector_attr_dscp_value_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_collector_attr_dscp_value_get',

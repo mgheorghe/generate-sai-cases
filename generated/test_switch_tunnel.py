@@ -24,7 +24,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_switch_tunnel_attr_loopback_packet_action_set(self, dpu):
+    def test_sai_switch_tunnel_attr_loopback_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_loopback_packet_action_set',
@@ -41,7 +41,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_loopback_packet_action_get(self, dpu):
+    def test_sai_switch_tunnel_attr_loopback_packet_action_get(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_loopback_packet_action_get',
@@ -57,7 +57,7 @@ class TestSaiSwitchTunnel:
             [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
         ), 'Get error'
 
-    def test_sai_switch_tunnel_attr_tunnel_vxlan_udp_sport_mode_set(self, dpu):
+    def test_sai_switch_tunnel_attr_tunnel_vxlan_udp_sport_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_tunnel_vxlan_udp_sport_mode_set',
@@ -74,7 +74,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_tunnel_vxlan_udp_sport_mode_get(self, dpu):
+    def test_sai_switch_tunnel_attr_tunnel_vxlan_udp_sport_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_tunnel_vxlan_udp_sport_mode_get',
@@ -93,7 +93,7 @@ class TestSaiSwitchTunnel:
             ]
         ), 'Get error'
 
-    def test_sai_switch_tunnel_attr_vxlan_udp_sport_set(self, dpu):
+    def test_sai_switch_tunnel_attr_vxlan_udp_sport_set(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_vxlan_udp_sport_set',
@@ -107,7 +107,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_vxlan_udp_sport_get(self, dpu):
+    def test_sai_switch_tunnel_attr_vxlan_udp_sport_get(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_vxlan_udp_sport_get',
@@ -121,7 +121,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_vxlan_udp_sport_mask_set(self, dpu):
+    def test_sai_switch_tunnel_attr_vxlan_udp_sport_mask_set(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_vxlan_udp_sport_mask_set',
@@ -135,7 +135,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_vxlan_udp_sport_mask_get(self, dpu):
+    def test_sai_switch_tunnel_attr_vxlan_udp_sport_mask_get(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_vxlan_udp_sport_mask_get',
@@ -149,7 +149,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_set(self, dpu):
+    def test_sai_switch_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_set(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_set',
@@ -166,7 +166,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_get(self, dpu):
+    def test_sai_switch_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_get(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_get',
@@ -180,7 +180,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_encap_qos_tc_to_queue_map_set(self, dpu):
+    def test_sai_switch_tunnel_attr_encap_qos_tc_to_queue_map_set(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_encap_qos_tc_to_queue_map_set',
@@ -197,7 +197,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_encap_qos_tc_to_queue_map_get(self, dpu):
+    def test_sai_switch_tunnel_attr_encap_qos_tc_to_queue_map_get(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_encap_qos_tc_to_queue_map_get',
@@ -211,7 +211,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_decap_qos_dscp_to_tc_map_set(self, dpu):
+    def test_sai_switch_tunnel_attr_decap_qos_dscp_to_tc_map_set(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_decap_qos_dscp_to_tc_map_set',
@@ -228,7 +228,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_decap_qos_dscp_to_tc_map_get(self, dpu):
+    def test_sai_switch_tunnel_attr_decap_qos_dscp_to_tc_map_get(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_decap_qos_dscp_to_tc_map_get',
@@ -242,7 +242,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_decap_qos_tc_to_priority_group_map_set(self, dpu):
+    def test_sai_switch_tunnel_attr_decap_qos_tc_to_priority_group_map_set(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_decap_qos_tc_to_priority_group_map_set',
@@ -259,7 +259,7 @@ class TestSaiSwitchTunnel:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_switch_tunnel_attr_decap_qos_tc_to_priority_group_map_get(self, dpu):
+    def test_sai_switch_tunnel_attr_decap_qos_tc_to_priority_group_map_get(self, npu):
         commands = [
             {
                 'name': 'sai_switch_tunnel_attr_decap_qos_tc_to_priority_group_map_get',

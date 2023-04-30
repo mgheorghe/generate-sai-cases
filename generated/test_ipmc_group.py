@@ -21,7 +21,7 @@ class TestSaiIpmcGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_ipmc_group_attr_ipmc_output_count_get(self, dpu):
+    def test_sai_ipmc_group_attr_ipmc_output_count_get(self, npu):
         commands = [
             {
                 'name': 'sai_ipmc_group_attr_ipmc_output_count_get',
@@ -35,7 +35,7 @@ class TestSaiIpmcGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_ipmc_group_attr_ipmc_member_list_get(self, dpu):
+    def test_sai_ipmc_group_attr_ipmc_member_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_ipmc_group_attr_ipmc_member_list_get',

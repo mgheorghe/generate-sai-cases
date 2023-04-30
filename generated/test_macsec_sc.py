@@ -39,7 +39,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_macsec_sc_attr_macsec_explicit_sci_enable_set(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_explicit_sci_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_explicit_sci_enable_set',
@@ -53,7 +53,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_explicit_sci_enable_get(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_explicit_sci_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_explicit_sci_enable_get',
@@ -67,7 +67,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_sectag_offset_set(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_sectag_offset_set(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_sectag_offset_set',
@@ -81,7 +81,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_sectag_offset_get(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_sectag_offset_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_sectag_offset_get',
@@ -95,7 +95,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_active_egress_sa_id_get(self, dpu):
+    def test_sai_macsec_sc_attr_active_egress_sa_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_active_egress_sa_id_get',
@@ -109,7 +109,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_replay_protection_enable_set(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_replay_protection_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_replay_protection_enable_set',
@@ -126,7 +126,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_replay_protection_enable_get(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_replay_protection_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_replay_protection_enable_get',
@@ -140,7 +140,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'true' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_replay_protection_window_set(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_replay_protection_window_set(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_replay_protection_window_set',
@@ -157,7 +157,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_replay_protection_window_get(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_replay_protection_window_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_replay_protection_window_get',
@@ -171,7 +171,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_sa_list_get(self, dpu):
+    def test_sai_macsec_sc_attr_sa_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_sa_list_get',
@@ -185,7 +185,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_cipher_suite_set(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_cipher_suite_set(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_cipher_suite_set',
@@ -199,7 +199,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_macsec_cipher_suite_get(self, dpu):
+    def test_sai_macsec_sc_attr_macsec_cipher_suite_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_macsec_cipher_suite_get',
@@ -213,7 +213,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_encryption_enable_set(self, dpu):
+    def test_sai_macsec_sc_attr_encryption_enable_set(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_encryption_enable_set',
@@ -227,7 +227,7 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_macsec_sc_attr_encryption_enable_get(self, dpu):
+    def test_sai_macsec_sc_attr_encryption_enable_get(self, npu):
         commands = [
             {
                 'name': 'sai_macsec_sc_attr_encryption_enable_get',

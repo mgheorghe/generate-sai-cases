@@ -108,7 +108,7 @@ class TestSaiVlanMember:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_vlan_member_attr_vlan_tagging_mode_set(self, dpu):
+    def test_sai_vlan_member_attr_vlan_tagging_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_member_attr_vlan_tagging_mode_set',
@@ -125,7 +125,7 @@ class TestSaiVlanMember:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_vlan_member_attr_vlan_tagging_mode_get(self, dpu):
+    def test_sai_vlan_member_attr_vlan_tagging_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_vlan_member_attr_vlan_tagging_mode_get',

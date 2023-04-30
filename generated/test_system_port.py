@@ -24,7 +24,7 @@ class TestSaiSystemPort:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_system_port_attr_type_get(self, dpu):
+    def test_sai_system_port_attr_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_system_port_attr_type_get',
@@ -38,7 +38,7 @@ class TestSaiSystemPort:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_system_port_attr_qos_number_of_voqs_get(self, dpu):
+    def test_sai_system_port_attr_qos_number_of_voqs_get(self, npu):
         commands = [
             {
                 'name': 'sai_system_port_attr_qos_number_of_voqs_get',
@@ -52,7 +52,7 @@ class TestSaiSystemPort:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_system_port_attr_qos_voq_list_get(self, dpu):
+    def test_sai_system_port_attr_qos_voq_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_system_port_attr_qos_voq_list_get',
@@ -66,7 +66,7 @@ class TestSaiSystemPort:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_system_port_attr_port_get(self, dpu):
+    def test_sai_system_port_attr_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_system_port_attr_port_get',
@@ -80,7 +80,7 @@ class TestSaiSystemPort:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_system_port_attr_admin_state_set(self, dpu):
+    def test_sai_system_port_attr_admin_state_set(self, npu):
         commands = [
             {
                 'name': 'sai_system_port_attr_admin_state_set',
@@ -94,7 +94,7 @@ class TestSaiSystemPort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_system_port_attr_admin_state_get(self, dpu):
+    def test_sai_system_port_attr_admin_state_get(self, npu):
         commands = [
             {
                 'name': 'sai_system_port_attr_admin_state_get',
@@ -108,7 +108,7 @@ class TestSaiSystemPort:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_system_port_attr_qos_tc_to_queue_map_set(self, dpu):
+    def test_sai_system_port_attr_qos_tc_to_queue_map_set(self, npu):
         commands = [
             {
                 'name': 'sai_system_port_attr_qos_tc_to_queue_map_set',
@@ -125,7 +125,7 @@ class TestSaiSystemPort:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_system_port_attr_qos_tc_to_queue_map_get(self, dpu):
+    def test_sai_system_port_attr_qos_tc_to_queue_map_get(self, npu):
         commands = [
             {
                 'name': 'sai_system_port_attr_qos_tc_to_queue_map_get',

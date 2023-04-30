@@ -59,7 +59,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_mirror_session_attr_monitor_port_set(self, dpu):
+    def test_sai_mirror_session_attr_monitor_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_monitor_port_set',
@@ -73,7 +73,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_monitor_port_get(self, dpu):
+    def test_sai_mirror_session_attr_monitor_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_monitor_port_get',
@@ -87,7 +87,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_truncate_size_set(self, dpu):
+    def test_sai_mirror_session_attr_truncate_size_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_truncate_size_set',
@@ -101,7 +101,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_truncate_size_get(self, dpu):
+    def test_sai_mirror_session_attr_truncate_size_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_truncate_size_get',
@@ -115,7 +115,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_sample_rate_set(self, dpu):
+    def test_sai_mirror_session_attr_sample_rate_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_sample_rate_set',
@@ -129,7 +129,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_sample_rate_get(self, dpu):
+    def test_sai_mirror_session_attr_sample_rate_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_sample_rate_get',
@@ -143,7 +143,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == '1' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_congestion_mode_set(self, dpu):
+    def test_sai_mirror_session_attr_congestion_mode_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_congestion_mode_set',
@@ -160,7 +160,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_congestion_mode_get(self, dpu):
+    def test_sai_mirror_session_attr_congestion_mode_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_congestion_mode_get',
@@ -179,7 +179,7 @@ class TestSaiMirrorSession:
             ]
         ), 'Get error'
 
-    def test_sai_mirror_session_attr_tc_set(self, dpu):
+    def test_sai_mirror_session_attr_tc_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_tc_set',
@@ -193,7 +193,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_tc_get(self, dpu):
+    def test_sai_mirror_session_attr_tc_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_tc_get',
@@ -207,7 +207,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_tpid_set(self, dpu):
+    def test_sai_mirror_session_attr_vlan_tpid_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_tpid_set',
@@ -221,7 +221,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_tpid_get(self, dpu):
+    def test_sai_mirror_session_attr_vlan_tpid_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_tpid_get',
@@ -235,7 +235,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == '0x8100' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_id_set(self, dpu):
+    def test_sai_mirror_session_attr_vlan_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_id_set',
@@ -249,7 +249,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_id_get(self, dpu):
+    def test_sai_mirror_session_attr_vlan_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_id_get',
@@ -263,7 +263,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_pri_set(self, dpu):
+    def test_sai_mirror_session_attr_vlan_pri_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_pri_set',
@@ -277,7 +277,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_pri_get(self, dpu):
+    def test_sai_mirror_session_attr_vlan_pri_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_pri_get',
@@ -291,7 +291,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_cfi_set(self, dpu):
+    def test_sai_mirror_session_attr_vlan_cfi_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_cfi_set',
@@ -305,7 +305,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_cfi_get(self, dpu):
+    def test_sai_mirror_session_attr_vlan_cfi_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_cfi_get',
@@ -319,7 +319,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_header_valid_set(self, dpu):
+    def test_sai_mirror_session_attr_vlan_header_valid_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_header_valid_set',
@@ -333,7 +333,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_vlan_header_valid_get(self, dpu):
+    def test_sai_mirror_session_attr_vlan_header_valid_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_vlan_header_valid_get',
@@ -347,7 +347,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_iphdr_version_set(self, dpu):
+    def test_sai_mirror_session_attr_iphdr_version_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_iphdr_version_set',
@@ -361,7 +361,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_iphdr_version_get(self, dpu):
+    def test_sai_mirror_session_attr_iphdr_version_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_iphdr_version_get',
@@ -375,7 +375,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_tos_set(self, dpu):
+    def test_sai_mirror_session_attr_tos_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_tos_set',
@@ -389,7 +389,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_tos_get(self, dpu):
+    def test_sai_mirror_session_attr_tos_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_tos_get',
@@ -403,7 +403,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_ttl_set(self, dpu):
+    def test_sai_mirror_session_attr_ttl_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_ttl_set',
@@ -417,7 +417,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_ttl_get(self, dpu):
+    def test_sai_mirror_session_attr_ttl_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_ttl_get',
@@ -431,7 +431,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == '255' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_src_ip_address_set(self, dpu):
+    def test_sai_mirror_session_attr_src_ip_address_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_src_ip_address_set',
@@ -445,7 +445,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_src_ip_address_get(self, dpu):
+    def test_sai_mirror_session_attr_src_ip_address_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_src_ip_address_get',
@@ -459,7 +459,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_dst_ip_address_set(self, dpu):
+    def test_sai_mirror_session_attr_dst_ip_address_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_dst_ip_address_set',
@@ -473,7 +473,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_dst_ip_address_get(self, dpu):
+    def test_sai_mirror_session_attr_dst_ip_address_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_dst_ip_address_get',
@@ -487,7 +487,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_src_mac_address_set(self, dpu):
+    def test_sai_mirror_session_attr_src_mac_address_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_src_mac_address_set',
@@ -501,7 +501,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_src_mac_address_get(self, dpu):
+    def test_sai_mirror_session_attr_src_mac_address_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_src_mac_address_get',
@@ -515,7 +515,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_dst_mac_address_set(self, dpu):
+    def test_sai_mirror_session_attr_dst_mac_address_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_dst_mac_address_set',
@@ -529,7 +529,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_dst_mac_address_get(self, dpu):
+    def test_sai_mirror_session_attr_dst_mac_address_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_dst_mac_address_get',
@@ -543,7 +543,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_gre_protocol_type_set(self, dpu):
+    def test_sai_mirror_session_attr_gre_protocol_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_gre_protocol_type_set',
@@ -557,7 +557,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_gre_protocol_type_get(self, dpu):
+    def test_sai_mirror_session_attr_gre_protocol_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_gre_protocol_type_get',
@@ -571,7 +571,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_monitor_portlist_set(self, dpu):
+    def test_sai_mirror_session_attr_monitor_portlist_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_monitor_portlist_set',
@@ -585,7 +585,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_monitor_portlist_get(self, dpu):
+    def test_sai_mirror_session_attr_monitor_portlist_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_monitor_portlist_get',
@@ -599,7 +599,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_policer_set(self, dpu):
+    def test_sai_mirror_session_attr_policer_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_policer_set',
@@ -613,7 +613,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_policer_get(self, dpu):
+    def test_sai_mirror_session_attr_policer_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_policer_get',
@@ -627,7 +627,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_udp_src_port_set(self, dpu):
+    def test_sai_mirror_session_attr_udp_src_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_udp_src_port_set',
@@ -641,7 +641,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_udp_src_port_get(self, dpu):
+    def test_sai_mirror_session_attr_udp_src_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_udp_src_port_get',
@@ -655,7 +655,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_udp_dst_port_set(self, dpu):
+    def test_sai_mirror_session_attr_udp_dst_port_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_udp_dst_port_set',
@@ -669,7 +669,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_udp_dst_port_get(self, dpu):
+    def test_sai_mirror_session_attr_udp_dst_port_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_udp_dst_port_get',
@@ -683,7 +683,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_counter_id_set(self, dpu):
+    def test_sai_mirror_session_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_counter_id_set',
@@ -700,7 +700,7 @@ class TestSaiMirrorSession:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_mirror_session_attr_counter_id_get(self, dpu):
+    def test_sai_mirror_session_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_mirror_session_attr_counter_id_get',

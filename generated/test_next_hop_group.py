@@ -24,7 +24,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_next_hop_group_attr_next_hop_count_get(self, dpu):
+    def test_sai_next_hop_group_attr_next_hop_count_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_next_hop_count_get',
@@ -38,7 +38,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_next_hop_member_list_get(self, dpu):
+    def test_sai_next_hop_group_attr_next_hop_member_list_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_next_hop_member_list_get',
@@ -52,7 +52,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_set_switchover_set(self, dpu):
+    def test_sai_next_hop_group_attr_set_switchover_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_set_switchover_set',
@@ -66,7 +66,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_set_switchover_get(self, dpu):
+    def test_sai_next_hop_group_attr_set_switchover_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_set_switchover_get',
@@ -80,7 +80,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'false' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_counter_id_set(self, dpu):
+    def test_sai_next_hop_group_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_counter_id_set',
@@ -97,7 +97,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_counter_id_get(self, dpu):
+    def test_sai_next_hop_group_attr_counter_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_counter_id_get',
@@ -111,7 +111,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_real_size_get(self, dpu):
+    def test_sai_next_hop_group_attr_real_size_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_real_size_get',
@@ -125,7 +125,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_selection_map_set(self, dpu):
+    def test_sai_next_hop_group_attr_selection_map_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_selection_map_set',
@@ -142,7 +142,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_selection_map_get(self, dpu):
+    def test_sai_next_hop_group_attr_selection_map_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_selection_map_get',
@@ -156,7 +156,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_ars_object_id_set(self, dpu):
+    def test_sai_next_hop_group_attr_ars_object_id_set(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_ars_object_id_set',
@@ -173,7 +173,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_ars_object_id_get(self, dpu):
+    def test_sai_next_hop_group_attr_ars_object_id_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_ars_object_id_get',
@@ -187,7 +187,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_ars_packet_drops_get(self, dpu):
+    def test_sai_next_hop_group_attr_ars_packet_drops_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_ars_packet_drops_get',
@@ -201,7 +201,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_ars_next_hop_reassignments_get(self, dpu):
+    def test_sai_next_hop_group_attr_ars_next_hop_reassignments_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_ars_next_hop_reassignments_get',
@@ -215,7 +215,7 @@ class TestSaiNextHopGroup:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_next_hop_group_attr_ars_port_reassignments_get(self, dpu):
+    def test_sai_next_hop_group_attr_ars_port_reassignments_get(self, npu):
         commands = [
             {
                 'name': 'sai_next_hop_group_attr_ars_port_reassignments_get',

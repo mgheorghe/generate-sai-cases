@@ -97,7 +97,7 @@ class TestSaiTunnelTermTableEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_tunnel_term_table_entry_attr_ip_addr_family_get(self, dpu):
+    def test_sai_tunnel_term_table_entry_attr_ip_addr_family_get(self, npu):
         commands = [
             {
                 'name': 'sai_tunnel_term_table_entry_attr_ip_addr_family_get',
@@ -111,7 +111,7 @@ class TestSaiTunnelTermTableEntry:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_tunnel_term_table_entry_attr_ipsec_verified_set(self, dpu):
+    def test_sai_tunnel_term_table_entry_attr_ipsec_verified_set(self, npu):
         commands = [
             {
                 'name': 'sai_tunnel_term_table_entry_attr_ipsec_verified_set',
@@ -128,7 +128,7 @@ class TestSaiTunnelTermTableEntry:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tunnel_term_table_entry_attr_ipsec_verified_get(self, dpu):
+    def test_sai_tunnel_term_table_entry_attr_ipsec_verified_get(self, npu):
         commands = [
             {
                 'name': 'sai_tunnel_term_table_entry_attr_ipsec_verified_get',

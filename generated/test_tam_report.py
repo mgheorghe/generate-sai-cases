@@ -21,7 +21,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_sai_tam_report_attr_type_set(self, dpu):
+    def test_sai_tam_report_attr_type_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_type_set',
@@ -35,7 +35,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_type_get(self, dpu):
+    def test_sai_tam_report_attr_type_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_type_get',
@@ -49,7 +49,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == 'TODO' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_quota_set(self, dpu):
+    def test_sai_tam_report_attr_quota_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_quota_set',
@@ -63,7 +63,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_quota_get(self, dpu):
+    def test_sai_tam_report_attr_quota_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_quota_get',
@@ -77,7 +77,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_report_interval_set(self, dpu):
+    def test_sai_tam_report_attr_report_interval_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_report_interval_set',
@@ -91,7 +91,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_report_interval_get(self, dpu):
+    def test_sai_tam_report_attr_report_interval_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_report_interval_get',
@@ -105,7 +105,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == '1000' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_enterprise_number_set(self, dpu):
+    def test_sai_tam_report_attr_enterprise_number_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_enterprise_number_set',
@@ -119,7 +119,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_enterprise_number_get(self, dpu):
+    def test_sai_tam_report_attr_enterprise_number_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_enterprise_number_get',
@@ -133,7 +133,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == '0' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_template_report_interval_set(self, dpu):
+    def test_sai_tam_report_attr_template_report_interval_set(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_template_report_interval_set',
@@ -147,7 +147,7 @@ class TestSaiTamReport:
         pprint(results)
         assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
 
-    def test_sai_tam_report_attr_template_report_interval_get(self, dpu):
+    def test_sai_tam_report_attr_template_report_interval_get(self, npu):
         commands = [
             {
                 'name': 'sai_tam_report_attr_template_report_interval_get',
