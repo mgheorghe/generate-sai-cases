@@ -24,7 +24,7 @@ class TestSaiVlan:
     def test_sai_vlan_attr_member_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_member_list_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_MEMBER_LIST',
@@ -33,12 +33,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_max_learned_addresses_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_max_learned_addresses_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': ['SAI_VLAN_ATTR_MAX_LEARNED_ADDRESSES', '0'],
@@ -47,12 +50,13 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_attr_max_learned_addresses_set'])
     def test_sai_vlan_attr_max_learned_addresses_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_max_learned_addresses_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_MAX_LEARNED_ADDRESSES',
@@ -61,12 +65,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_stp_instance_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_stp_instance_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -78,12 +85,13 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_attr_stp_instance_set'])
     def test_sai_vlan_attr_stp_instance_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_stp_instance_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_STP_INSTANCE',
@@ -92,17 +100,18 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [
-                result == 'attrvalue SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID'
-                for result in results
-            ]
-        ), 'Get error'
+        assert (
+            results[1][0].value() == 'attrvalue SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID'
+        ), (
+            'Get error, expected attrvalue SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_learn_disable_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_learn_disable_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': ['SAI_VLAN_ATTR_LEARN_DISABLE', 'false'],
@@ -111,12 +120,13 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_attr_learn_disable_set'])
     def test_sai_vlan_attr_learn_disable_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_learn_disable_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_LEARN_DISABLE',
@@ -125,12 +135,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_ipv4_mcast_lookup_key_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_ipv4_mcast_lookup_key_type_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -142,12 +155,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_ipv4_mcast_lookup_key_type_set']
+    )
     def test_sai_vlan_attr_ipv4_mcast_lookup_key_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_ipv4_mcast_lookup_key_type_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_IPV4_MCAST_LOOKUP_KEY_TYPE',
@@ -156,14 +172,16 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA', (
+            'Get error, expected SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_ipv6_mcast_lookup_key_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_ipv6_mcast_lookup_key_type_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -175,12 +193,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_ipv6_mcast_lookup_key_type_set']
+    )
     def test_sai_vlan_attr_ipv6_mcast_lookup_key_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_ipv6_mcast_lookup_key_type_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_IPV6_MCAST_LOOKUP_KEY_TYPE',
@@ -189,14 +210,16 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA', (
+            'Get error, expected SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_unknown_non_ip_mcast_output_group_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_non_ip_mcast_output_group_id_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -208,12 +231,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_unknown_non_ip_mcast_output_group_id_set']
+    )
     def test_sai_vlan_attr_unknown_non_ip_mcast_output_group_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_non_ip_mcast_output_group_id_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_UNKNOWN_NON_IP_MCAST_OUTPUT_GROUP_ID',
@@ -222,12 +248,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_unknown_ipv4_mcast_output_group_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_ipv4_mcast_output_group_id_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -239,12 +268,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_unknown_ipv4_mcast_output_group_id_set']
+    )
     def test_sai_vlan_attr_unknown_ipv4_mcast_output_group_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_ipv4_mcast_output_group_id_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_UNKNOWN_IPV4_MCAST_OUTPUT_GROUP_ID',
@@ -253,12 +285,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_unknown_ipv6_mcast_output_group_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_ipv6_mcast_output_group_id_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -270,12 +305,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_unknown_ipv6_mcast_output_group_id_set']
+    )
     def test_sai_vlan_attr_unknown_ipv6_mcast_output_group_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_ipv6_mcast_output_group_id_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_UNKNOWN_IPV6_MCAST_OUTPUT_GROUP_ID',
@@ -284,12 +322,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_unknown_linklocal_mcast_output_group_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_linklocal_mcast_output_group_id_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -301,12 +342,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_unknown_linklocal_mcast_output_group_id_set']
+    )
     def test_sai_vlan_attr_unknown_linklocal_mcast_output_group_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_linklocal_mcast_output_group_id_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_UNKNOWN_LINKLOCAL_MCAST_OUTPUT_GROUP_ID',
@@ -315,12 +359,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_ingress_acl_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_ingress_acl_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': ['SAI_VLAN_ATTR_INGRESS_ACL', 'SAI_NULL_OBJECT_ID'],
@@ -329,12 +376,13 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_attr_ingress_acl_set'])
     def test_sai_vlan_attr_ingress_acl_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_ingress_acl_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_INGRESS_ACL',
@@ -343,12 +391,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_egress_acl_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_egress_acl_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': ['SAI_VLAN_ATTR_EGRESS_ACL', 'SAI_NULL_OBJECT_ID'],
@@ -357,12 +408,13 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_attr_egress_acl_set'])
     def test_sai_vlan_attr_egress_acl_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_egress_acl_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_EGRESS_ACL',
@@ -371,12 +423,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_meta_data_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_meta_data_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': ['SAI_VLAN_ATTR_META_DATA', '0'],
@@ -385,12 +440,13 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_attr_meta_data_set'])
     def test_sai_vlan_attr_meta_data_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_meta_data_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_META_DATA',
@@ -399,12 +455,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_unknown_unicast_flood_control_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_unicast_flood_control_type_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -416,12 +475,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_unknown_unicast_flood_control_type_set']
+    )
     def test_sai_vlan_attr_unknown_unicast_flood_control_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_unicast_flood_control_type_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_UNKNOWN_UNICAST_FLOOD_CONTROL_TYPE',
@@ -430,14 +492,16 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL', (
+            'Get error, expected SAI_VLAN_FLOOD_CONTROL_TYPE_ALL but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_unknown_unicast_flood_group_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_unicast_flood_group_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -449,12 +513,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_unknown_unicast_flood_group_set']
+    )
     def test_sai_vlan_attr_unknown_unicast_flood_group_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_unicast_flood_group_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP',
@@ -463,12 +530,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_unknown_multicast_flood_control_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_multicast_flood_control_type_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -480,12 +550,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_unknown_multicast_flood_control_type_set']
+    )
     def test_sai_vlan_attr_unknown_multicast_flood_control_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_multicast_flood_control_type_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE',
@@ -494,14 +567,16 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL', (
+            'Get error, expected SAI_VLAN_FLOOD_CONTROL_TYPE_ALL but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_unknown_multicast_flood_group_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_multicast_flood_group_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -513,12 +588,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_unknown_multicast_flood_group_set']
+    )
     def test_sai_vlan_attr_unknown_multicast_flood_group_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_unknown_multicast_flood_group_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP',
@@ -527,12 +605,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_broadcast_flood_control_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_broadcast_flood_control_type_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -544,12 +625,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_broadcast_flood_control_type_set']
+    )
     def test_sai_vlan_attr_broadcast_flood_control_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_broadcast_flood_control_type_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_BROADCAST_FLOOD_CONTROL_TYPE',
@@ -558,14 +642,16 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL', (
+            'Get error, expected SAI_VLAN_FLOOD_CONTROL_TYPE_ALL but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_broadcast_flood_group_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_broadcast_flood_group_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': [
@@ -577,12 +663,13 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_attr_broadcast_flood_group_set'])
     def test_sai_vlan_attr_broadcast_flood_group_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_broadcast_flood_group_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_BROADCAST_FLOOD_GROUP',
@@ -591,12 +678,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_custom_igmp_snooping_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_custom_igmp_snooping_enable_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': ['SAI_VLAN_ATTR_CUSTOM_IGMP_SNOOPING_ENABLE', 'false'],
@@ -605,12 +695,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_vlan_attr_custom_igmp_snooping_enable_set']
+    )
     def test_sai_vlan_attr_custom_igmp_snooping_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_custom_igmp_snooping_enable_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_CUSTOM_IGMP_SNOOPING_ENABLE',
@@ -619,12 +712,15 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_vlan_attr_tam_object_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_tam_object_set',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': ['SAI_VLAN_ATTR_TAM_OBJECT', 'empty'],
@@ -633,12 +729,13 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_attr_tam_object_set'])
     def test_sai_vlan_attr_tam_object_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_attr_tam_object_get',
+                'name': 'vlan_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN',
                 'atrribute': 'SAI_VLAN_ATTR_TAM_OBJECT',
@@ -647,7 +744,9 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'empty' for result in results]), 'Get error'
+        assert results[1][0].value() == 'empty', (
+            'Get error, expected empty but got %s' % results[1][0].value()
+        )
 
     def test_vlan_remove(self, npu):
         commands = [

@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiRpfGroupMember:
     # object with parent SAI_OBJECT_TYPE_RPF_GROUP SAI_OBJECT_TYPE_ROUTER_INTERFACE

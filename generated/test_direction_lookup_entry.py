@@ -21,10 +21,11 @@ class TestSaiDirectionLookupEntry:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_direction_lookup_entry_attr_action_set(self, npu):
         commands = [
             {
-                'name': 'sai_direction_lookup_entry_attr_action_set',
+                'name': 'direction_lookup_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY',
                 'atrribute': [
@@ -36,12 +37,13 @@ class TestSaiDirectionLookupEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_direction_lookup_entry_attr_action_set'])
     def test_sai_direction_lookup_entry_attr_action_get(self, npu):
         commands = [
             {
-                'name': 'sai_direction_lookup_entry_attr_action_get',
+                'name': 'direction_lookup_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY',
                 'atrribute': 'SAI_DIRECTION_LOOKUP_ENTRY_ATTR_ACTION',
@@ -50,12 +52,13 @@ class TestSaiDirectionLookupEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [
-                result == 'SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION'
-                for result in results
-            ]
-        ), 'Get error'
+        assert (
+            results[1][0].value()
+            == 'SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION'
+        ), (
+            'Get error, expected SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION but got %s'
+            % results[1][0].value()
+        )
 
     def test_direction_lookup_entry_remove(self, npu):
         commands = [

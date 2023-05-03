@@ -24,10 +24,11 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_my_sid_entry_attr_endpoint_behavior_set(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_endpoint_behavior_set',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': ['SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR', 'TODO'],
@@ -36,12 +37,15 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_my_sid_entry_attr_endpoint_behavior_set']
+    )
     def test_sai_my_sid_entry_attr_endpoint_behavior_get(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_endpoint_behavior_get',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': 'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR',
@@ -50,12 +54,15 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_my_sid_entry_attr_endpoint_behavior_flavor_set(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_endpoint_behavior_flavor_set',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': [
@@ -67,12 +74,15 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_my_sid_entry_attr_endpoint_behavior_flavor_set']
+    )
     def test_sai_my_sid_entry_attr_endpoint_behavior_flavor_get(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_endpoint_behavior_flavor_get',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': 'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR_FLAVOR',
@@ -81,17 +91,18 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [
-                result == 'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_FLAVOR_NONE'
-                for result in results
-            ]
-        ), 'Get error'
+        assert (
+            results[1][0].value() == 'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_FLAVOR_NONE'
+        ), (
+            'Get error, expected SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_FLAVOR_NONE but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_my_sid_entry_attr_packet_action_set(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_packet_action_set',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': [
@@ -103,12 +114,13 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_my_sid_entry_attr_packet_action_set'])
     def test_sai_my_sid_entry_attr_packet_action_get(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_packet_action_get',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': 'SAI_MY_SID_ENTRY_ATTR_PACKET_ACTION',
@@ -117,14 +129,16 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_my_sid_entry_attr_trap_priority_set(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_trap_priority_set',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': ['SAI_MY_SID_ENTRY_ATTR_TRAP_PRIORITY', '0'],
@@ -133,12 +147,13 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_my_sid_entry_attr_trap_priority_set'])
     def test_sai_my_sid_entry_attr_trap_priority_get(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_trap_priority_get',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': 'SAI_MY_SID_ENTRY_ATTR_TRAP_PRIORITY',
@@ -147,12 +162,15 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_my_sid_entry_attr_next_hop_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_next_hop_id_set',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': [
@@ -164,12 +182,13 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_my_sid_entry_attr_next_hop_id_set'])
     def test_sai_my_sid_entry_attr_next_hop_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_next_hop_id_get',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': 'SAI_MY_SID_ENTRY_ATTR_NEXT_HOP_ID',
@@ -178,12 +197,15 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_my_sid_entry_attr_tunnel_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_tunnel_id_set',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': ['SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID', 'SAI_NULL_OBJECT_ID'],
@@ -192,12 +214,13 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_my_sid_entry_attr_tunnel_id_set'])
     def test_sai_my_sid_entry_attr_tunnel_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_tunnel_id_get',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': 'SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID',
@@ -206,12 +229,15 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_my_sid_entry_attr_vrf_set(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_vrf_set',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': ['SAI_MY_SID_ENTRY_ATTR_VRF', 'SAI_NULL_OBJECT_ID'],
@@ -220,12 +246,13 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_my_sid_entry_attr_vrf_set'])
     def test_sai_my_sid_entry_attr_vrf_get(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_vrf_get',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': 'SAI_MY_SID_ENTRY_ATTR_VRF',
@@ -234,12 +261,15 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_my_sid_entry_attr_counter_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_counter_id_set',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': ['SAI_MY_SID_ENTRY_ATTR_COUNTER_ID', 'SAI_NULL_OBJECT_ID'],
@@ -248,12 +278,13 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_my_sid_entry_attr_counter_id_set'])
     def test_sai_my_sid_entry_attr_counter_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_my_sid_entry_attr_counter_id_get',
+                'name': 'my_sid_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
                 'atrribute': 'SAI_MY_SID_ENTRY_ATTR_COUNTER_ID',
@@ -262,7 +293,9 @@ class TestSaiMySidEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
     def test_my_sid_entry_remove(self, npu):
         commands = [

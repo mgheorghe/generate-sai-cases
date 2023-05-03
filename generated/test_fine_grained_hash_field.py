@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiFineGrainedHashField:
     # object with no parents

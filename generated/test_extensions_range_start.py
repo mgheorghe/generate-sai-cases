@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiExtensionsRangeStart:
     # object with no attributes

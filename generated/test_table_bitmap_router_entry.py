@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiTableBitmapRouterEntry:
     # object with parent SAI_OBJECT_TYPE_NEXT_HOP SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_HOSTIF_TRAP

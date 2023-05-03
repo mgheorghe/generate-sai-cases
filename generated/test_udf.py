@@ -40,10 +40,11 @@ class TestSaiUdf:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_udf_attr_base_set(self, npu):
         commands = [
             {
-                'name': 'sai_udf_attr_base_set',
+                'name': 'udf_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_UDF',
                 'atrribute': ['SAI_UDF_ATTR_BASE', 'SAI_UDF_BASE_L2'],
@@ -52,12 +53,13 @@ class TestSaiUdf:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_udf_attr_base_set'])
     def test_sai_udf_attr_base_get(self, npu):
         commands = [
             {
-                'name': 'sai_udf_attr_base_get',
+                'name': 'udf_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_UDF',
                 'atrribute': 'SAI_UDF_ATTR_BASE',
@@ -66,12 +68,15 @@ class TestSaiUdf:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_UDF_BASE_L2' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_UDF_BASE_L2', (
+            'Get error, expected SAI_UDF_BASE_L2 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_udf_attr_hash_mask_set(self, npu):
         commands = [
             {
-                'name': 'sai_udf_attr_hash_mask_set',
+                'name': 'udf_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_UDF',
                 'atrribute': ['SAI_UDF_ATTR_HASH_MASK', 'const'],
@@ -80,12 +85,13 @@ class TestSaiUdf:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_udf_attr_hash_mask_set'])
     def test_sai_udf_attr_hash_mask_get(self, npu):
         commands = [
             {
-                'name': 'sai_udf_attr_hash_mask_get',
+                'name': 'udf_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_UDF',
                 'atrribute': 'SAI_UDF_ATTR_HASH_MASK',
@@ -94,7 +100,9 @@ class TestSaiUdf:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'const' for result in results]), 'Get error'
+        assert results[1][0].value() == 'const', (
+            'Get error, expected const but got %s' % results[1][0].value()
+        )
 
     def test_udf_remove(self, npu):
         commands = [

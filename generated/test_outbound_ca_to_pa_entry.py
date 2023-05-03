@@ -21,10 +21,11 @@ class TestSaiOutboundCaToPaEntry:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_outbound_ca_to_pa_entry_attr_underlay_dip_set(self, npu):
         commands = [
             {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_underlay_dip_set',
+                'name': 'outbound_ca_to_pa_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'atrribute': [
@@ -36,12 +37,15 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_outbound_ca_to_pa_entry_attr_underlay_dip_set']
+    )
     def test_sai_outbound_ca_to_pa_entry_attr_underlay_dip_get(self, npu):
         commands = [
             {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_underlay_dip_get',
+                'name': 'outbound_ca_to_pa_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'atrribute': 'SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_UNDERLAY_DIP',
@@ -50,12 +54,15 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0.0.0.0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0.0.0.0', (
+            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_outbound_ca_to_pa_entry_attr_overlay_dmac_set(self, npu):
         commands = [
             {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_overlay_dmac_set',
+                'name': 'outbound_ca_to_pa_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'atrribute': [
@@ -67,12 +74,15 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_outbound_ca_to_pa_entry_attr_overlay_dmac_set']
+    )
     def test_sai_outbound_ca_to_pa_entry_attr_overlay_dmac_get(self, npu):
         commands = [
             {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_overlay_dmac_get',
+                'name': 'outbound_ca_to_pa_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'atrribute': 'SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_OVERLAY_DMAC',
@@ -81,12 +91,15 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0:0:0:0:0:0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0:0:0:0:0:0', (
+            'Get error, expected 0:0:0:0:0:0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_set(self, npu):
         commands = [
             {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_set',
+                'name': 'outbound_ca_to_pa_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'atrribute': [
@@ -98,12 +111,15 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_set']
+    )
     def test_sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_get(self, npu):
         commands = [
             {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_use_dst_vnet_vni_get',
+                'name': 'outbound_ca_to_pa_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'atrribute': 'SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_USE_DST_VNET_VNI',
@@ -112,12 +128,15 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_outbound_ca_to_pa_entry_attr_counter_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_counter_id_set',
+                'name': 'outbound_ca_to_pa_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'atrribute': [
@@ -129,12 +148,15 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_outbound_ca_to_pa_entry_attr_counter_id_set']
+    )
     def test_sai_outbound_ca_to_pa_entry_attr_counter_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_counter_id_get',
+                'name': 'outbound_ca_to_pa_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'atrribute': 'SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_COUNTER_ID',
@@ -143,21 +165,9 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
-
-    def test_sai_outbound_ca_to_pa_entry_attr_ip_addr_family_get(self, npu):
-        commands = [
-            {
-                'name': 'sai_outbound_ca_to_pa_entry_attr_ip_addr_family_get',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
-                'atrribute': 'SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_IP_ADDR_FAMILY',
-            }
-        ]
-        results = [*npu.process_commands(commands)]
-        print('======= SAI commands RETURN values get =======')
-        pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
     def test_outbound_ca_to_pa_entry_remove(self, npu):
         commands = [

@@ -21,10 +21,11 @@ class TestSaiInsegEntry:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_num_of_pop_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_num_of_pop_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': ['SAI_INSEG_ENTRY_ATTR_NUM_OF_POP', '0'],
@@ -33,12 +34,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_num_of_pop_set'])
     def test_sai_inseg_entry_attr_num_of_pop_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_num_of_pop_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_NUM_OF_POP',
@@ -47,12 +49,15 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_packet_action_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_packet_action_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': [
@@ -64,12 +69,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_packet_action_set'])
     def test_sai_inseg_entry_attr_packet_action_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_packet_action_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_PACKET_ACTION',
@@ -78,14 +84,16 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_trap_priority_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_trap_priority_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': ['SAI_INSEG_ENTRY_ATTR_TRAP_PRIORITY', '0'],
@@ -94,12 +102,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_trap_priority_set'])
     def test_sai_inseg_entry_attr_trap_priority_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_trap_priority_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_TRAP_PRIORITY',
@@ -108,12 +117,15 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_next_hop_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_next_hop_id_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': ['SAI_INSEG_ENTRY_ATTR_NEXT_HOP_ID', 'SAI_NULL_OBJECT_ID'],
@@ -122,12 +134,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_next_hop_id_set'])
     def test_sai_inseg_entry_attr_next_hop_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_next_hop_id_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_NEXT_HOP_ID',
@@ -136,12 +149,15 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_psc_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_psc_type_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': [
@@ -153,12 +169,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_psc_type_set'])
     def test_sai_inseg_entry_attr_psc_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_psc_type_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_PSC_TYPE',
@@ -167,14 +184,16 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_INSEG_ENTRY_PSC_TYPE_ELSP' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_INSEG_ENTRY_PSC_TYPE_ELSP', (
+            'Get error, expected SAI_INSEG_ENTRY_PSC_TYPE_ELSP but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_qos_tc_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_qos_tc_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': ['SAI_INSEG_ENTRY_ATTR_QOS_TC', '0'],
@@ -183,12 +202,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_qos_tc_set'])
     def test_sai_inseg_entry_attr_qos_tc_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_qos_tc_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_QOS_TC',
@@ -197,12 +217,15 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_mpls_exp_to_tc_map_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_mpls_exp_to_tc_map_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': [
@@ -214,12 +237,15 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_inseg_entry_attr_mpls_exp_to_tc_map_set']
+    )
     def test_sai_inseg_entry_attr_mpls_exp_to_tc_map_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_mpls_exp_to_tc_map_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_TC_MAP',
@@ -228,12 +254,15 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_mpls_exp_to_color_map_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_mpls_exp_to_color_map_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': [
@@ -245,12 +274,15 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_inseg_entry_attr_mpls_exp_to_color_map_set']
+    )
     def test_sai_inseg_entry_attr_mpls_exp_to_color_map_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_mpls_exp_to_color_map_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_COLOR_MAP',
@@ -259,12 +291,15 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_pop_ttl_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_pop_ttl_mode_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': [
@@ -276,12 +311,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_pop_ttl_mode_set'])
     def test_sai_inseg_entry_attr_pop_ttl_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_pop_ttl_mode_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_POP_TTL_MODE',
@@ -290,14 +326,16 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_INSEG_ENTRY_POP_TTL_MODE_UNIFORM' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_INSEG_ENTRY_POP_TTL_MODE_UNIFORM', (
+            'Get error, expected SAI_INSEG_ENTRY_POP_TTL_MODE_UNIFORM but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_pop_qos_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_pop_qos_mode_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': [
@@ -309,12 +347,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_pop_qos_mode_set'])
     def test_sai_inseg_entry_attr_pop_qos_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_pop_qos_mode_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_POP_QOS_MODE',
@@ -323,14 +362,16 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_INSEG_ENTRY_POP_QOS_MODE_UNIFORM' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_INSEG_ENTRY_POP_QOS_MODE_UNIFORM', (
+            'Get error, expected SAI_INSEG_ENTRY_POP_QOS_MODE_UNIFORM but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inseg_entry_attr_counter_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_counter_id_set',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': ['SAI_INSEG_ENTRY_ATTR_COUNTER_ID', 'SAI_NULL_OBJECT_ID'],
@@ -339,12 +380,13 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inseg_entry_attr_counter_id_set'])
     def test_sai_inseg_entry_attr_counter_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_inseg_entry_attr_counter_id_get',
+                'name': 'inseg_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'atrribute': 'SAI_INSEG_ENTRY_ATTR_COUNTER_ID',
@@ -353,7 +395,9 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
     def test_inseg_entry_remove(self, npu):
         commands = [

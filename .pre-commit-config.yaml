@@ -17,9 +17,13 @@ repos:
   hooks:
   - id: flake8
     args: ["--max-line-length=201"]
+- repo: https://github.com/fsouza/autoflake8
+  rev: v0.4.0
+  hooks:
+  - id: autoflake8
 - repo: https://github.com/psf/black
   rev: 23.3.0
   hooks:
   - id: black
-    args:  ["--skip-string-normalization"]
+    args: ["--skip-string-normalization"]
 #["--line-length=160",

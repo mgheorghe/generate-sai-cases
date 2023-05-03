@@ -27,7 +27,7 @@ class TestSaiSystemPort:
     def test_sai_system_port_attr_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_system_port_attr_type_get',
+                'name': 'system_port_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
                 'atrribute': 'SAI_SYSTEM_PORT_ATTR_TYPE',
@@ -36,12 +36,14 @@ class TestSaiSystemPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_system_port_attr_qos_number_of_voqs_get(self, npu):
         commands = [
             {
-                'name': 'sai_system_port_attr_qos_number_of_voqs_get',
+                'name': 'system_port_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
                 'atrribute': 'SAI_SYSTEM_PORT_ATTR_QOS_NUMBER_OF_VOQS',
@@ -50,12 +52,14 @@ class TestSaiSystemPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_system_port_attr_qos_voq_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_system_port_attr_qos_voq_list_get',
+                'name': 'system_port_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
                 'atrribute': 'SAI_SYSTEM_PORT_ATTR_QOS_VOQ_LIST',
@@ -64,12 +68,14 @@ class TestSaiSystemPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_system_port_attr_port_get(self, npu):
         commands = [
             {
-                'name': 'sai_system_port_attr_port_get',
+                'name': 'system_port_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
                 'atrribute': 'SAI_SYSTEM_PORT_ATTR_PORT',
@@ -78,12 +84,15 @@ class TestSaiSystemPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_system_port_attr_admin_state_set(self, npu):
         commands = [
             {
-                'name': 'sai_system_port_attr_admin_state_set',
+                'name': 'system_port_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
                 'atrribute': ['SAI_SYSTEM_PORT_ATTR_ADMIN_STATE', 'false'],
@@ -92,12 +101,13 @@ class TestSaiSystemPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_system_port_attr_admin_state_set'])
     def test_sai_system_port_attr_admin_state_get(self, npu):
         commands = [
             {
-                'name': 'sai_system_port_attr_admin_state_get',
+                'name': 'system_port_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
                 'atrribute': 'SAI_SYSTEM_PORT_ATTR_ADMIN_STATE',
@@ -106,12 +116,15 @@ class TestSaiSystemPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_system_port_attr_qos_tc_to_queue_map_set(self, npu):
         commands = [
             {
-                'name': 'sai_system_port_attr_qos_tc_to_queue_map_set',
+                'name': 'system_port_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
                 'atrribute': [
@@ -123,12 +136,15 @@ class TestSaiSystemPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_system_port_attr_qos_tc_to_queue_map_set']
+    )
     def test_sai_system_port_attr_qos_tc_to_queue_map_get(self, npu):
         commands = [
             {
-                'name': 'sai_system_port_attr_qos_tc_to_queue_map_get',
+                'name': 'system_port_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
                 'atrribute': 'SAI_SYSTEM_PORT_ATTR_QOS_TC_TO_QUEUE_MAP',
@@ -137,7 +153,9 @@ class TestSaiSystemPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
     def test_system_port_remove(self, npu):
         commands = [

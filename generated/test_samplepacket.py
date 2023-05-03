@@ -21,10 +21,11 @@ class TestSaiSamplepacket:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_samplepacket_attr_sample_rate_set(self, npu):
         commands = [
             {
-                'name': 'sai_samplepacket_attr_sample_rate_set',
+                'name': 'samplepacket_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SAMPLEPACKET',
                 'atrribute': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', 'TODO'],
@@ -33,12 +34,13 @@ class TestSaiSamplepacket:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_samplepacket_attr_sample_rate_set'])
     def test_sai_samplepacket_attr_sample_rate_get(self, npu):
         commands = [
             {
-                'name': 'sai_samplepacket_attr_sample_rate_get',
+                'name': 'samplepacket_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_SAMPLEPACKET',
                 'atrribute': 'SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE',
@@ -47,7 +49,9 @@ class TestSaiSamplepacket:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_samplepacket_remove(self, npu):
         commands = [

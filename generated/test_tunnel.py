@@ -78,10 +78,11 @@ class TestSaiTunnel:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_encap_ttl_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_ttl_mode_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -93,12 +94,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_encap_ttl_mode_set'])
     def test_sai_tunnel_attr_encap_ttl_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_ttl_mode_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_TTL_MODE',
@@ -107,14 +109,16 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_TUNNEL_TTL_MODE_UNIFORM_MODEL' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_TUNNEL_TTL_MODE_UNIFORM_MODEL', (
+            'Get error, expected SAI_TUNNEL_TTL_MODE_UNIFORM_MODEL but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_encap_ttl_val_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_ttl_val_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': ['SAI_TUNNEL_ATTR_ENCAP_TTL_VAL', '255'],
@@ -123,12 +127,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_encap_ttl_val_set'])
     def test_sai_tunnel_attr_encap_ttl_val_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_ttl_val_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_TTL_VAL',
@@ -137,12 +142,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '255' for result in results]), 'Get error'
+        assert results[1][0].value() == '255', (
+            'Get error, expected 255 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_encap_dscp_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_dscp_mode_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -154,12 +162,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_encap_dscp_mode_set'])
     def test_sai_tunnel_attr_encap_dscp_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_dscp_mode_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_DSCP_MODE',
@@ -168,14 +177,16 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_TUNNEL_DSCP_MODE_UNIFORM_MODEL' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_TUNNEL_DSCP_MODE_UNIFORM_MODEL', (
+            'Get error, expected SAI_TUNNEL_DSCP_MODE_UNIFORM_MODEL but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_encap_dscp_val_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_dscp_val_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': ['SAI_TUNNEL_ATTR_ENCAP_DSCP_VAL', '0'],
@@ -184,12 +195,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_encap_dscp_val_set'])
     def test_sai_tunnel_attr_encap_dscp_val_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_dscp_val_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_DSCP_VAL',
@@ -198,12 +210,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_encap_gre_key_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_gre_key_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': ['SAI_TUNNEL_ATTR_ENCAP_GRE_KEY', '0'],
@@ -212,12 +227,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_encap_gre_key_set'])
     def test_sai_tunnel_attr_encap_gre_key_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_gre_key_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_GRE_KEY',
@@ -226,12 +242,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_decap_ttl_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_decap_ttl_mode_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -243,12 +262,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_decap_ttl_mode_set'])
     def test_sai_tunnel_attr_decap_ttl_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_decap_ttl_mode_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_DECAP_TTL_MODE',
@@ -257,14 +277,16 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_TUNNEL_TTL_MODE_UNIFORM_MODEL' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_TUNNEL_TTL_MODE_UNIFORM_MODEL', (
+            'Get error, expected SAI_TUNNEL_TTL_MODE_UNIFORM_MODEL but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_decap_dscp_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_decap_dscp_mode_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -276,12 +298,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_decap_dscp_mode_set'])
     def test_sai_tunnel_attr_decap_dscp_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_decap_dscp_mode_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_DECAP_DSCP_MODE',
@@ -290,14 +313,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_TUNNEL_DSCP_MODE_UNIFORM_MODEL' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_TUNNEL_DSCP_MODE_UNIFORM_MODEL', (
+            'Get error, expected SAI_TUNNEL_DSCP_MODE_UNIFORM_MODEL but got %s'
+            % results[1][0].value()
+        )
 
     def test_sai_tunnel_attr_term_table_entry_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_term_table_entry_list_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_TERM_TABLE_ENTRY_LIST',
@@ -306,12 +330,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_loopback_packet_action_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_loopback_packet_action_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -323,12 +350,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_loopback_packet_action_set'])
     def test_sai_tunnel_attr_loopback_packet_action_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_loopback_packet_action_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_LOOPBACK_PACKET_ACTION',
@@ -337,14 +365,16 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_PACKET_ACTION_FORWARD' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_vxlan_udp_sport_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_vxlan_udp_sport_mode_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -356,12 +386,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_vxlan_udp_sport_mode_set'])
     def test_sai_tunnel_attr_vxlan_udp_sport_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_vxlan_udp_sport_mode_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MODE',
@@ -370,17 +401,16 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [
-                result == 'SAI_TUNNEL_VXLAN_UDP_SPORT_MODE_EPHEMERAL'
-                for result in results
-            ]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_TUNNEL_VXLAN_UDP_SPORT_MODE_EPHEMERAL', (
+            'Get error, expected SAI_TUNNEL_VXLAN_UDP_SPORT_MODE_EPHEMERAL but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_vxlan_udp_sport_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_vxlan_udp_sport_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': ['SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT', '0'],
@@ -389,12 +419,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_vxlan_udp_sport_set'])
     def test_sai_tunnel_attr_vxlan_udp_sport_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_vxlan_udp_sport_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT',
@@ -403,12 +434,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_vxlan_udp_sport_mask_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_vxlan_udp_sport_mask_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': ['SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MASK', '0'],
@@ -417,12 +451,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_vxlan_udp_sport_mask_set'])
     def test_sai_tunnel_attr_vxlan_udp_sport_mask_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_vxlan_udp_sport_mask_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MASK',
@@ -431,12 +466,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_sa_index_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_sa_index_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': ['SAI_TUNNEL_ATTR_SA_INDEX', '0'],
@@ -445,12 +483,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_sa_index_set'])
     def test_sai_tunnel_attr_sa_index_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_sa_index_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_SA_INDEX',
@@ -459,12 +498,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_ipsec_sa_port_list_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_ipsec_sa_port_list_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': ['SAI_TUNNEL_ATTR_IPSEC_SA_PORT_LIST', 'empty'],
@@ -473,12 +515,13 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tunnel_attr_ipsec_sa_port_list_set'])
     def test_sai_tunnel_attr_ipsec_sa_port_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_ipsec_sa_port_list_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_IPSEC_SA_PORT_LIST',
@@ -487,12 +530,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'empty' for result in results]), 'Get error'
+        assert results[1][0].value() == 'empty', (
+            'Get error, expected empty but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -504,12 +550,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_set']
+    )
     def test_sai_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP',
@@ -518,12 +567,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_encap_qos_tc_to_queue_map_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_qos_tc_to_queue_map_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -535,12 +587,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_tunnel_attr_encap_qos_tc_to_queue_map_set']
+    )
     def test_sai_tunnel_attr_encap_qos_tc_to_queue_map_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_encap_qos_tc_to_queue_map_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP',
@@ -549,12 +604,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_decap_qos_dscp_to_tc_map_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_decap_qos_dscp_to_tc_map_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -566,12 +624,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_tunnel_attr_decap_qos_dscp_to_tc_map_set']
+    )
     def test_sai_tunnel_attr_decap_qos_dscp_to_tc_map_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_decap_qos_dscp_to_tc_map_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP',
@@ -580,12 +641,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_decap_qos_tc_to_priority_group_map_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_decap_qos_tc_to_priority_group_map_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': [
@@ -597,12 +661,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_tunnel_attr_decap_qos_tc_to_priority_group_map_set']
+    )
     def test_sai_tunnel_attr_decap_qos_tc_to_priority_group_map_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_decap_qos_tc_to_priority_group_map_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP',
@@ -611,12 +678,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tunnel_attr_vxlan_udp_sport_security_set(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_vxlan_udp_sport_security_set',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': ['SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_SECURITY', 'false'],
@@ -625,12 +695,15 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_tunnel_attr_vxlan_udp_sport_security_set']
+    )
     def test_sai_tunnel_attr_vxlan_udp_sport_security_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_attr_vxlan_udp_sport_security_get',
+                'name': 'tunnel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'atrribute': 'SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_SECURITY',
@@ -639,7 +712,9 @@ class TestSaiTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
     def test_tunnel_remove(self, npu):
         commands = [

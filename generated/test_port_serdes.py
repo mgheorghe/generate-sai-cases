@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiPortSerdes:
     # object with parent SAI_OBJECT_TYPE_PORT

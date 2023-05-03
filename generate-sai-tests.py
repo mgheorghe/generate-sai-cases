@@ -12,15 +12,16 @@ from default_values import DEFAULT_VALUES, SAI_OBJECT_TYPES
 # give your custom path
 SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
 SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
-SAI_CODE_LOCATION = r'C:/github-mgheorghe/SAI'
+# SAI_CODE_LOCATION = r'C:/github-mgheorghe/SAI'
 
 TEST_TEMPLATE_GET = '''
 
+    %(PYTEST_MARKER)s
     def test_%(ATTR_NAME)s_get(self, npu):
 
         commands = [
             {
-                "name": "%(ATTR_NAME)s_get",
+                "name": "%(OBJECT_NAME)s_1",
                 "op": "get",
                 "type": "%(OBJECT_TYPE)s",
                 "atrribute": "%(ATTRIBUTE)s"
@@ -29,17 +30,17 @@ TEST_TEMPLATE_GET = '''
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
-        assert all([result == '%(EXPECTED_VALUE)s' for result in results]), 'Get error'
-
+        assert results[1][0].value() == '%(EXPECTED_VALUE)s', 'Get error, expected %(EXPECTED_VALUE)s but got %%s' %%  results[1][0].value()
 '''
 
 TEST_TEMPLATE_SET = '''
 
+    %(PYTEST_MARKER)s
     def test_%(ATTR_NAME)s_set(self, npu):
 
         commands = [
             {
-                "name": "%(ATTR_NAME)s_set",
+                "name": "%(OBJECT_NAME)s_1",
                 "op": "get",
                 "type": "%(OBJECT_TYPE)s",
                 "atrribute": ["%(ATTRIBUTE)s", '%(EXPECTED_VALUE)s']
@@ -48,7 +49,7 @@ TEST_TEMPLATE_SET = '''
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
 '''
 
@@ -287,20 +288,27 @@ def generate_pyetes_test(obj_type):
             if obj[attribute]['flags'] is not None:
                 if 'READ_ONLY' in obj[attribute]['flags']:
                     TEST_CODE += TEST_TEMPLATE_GET % {
+                        'PYTEST_MARKER': '',
                         'ATTR_NAME': get_obj_name(attribute),
+                        'OBJECT_NAME': obj_name,
                         'OBJECT_TYPE': obj_type,
                         'ATTRIBUTE': attribute,
                         'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),
                     }
                 elif 'CREATE_AND_SET' in obj[attribute]['flags']:
                     TEST_CODE += TEST_TEMPLATE_SET % {
+                        'PYTEST_MARKER': '@pytest.mark.dependency()',
                         'ATTR_NAME': get_obj_name(attribute),
+                        'OBJECT_NAME': obj_name,
                         'OBJECT_TYPE': obj_type,
                         'ATTRIBUTE': attribute,
                         'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),
                     }
                     TEST_CODE += TEST_TEMPLATE_GET % {
+                        'PYTEST_MARKER': '@pytest.mark.dependency(depends=["test_%s_set"])'
+                        % get_obj_name(attribute),
                         'ATTR_NAME': get_obj_name(attribute),
+                        'OBJECT_NAME': obj_name,
                         'OBJECT_TYPE': obj_type,
                         'ATTRIBUTE': attribute,
                         'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),

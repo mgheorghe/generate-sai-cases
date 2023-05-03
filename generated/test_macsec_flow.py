@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiMacsecFlow:
     # object with no parents
@@ -27,7 +25,7 @@ class TestSaiMacsecFlow:
     def test_sai_macsec_flow_attr_acl_entry_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_flow_attr_acl_entry_list_get',
+                'name': 'macsec_flow_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_FLOW',
                 'atrribute': 'SAI_MACSEC_FLOW_ATTR_ACL_ENTRY_LIST',
@@ -36,12 +34,14 @@ class TestSaiMacsecFlow:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_macsec_flow_attr_sc_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_flow_attr_sc_list_get',
+                'name': 'macsec_flow_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_FLOW',
                 'atrribute': 'SAI_MACSEC_FLOW_ATTR_SC_LIST',
@@ -50,7 +50,9 @@ class TestSaiMacsecFlow:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_macsec_flow_remove(self, npu):
         commands = [

@@ -21,10 +21,11 @@ class TestSaiHostifTrapGroup:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_hostif_trap_group_attr_admin_state_set(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_trap_group_attr_admin_state_set',
+                'name': 'hostif_trap_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
                 'atrribute': ['SAI_HOSTIF_TRAP_GROUP_ATTR_ADMIN_STATE', 'true'],
@@ -33,12 +34,13 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_hostif_trap_group_attr_admin_state_set'])
     def test_sai_hostif_trap_group_attr_admin_state_get(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_trap_group_attr_admin_state_get',
+                'name': 'hostif_trap_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
                 'atrribute': 'SAI_HOSTIF_TRAP_GROUP_ATTR_ADMIN_STATE',
@@ -47,12 +49,15 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'true' for result in results]), 'Get error'
+        assert results[1][0].value() == 'true', (
+            'Get error, expected true but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_hostif_trap_group_attr_queue_set(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_trap_group_attr_queue_set',
+                'name': 'hostif_trap_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
                 'atrribute': ['SAI_HOSTIF_TRAP_GROUP_ATTR_QUEUE', '0'],
@@ -61,12 +66,13 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_hostif_trap_group_attr_queue_set'])
     def test_sai_hostif_trap_group_attr_queue_get(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_trap_group_attr_queue_get',
+                'name': 'hostif_trap_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
                 'atrribute': 'SAI_HOSTIF_TRAP_GROUP_ATTR_QUEUE',
@@ -75,12 +81,15 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_hostif_trap_group_attr_policer_set(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_trap_group_attr_policer_set',
+                'name': 'hostif_trap_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
                 'atrribute': [
@@ -92,12 +101,13 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_hostif_trap_group_attr_policer_set'])
     def test_sai_hostif_trap_group_attr_policer_get(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_trap_group_attr_policer_get',
+                'name': 'hostif_trap_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
                 'atrribute': 'SAI_HOSTIF_TRAP_GROUP_ATTR_POLICER',
@@ -106,7 +116,9 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
     def test_hostif_trap_group_remove(self, npu):
         commands = [

@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiHostifPacket:
     # object with parent SAI_OBJECT_TYPE_PORT
@@ -40,7 +38,7 @@ class TestSaiHostifPacket:
     def test_sai_hostif_packet_attr_hostif_trap_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_packet_attr_hostif_trap_id_get',
+                'name': 'hostif_packet_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_HOSTIF_TRAP_ID',
@@ -49,12 +47,14 @@ class TestSaiHostifPacket:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_hostif_packet_attr_ingress_port_get(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_packet_attr_ingress_port_get',
+                'name': 'hostif_packet_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_INGRESS_PORT',
@@ -63,12 +63,14 @@ class TestSaiHostifPacket:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_hostif_packet_attr_ingress_lag_get(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_packet_attr_ingress_lag_get',
+                'name': 'hostif_packet_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_INGRESS_LAG',
@@ -77,12 +79,14 @@ class TestSaiHostifPacket:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_hostif_packet_attr_bridge_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_packet_attr_bridge_id_get',
+                'name': 'hostif_packet_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_BRIDGE_ID',
@@ -91,12 +95,14 @@ class TestSaiHostifPacket:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_hostif_packet_attr_timestamp_get(self, npu):
         commands = [
             {
-                'name': 'sai_hostif_packet_attr_timestamp_get',
+                'name': 'hostif_packet_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
                 'atrribute': 'SAI_HOSTIF_PACKET_ATTR_TIMESTAMP',
@@ -105,7 +111,9 @@ class TestSaiHostifPacket:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_hostif_packet_remove(self, npu):
         commands = [

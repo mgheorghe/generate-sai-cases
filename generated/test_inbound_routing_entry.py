@@ -21,10 +21,11 @@ class TestSaiInboundRoutingEntry:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_inbound_routing_entry_attr_action_set(self, npu):
         commands = [
             {
-                'name': 'sai_inbound_routing_entry_attr_action_set',
+                'name': 'inbound_routing_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY',
                 'atrribute': [
@@ -36,12 +37,13 @@ class TestSaiInboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_inbound_routing_entry_attr_action_set'])
     def test_sai_inbound_routing_entry_attr_action_get(self, npu):
         commands = [
             {
-                'name': 'sai_inbound_routing_entry_attr_action_get',
+                'name': 'inbound_routing_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY',
                 'atrribute': 'SAI_INBOUND_ROUTING_ENTRY_ATTR_ACTION',
@@ -50,17 +52,18 @@ class TestSaiInboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [
-                result == 'SAI_INBOUND_ROUTING_ENTRY_ACTION_VXLAN_DECAP'
-                for result in results
-            ]
-        ), 'Get error'
+        assert (
+            results[1][0].value() == 'SAI_INBOUND_ROUTING_ENTRY_ACTION_VXLAN_DECAP'
+        ), (
+            'Get error, expected SAI_INBOUND_ROUTING_ENTRY_ACTION_VXLAN_DECAP but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_inbound_routing_entry_attr_src_vnet_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_inbound_routing_entry_attr_src_vnet_id_set',
+                'name': 'inbound_routing_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY',
                 'atrribute': [
@@ -72,12 +75,15 @@ class TestSaiInboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_inbound_routing_entry_attr_src_vnet_id_set']
+    )
     def test_sai_inbound_routing_entry_attr_src_vnet_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_inbound_routing_entry_attr_src_vnet_id_get',
+                'name': 'inbound_routing_entry_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY',
                 'atrribute': 'SAI_INBOUND_ROUTING_ENTRY_ATTR_SRC_VNET_ID',
@@ -86,21 +92,9 @@ class TestSaiInboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
-
-    def test_sai_inbound_routing_entry_attr_ip_addr_family_get(self, npu):
-        commands = [
-            {
-                'name': 'sai_inbound_routing_entry_attr_ip_addr_family_get',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY',
-                'atrribute': 'SAI_INBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY',
-            }
-        ]
-        results = [*npu.process_commands(commands)]
-        print('======= SAI commands RETURN values get =======')
-        pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
     def test_inbound_routing_entry_remove(self, npu):
         commands = [

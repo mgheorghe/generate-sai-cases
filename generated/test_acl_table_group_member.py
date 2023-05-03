@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiAclTableGroupMember:
     # object with parent SAI_OBJECT_TYPE_ACL_TABLE_GROUP SAI_OBJECT_TYPE_ACL_TABLE

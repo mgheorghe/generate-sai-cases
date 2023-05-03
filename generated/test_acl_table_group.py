@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiAclTableGroup:
     # object with no parents
@@ -27,7 +25,7 @@ class TestSaiAclTableGroup:
     def test_sai_acl_table_group_attr_member_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_acl_table_group_attr_member_list_get',
+                'name': 'acl_table_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ACL_TABLE_GROUP',
                 'atrribute': 'SAI_ACL_TABLE_GROUP_ATTR_MEMBER_LIST',
@@ -36,7 +34,9 @@ class TestSaiAclTableGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_acl_table_group_remove(self, npu):
         commands = [

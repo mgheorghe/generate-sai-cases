@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiL2McGroupMember:
     # object with parent SAI_OBJECT_TYPE_L2MC_GROUP SAI_OBJECT_TYPE_BRIDGE_PORT

@@ -103,10 +103,11 @@ class TestSaiNextHop:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_tunnel_vni_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_tunnel_vni_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': ['SAI_NEXT_HOP_ATTR_TUNNEL_VNI', '0'],
@@ -115,12 +116,13 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_next_hop_attr_tunnel_vni_set'])
     def test_sai_next_hop_attr_tunnel_vni_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_tunnel_vni_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_TUNNEL_VNI',
@@ -129,12 +131,15 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_tunnel_mac_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_tunnel_mac_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': [
@@ -146,12 +151,13 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_next_hop_attr_tunnel_mac_set'])
     def test_sai_next_hop_attr_tunnel_mac_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_tunnel_mac_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_TUNNEL_MAC',
@@ -160,17 +166,19 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [
-                result == 'attrvalue SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC'
-                for result in results
-            ]
-        ), 'Get error'
+        assert (
+            results[1][0].value()
+            == 'attrvalue SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC'
+        ), (
+            'Get error, expected attrvalue SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_counter_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_counter_id_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': ['SAI_NEXT_HOP_ATTR_COUNTER_ID', 'SAI_NULL_OBJECT_ID'],
@@ -179,12 +187,13 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_next_hop_attr_counter_id_set'])
     def test_sai_next_hop_attr_counter_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_counter_id_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_COUNTER_ID',
@@ -193,12 +202,15 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_disable_decrement_ttl_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_disable_decrement_ttl_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': ['SAI_NEXT_HOP_ATTR_DISABLE_DECREMENT_TTL', 'false'],
@@ -207,12 +219,15 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_next_hop_attr_disable_decrement_ttl_set']
+    )
     def test_sai_next_hop_attr_disable_decrement_ttl_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_disable_decrement_ttl_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_DISABLE_DECREMENT_TTL',
@@ -221,12 +236,15 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_outseg_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_type_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': ['SAI_NEXT_HOP_ATTR_OUTSEG_TYPE', 'SAI_OUTSEG_TYPE_SWAP'],
@@ -235,12 +253,13 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_next_hop_attr_outseg_type_set'])
     def test_sai_next_hop_attr_outseg_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_type_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_OUTSEG_TYPE',
@@ -249,14 +268,16 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_OUTSEG_TYPE_SWAP' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_OUTSEG_TYPE_SWAP', (
+            'Get error, expected SAI_OUTSEG_TYPE_SWAP but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_outseg_ttl_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_ttl_mode_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': [
@@ -268,12 +289,13 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_next_hop_attr_outseg_ttl_mode_set'])
     def test_sai_next_hop_attr_outseg_ttl_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_ttl_mode_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_OUTSEG_TTL_MODE',
@@ -282,14 +304,16 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_OUTSEG_TTL_MODE_UNIFORM' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_OUTSEG_TTL_MODE_UNIFORM', (
+            'Get error, expected SAI_OUTSEG_TTL_MODE_UNIFORM but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_outseg_ttl_value_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_ttl_value_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': ['SAI_NEXT_HOP_ATTR_OUTSEG_TTL_VALUE', '255'],
@@ -298,12 +322,13 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_next_hop_attr_outseg_ttl_value_set'])
     def test_sai_next_hop_attr_outseg_ttl_value_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_ttl_value_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_OUTSEG_TTL_VALUE',
@@ -312,12 +337,15 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '255' for result in results]), 'Get error'
+        assert results[1][0].value() == '255', (
+            'Get error, expected 255 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_outseg_exp_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_exp_mode_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': [
@@ -329,12 +357,13 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_next_hop_attr_outseg_exp_mode_set'])
     def test_sai_next_hop_attr_outseg_exp_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_exp_mode_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_OUTSEG_EXP_MODE',
@@ -343,14 +372,16 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_OUTSEG_EXP_MODE_UNIFORM' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_OUTSEG_EXP_MODE_UNIFORM', (
+            'Get error, expected SAI_OUTSEG_EXP_MODE_UNIFORM but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_outseg_exp_value_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_exp_value_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': ['SAI_NEXT_HOP_ATTR_OUTSEG_EXP_VALUE', '0'],
@@ -359,12 +390,13 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_next_hop_attr_outseg_exp_value_set'])
     def test_sai_next_hop_attr_outseg_exp_value_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_outseg_exp_value_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_OUTSEG_EXP_VALUE',
@@ -373,12 +405,15 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_set(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_set',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': [
@@ -390,12 +425,15 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_set']
+    )
     def test_sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_get(self, npu):
         commands = [
             {
-                'name': 'sai_next_hop_attr_qos_tc_and_color_to_mpls_exp_map_get',
+                'name': 'next_hop_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_NEXT_HOP',
                 'atrribute': 'SAI_NEXT_HOP_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP',
@@ -404,7 +442,9 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
     def test_next_hop_remove(self, npu):
         commands = [

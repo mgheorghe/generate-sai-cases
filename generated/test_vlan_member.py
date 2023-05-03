@@ -108,10 +108,11 @@ class TestSaiVlanMember:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_vlan_member_attr_vlan_tagging_mode_set(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_member_attr_vlan_tagging_mode_set',
+                'name': 'vlan_member_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN_MEMBER',
                 'atrribute': [
@@ -123,12 +124,13 @@ class TestSaiVlanMember:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_vlan_member_attr_vlan_tagging_mode_set'])
     def test_sai_vlan_member_attr_vlan_tagging_mode_get(self, npu):
         commands = [
             {
-                'name': 'sai_vlan_member_attr_vlan_tagging_mode_get',
+                'name': 'vlan_member_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_VLAN_MEMBER',
                 'atrribute': 'SAI_VLAN_MEMBER_ATTR_VLAN_TAGGING_MODE',
@@ -137,9 +139,10 @@ class TestSaiVlanMember:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_VLAN_TAGGING_MODE_UNTAGGED' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_VLAN_TAGGING_MODE_UNTAGGED', (
+            'Get error, expected SAI_VLAN_TAGGING_MODE_UNTAGGED but got %s'
+            % results[1][0].value()
+        )
 
     def test_vlan_member_remove(self, npu):
         commands = [

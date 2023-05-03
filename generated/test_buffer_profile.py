@@ -43,10 +43,11 @@ class TestSaiBufferProfile:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_buffer_profile_attr_reserved_buffer_size_set(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_reserved_buffer_size_set',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE', 'TODO'],
@@ -55,12 +56,15 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_buffer_profile_attr_reserved_buffer_size_set']
+    )
     def test_sai_buffer_profile_attr_reserved_buffer_size_get(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_reserved_buffer_size_get',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE',
@@ -69,12 +73,15 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_buffer_profile_attr_shared_dynamic_th_set(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_shared_dynamic_th_set',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH', 'TODO'],
@@ -83,12 +90,15 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_buffer_profile_attr_shared_dynamic_th_set']
+    )
     def test_sai_buffer_profile_attr_shared_dynamic_th_get(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_shared_dynamic_th_get',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH',
@@ -97,12 +107,15 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_buffer_profile_attr_shared_static_th_set(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_shared_static_th_set',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH', 'TODO'],
@@ -111,12 +124,15 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_buffer_profile_attr_shared_static_th_set']
+    )
     def test_sai_buffer_profile_attr_shared_static_th_get(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_shared_static_th_get',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH',
@@ -125,12 +141,15 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_buffer_profile_attr_xoff_th_set(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_xoff_th_set',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XOFF_TH', '0'],
@@ -139,12 +158,13 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_buffer_profile_attr_xoff_th_set'])
     def test_sai_buffer_profile_attr_xoff_th_get(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_xoff_th_get',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XOFF_TH',
@@ -153,12 +173,15 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_buffer_profile_attr_xon_th_set(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_xon_th_set',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XON_TH', '0'],
@@ -167,12 +190,13 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_buffer_profile_attr_xon_th_set'])
     def test_sai_buffer_profile_attr_xon_th_get(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_xon_th_get',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XON_TH',
@@ -181,12 +205,15 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_buffer_profile_attr_xon_offset_th_set(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_xon_offset_th_set',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': ['SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH', '0'],
@@ -195,12 +222,13 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_buffer_profile_attr_xon_offset_th_set'])
     def test_sai_buffer_profile_attr_xon_offset_th_get(self, npu):
         commands = [
             {
-                'name': 'sai_buffer_profile_attr_xon_offset_th_get',
+                'name': 'buffer_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
                 'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH',
@@ -209,7 +237,9 @@ class TestSaiBufferProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
     def test_buffer_profile_remove(self, npu):
         commands = [

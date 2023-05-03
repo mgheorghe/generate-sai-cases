@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiStp:
     # object with no attributes
@@ -24,7 +22,7 @@ class TestSaiStp:
     def test_sai_stp_attr_vlan_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_stp_attr_vlan_list_get',
+                'name': 'stp_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_STP',
                 'atrribute': 'SAI_STP_ATTR_VLAN_LIST',
@@ -33,12 +31,14 @@ class TestSaiStp:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_stp_attr_bridge_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_stp_attr_bridge_id_get',
+                'name': 'stp_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_STP',
                 'atrribute': 'SAI_STP_ATTR_BRIDGE_ID',
@@ -47,12 +47,14 @@ class TestSaiStp:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_stp_attr_port_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_stp_attr_port_list_get',
+                'name': 'stp_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_STP',
                 'atrribute': 'SAI_STP_ATTR_PORT_LIST',
@@ -61,7 +63,9 @@ class TestSaiStp:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_stp_remove(self, npu):
         commands = [

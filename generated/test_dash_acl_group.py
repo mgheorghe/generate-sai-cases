@@ -21,10 +21,11 @@ class TestSaiDashAclGroup:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_dash_acl_group_attr_ip_addr_family_set(self, npu):
         commands = [
             {
-                'name': 'sai_dash_acl_group_attr_ip_addr_family_set',
+                'name': 'dash_acl_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DASH_ACL_GROUP',
                 'atrribute': [
@@ -36,12 +37,13 @@ class TestSaiDashAclGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dash_acl_group_attr_ip_addr_family_set'])
     def test_sai_dash_acl_group_attr_ip_addr_family_get(self, npu):
         commands = [
             {
-                'name': 'sai_dash_acl_group_attr_ip_addr_family_get',
+                'name': 'dash_acl_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DASH_ACL_GROUP',
                 'atrribute': 'SAI_DASH_ACL_GROUP_ATTR_IP_ADDR_FAMILY',
@@ -50,9 +52,10 @@ class TestSaiDashAclGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_IP_ADDR_FAMILY_IPV4' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_IP_ADDR_FAMILY_IPV4', (
+            'Get error, expected SAI_IP_ADDR_FAMILY_IPV4 but got %s'
+            % results[1][0].value()
+        )
 
     def test_dash_acl_group_remove(self, npu):
         commands = [

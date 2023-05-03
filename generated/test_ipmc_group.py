@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiIpmcGroup:
     # object with no attributes
@@ -24,7 +22,7 @@ class TestSaiIpmcGroup:
     def test_sai_ipmc_group_attr_ipmc_output_count_get(self, npu):
         commands = [
             {
-                'name': 'sai_ipmc_group_attr_ipmc_output_count_get',
+                'name': 'ipmc_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_IPMC_GROUP',
                 'atrribute': 'SAI_IPMC_GROUP_ATTR_IPMC_OUTPUT_COUNT',
@@ -33,12 +31,14 @@ class TestSaiIpmcGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_ipmc_group_attr_ipmc_member_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_ipmc_group_attr_ipmc_member_list_get',
+                'name': 'ipmc_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_IPMC_GROUP',
                 'atrribute': 'SAI_IPMC_GROUP_ATTR_IPMC_MEMBER_LIST',
@@ -47,7 +47,9 @@ class TestSaiIpmcGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_ipmc_group_remove(self, npu):
         commands = [

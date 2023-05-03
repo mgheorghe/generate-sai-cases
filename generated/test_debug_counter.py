@@ -27,7 +27,7 @@ class TestSaiDebugCounter:
     def test_sai_debug_counter_attr_index_get(self, npu):
         commands = [
             {
-                'name': 'sai_debug_counter_attr_index_get',
+                'name': 'debug_counter_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
                 'atrribute': 'SAI_DEBUG_COUNTER_ATTR_INDEX',
@@ -36,12 +36,15 @@ class TestSaiDebugCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_debug_counter_attr_in_drop_reason_list_set(self, npu):
         commands = [
             {
-                'name': 'sai_debug_counter_attr_in_drop_reason_list_set',
+                'name': 'debug_counter_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
                 'atrribute': ['SAI_DEBUG_COUNTER_ATTR_IN_DROP_REASON_LIST', 'empty'],
@@ -50,12 +53,15 @@ class TestSaiDebugCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_debug_counter_attr_in_drop_reason_list_set']
+    )
     def test_sai_debug_counter_attr_in_drop_reason_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_debug_counter_attr_in_drop_reason_list_get',
+                'name': 'debug_counter_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
                 'atrribute': 'SAI_DEBUG_COUNTER_ATTR_IN_DROP_REASON_LIST',
@@ -64,12 +70,15 @@ class TestSaiDebugCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'empty' for result in results]), 'Get error'
+        assert results[1][0].value() == 'empty', (
+            'Get error, expected empty but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_debug_counter_attr_out_drop_reason_list_set(self, npu):
         commands = [
             {
-                'name': 'sai_debug_counter_attr_out_drop_reason_list_set',
+                'name': 'debug_counter_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
                 'atrribute': ['SAI_DEBUG_COUNTER_ATTR_OUT_DROP_REASON_LIST', 'empty'],
@@ -78,12 +87,15 @@ class TestSaiDebugCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_debug_counter_attr_out_drop_reason_list_set']
+    )
     def test_sai_debug_counter_attr_out_drop_reason_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_debug_counter_attr_out_drop_reason_list_get',
+                'name': 'debug_counter_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
                 'atrribute': 'SAI_DEBUG_COUNTER_ATTR_OUT_DROP_REASON_LIST',
@@ -92,7 +104,9 @@ class TestSaiDebugCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'empty' for result in results]), 'Get error'
+        assert results[1][0].value() == 'empty', (
+            'Get error, expected empty but got %s' % results[1][0].value()
+        )
 
     def test_debug_counter_remove(self, npu):
         commands = [

@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSai60:
     # object with no attributes

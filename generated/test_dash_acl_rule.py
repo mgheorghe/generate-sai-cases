@@ -42,10 +42,11 @@ class TestSaiDashAclRule:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_dash_acl_rule_attr_action_set(self, npu):
         commands = [
             {
-                'name': 'sai_dash_acl_rule_attr_action_set',
+                'name': 'dash_acl_rule_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DASH_ACL_RULE',
                 'atrribute': [
@@ -57,12 +58,13 @@ class TestSaiDashAclRule:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dash_acl_rule_attr_action_set'])
     def test_sai_dash_acl_rule_attr_action_get(self, npu):
         commands = [
             {
-                'name': 'sai_dash_acl_rule_attr_action_get',
+                'name': 'dash_acl_rule_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DASH_ACL_RULE',
                 'atrribute': 'SAI_DASH_ACL_RULE_ATTR_ACTION',
@@ -71,14 +73,16 @@ class TestSaiDashAclRule:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_DASH_ACL_RULE_ACTION_PERMIT' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_DASH_ACL_RULE_ACTION_PERMIT', (
+            'Get error, expected SAI_DASH_ACL_RULE_ACTION_PERMIT but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dash_acl_rule_attr_counter_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_dash_acl_rule_attr_counter_id_set',
+                'name': 'dash_acl_rule_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DASH_ACL_RULE',
                 'atrribute': [
@@ -90,12 +94,13 @@ class TestSaiDashAclRule:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dash_acl_rule_attr_counter_id_set'])
     def test_sai_dash_acl_rule_attr_counter_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_dash_acl_rule_attr_counter_id_get',
+                'name': 'dash_acl_rule_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DASH_ACL_RULE',
                 'atrribute': 'SAI_DASH_ACL_RULE_ATTR_COUNTER_ID',
@@ -104,21 +109,9 @@ class TestSaiDashAclRule:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
-
-    def test_sai_dash_acl_rule_attr_ip_addr_family_get(self, npu):
-        commands = [
-            {
-                'name': 'sai_dash_acl_rule_attr_ip_addr_family_get',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DASH_ACL_RULE',
-                'atrribute': 'SAI_DASH_ACL_RULE_ATTR_IP_ADDR_FAMILY',
-            }
-        ]
-        results = [*npu.process_commands(commands)]
-        print('======= SAI commands RETURN values get =======')
-        pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
     def test_dash_acl_rule_remove(self, npu):
         commands = [

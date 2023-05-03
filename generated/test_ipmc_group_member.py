@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiIpmcGroupMember:
     # object with parent SAI_OBJECT_TYPE_IPMC_GROUP SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_TUNNEL

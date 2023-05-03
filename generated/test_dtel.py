@@ -21,10 +21,11 @@ class TestSaiDtel:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_int_endpoint_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_int_endpoint_enable_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_INT_ENDPOINT_ENABLE', 'false'],
@@ -33,12 +34,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_int_endpoint_enable_set'])
     def test_sai_dtel_attr_int_endpoint_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_int_endpoint_enable_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_INT_ENDPOINT_ENABLE',
@@ -47,12 +49,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_int_transit_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_int_transit_enable_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_INT_TRANSIT_ENABLE', 'false'],
@@ -61,12 +66,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_int_transit_enable_set'])
     def test_sai_dtel_attr_int_transit_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_int_transit_enable_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_INT_TRANSIT_ENABLE',
@@ -75,12 +81,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_postcard_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_postcard_enable_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_POSTCARD_ENABLE', 'false'],
@@ -89,12 +98,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_postcard_enable_set'])
     def test_sai_dtel_attr_postcard_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_postcard_enable_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_POSTCARD_ENABLE',
@@ -103,12 +113,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_drop_report_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_drop_report_enable_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_DROP_REPORT_ENABLE', 'false'],
@@ -117,12 +130,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_drop_report_enable_set'])
     def test_sai_dtel_attr_drop_report_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_drop_report_enable_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_DROP_REPORT_ENABLE',
@@ -131,12 +145,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_queue_report_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_queue_report_enable_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_QUEUE_REPORT_ENABLE', 'false'],
@@ -145,12 +162,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_queue_report_enable_set'])
     def test_sai_dtel_attr_queue_report_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_queue_report_enable_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_QUEUE_REPORT_ENABLE',
@@ -159,12 +177,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_switch_id_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_switch_id_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_SWITCH_ID', '0'],
@@ -173,12 +194,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_switch_id_set'])
     def test_sai_dtel_attr_switch_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_switch_id_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_SWITCH_ID',
@@ -187,12 +209,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_flow_state_clear_cycle_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_flow_state_clear_cycle_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_FLOW_STATE_CLEAR_CYCLE', '0'],
@@ -201,12 +226,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_flow_state_clear_cycle_set'])
     def test_sai_dtel_attr_flow_state_clear_cycle_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_flow_state_clear_cycle_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_FLOW_STATE_CLEAR_CYCLE',
@@ -215,12 +241,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_latency_sensitivity_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_latency_sensitivity_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_LATENCY_SENSITIVITY', '0'],
@@ -229,12 +258,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_latency_sensitivity_set'])
     def test_sai_dtel_attr_latency_sensitivity_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_latency_sensitivity_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_LATENCY_SENSITIVITY',
@@ -243,12 +273,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_sink_port_list_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_sink_port_list_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_SINK_PORT_LIST', 'empty'],
@@ -257,12 +290,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_sink_port_list_set'])
     def test_sai_dtel_attr_sink_port_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_sink_port_list_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_SINK_PORT_LIST',
@@ -271,12 +305,15 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'empty' for result in results]), 'Get error'
+        assert results[1][0].value() == 'empty', (
+            'Get error, expected empty but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_dtel_attr_int_l4_dscp_set(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_int_l4_dscp_set',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': ['SAI_DTEL_ATTR_INT_L4_DSCP', 'disabled'],
@@ -285,12 +322,13 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_dtel_attr_int_l4_dscp_set'])
     def test_sai_dtel_attr_int_l4_dscp_get(self, npu):
         commands = [
             {
-                'name': 'sai_dtel_attr_int_l4_dscp_get',
+                'name': 'dtel_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_DTEL',
                 'atrribute': 'SAI_DTEL_ATTR_INT_L4_DSCP',
@@ -299,7 +337,9 @@ class TestSaiDtel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'disabled' for result in results]), 'Get error'
+        assert results[1][0].value() == 'disabled', (
+            'Get error, expected disabled but got %s' % results[1][0].value()
+        )
 
     def test_dtel_remove(self, npu):
         commands = [

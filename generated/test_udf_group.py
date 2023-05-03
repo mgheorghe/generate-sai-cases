@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiUdfGroup:
     # object with no parents
@@ -24,7 +22,7 @@ class TestSaiUdfGroup:
     def test_sai_udf_group_attr_udf_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_udf_group_attr_udf_list_get',
+                'name': 'udf_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_UDF_GROUP',
                 'atrribute': 'SAI_UDF_GROUP_ATTR_UDF_LIST',
@@ -33,7 +31,9 @@ class TestSaiUdfGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_udf_group_remove(self, npu):
         commands = [

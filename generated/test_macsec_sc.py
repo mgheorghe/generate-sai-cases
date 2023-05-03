@@ -39,10 +39,11 @@ class TestSaiMacsecSc:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_macsec_sc_attr_macsec_explicit_sci_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_explicit_sci_enable_set',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': ['SAI_MACSEC_SC_ATTR_MACSEC_EXPLICIT_SCI_ENABLE', 'false'],
@@ -51,12 +52,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_macsec_sc_attr_macsec_explicit_sci_enable_set']
+    )
     def test_sai_macsec_sc_attr_macsec_explicit_sci_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_explicit_sci_enable_get',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': 'SAI_MACSEC_SC_ATTR_MACSEC_EXPLICIT_SCI_ENABLE',
@@ -65,12 +69,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_macsec_sc_attr_macsec_sectag_offset_set(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_sectag_offset_set',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': ['SAI_MACSEC_SC_ATTR_MACSEC_SECTAG_OFFSET', '0'],
@@ -79,12 +86,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_macsec_sc_attr_macsec_sectag_offset_set']
+    )
     def test_sai_macsec_sc_attr_macsec_sectag_offset_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_sectag_offset_get',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': 'SAI_MACSEC_SC_ATTR_MACSEC_SECTAG_OFFSET',
@@ -93,12 +103,14 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
     def test_sai_macsec_sc_attr_active_egress_sa_id_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_active_egress_sa_id_get',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': 'SAI_MACSEC_SC_ATTR_ACTIVE_EGRESS_SA_ID',
@@ -107,12 +119,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_macsec_sc_attr_macsec_replay_protection_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_replay_protection_enable_set',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': [
@@ -124,12 +139,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_macsec_sc_attr_macsec_replay_protection_enable_set']
+    )
     def test_sai_macsec_sc_attr_macsec_replay_protection_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_replay_protection_enable_get',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': 'SAI_MACSEC_SC_ATTR_MACSEC_REPLAY_PROTECTION_ENABLE',
@@ -138,12 +156,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'true' for result in results]), 'Get error'
+        assert results[1][0].value() == 'true', (
+            'Get error, expected true but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_macsec_sc_attr_macsec_replay_protection_window_set(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_replay_protection_window_set',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': [
@@ -155,12 +176,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_macsec_sc_attr_macsec_replay_protection_window_set']
+    )
     def test_sai_macsec_sc_attr_macsec_replay_protection_window_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_replay_protection_window_get',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': 'SAI_MACSEC_SC_ATTR_MACSEC_REPLAY_PROTECTION_WINDOW',
@@ -169,12 +193,14 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
     def test_sai_macsec_sc_attr_sa_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_sa_list_get',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': 'SAI_MACSEC_SC_ATTR_SA_LIST',
@@ -183,12 +209,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_macsec_sc_attr_macsec_cipher_suite_set(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_cipher_suite_set',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': ['SAI_MACSEC_SC_ATTR_MACSEC_CIPHER_SUITE', 'TODO'],
@@ -197,12 +226,13 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_macsec_sc_attr_macsec_cipher_suite_set'])
     def test_sai_macsec_sc_attr_macsec_cipher_suite_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_macsec_cipher_suite_get',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': 'SAI_MACSEC_SC_ATTR_MACSEC_CIPHER_SUITE',
@@ -211,12 +241,15 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_macsec_sc_attr_encryption_enable_set(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_encryption_enable_set',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': ['SAI_MACSEC_SC_ATTR_ENCRYPTION_ENABLE', 'true'],
@@ -225,12 +258,13 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_macsec_sc_attr_encryption_enable_set'])
     def test_sai_macsec_sc_attr_encryption_enable_get(self, npu):
         commands = [
             {
-                'name': 'sai_macsec_sc_attr_encryption_enable_get',
+                'name': 'macsec_sc_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_MACSEC_SC',
                 'atrribute': 'SAI_MACSEC_SC_ATTR_ENCRYPTION_ENABLE',
@@ -239,7 +273,9 @@ class TestSaiMacsecSc:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'true' for result in results]), 'Get error'
+        assert results[1][0].value() == 'true', (
+            'Get error, expected true but got %s' % results[1][0].value()
+        )
 
     def test_macsec_sc_remove(self, npu):
         commands = [

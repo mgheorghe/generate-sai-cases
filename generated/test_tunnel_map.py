@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiTunnelMap:
     # object with no parents
@@ -27,7 +25,7 @@ class TestSaiTunnelMap:
     def test_sai_tunnel_map_attr_entry_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_tunnel_map_attr_entry_list_get',
+                'name': 'tunnel_map_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TUNNEL_MAP',
                 'atrribute': 'SAI_TUNNEL_MAP_ATTR_ENTRY_LIST',
@@ -36,7 +34,9 @@ class TestSaiTunnelMap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_tunnel_map_remove(self, npu):
         commands = [

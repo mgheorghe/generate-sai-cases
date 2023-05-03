@@ -4309,15 +4309,6 @@
       "allownull": null,
       "default": null
     },
-    "SAI_DASH_ACL_RULE_ATTR_IP_ADDR_FAMILY": {
-      "type": "sai_ip_addr_family_t",
-      "flags": [
-        "READ_ONLY"
-      ],
-      "objects": null,
-      "allownull": null,
-      "default": null
-    },
     "SAI_DASH_ACL_RULE_ATTR_END": {
       "type": null,
       "flags": null,
@@ -6169,15 +6160,6 @@
       ],
       "allownull": "true",
       "default": "SAI_NULL_OBJECT_ID"
-    },
-    "SAI_INBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY": {
-      "type": "sai_ip_addr_family_t",
-      "flags": [
-        "READ_ONLY"
-      ],
-      "objects": null,
-      "allownull": null,
-      "default": null
     },
     "SAI_INBOUND_ROUTING_ENTRY_ATTR_END": {
       "type": null,
@@ -9834,15 +9816,6 @@
       "allownull": "true",
       "default": "SAI_NULL_OBJECT_ID"
     },
-    "SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_IP_ADDR_FAMILY": {
-      "type": "sai_ip_addr_family_t",
-      "flags": [
-        "READ_ONLY"
-      ],
-      "objects": null,
-      "allownull": null,
-      "default": null
-    },
     "SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_END": {
       "type": null,
       "flags": null,
@@ -9985,15 +9958,6 @@
       "allownull": "true",
       "default": "SAI_NULL_OBJECT_ID"
     },
-    "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY": {
-      "type": "sai_ip_addr_family_t",
-      "flags": [
-        "READ_ONLY"
-      ],
-      "objects": null,
-      "allownull": null,
-      "default": null
-    },
     "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_END": {
       "type": null,
       "flags": null,
@@ -10032,15 +9996,6 @@
       "objects": null,
       "allownull": null,
       "default": "SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT"
-    },
-    "SAI_PA_VALIDATION_ENTRY_ATTR_IP_ADDR_FAMILY": {
-      "type": "sai_ip_addr_family_t",
-      "flags": [
-        "READ_ONLY"
-      ],
-      "objects": null,
-      "allownull": null,
-      "default": null
     },
     "SAI_PA_VALIDATION_ENTRY_ATTR_END": {
       "type": null,
@@ -17871,15 +17826,6 @@
       "objects": null,
       "allownull": null,
       "default": "SAI_VIP_ENTRY_ACTION_ACCEPT"
-    },
-    "SAI_VIP_ENTRY_ATTR_IP_ADDR_FAMILY": {
-      "type": "sai_ip_addr_family_t",
-      "flags": [
-        "READ_ONLY"
-      ],
-      "objects": null,
-      "allownull": null,
-      "default": null
     },
     "SAI_VIP_ENTRY_ATTR_END": {
       "type": null,

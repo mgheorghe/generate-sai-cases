@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiRpfGroup:
     # object with no attributes
@@ -24,7 +22,7 @@ class TestSaiRpfGroup:
     def test_sai_rpf_group_attr_rpf_interface_count_get(self, npu):
         commands = [
             {
-                'name': 'sai_rpf_group_attr_rpf_interface_count_get',
+                'name': 'rpf_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
                 'atrribute': 'SAI_RPF_GROUP_ATTR_RPF_INTERFACE_COUNT',
@@ -33,12 +31,14 @@ class TestSaiRpfGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_rpf_group_attr_rpf_member_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_rpf_group_attr_rpf_member_list_get',
+                'name': 'rpf_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
                 'atrribute': 'SAI_RPF_GROUP_ATTR_RPF_MEMBER_LIST',
@@ -47,7 +47,9 @@ class TestSaiRpfGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_rpf_group_remove(self, npu):
         commands = [

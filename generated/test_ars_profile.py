@@ -21,10 +21,11 @@ class TestSaiArsProfile:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_algo_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_algo_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_ALGO', 'SAI_ARS_PROFILE_ALGO_EWMA'],
@@ -33,12 +34,13 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_ars_profile_attr_algo_set'])
     def test_sai_ars_profile_attr_algo_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_algo_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_ALGO',
@@ -47,14 +49,16 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_ARS_PROFILE_ALGO_EWMA' for result in results]
-        ), 'Get error'
+        assert results[1][0].value() == 'SAI_ARS_PROFILE_ALGO_EWMA', (
+            'Get error, expected SAI_ARS_PROFILE_ALGO_EWMA but got %s'
+            % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_sampling_interval_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_sampling_interval_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_SAMPLING_INTERVAL', '16'],
@@ -63,12 +67,13 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_ars_profile_attr_sampling_interval_set'])
     def test_sai_ars_profile_attr_sampling_interval_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_sampling_interval_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_SAMPLING_INTERVAL',
@@ -77,12 +82,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '16' for result in results]), 'Get error'
+        assert results[1][0].value() == '16', (
+            'Get error, expected 16 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_ars_random_seed_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_ars_random_seed_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_ARS_RANDOM_SEED', '0'],
@@ -91,12 +99,13 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_ars_profile_attr_ars_random_seed_set'])
     def test_sai_ars_profile_attr_ars_random_seed_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_ars_random_seed_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_ARS_RANDOM_SEED',
@@ -105,12 +114,14 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
     def test_sai_ars_profile_attr_ecmp_ars_max_groups_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_ecmp_ars_max_groups_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_ECMP_ARS_MAX_GROUPS',
@@ -119,12 +130,14 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_ars_profile_attr_ecmp_ars_max_members_per_group_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_ecmp_ars_max_members_per_group_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_ECMP_ARS_MAX_MEMBERS_PER_GROUP',
@@ -133,12 +146,14 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_ars_profile_attr_lag_ars_max_groups_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_lag_ars_max_groups_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_LAG_ARS_MAX_GROUPS',
@@ -147,12 +162,14 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_ars_profile_attr_lag_ars_max_members_per_group_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_lag_ars_max_members_per_group_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_LAG_ARS_MAX_MEMBERS_PER_GROUP',
@@ -161,12 +178,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_port_load_past_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_past_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST', 'true'],
@@ -175,12 +195,13 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_ars_profile_attr_port_load_past_set'])
     def test_sai_ars_profile_attr_port_load_past_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_past_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST',
@@ -189,12 +210,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'true' for result in results]), 'Get error'
+        assert results[1][0].value() == 'true', (
+            'Get error, expected true but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_port_load_past_weight_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_past_weight_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST_WEIGHT', '16'],
@@ -203,12 +227,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_port_load_past_weight_set']
+    )
     def test_sai_ars_profile_attr_port_load_past_weight_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_past_weight_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST_WEIGHT',
@@ -217,12 +244,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '16' for result in results]), 'Get error'
+        assert results[1][0].value() == '16', (
+            'Get error, expected 16 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_port_load_future_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_future_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE', 'true'],
@@ -231,12 +261,13 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_ars_profile_attr_port_load_future_set'])
     def test_sai_ars_profile_attr_port_load_future_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_future_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE',
@@ -245,12 +276,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'true' for result in results]), 'Get error'
+        assert results[1][0].value() == 'true', (
+            'Get error, expected true but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_port_load_future_weight_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_future_weight_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE_WEIGHT', '16'],
@@ -259,12 +293,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_port_load_future_weight_set']
+    )
     def test_sai_ars_profile_attr_port_load_future_weight_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_future_weight_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE_WEIGHT',
@@ -273,12 +310,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '16' for result in results]), 'Get error'
+        assert results[1][0].value() == '16', (
+            'Get error, expected 16 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_port_load_current_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_current_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_CURRENT', 'false'],
@@ -287,12 +327,13 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_ars_profile_attr_port_load_current_set'])
     def test_sai_ars_profile_attr_port_load_current_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_current_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_CURRENT',
@@ -301,12 +342,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'false' for result in results]), 'Get error'
+        assert results[1][0].value() == 'false', (
+            'Get error, expected false but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_port_load_exponent_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_exponent_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_PORT_LOAD_EXPONENT', '2'],
@@ -315,12 +359,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_port_load_exponent_set']
+    )
     def test_sai_ars_profile_attr_port_load_exponent_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_port_load_exponent_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_PORT_LOAD_EXPONENT',
@@ -329,12 +376,14 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '2' for result in results]), 'Get error'
+        assert results[1][0].value() == '2', (
+            'Get error, expected 2 but got %s' % results[1][0].value()
+        )
 
     def test_sai_ars_profile_attr_quant_bands_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_bands_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BANDS',
@@ -343,12 +392,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_0_min_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_0_min_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MIN_THRESHOLD', '0'],
@@ -357,12 +409,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_0_min_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_0_min_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_0_min_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MIN_THRESHOLD',
@@ -371,12 +426,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_0_max_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_0_max_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MAX_THRESHOLD', '0'],
@@ -385,12 +443,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_0_max_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_0_max_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_0_max_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MAX_THRESHOLD',
@@ -399,12 +460,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_1_min_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_1_min_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MIN_THRESHOLD', '0'],
@@ -413,12 +477,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_1_min_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_1_min_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_1_min_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MIN_THRESHOLD',
@@ -427,12 +494,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_1_max_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_1_max_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MAX_THRESHOLD', '0'],
@@ -441,12 +511,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_1_max_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_1_max_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_1_max_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MAX_THRESHOLD',
@@ -455,12 +528,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_2_min_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_2_min_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MIN_THRESHOLD', '0'],
@@ -469,12 +545,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_2_min_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_2_min_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_2_min_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MIN_THRESHOLD',
@@ -483,12 +562,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_2_max_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_2_max_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MAX_THRESHOLD', '0'],
@@ -497,12 +579,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_2_max_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_2_max_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_2_max_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MAX_THRESHOLD',
@@ -511,12 +596,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_3_min_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_3_min_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MIN_THRESHOLD', '0'],
@@ -525,12 +613,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_3_min_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_3_min_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_3_min_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MIN_THRESHOLD',
@@ -539,12 +630,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_3_max_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_3_max_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MAX_THRESHOLD', '0'],
@@ -553,12 +647,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_3_max_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_3_max_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_3_max_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MAX_THRESHOLD',
@@ -567,12 +664,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_4_min_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_4_min_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MIN_THRESHOLD', '0'],
@@ -581,12 +681,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_4_min_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_4_min_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_4_min_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MIN_THRESHOLD',
@@ -595,12 +698,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_4_max_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_4_max_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MAX_THRESHOLD', '0'],
@@ -609,12 +715,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_4_max_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_4_max_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_4_max_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MAX_THRESHOLD',
@@ -623,12 +732,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_5_min_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_5_min_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MIN_THRESHOLD', '0'],
@@ -637,12 +749,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_5_min_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_5_min_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_5_min_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MIN_THRESHOLD',
@@ -651,12 +766,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_5_max_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_5_max_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MAX_THRESHOLD', '0'],
@@ -665,12 +783,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_5_max_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_5_max_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_5_max_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MAX_THRESHOLD',
@@ -679,12 +800,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_6_min_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_6_min_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MIN_THRESHOLD', '0'],
@@ -693,12 +817,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_6_min_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_6_min_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_6_min_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MIN_THRESHOLD',
@@ -707,12 +834,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_6_max_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_6_max_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MAX_THRESHOLD', '0'],
@@ -721,12 +851,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_6_max_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_6_max_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_6_max_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MAX_THRESHOLD',
@@ -735,12 +868,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_7_min_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_7_min_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MIN_THRESHOLD', '0'],
@@ -749,12 +885,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_7_min_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_7_min_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_7_min_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MIN_THRESHOLD',
@@ -763,12 +902,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ars_profile_attr_quant_band_7_max_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_7_max_threshold_set',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': ['SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MAX_THRESHOLD', '0'],
@@ -777,12 +919,15 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ars_profile_attr_quant_band_7_max_threshold_set']
+    )
     def test_sai_ars_profile_attr_quant_band_7_max_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_ars_profile_attr_quant_band_7_max_threshold_get',
+                'name': 'ars_profile_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_ARS_PROFILE',
                 'atrribute': 'SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MAX_THRESHOLD',
@@ -791,7 +936,9 @@ class TestSaiArsProfile:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
     def test_ars_profile_remove(self, npu):
         commands = [

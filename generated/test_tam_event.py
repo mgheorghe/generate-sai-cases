@@ -28,10 +28,11 @@ class TestSaiTamEvent:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_tam_event_attr_threshold_set(self, npu):
         commands = [
             {
-                'name': 'sai_tam_event_attr_threshold_set',
+                'name': 'tam_event_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
                 'atrribute': ['SAI_TAM_EVENT_ATTR_THRESHOLD', 'SAI_NULL_OBJECT_ID'],
@@ -40,12 +41,13 @@ class TestSaiTamEvent:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tam_event_attr_threshold_set'])
     def test_sai_tam_event_attr_threshold_get(self, npu):
         commands = [
             {
-                'name': 'sai_tam_event_attr_threshold_get',
+                'name': 'tam_event_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
                 'atrribute': 'SAI_TAM_EVENT_ATTR_THRESHOLD',
@@ -54,12 +56,15 @@ class TestSaiTamEvent:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tam_event_attr_dscp_value_set(self, npu):
         commands = [
             {
-                'name': 'sai_tam_event_attr_dscp_value_set',
+                'name': 'tam_event_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
                 'atrribute': ['SAI_TAM_EVENT_ATTR_DSCP_VALUE', '0'],
@@ -68,12 +73,13 @@ class TestSaiTamEvent:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tam_event_attr_dscp_value_set'])
     def test_sai_tam_event_attr_dscp_value_get(self, npu):
         commands = [
             {
-                'name': 'sai_tam_event_attr_dscp_value_get',
+                'name': 'tam_event_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
                 'atrribute': 'SAI_TAM_EVENT_ATTR_DSCP_VALUE',
@@ -82,7 +88,9 @@ class TestSaiTamEvent:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
     def test_tam_event_remove(self, npu):
         commands = [

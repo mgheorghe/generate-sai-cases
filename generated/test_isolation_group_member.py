@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiIsolationGroupMember:
     # object with parent SAI_OBJECT_TYPE_ISOLATION_GROUP SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_BRIDGE_PORT

@@ -37,10 +37,11 @@ class TestSaiIngressPriorityGroup:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_ingress_priority_group_attr_buffer_profile_set(self, npu):
         commands = [
             {
-                'name': 'sai_ingress_priority_group_attr_buffer_profile_set',
+                'name': 'ingress_priority_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
                 'atrribute': [
@@ -52,12 +53,15 @@ class TestSaiIngressPriorityGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_ingress_priority_group_attr_buffer_profile_set']
+    )
     def test_sai_ingress_priority_group_attr_buffer_profile_get(self, npu):
         commands = [
             {
-                'name': 'sai_ingress_priority_group_attr_buffer_profile_get',
+                'name': 'ingress_priority_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
                 'atrribute': 'SAI_INGRESS_PRIORITY_GROUP_ATTR_BUFFER_PROFILE',
@@ -66,12 +70,15 @@ class TestSaiIngressPriorityGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_NULL_OBJECT_ID' for result in results]), 'Get error'
+        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_ingress_priority_group_attr_tam_set(self, npu):
         commands = [
             {
-                'name': 'sai_ingress_priority_group_attr_tam_set',
+                'name': 'ingress_priority_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
                 'atrribute': ['SAI_INGRESS_PRIORITY_GROUP_ATTR_TAM', 'empty'],
@@ -80,12 +87,13 @@ class TestSaiIngressPriorityGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_ingress_priority_group_attr_tam_set'])
     def test_sai_ingress_priority_group_attr_tam_get(self, npu):
         commands = [
             {
-                'name': 'sai_ingress_priority_group_attr_tam_get',
+                'name': 'ingress_priority_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
                 'atrribute': 'SAI_INGRESS_PRIORITY_GROUP_ATTR_TAM',
@@ -94,7 +102,9 @@ class TestSaiIngressPriorityGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'empty' for result in results]), 'Get error'
+        assert results[1][0].value() == 'empty', (
+            'Get error, expected empty but got %s' % results[1][0].value()
+        )
 
     def test_ingress_priority_group_remove(self, npu):
         commands = [

@@ -30,10 +30,11 @@ class TestSaiTamEventAction:
         pprint(results)
         assert all(results), 'Create error'
 
+    @pytest.mark.dependency()
     def test_sai_tam_event_action_attr_report_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_tam_event_action_attr_report_type_set',
+                'name': 'tam_event_action_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
                 'atrribute': ['SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE', 'TODO'],
@@ -42,12 +43,13 @@ class TestSaiTamEventAction:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(depends=['test_sai_tam_event_action_attr_report_type_set'])
     def test_sai_tam_event_action_attr_report_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_tam_event_action_attr_report_type_get',
+                'name': 'tam_event_action_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
                 'atrribute': 'SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE',
@@ -56,12 +58,15 @@ class TestSaiTamEventAction:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
+    @pytest.mark.dependency()
     def test_sai_tam_event_action_attr_qos_action_type_set(self, npu):
         commands = [
             {
-                'name': 'sai_tam_event_action_attr_qos_action_type_set',
+                'name': 'tam_event_action_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
                 'atrribute': ['SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE', '0'],
@@ -70,12 +75,15 @@ class TestSaiTamEventAction:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Get error'
+        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
+    @pytest.mark.dependency(
+        depends=['test_sai_tam_event_action_attr_qos_action_type_set']
+    )
     def test_sai_tam_event_action_attr_qos_action_type_get(self, npu):
         commands = [
             {
-                'name': 'sai_tam_event_action_attr_qos_action_type_get',
+                'name': 'tam_event_action_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
                 'atrribute': 'SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE',
@@ -84,7 +92,9 @@ class TestSaiTamEventAction:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == '0' for result in results]), 'Get error'
+        assert results[1][0].value() == '0', (
+            'Get error, expected 0 but got %s' % results[1][0].value()
+        )
 
     def test_tam_event_action_remove(self, npu):
         commands = [

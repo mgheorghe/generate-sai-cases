@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiTunnelMapEntry:
     # object with parent SAI_OBJECT_TYPE_TUNNEL_MAP SAI_OBJECT_TYPE_BRIDGE SAI_OBJECT_TYPE_BRIDGE SAI_OBJECT_TYPE_VIRTUAL_ROUTER SAI_OBJECT_TYPE_VIRTUAL_ROUTER

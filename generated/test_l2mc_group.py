@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import pytest
-
 
 class TestSaiL2McGroup:
     # object with no attributes
@@ -24,7 +22,7 @@ class TestSaiL2McGroup:
     def test_sai_l2mc_group_attr_l2mc_output_count_get(self, npu):
         commands = [
             {
-                'name': 'sai_l2mc_group_attr_l2mc_output_count_get',
+                'name': 'l2mc_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_L2MC_GROUP',
                 'atrribute': 'SAI_L2MC_GROUP_ATTR_L2MC_OUTPUT_COUNT',
@@ -33,12 +31,14 @@ class TestSaiL2McGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_sai_l2mc_group_attr_l2mc_member_list_get(self, npu):
         commands = [
             {
-                'name': 'sai_l2mc_group_attr_l2mc_member_list_get',
+                'name': 'l2mc_group_1',
                 'op': 'get',
                 'type': 'SAI_OBJECT_TYPE_L2MC_GROUP',
                 'atrribute': 'SAI_L2MC_GROUP_ATTR_L2MC_MEMBER_LIST',
@@ -47,7 +47,9 @@ class TestSaiL2McGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert all([result == 'TODO' for result in results]), 'Get error'
+        assert results[1][0].value() == 'TODO', (
+            'Get error, expected TODO but got %s' % results[1][0].value()
+        )
 
     def test_l2mc_group_remove(self, npu):
         commands = [
