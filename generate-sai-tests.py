@@ -108,23 +108,41 @@ def parse_sai_header_files():
 
     for obj_type in object_types:
         dictionary[obj_type] = {}
+        dictionary[obj_type]['keys'] = {}
+        dictionary[obj_type]['attributes'] = {}
         obj_name = get_obj_name(obj_type)
-        block_start = 'typedef enum _sai_%s_attr_t' % obj_name
-        block_end = '} sai_%s_attr_t;' % obj_name
+        attributes_block_start = 'typedef enum _sai_%s_attr_t' % obj_name
+        attributes_block_end = '} sai_%s_attr_t;' % obj_name
+
+        keys_block_start = 'typedef struct _sai_%s_t' % obj_name
+        keys_block_end = '} sai_%s_t;' % obj_name
 
         for h_file_path in header_files_paths:
             start_copy = False
             is_attribute = False
-            attr_block_start = False
+            is_key = False
+            attr_attributes_block_start = False
+            parsing_attributes = False
+            parsing_keys = False
+
             with io.open(h_file_path, 'rt', encoding='utf-8') as h_file:
                 for text_line in h_file:
-                    if block_start in text_line:
+                    if attributes_block_start in text_line:
                         print(h_file_path)
                         start_copy = True
-                    if block_end in text_line:
+                        parsing_attributes = True
+                    if attributes_block_end in text_line:
                         start_copy = False
+                        parsing_attributes = False
+                    if keys_block_start in text_line:
+                        print(h_file_path)
+                        start_copy = True
+                        parsing_keys = True
+                    if keys_block_end in text_line:
+                        start_copy = False
+                        parsing_keys = False
                     if start_copy:
-                        if attr_block_start:
+                        if attr_attributes_block_start:
                             if '@type' in text_line:
                                 o_types = []
                                 for o_type in (
@@ -153,12 +171,22 @@ def parse_sai_header_files():
                         if is_attribute:
                             attribute = text_line.split('=')[0].replace(',', '').strip()
                             if attribute != '':
-                                dictionary[obj_type][attribute] = {}
-                                dictionary[obj_type][attribute]['type'] = o_type
-                                dictionary[obj_type][attribute]['flags'] = flags
-                                dictionary[obj_type][attribute]['objects'] = objects
-                                dictionary[obj_type][attribute]['allownull'] = allownull
-                                dictionary[obj_type][attribute]['default'] = default
+                                dictionary[obj_type]['attributes'][attribute] = {}
+                                dictionary[obj_type]['attributes'][attribute][
+                                    'type'
+                                ] = o_type
+                                dictionary[obj_type]['attributes'][attribute][
+                                    'flags'
+                                ] = flags
+                                dictionary[obj_type]['attributes'][attribute][
+                                    'objects'
+                                ] = objects
+                                dictionary[obj_type]['attributes'][attribute][
+                                    'allownull'
+                                ] = allownull
+                                dictionary[obj_type]['attributes'][attribute][
+                                    'default'
+                                ] = default
                                 # print(attribute)
                                 # print(dictionary[attribute])
                             o_type = None
@@ -168,16 +196,39 @@ def parse_sai_header_files():
                             default = None
                             is_attribute = False
 
+                        if is_key:
+                            key = text_line.strip().split(' ')[1].replace(';', '')
+                            if key != '':
+                                dictionary[obj_type]['keys'][key] = {}
+                                dictionary[obj_type]['keys'][key]['type'] = o_type
+                                dictionary[obj_type]['keys'][key]['flags'] = flags
+                                dictionary[obj_type]['keys'][key]['objects'] = objects
+                                dictionary[obj_type]['keys'][key][
+                                    'allownull'
+                                ] = allownull
+                                dictionary[obj_type]['keys'][key]['default'] = default
+                                # print(attribute)
+                                # print(dictionary[attribute])
+                            o_type = None
+                            flags = None
+                            objects = None
+                            allownull = None
+                            default = None
+                            is_key = False
+
                         if '/**' in text_line:
-                            attr_block_start = True
+                            attr_attributes_block_start = True
                             o_type = None
                             flags = None
                             objects = None
                             allownull = None
                             default = None
                         if '*/' in text_line:
-                            attr_block_start = False
-                            is_attribute = True
+                            attr_attributes_block_start = False
+                            if parsing_attributes:
+                                is_attribute = True
+                            elif parsing_keys:
+                                is_key = True
 
     # pprint.pprint(dictionary)
     return dictionary
@@ -185,10 +236,13 @@ def parse_sai_header_files():
 
 def select_mandatory_attributes(obj_type):
     mandatory = {}
-    for attribute in SAI_DATA[obj_type].keys():
-        if SAI_DATA[obj_type][attribute]['flags'] is not None:
-            if 'MANDATORY_ON_CREATE' in SAI_DATA[obj_type][attribute]['flags']:
-                mandatory[attribute] = SAI_DATA[obj_type][attribute]
+    for attribute in SAI_DATA[obj_type]['attributes'].keys():
+        if SAI_DATA[obj_type]['attributes'][attribute]['flags'] is not None:
+            if (
+                'MANDATORY_ON_CREATE'
+                in SAI_DATA[obj_type]['attributes'][attribute]['flags']
+            ):
+                mandatory[attribute] = SAI_DATA[obj_type]['attributes'][attribute]
 
     pprint.pprint(mandatory)
     return mandatory
@@ -284,25 +338,29 @@ def generate_pyetes_test(obj_type):
             'COMMENT': generate_comment(obj_type),
         }
         obj = SAI_DATA[obj_type]
-        for attribute in SAI_DATA[obj_type].keys():
-            if obj[attribute]['flags'] is not None:
-                if 'READ_ONLY' in obj[attribute]['flags']:
+        for attribute in SAI_DATA[obj_type]['attributes'].keys():
+            if obj['attributes'][attribute]['flags'] is not None:
+                if 'READ_ONLY' in obj['attributes'][attribute]['flags']:
                     TEST_CODE += TEST_TEMPLATE_GET % {
                         'PYTEST_MARKER': '',
                         'ATTR_NAME': get_obj_name(attribute),
                         'OBJECT_NAME': obj_name,
                         'OBJECT_TYPE': obj_type,
                         'ATTRIBUTE': attribute,
-                        'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),
+                        'EXPECTED_VALUE': get_attribute_expected_value(
+                            obj['attributes'][attribute]
+                        ),
                     }
-                elif 'CREATE_AND_SET' in obj[attribute]['flags']:
+                elif 'CREATE_AND_SET' in obj['attributes'][attribute]['flags']:
                     TEST_CODE += TEST_TEMPLATE_SET % {
                         'PYTEST_MARKER': '@pytest.mark.dependency()',
                         'ATTR_NAME': get_obj_name(attribute),
                         'OBJECT_NAME': obj_name,
                         'OBJECT_TYPE': obj_type,
                         'ATTRIBUTE': attribute,
-                        'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),
+                        'EXPECTED_VALUE': get_attribute_expected_value(
+                            obj['attributes'][attribute]
+                        ),
                     }
                     TEST_CODE += TEST_TEMPLATE_GET % {
                         'PYTEST_MARKER': '@pytest.mark.dependency(depends=["test_%s_set"])'
@@ -311,7 +369,9 @@ def generate_pyetes_test(obj_type):
                         'OBJECT_NAME': obj_name,
                         'OBJECT_TYPE': obj_type,
                         'ATTRIBUTE': attribute,
-                        'EXPECTED_VALUE': get_attribute_expected_value(obj[attribute]),
+                        'EXPECTED_VALUE': get_attribute_expected_value(
+                            obj['attributes'][attribute]
+                        ),
                     }
                 else:
                     # TODO: see if any other case that can be tested exists
@@ -331,18 +391,18 @@ def create_depedency_graph():
     for obj_type in SAI_DATA.keys():
         obj = SAI_DATA[obj_type]
         G.add_node(obj_type.replace('SAI_OBJECT_TYPE_', ''))
-        for attribute in obj.keys():
-            flags = obj[attribute]['flags']
+        for attribute in obj['attributes'].keys():
+            flags = obj['attributes'][attribute]['flags']
             if flags is not None:
                 if 'MANDATORY_ON_CREATE' in flags:
-                    objects = obj[attribute]['objects']
+                    objects = obj['attributes'][attribute]['objects']
                     if objects is not None:
                         node1 = obj_type.replace('SAI_OBJECT_TYPE_', '')
-                        node2 = obj[attribute]['objects'][0].replace(
+                        node2 = obj['attributes'][attribute]['objects'][0].replace(
                             'SAI_OBJECT_TYPE_', ''
                         )
                         if node1 == node2:
-                            node2 = obj[attribute]['objects'][1].replace(
+                            node2 = obj['attributes'][attribute]['objects'][1].replace(
                                 'SAI_OBJECT_TYPE_', ''
                             )
                         G.add_edge(node1, node2)
