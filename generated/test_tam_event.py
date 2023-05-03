@@ -14,7 +14,7 @@ class TestSaiTamEvent:
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
                 'attributes': [
                     'SAI_TAM_EVENT_ATTR_TYPE',
-                    'sai_tam_event_type_t',
+                    'SAI_TAM_EVENT_TYPE_FLOW_STATE',
                     'SAI_TAM_EVENT_ATTR_ACTION_LIST',
                     'sai_object_list_t',
                     'SAI_TAM_EVENT_ATTR_COLLECTOR_LIST',
@@ -100,7 +100,7 @@ class TestSaiTamEvent:
                 'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
                 'attributes': [
                     'SAI_TAM_EVENT_ATTR_TYPE',
-                    'sai_tam_event_type_t',
+                    'SAI_TAM_EVENT_TYPE_FLOW_STATE',
                     'SAI_TAM_EVENT_ATTR_ACTION_LIST',
                     'sai_object_list_t',
                     'SAI_TAM_EVENT_ATTR_COLLECTOR_LIST',

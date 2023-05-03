@@ -29,7 +29,7 @@ class TestSaiMacsecSc:
                     'SAI_MACSEC_SC_ATTR_MACSEC_SCI',
                     '10',
                     'SAI_MACSEC_SC_ATTR_MACSEC_CIPHER_SUITE',
-                    'sai_macsec_cipher_suite_t',
+                    'SAI_MACSEC_CIPHER_SUITE_GCM_AES_128',
                 ],
             },
         ]
@@ -291,7 +291,7 @@ class TestSaiMacsecSc:
                     'SAI_MACSEC_SC_ATTR_MACSEC_SCI',
                     '10',
                     'SAI_MACSEC_SC_ATTR_MACSEC_CIPHER_SUITE',
-                    'sai_macsec_cipher_suite_t',
+                    'SAI_MACSEC_CIPHER_SUITE_GCM_AES_128',
                 ],
             },
             {

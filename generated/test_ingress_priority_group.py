@@ -27,7 +27,7 @@ class TestSaiIngressPriorityGroup:
                     'SAI_INGRESS_PRIORITY_GROUP_ATTR_PORT',
                     '$port_1',
                     'SAI_INGRESS_PRIORITY_GROUP_ATTR_INDEX',
-                    'sai_uint8_t',
+                    '1',
                 ],
             },
         ]
@@ -116,7 +116,7 @@ class TestSaiIngressPriorityGroup:
                     'SAI_INGRESS_PRIORITY_GROUP_ATTR_PORT',
                     '$port_1',
                     'SAI_INGRESS_PRIORITY_GROUP_ATTR_INDEX',
-                    'sai_uint8_t',
+                    '1',
                 ],
             },
             {

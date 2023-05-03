@@ -1,4 +1,6 @@
 DEFAULT_VALUES = {
+    'sai_int8_t': '1',
+    'sai_uint8_t': '1',
     'sai_uint16_t': '10',
     'sai_uint32_t': '10',
     'sai_uint64_t': '10',
@@ -34,6 +36,7 @@ DEFAULT_VALUES = {
     'sai_tam_report_type_t': 'SAI_TAM_REPORT_TYPE_SFLOW',
     'sai_switch_hardware_access_bus_t': 'SAI_SWITCH_HARDWARE_ACCESS_BUS_MDIO',
     'sai_ip4_t': '255.0.0.0',
+    'sai_ip_address_t': '180.0.0.1',
     'sai_bfd_session_type_t': 'SAI_BFD_SESSION_TYPE_DEMAND_ACTIVE',
     'sai_bfd_encapsulation_type_t': 'SAI_BFD_ENCAPSULATION_TYPE_IP_IN_IP',
     'sai_bridge_port_type_t': 'SAI_BRIDGE_PORT_TYPE_PORT',
@@ -52,6 +55,18 @@ DEFAULT_VALUES = {
     'sai_ip6_t': 'FF::0',
     'sai_stp_port_state_t': 'SAI_STP_PORT_STATE_LEARNING',
     'sai_router_interface_type_t': 'SAI_ROUTER_INTERFACE_TYPE_PORT',
+    'sai_buffer_profile_threshold_mode_t': 'SAI_BUFFER_PROFILE_THRESHOLD_MODE_STATIC',
+    'sai_ipsec_direction_t': 'SAI_IPSEC_DIRECTION_EGRESS',
+    'sai_encrypt_key_t': 'typedef UINT8   sai_encrypt_key_t[32]',
+    'sai_auth_key_t': 'typedef UINT8   sai_auth_key_t[16]',
+    'sai_macsec_cipher_suite_t': 'SAI_MACSEC_CIPHER_SUITE_GCM_AES_128',
+    'sai_macsec_sak_t': 'typedef UINT8   sai_macsec_sak_t[32]',
+    'sai_macsec_salt_t': 'typedef UINT8   sai_macsec_salt_t[12]',
+    'sai_macsec_auth_key_t': 'typedef UINT8   sai_macsec_auth_key_t[16]',
+    'sai_system_port_config_t': 'TODO',
+    'sai_ip_prefix_t': '190.0.0.1',
+    'sai_table_bitmap_router_entry_action_t': 'SAI_TABLE_BITMAP_ROUTER_ENTRY_ACTION_NOACTION',
+    'sai_tam_event_type_t': 'SAI_TAM_EVENT_TYPE_FLOW_STATE',
 }
 
 

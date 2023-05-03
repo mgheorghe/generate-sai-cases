@@ -12,10 +12,7 @@ class TestSaiSystemPort:
                 'name': 'system_port_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
-                'attributes': [
-                    'SAI_SYSTEM_PORT_ATTR_CONFIG_INFO',
-                    'sai_system_port_config_t',
-                ],
+                'attributes': ['SAI_SYSTEM_PORT_ATTR_CONFIG_INFO', 'TODO'],
             }
         ]
 
@@ -163,10 +160,7 @@ class TestSaiSystemPort:
                 'name': 'system_port_1',
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_SYSTEM_PORT',
-                'attributes': [
-                    'SAI_SYSTEM_PORT_ATTR_CONFIG_INFO',
-                    'sai_system_port_config_t',
-                ],
+                'attributes': ['SAI_SYSTEM_PORT_ATTR_CONFIG_INFO', 'TODO'],
             }
         ]
 

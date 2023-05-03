@@ -23,13 +23,13 @@ class TestSaiTamCollector:
                 'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
                 'attributes': [
                     'SAI_TAM_COLLECTOR_ATTR_SRC_IP',
-                    'sai_ip_address_t',
+                    '180.0.0.1',
                     'SAI_TAM_COLLECTOR_ATTR_DST_IP',
-                    'sai_ip_address_t',
+                    '180.0.0.1',
                     'SAI_TAM_COLLECTOR_ATTR_TRANSPORT',
                     '$tam_transport_1',
                     'SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE',
-                    'sai_uint8_t',
+                    '1',
                 ],
             },
         ]
@@ -276,13 +276,13 @@ class TestSaiTamCollector:
                 'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
                 'attributes': [
                     'SAI_TAM_COLLECTOR_ATTR_SRC_IP',
-                    'sai_ip_address_t',
+                    '180.0.0.1',
                     'SAI_TAM_COLLECTOR_ATTR_DST_IP',
-                    'sai_ip_address_t',
+                    '180.0.0.1',
                     'SAI_TAM_COLLECTOR_ATTR_TRANSPORT',
                     '$tam_transport_1',
                     'SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE',
-                    'sai_uint8_t',
+                    '1',
                 ],
             },
             {
