@@ -13,6 +13,11 @@ class TestSaiOutboundCaToPaEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'dst_vnet_id': 'TODO',
+                    'dip': 'TODO',
+                },
             }
         ]
 
@@ -176,6 +181,11 @@ class TestSaiOutboundCaToPaEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'dst_vnet_id': 'TODO',
+                    'dip': 'TODO',
+                },
             }
         ]
 

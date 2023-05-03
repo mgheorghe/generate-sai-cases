@@ -24,6 +24,13 @@ class TestSaiIpmcEntry:
                     'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
                     '$rpf_group_1',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'type': 'TODO',
+                    'destination': 'TODO',
+                    'source': 'TODO',
+                },
             },
         ]
 
@@ -175,6 +182,13 @@ class TestSaiIpmcEntry:
                     'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
                     '$rpf_group_1',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'type': 'TODO',
+                    'destination': 'TODO',
+                    'source': 'TODO',
+                },
             },
             {
                 'name': 'rpf_group_1',

@@ -13,6 +13,7 @@ class TestSaiVipEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_VIP_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'vip': 'TODO'},
             }
         ]
 
@@ -64,6 +65,7 @@ class TestSaiVipEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_VIP_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'vip': 'TODO'},
             }
         ]
 

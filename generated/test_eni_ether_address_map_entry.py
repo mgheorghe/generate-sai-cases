@@ -13,6 +13,7 @@ class TestSaiEniEtherAddressMapEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_ENI_ETHER_ADDRESS_MAP_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'address': 'TODO'},
             }
         ]
 
@@ -65,6 +66,7 @@ class TestSaiEniEtherAddressMapEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_ENI_ETHER_ADDRESS_MAP_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'address': 'TODO'},
             }
         ]
 

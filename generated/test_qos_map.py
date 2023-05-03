@@ -18,6 +18,7 @@ class TestSaiQosMap:
                     'SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST',
                     '2:10,11',
                 ],
+                'key': {'key': 'TODO', 'value': 'TODO'},
             }
         ]
 
@@ -70,6 +71,7 @@ class TestSaiQosMap:
                     'SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST',
                     '2:10,11',
                 ],
+                'key': {'key': 'TODO', 'value': 'TODO'},
             }
         ]
 

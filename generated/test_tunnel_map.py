@@ -14,6 +14,7 @@ class TestSaiTunnelMap:
                     'SAI_TUNNEL_MAP_ATTR_TYPE',
                     'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
                 ],
+                'key': {'key': 'TODO', 'value': 'TODO'},
             }
         ]
 
@@ -48,6 +49,7 @@ class TestSaiTunnelMap:
                     'SAI_TUNNEL_MAP_ATTR_TYPE',
                     'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
                 ],
+                'key': {'key': 'TODO', 'value': 'TODO'},
             }
         ]
 

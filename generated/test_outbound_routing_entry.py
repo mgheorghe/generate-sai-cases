@@ -13,6 +13,11 @@ class TestSaiOutboundRoutingEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'eni_id': 'TODO',
+                    'destination': 'TODO',
+                },
             }
         ]
 
@@ -462,6 +467,11 @@ class TestSaiOutboundRoutingEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'eni_id': 'TODO',
+                    'destination': 'TODO',
+                },
             }
         ]
 

@@ -16,6 +16,13 @@ class TestSaiL2McEntry:
                     'SAI_L2MC_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'bv_id': 'TODO',
+                    'type': 'TODO',
+                    'destination': 'TODO',
+                    'source': 'TODO',
+                },
             }
         ]
 
@@ -101,6 +108,13 @@ class TestSaiL2McEntry:
                     'SAI_L2MC_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'bv_id': 'TODO',
+                    'type': 'TODO',
+                    'destination': 'TODO',
+                    'source': 'TODO',
+                },
             }
         ]
 

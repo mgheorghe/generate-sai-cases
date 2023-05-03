@@ -13,6 +13,7 @@ class TestSaiInsegEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'label': 'TODO'},
             }
         ]
 
@@ -406,6 +407,7 @@ class TestSaiInsegEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'label': 'TODO'},
             }
         ]
 

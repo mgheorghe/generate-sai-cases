@@ -16,6 +16,15 @@ class TestSaiMySidEntry:
                     'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR',
                     'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_E',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'locator_block_len': 'TODO',
+                    'locator_node_len': 'TODO',
+                    'function_len': 'TODO',
+                    'args_len': 'TODO',
+                    'sid': 'TODO',
+                },
             }
         ]
 
@@ -307,6 +316,15 @@ class TestSaiMySidEntry:
                     'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR',
                     'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_E',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'locator_block_len': 'TODO',
+                    'locator_node_len': 'TODO',
+                    'function_len': 'TODO',
+                    'args_len': 'TODO',
+                    'sid': 'TODO',
+                },
             }
         ]
 

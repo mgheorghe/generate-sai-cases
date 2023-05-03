@@ -16,6 +16,11 @@ class TestSaiNeighborEntry:
                     'SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS',
                     '00:00:B1:AE:C5:00',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'rif_id': 'TODO',
+                    'ip_address': 'TODO',
+                },
             }
         ]
 
@@ -352,6 +357,11 @@ class TestSaiNeighborEntry:
                     'SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS',
                     '00:00:B1:AE:C5:00',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'rif_id': 'TODO',
+                    'ip_address': 'TODO',
+                },
             }
         ]
 

@@ -13,6 +13,11 @@ class TestSaiRouteEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'destination': 'TODO',
+                },
             }
         ]
 
@@ -243,6 +248,11 @@ class TestSaiRouteEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'destination': 'TODO',
+                },
             }
         ]
 

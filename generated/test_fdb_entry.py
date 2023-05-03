@@ -13,6 +13,11 @@ class TestSaiFdbEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
                 'attributes': ['SAI_FDB_ENTRY_ATTR_TYPE', 'SAI_FDB_ENTRY_TYPE_DYNAMIC'],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'mac_address': 'TODO',
+                    'bv_id': 'TODO',
+                },
             }
         ]
 
@@ -291,6 +296,11 @@ class TestSaiFdbEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
                 'attributes': ['SAI_FDB_ENTRY_ATTR_TYPE', 'SAI_FDB_ENTRY_TYPE_DYNAMIC'],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'mac_address': 'TODO',
+                    'bv_id': 'TODO',
+                },
             }
         ]
 

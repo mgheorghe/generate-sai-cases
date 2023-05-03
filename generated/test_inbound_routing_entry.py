@@ -13,6 +13,14 @@ class TestSaiInboundRoutingEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'eni_id': 'TODO',
+                    'vni': 'TODO',
+                    'sip': 'TODO',
+                    'sip_mask': 'TODO',
+                    'priority': 'TODO',
+                },
             }
         ]
 
@@ -103,6 +111,14 @@ class TestSaiInboundRoutingEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'eni_id': 'TODO',
+                    'vni': 'TODO',
+                    'sip': 'TODO',
+                    'sip_mask': 'TODO',
+                    'priority': 'TODO',
+                },
             }
         ]
 

@@ -13,6 +13,12 @@ class TestSaiNatEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'nat_type': 'TODO',
+                    'data': 'TODO',
+                },
             }
         ]
 
@@ -508,6 +514,12 @@ class TestSaiNatEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
                 'attributes': [],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'nat_type': 'TODO',
+                    'data': 'TODO',
+                },
             }
         ]
 

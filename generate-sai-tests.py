@@ -252,6 +252,16 @@ def get_obj_name(obj_type):
     return obj_type.replace('SAI_OBJECT_TYPE_', '').lower()
 
 
+def get_obj_keys(obj_type):
+    keys = {}
+    for key in SAI_DATA[obj_type]['keys'].keys():
+        if key == 'switch_id':
+            keys[key] = '$SWITCH_ID'
+        else:
+            keys[key] = 'TODO'
+    return keys
+
+
 def get_create_commands(obj_type):
     obj_name = get_obj_name(obj_type)
     command = {'name': obj_name + '_1', 'op': 'create', 'type': obj_type}
@@ -276,6 +286,8 @@ def get_create_commands(obj_type):
         else:
             attributes.append('TODO')
     command['attributes'] = attributes
+    if SAI_DATA[obj_type]['keys'] != {}:
+        command['key'] = get_obj_keys(obj_type)
     commands.append(command)
 
     unique_commands = []

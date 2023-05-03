@@ -14,6 +14,7 @@ class TestSaiTunnelMapEntry:
                     'SAI_TUNNEL_MAP_ATTR_TYPE',
                     'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
                 ],
+                'key': {'key': 'TODO', 'value': 'TODO'},
             },
             {
                 'name': 'bridge_1',
@@ -142,6 +143,7 @@ class TestSaiTunnelMapEntry:
                     'SAI_TUNNEL_MAP_ATTR_TYPE',
                     'SAI_TUNNEL_MAP_TYPE_OECN_TO_UECN',
                 ],
+                'key': {'key': 'TODO', 'value': 'TODO'},
             },
         ]
 

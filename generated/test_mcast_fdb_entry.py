@@ -24,6 +24,11 @@ class TestSaiMcastFdbEntry:
                     'SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'mac_address': 'TODO',
+                    'bv_id': 'TODO',
+                },
             },
         ]
 
@@ -140,6 +145,11 @@ class TestSaiMcastFdbEntry:
                     'SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                 ],
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'mac_address': 'TODO',
+                    'bv_id': 'TODO',
+                },
             },
             {
                 'name': 'l2mc_group_1',

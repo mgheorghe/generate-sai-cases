@@ -13,6 +13,7 @@ class TestSaiPaValidationEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_PA_VALIDATION_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'vnet_id': 'TODO', 'sip': 'TODO'},
             }
         ]
 
@@ -64,6 +65,7 @@ class TestSaiPaValidationEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_PA_VALIDATION_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'vnet_id': 'TODO', 'sip': 'TODO'},
             }
         ]
 

@@ -13,6 +13,7 @@ class TestSaiDirectionLookupEntry:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'vni': 'TODO'},
             }
         ]
 
@@ -67,6 +68,7 @@ class TestSaiDirectionLookupEntry:
                 'op': 'remove',
                 'type': 'SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'vni': 'TODO'},
             }
         ]
 
