@@ -26,14 +26,13 @@ class TestSaiFdbEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_fdb_entry_attr_type_set')
     def test_sai_fdb_entry_attr_type_set(self, npu):
         commands = [
             {
                 'name': 'fdb_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'atrribute': ['SAI_FDB_ENTRY_ATTR_TYPE', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_FDB_ENTRY_ATTR_TYPE', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -54,17 +53,16 @@ class TestSaiFdbEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_fdb_entry_attr_packet_action_set')
     def test_sai_fdb_entry_attr_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'fdb_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_FDB_ENTRY_ATTR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_FORWARD',
                 ],
@@ -89,17 +87,16 @@ class TestSaiFdbEntry:
         pprint(results)
         assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
             'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_fdb_entry_attr_user_trap_id_set')
     def test_sai_fdb_entry_attr_user_trap_id_set(self, npu):
         commands = [
             {
                 'name': 'fdb_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'atrribute': ['SAI_FDB_ENTRY_ATTR_USER_TRAP_ID', 'SAI_NULL_OBJECT_ID'],
+                'op': 'set',
+                'attributes': ['SAI_FDB_ENTRY_ATTR_USER_TRAP_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -120,17 +117,16 @@ class TestSaiFdbEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_fdb_entry_attr_bridge_port_id_set')
     def test_sai_fdb_entry_attr_bridge_port_id_set(self, npu):
         commands = [
             {
                 'name': 'fdb_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_FDB_ENTRY_ATTR_BRIDGE_PORT_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -154,17 +150,16 @@ class TestSaiFdbEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_fdb_entry_attr_meta_data_set')
     def test_sai_fdb_entry_attr_meta_data_set(self, npu):
         commands = [
             {
                 'name': 'fdb_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'atrribute': ['SAI_FDB_ENTRY_ATTR_META_DATA', '0'],
+                'op': 'set',
+                'attributes': ['SAI_FDB_ENTRY_ATTR_META_DATA', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -185,17 +180,16 @@ class TestSaiFdbEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_fdb_entry_attr_endpoint_ip_set')
     def test_sai_fdb_entry_attr_endpoint_ip_set(self, npu):
         commands = [
             {
                 'name': 'fdb_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'atrribute': ['SAI_FDB_ENTRY_ATTR_ENDPOINT_IP', '0.0.0.0'],
+                'op': 'set',
+                'attributes': ['SAI_FDB_ENTRY_ATTR_ENDPOINT_IP', '0.0.0.0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -216,17 +210,16 @@ class TestSaiFdbEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_fdb_entry_attr_counter_id_set')
     def test_sai_fdb_entry_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'fdb_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'atrribute': ['SAI_FDB_ENTRY_ATTR_COUNTER_ID', 'SAI_NULL_OBJECT_ID'],
+                'op': 'set',
+                'attributes': ['SAI_FDB_ENTRY_ATTR_COUNTER_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -247,17 +240,16 @@ class TestSaiFdbEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_fdb_entry_attr_allow_mac_move_set')
     def test_sai_fdb_entry_attr_allow_mac_move_set(self, npu):
         commands = [
             {
                 'name': 'fdb_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_FDB_ENTRY',
-                'atrribute': ['SAI_FDB_ENTRY_ATTR_ALLOW_MAC_MOVE', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_FDB_ENTRY_ATTR_ALLOW_MAC_MOVE', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -278,7 +270,7 @@ class TestSaiFdbEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
     def test_fdb_entry_remove(self, npu):

@@ -21,14 +21,13 @@ class TestSaiMyMac:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_my_mac_attr_priority_set')
     def test_sai_my_mac_attr_priority_set(self, npu):
         commands = [
             {
                 'name': 'my_mac_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_MAC',
-                'atrribute': ['SAI_MY_MAC_ATTR_PRIORITY', '0'],
+                'op': 'set',
+                'attributes': ['SAI_MY_MAC_ATTR_PRIORITY', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -49,7 +48,7 @@ class TestSaiMyMac:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
     def test_my_mac_remove(self, npu):

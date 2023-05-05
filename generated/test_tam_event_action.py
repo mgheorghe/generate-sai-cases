@@ -30,14 +30,13 @@ class TestSaiTamEventAction:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_event_action_attr_report_type_set')
     def test_sai_tam_event_action_attr_report_type_set(self, npu):
         commands = [
             {
                 'name': 'tam_event_action_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
-                'atrribute': ['SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -58,17 +57,16 @@ class TestSaiTamEventAction:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_event_action_attr_qos_action_type_set')
     def test_sai_tam_event_action_attr_qos_action_type_set(self, npu):
         commands = [
             {
                 'name': 'tam_event_action_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
-                'atrribute': ['SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -91,7 +89,7 @@ class TestSaiTamEventAction:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
     def test_tam_event_action_remove(self, npu):

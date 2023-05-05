@@ -37,14 +37,13 @@ class TestSaiMacsecPort:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_macsec_port_attr_ctag_enable_set')
     def test_sai_macsec_port_attr_ctag_enable_set(self, npu):
         commands = [
             {
                 'name': 'macsec_port_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
-                'atrribute': ['SAI_MACSEC_PORT_ATTR_CTAG_ENABLE', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_MACSEC_PORT_ATTR_CTAG_ENABLE', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -65,17 +64,16 @@ class TestSaiMacsecPort:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_macsec_port_attr_stag_enable_set')
     def test_sai_macsec_port_attr_stag_enable_set(self, npu):
         commands = [
             {
                 'name': 'macsec_port_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
-                'atrribute': ['SAI_MACSEC_PORT_ATTR_STAG_ENABLE', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_MACSEC_PORT_ATTR_STAG_ENABLE', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -96,17 +94,16 @@ class TestSaiMacsecPort:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_macsec_port_attr_switch_switching_mode_set')
     def test_sai_macsec_port_attr_switch_switching_mode_set(self, npu):
         commands = [
             {
                 'name': 'macsec_port_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC_PORT',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_MACSEC_PORT_ATTR_SWITCH_SWITCHING_MODE',
                     'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH',
                 ],
@@ -133,7 +130,7 @@ class TestSaiMacsecPort:
         pprint(results)
         assert results[0][0].value() == 'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH', (
             'Get error, expected SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_macsec_port_remove(self, npu):

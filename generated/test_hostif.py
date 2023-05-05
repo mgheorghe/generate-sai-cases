@@ -41,14 +41,13 @@ class TestSaiHostif:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_hostif_attr_oper_status_set')
     def test_sai_hostif_attr_oper_status_set(self, npu):
         commands = [
             {
                 'name': 'hostif_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF',
-                'atrribute': ['SAI_HOSTIF_ATTR_OPER_STATUS', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_HOSTIF_ATTR_OPER_STATUS', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -69,17 +68,16 @@ class TestSaiHostif:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_hostif_attr_queue_set')
     def test_sai_hostif_attr_queue_set(self, npu):
         commands = [
             {
                 'name': 'hostif_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF',
-                'atrribute': ['SAI_HOSTIF_ATTR_QUEUE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_HOSTIF_ATTR_QUEUE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -96,17 +94,16 @@ class TestSaiHostif:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_hostif_attr_vlan_tag_set')
     def test_sai_hostif_attr_vlan_tag_set(self, npu):
         commands = [
             {
                 'name': 'hostif_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF',
-                'atrribute': ['SAI_HOSTIF_ATTR_VLAN_TAG', 'SAI_HOSTIF_VLAN_TAG_STRIP'],
+                'op': 'set',
+                'attributes': ['SAI_HOSTIF_ATTR_VLAN_TAG', 'SAI_HOSTIF_VLAN_TAG_STRIP'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -128,7 +125,7 @@ class TestSaiHostif:
         pprint(results)
         assert results[0][0].value() == 'SAI_HOSTIF_VLAN_TAG_STRIP', (
             'Get error, expected SAI_HOSTIF_VLAN_TAG_STRIP but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_hostif_remove(self, npu):

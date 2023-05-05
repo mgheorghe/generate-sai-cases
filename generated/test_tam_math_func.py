@@ -21,14 +21,15 @@ class TestSaiTamMathFunc:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_tam_math_func_attr_tam_tel_math_func_type_set'
+    )
     def test_sai_tam_math_func_attr_tam_tel_math_func_type_set(self, npu):
         commands = [
             {
                 'name': 'tam_math_func_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_MATH_FUNC',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_TAM_MATH_FUNC_ATTR_TAM_TEL_MATH_FUNC_TYPE',
                     'SAI_TAM_TEL_MATH_FUNC_TYPE_NONE',
                 ],
@@ -55,7 +56,7 @@ class TestSaiTamMathFunc:
         pprint(results)
         assert results[0][0].value() == 'SAI_TAM_TEL_MATH_FUNC_TYPE_NONE', (
             'Get error, expected SAI_TAM_TEL_MATH_FUNC_TYPE_NONE but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_tam_math_func_remove(self, npu):

@@ -26,14 +26,13 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_action_set')
     def test_sai_outbound_routing_entry_attr_action_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_ACTION',
                     'SAI_OUTBOUND_ROUTING_ENTRY_ACTION_ROUTE_VNET',
                 ],
@@ -60,17 +59,16 @@ class TestSaiOutboundRoutingEntry:
             results[0][0].value() == 'SAI_OUTBOUND_ROUTING_ENTRY_ACTION_ROUTE_VNET'
         ), (
             'Get error, expected SAI_OUTBOUND_ROUTING_ENTRY_ACTION_ROUTE_VNET but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_dst_vnet_id_set')
     def test_sai_outbound_routing_entry_attr_dst_vnet_id_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DST_VNET_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -96,17 +94,16 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_overlay_ip_set')
     def test_sai_outbound_routing_entry_attr_overlay_ip_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_IP', '0.0.0.0'],
+                'op': 'set',
+                'attributes': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_IP', '0.0.0.0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -129,17 +126,19 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_overlay_dip_set')
     def test_sai_outbound_routing_entry_attr_overlay_dip_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP', '0.0.0.0'],
+                'op': 'set',
+                'attributes': [
+                    'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP',
+                    '0.0.0.0',
+                ],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -162,17 +161,18 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_outbound_routing_entry_attr_overlay_dip_mask_set'
+    )
     def test_sai_outbound_routing_entry_attr_overlay_dip_mask_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP_MASK',
                     '0.0.0.0',
                 ],
@@ -198,17 +198,19 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_overlay_sip_set')
     def test_sai_outbound_routing_entry_attr_overlay_sip_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP', '0.0.0.0'],
+                'op': 'set',
+                'attributes': [
+                    'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP',
+                    '0.0.0.0',
+                ],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -231,17 +233,18 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_outbound_routing_entry_attr_overlay_sip_mask_set'
+    )
     def test_sai_outbound_routing_entry_attr_overlay_sip_mask_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP_MASK',
                     '0.0.0.0',
                 ],
@@ -267,17 +270,18 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_outbound_routing_entry_attr_underlay_dip_set'
+    )
     def test_sai_outbound_routing_entry_attr_underlay_dip_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_UNDERLAY_DIP',
                     '0.0.0.0',
                 ],
@@ -303,17 +307,18 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_outbound_routing_entry_attr_underlay_sip_set'
+    )
     def test_sai_outbound_routing_entry_attr_underlay_sip_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_UNDERLAY_SIP',
                     '0.0.0.0',
                 ],
@@ -339,17 +344,18 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
+            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_outbound_routing_entry_attr_dash_encapsulation_set'
+    )
     def test_sai_outbound_routing_entry_attr_dash_encapsulation_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DASH_ENCAPSULATION',
                     'SAI_DASH_ENCAPSULATION_VXLAN',
                 ],
@@ -376,17 +382,16 @@ class TestSaiOutboundRoutingEntry:
         pprint(results)
         assert results[0][0].value() == 'SAI_DASH_ENCAPSULATION_VXLAN', (
             'Get error, expected SAI_DASH_ENCAPSULATION_VXLAN but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_tunnel_key_set')
     def test_sai_outbound_routing_entry_attr_tunnel_key_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_TUNNEL_KEY', '0'],
+                'op': 'set',
+                'attributes': ['SAI_OUTBOUND_ROUTING_ENTRY_ATTR_TUNNEL_KEY', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -409,17 +414,16 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_counter_id_set')
     def test_sai_outbound_routing_entry_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'outbound_routing_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_OUTBOUND_ROUTING_ENTRY_ATTR_COUNTER_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -445,7 +449,7 @@ class TestSaiOutboundRoutingEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
     def test_outbound_routing_entry_remove(self, npu):

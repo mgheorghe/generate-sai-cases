@@ -21,14 +21,13 @@ class TestSaiTam:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_attr_telemetry_objects_list_set')
     def test_sai_tam_attr_telemetry_objects_list_set(self, npu):
         commands = [
             {
                 'name': 'tam_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM',
-                'atrribute': ['SAI_TAM_ATTR_TELEMETRY_OBJECTS_LIST', 'empty'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_ATTR_TELEMETRY_OBJECTS_LIST', 'empty'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -49,17 +48,16 @@ class TestSaiTam:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[1][0].value()
+            'Get error, expected empty but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_attr_event_objects_list_set')
     def test_sai_tam_attr_event_objects_list_set(self, npu):
         commands = [
             {
                 'name': 'tam_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM',
-                'atrribute': ['SAI_TAM_ATTR_EVENT_OBJECTS_LIST', 'empty'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_ATTR_EVENT_OBJECTS_LIST', 'empty'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -80,17 +78,16 @@ class TestSaiTam:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[1][0].value()
+            'Get error, expected empty but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_attr_int_objects_list_set')
     def test_sai_tam_attr_int_objects_list_set(self, npu):
         commands = [
             {
                 'name': 'tam_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM',
-                'atrribute': ['SAI_TAM_ATTR_INT_OBJECTS_LIST', 'empty'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_ATTR_INT_OBJECTS_LIST', 'empty'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -111,7 +108,7 @@ class TestSaiTam:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[1][0].value()
+            'Get error, expected empty but got %s' % results[0][0].value()
         )
 
     def test_tam_remove(self, npu):

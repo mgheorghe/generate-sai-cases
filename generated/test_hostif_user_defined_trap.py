@@ -24,14 +24,15 @@ class TestSaiHostifUserDefinedTrap:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_hostif_user_defined_trap_attr_trap_priority_set'
+    )
     def test_sai_hostif_user_defined_trap_attr_trap_priority_set(self, npu):
         commands = [
             {
                 'name': 'hostif_user_defined_trap_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_PRIORITY',
                     'attrvalue SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY',
                 ],
@@ -61,17 +62,18 @@ class TestSaiHostifUserDefinedTrap:
             == 'attrvalue SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY'
         ), (
             'Get error, expected attrvalue SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_hostif_user_defined_trap_attr_trap_group_set'
+    )
     def test_sai_hostif_user_defined_trap_attr_trap_group_set(self, npu):
         commands = [
             {
                 'name': 'hostif_user_defined_trap_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_GROUP',
                     'attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP',
                 ],
@@ -100,7 +102,7 @@ class TestSaiHostifUserDefinedTrap:
             results[0][0].value() == 'attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP'
         ), (
             'Get error, expected attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_hostif_user_defined_trap_remove(self, npu):

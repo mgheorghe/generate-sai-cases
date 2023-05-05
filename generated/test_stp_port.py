@@ -116,14 +116,13 @@ class TestSaiStpPort:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_stp_port_attr_state_set')
     def test_sai_stp_port_attr_state_set(self, npu):
         commands = [
             {
                 'name': 'stp_port_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_STP_PORT',
-                'atrribute': ['SAI_STP_PORT_ATTR_STATE', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_STP_PORT_ATTR_STATE', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -144,7 +143,7 @@ class TestSaiStpPort:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_stp_port_remove(self, npu):

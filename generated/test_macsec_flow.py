@@ -34,7 +34,7 @@ class TestSaiMacsecFlow:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_macsec_flow_attr_sc_list_get(self, npu):
@@ -49,7 +49,7 @@ class TestSaiMacsecFlow:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_macsec_flow_remove(self, npu):

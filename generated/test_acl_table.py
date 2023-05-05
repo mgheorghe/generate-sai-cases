@@ -31,7 +31,7 @@ class TestSaiAclTable:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_acl_table_attr_available_acl_entry_get(self, npu):
@@ -46,7 +46,7 @@ class TestSaiAclTable:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_acl_table_attr_available_acl_counter_get(self, npu):
@@ -61,7 +61,7 @@ class TestSaiAclTable:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_acl_table_remove(self, npu):

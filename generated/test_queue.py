@@ -56,14 +56,13 @@ class TestSaiQueue:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_queue_attr_parent_scheduler_node_set')
     def test_sai_queue_attr_parent_scheduler_node_set(self, npu):
         commands = [
             {
                 'name': 'queue_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': ['SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -84,17 +83,16 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_queue_attr_wred_profile_id_set')
     def test_sai_queue_attr_wred_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'queue_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': ['SAI_QUEUE_ATTR_WRED_PROFILE_ID', 'SAI_NULL_OBJECT_ID'],
+                'op': 'set',
+                'attributes': ['SAI_QUEUE_ATTR_WRED_PROFILE_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -115,17 +113,19 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_queue_attr_buffer_profile_id_set')
     def test_sai_queue_attr_buffer_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'queue_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': ['SAI_QUEUE_ATTR_BUFFER_PROFILE_ID', 'SAI_NULL_OBJECT_ID'],
+                'op': 'set',
+                'attributes': [
+                    'SAI_QUEUE_ATTR_BUFFER_PROFILE_ID',
+                    'SAI_NULL_OBJECT_ID',
+                ],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -146,17 +146,16 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_queue_attr_scheduler_profile_id_set')
     def test_sai_queue_attr_scheduler_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'queue_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_QUEUE_ATTR_SCHEDULER_PROFILE_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -180,7 +179,7 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
     def test_sai_queue_attr_pause_status_get(self, npu):
@@ -195,17 +194,16 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_queue_attr_enable_pfc_dldr_set')
     def test_sai_queue_attr_enable_pfc_dldr_set(self, npu):
         commands = [
             {
                 'name': 'queue_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': ['SAI_QUEUE_ATTR_ENABLE_PFC_DLDR', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_QUEUE_ATTR_ENABLE_PFC_DLDR', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -226,17 +224,16 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_queue_attr_pfc_dlr_init_set')
     def test_sai_queue_attr_pfc_dlr_init_set(self, npu):
         commands = [
             {
                 'name': 'queue_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': ['SAI_QUEUE_ATTR_PFC_DLR_INIT', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_QUEUE_ATTR_PFC_DLR_INIT', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -257,17 +254,16 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_queue_attr_tam_object_set')
     def test_sai_queue_attr_tam_object_set(self, npu):
         commands = [
             {
                 'name': 'queue_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': ['SAI_QUEUE_ATTR_TAM_OBJECT', 'empty'],
+                'op': 'set',
+                'attributes': ['SAI_QUEUE_ATTR_TAM_OBJECT', 'empty'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -288,17 +284,16 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[1][0].value()
+            'Get error, expected empty but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_queue_attr_pfc_dlr_packet_action_set')
     def test_sai_queue_attr_pfc_dlr_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'queue_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_QUEUE_ATTR_PFC_DLR_PACKET_ACTION',
                     'SAI_PACKET_ACTION_DROP',
                 ],
@@ -323,7 +318,7 @@ class TestSaiQueue:
         pprint(results)
         assert results[0][0].value() == 'SAI_PACKET_ACTION_DROP', (
             'Get error, expected SAI_PACKET_ACTION_DROP but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_sai_queue_attr_pfc_continuous_deadlock_state_get(self, npu):
@@ -338,7 +333,7 @@ class TestSaiQueue:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_queue_remove(self, npu):

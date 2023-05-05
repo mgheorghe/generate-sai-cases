@@ -62,14 +62,13 @@ class TestSaiDtelQueueReport:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_dtel_queue_report_attr_depth_threshold_set')
     def test_sai_dtel_queue_report_attr_depth_threshold_set(self, npu):
         commands = [
             {
                 'name': 'dtel_queue_report_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_QUEUE_REPORT',
-                'atrribute': ['SAI_DTEL_QUEUE_REPORT_ATTR_DEPTH_THRESHOLD', '0'],
+                'op': 'set',
+                'attributes': ['SAI_DTEL_QUEUE_REPORT_ATTR_DEPTH_THRESHOLD', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -92,17 +91,18 @@ class TestSaiDtelQueueReport:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_dtel_queue_report_attr_latency_threshold_set'
+    )
     def test_sai_dtel_queue_report_attr_latency_threshold_set(self, npu):
         commands = [
             {
                 'name': 'dtel_queue_report_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_QUEUE_REPORT',
-                'atrribute': ['SAI_DTEL_QUEUE_REPORT_ATTR_LATENCY_THRESHOLD', '0'],
+                'op': 'set',
+                'attributes': ['SAI_DTEL_QUEUE_REPORT_ATTR_LATENCY_THRESHOLD', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -125,17 +125,16 @@ class TestSaiDtelQueueReport:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_dtel_queue_report_attr_breach_quota_set')
     def test_sai_dtel_queue_report_attr_breach_quota_set(self, npu):
         commands = [
             {
                 'name': 'dtel_queue_report_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_QUEUE_REPORT',
-                'atrribute': ['SAI_DTEL_QUEUE_REPORT_ATTR_BREACH_QUOTA', '0'],
+                'op': 'set',
+                'attributes': ['SAI_DTEL_QUEUE_REPORT_ATTR_BREACH_QUOTA', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -158,17 +157,16 @@ class TestSaiDtelQueueReport:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_dtel_queue_report_attr_tail_drop_set')
     def test_sai_dtel_queue_report_attr_tail_drop_set(self, npu):
         commands = [
             {
                 'name': 'dtel_queue_report_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_QUEUE_REPORT',
-                'atrribute': ['SAI_DTEL_QUEUE_REPORT_ATTR_TAIL_DROP', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_DTEL_QUEUE_REPORT_ATTR_TAIL_DROP', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -189,7 +187,7 @@ class TestSaiDtelQueueReport:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
     def test_dtel_queue_report_remove(self, npu):

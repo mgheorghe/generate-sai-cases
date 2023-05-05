@@ -39,14 +39,13 @@ class TestSaiIpmcEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_ipmc_entry_attr_packet_action_set')
     def test_sai_ipmc_entry_attr_packet_action_set(self, npu):
         commands = [
             {
                 'name': 'ipmc_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'atrribute': ['SAI_IPMC_ENTRY_ATTR_PACKET_ACTION', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_IPMC_ENTRY_ATTR_PACKET_ACTION', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -67,17 +66,16 @@ class TestSaiIpmcEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_ipmc_entry_attr_output_group_id_set')
     def test_sai_ipmc_entry_attr_output_group_id_set(self, npu):
         commands = [
             {
                 'name': 'ipmc_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_IPMC_ENTRY_ATTR_OUTPUT_GROUP_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -101,17 +99,16 @@ class TestSaiIpmcEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_ipmc_entry_attr_rpf_group_id_set')
     def test_sai_ipmc_entry_attr_rpf_group_id_set(self, npu):
         commands = [
             {
                 'name': 'ipmc_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'atrribute': ['SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -132,17 +129,16 @@ class TestSaiIpmcEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_ipmc_entry_attr_counter_id_set')
     def test_sai_ipmc_entry_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'ipmc_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'atrribute': ['SAI_IPMC_ENTRY_ATTR_COUNTER_ID', 'SAI_NULL_OBJECT_ID'],
+                'op': 'set',
+                'attributes': ['SAI_IPMC_ENTRY_ATTR_COUNTER_ID', 'SAI_NULL_OBJECT_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -163,7 +159,7 @@ class TestSaiIpmcEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
     def test_ipmc_entry_remove(self, npu):

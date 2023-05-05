@@ -46,14 +46,13 @@ class TestSaiTamInt:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_ioam_trace_type_set')
     def test_sai_tam_int_attr_ioam_trace_type_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_IOAM_TRACE_TYPE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_IOAM_TRACE_TYPE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -74,17 +73,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_trace_vector_set')
     def test_sai_tam_int_attr_trace_vector_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_TRACE_VECTOR', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_TRACE_VECTOR', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -105,17 +103,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_action_vector_set')
     def test_sai_tam_int_attr_action_vector_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_ACTION_VECTOR', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_ACTION_VECTOR', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -136,17 +133,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_p4_int_instruction_bitmap_set')
     def test_sai_tam_int_attr_p4_int_instruction_bitmap_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_P4_INT_INSTRUCTION_BITMAP', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_P4_INT_INSTRUCTION_BITMAP', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -169,17 +165,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_metadata_fragment_enable_set')
     def test_sai_tam_int_attr_metadata_fragment_enable_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_METADATA_FRAGMENT_ENABLE', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_METADATA_FRAGMENT_ENABLE', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -202,17 +197,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_metadata_checksum_enable_set')
     def test_sai_tam_int_attr_metadata_checksum_enable_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_METADATA_CHECKSUM_ENABLE', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_METADATA_CHECKSUM_ENABLE', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -235,17 +229,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_report_all_packets_set')
     def test_sai_tam_int_attr_report_all_packets_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_REPORT_ALL_PACKETS', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_REPORT_ALL_PACKETS', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -266,17 +259,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_flow_liveness_period_set')
     def test_sai_tam_int_attr_flow_liveness_period_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_FLOW_LIVENESS_PERIOD', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_FLOW_LIVENESS_PERIOD', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -297,17 +289,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_latency_sensitivity_set')
     def test_sai_tam_int_attr_latency_sensitivity_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_LATENCY_SENSITIVITY', '20'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_LATENCY_SENSITIVITY', '20'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -328,17 +319,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '20', (
-            'Get error, expected 20 but got %s' % results[1][0].value()
+            'Get error, expected 20 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_acl_group_set')
     def test_sai_tam_int_attr_acl_group_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_ACL_GROUP', 'SAI_NULL_OBJECT_ID'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_ACL_GROUP', 'SAI_NULL_OBJECT_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -359,17 +349,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_max_hop_count_set')
     def test_sai_tam_int_attr_max_hop_count_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_MAX_HOP_COUNT', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_MAX_HOP_COUNT', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -390,17 +379,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_max_length_set')
     def test_sai_tam_int_attr_max_length_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_MAX_LENGTH', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_MAX_LENGTH', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -421,17 +409,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_name_space_id_set')
     def test_sai_tam_int_attr_name_space_id_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_NAME_SPACE_ID', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_NAME_SPACE_ID', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -452,17 +439,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_name_space_id_global_set')
     def test_sai_tam_int_attr_name_space_id_global_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_NAME_SPACE_ID_GLOBAL', 'false'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_NAME_SPACE_ID_GLOBAL', 'false'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -483,17 +469,18 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[1][0].value()
+            'Get error, expected false but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_tam_int_attr_ingress_samplepacket_enable_set'
+    )
     def test_sai_tam_int_attr_ingress_samplepacket_enable_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_TAM_INT_ATTR_INGRESS_SAMPLEPACKET_ENABLE',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -519,17 +506,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_collector_list_set')
     def test_sai_tam_int_attr_collector_list_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_COLLECTOR_LIST', 'empty'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_COLLECTOR_LIST', 'empty'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -550,17 +536,16 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[1][0].value()
+            'Get error, expected empty but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_int_attr_math_func_set')
     def test_sai_tam_int_attr_math_func_set(self, npu):
         commands = [
             {
                 'name': 'tam_int_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': ['SAI_TAM_INT_ATTR_MATH_FUNC', 'SAI_NULL_OBJECT_ID'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_INT_ATTR_MATH_FUNC', 'SAI_NULL_OBJECT_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -581,7 +566,7 @@ class TestSaiTamInt:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
     def test_tam_int_remove(self, npu):

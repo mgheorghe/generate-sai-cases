@@ -22,14 +22,13 @@ class TestSaiPaValidationEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_pa_validation_entry_attr_action_set')
     def test_sai_pa_validation_entry_attr_action_set(self, npu):
         commands = [
             {
                 'name': 'pa_validation_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_PA_VALIDATION_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_PA_VALIDATION_ENTRY_ATTR_ACTION',
                     'SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT',
                 ],
@@ -54,7 +53,7 @@ class TestSaiPaValidationEntry:
         pprint(results)
         assert results[0][0].value() == 'SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT', (
             'Get error, expected SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_pa_validation_entry_remove(self, npu):

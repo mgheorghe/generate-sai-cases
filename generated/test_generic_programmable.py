@@ -21,14 +21,13 @@ class TestSaiGenericProgrammable:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_generic_programmable_attr_entry_set')
     def test_sai_generic_programmable_attr_entry_set(self, npu):
         commands = [
             {
                 'name': 'generic_programmable_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-                'atrribute': ['SAI_GENERIC_PROGRAMMABLE_ATTR_ENTRY', 'vendor'],
+                'op': 'set',
+                'attributes': ['SAI_GENERIC_PROGRAMMABLE_ATTR_ENTRY', 'vendor'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -49,17 +48,16 @@ class TestSaiGenericProgrammable:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'vendor', (
-            'Get error, expected vendor but got %s' % results[1][0].value()
+            'Get error, expected vendor but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_generic_programmable_attr_counter_id_set')
     def test_sai_generic_programmable_attr_counter_id_set(self, npu):
         commands = [
             {
                 'name': 'generic_programmable_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_GENERIC_PROGRAMMABLE_ATTR_COUNTER_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -85,7 +83,7 @@ class TestSaiGenericProgrammable:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
     def test_generic_programmable_remove(self, npu):

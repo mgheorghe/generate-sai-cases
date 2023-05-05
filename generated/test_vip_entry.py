@@ -22,14 +22,13 @@ class TestSaiVipEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_vip_entry_attr_action_set')
     def test_sai_vip_entry_attr_action_set(self, npu):
         commands = [
             {
                 'name': 'vip_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_VIP_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_VIP_ENTRY_ATTR_ACTION',
                     'SAI_VIP_ENTRY_ACTION_ACCEPT',
                 ],
@@ -54,7 +53,7 @@ class TestSaiVipEntry:
         pprint(results)
         assert results[0][0].value() == 'SAI_VIP_ENTRY_ACTION_ACCEPT', (
             'Get error, expected SAI_VIP_ENTRY_ACTION_ACCEPT but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_vip_entry_remove(self, npu):

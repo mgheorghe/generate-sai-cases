@@ -39,14 +39,13 @@ class TestSaiTamCollector:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_collector_attr_src_ip_set')
     def test_sai_tam_collector_attr_src_ip_set(self, npu):
         commands = [
             {
                 'name': 'tam_collector_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': ['SAI_TAM_COLLECTOR_ATTR_SRC_IP', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_SRC_IP', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -67,17 +66,16 @@ class TestSaiTamCollector:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_collector_attr_dst_ip_set')
     def test_sai_tam_collector_attr_dst_ip_set(self, npu):
         commands = [
             {
                 'name': 'tam_collector_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': ['SAI_TAM_COLLECTOR_ATTR_DST_IP', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_DST_IP', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -98,17 +96,16 @@ class TestSaiTamCollector:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_collector_attr_localhost_set')
     def test_sai_tam_collector_attr_localhost_set(self, npu):
         commands = [
             {
                 'name': 'tam_collector_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': ['SAI_TAM_COLLECTOR_ATTR_LOCALHOST', 'true'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_LOCALHOST', 'true'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -129,17 +126,16 @@ class TestSaiTamCollector:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'true', (
-            'Get error, expected true but got %s' % results[1][0].value()
+            'Get error, expected true but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_collector_attr_virtual_router_id_set')
     def test_sai_tam_collector_attr_virtual_router_id_set(self, npu):
         commands = [
             {
                 'name': 'tam_collector_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_TAM_COLLECTOR_ATTR_VIRTUAL_ROUTER_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -165,17 +161,16 @@ class TestSaiTamCollector:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_collector_attr_truncate_size_set')
     def test_sai_tam_collector_attr_truncate_size_set(self, npu):
         commands = [
             {
                 'name': 'tam_collector_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': ['SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -196,17 +191,16 @@ class TestSaiTamCollector:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_collector_attr_transport_set')
     def test_sai_tam_collector_attr_transport_set(self, npu):
         commands = [
             {
                 'name': 'tam_collector_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': ['SAI_TAM_COLLECTOR_ATTR_TRANSPORT', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_TRANSPORT', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -227,17 +221,16 @@ class TestSaiTamCollector:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_tam_collector_attr_dscp_value_set')
     def test_sai_tam_collector_attr_dscp_value_set(self, npu):
         commands = [
             {
                 'name': 'tam_collector_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': ['SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -258,7 +251,7 @@ class TestSaiTamCollector:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_tam_collector_remove(self, npu):

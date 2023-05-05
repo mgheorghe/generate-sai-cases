@@ -38,17 +38,16 @@ class TestSaiBufferPool:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_buffer_pool_attr_size_set')
     def test_sai_buffer_pool_attr_size_set(self, npu):
         commands = [
             {
                 'name': 'buffer_pool_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
-                'atrribute': ['SAI_BUFFER_POOL_ATTR_SIZE', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_BUFFER_POOL_ATTR_SIZE', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -69,17 +68,16 @@ class TestSaiBufferPool:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_buffer_pool_attr_tam_set')
     def test_sai_buffer_pool_attr_tam_set(self, npu):
         commands = [
             {
                 'name': 'buffer_pool_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
-                'atrribute': ['SAI_BUFFER_POOL_ATTR_TAM', 'empty'],
+                'op': 'set',
+                'attributes': ['SAI_BUFFER_POOL_ATTR_TAM', 'empty'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -100,17 +98,16 @@ class TestSaiBufferPool:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[1][0].value()
+            'Get error, expected empty but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_buffer_pool_attr_xoff_size_set')
     def test_sai_buffer_pool_attr_xoff_size_set(self, npu):
         commands = [
             {
                 'name': 'buffer_pool_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
-                'atrribute': ['SAI_BUFFER_POOL_ATTR_XOFF_SIZE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_BUFFER_POOL_ATTR_XOFF_SIZE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -131,17 +128,16 @@ class TestSaiBufferPool:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_buffer_pool_attr_wred_profile_id_set')
     def test_sai_buffer_pool_attr_wred_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'buffer_pool_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_BUFFER_POOL_ATTR_WRED_PROFILE_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -165,7 +161,7 @@ class TestSaiBufferPool:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
     def test_buffer_pool_remove(self, npu):

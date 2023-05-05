@@ -21,14 +21,13 @@ class TestSaiScheduler:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_scheduler_attr_scheduling_type_set')
     def test_sai_scheduler_attr_scheduling_type_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_SCHEDULER_ATTR_SCHEDULING_TYPE',
                     'SAI_SCHEDULING_TYPE_WRR',
                 ],
@@ -53,17 +52,16 @@ class TestSaiScheduler:
         pprint(results)
         assert results[0][0].value() == 'SAI_SCHEDULING_TYPE_WRR', (
             'Get error, expected SAI_SCHEDULING_TYPE_WRR but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_scheduler_attr_scheduling_weight_set')
     def test_sai_scheduler_attr_scheduling_weight_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER',
-                'atrribute': ['SAI_SCHEDULER_ATTR_SCHEDULING_WEIGHT', '1'],
+                'op': 'set',
+                'attributes': ['SAI_SCHEDULER_ATTR_SCHEDULING_WEIGHT', '1'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -84,17 +82,16 @@ class TestSaiScheduler:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '1', (
-            'Get error, expected 1 but got %s' % results[1][0].value()
+            'Get error, expected 1 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_scheduler_attr_meter_type_set')
     def test_sai_scheduler_attr_meter_type_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER',
-                'atrribute': ['SAI_SCHEDULER_ATTR_METER_TYPE', 'SAI_METER_TYPE_BYTES'],
+                'op': 'set',
+                'attributes': ['SAI_SCHEDULER_ATTR_METER_TYPE', 'SAI_METER_TYPE_BYTES'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -116,17 +113,16 @@ class TestSaiScheduler:
         pprint(results)
         assert results[0][0].value() == 'SAI_METER_TYPE_BYTES', (
             'Get error, expected SAI_METER_TYPE_BYTES but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_scheduler_attr_min_bandwidth_rate_set')
     def test_sai_scheduler_attr_min_bandwidth_rate_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER',
-                'atrribute': ['SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -147,17 +143,16 @@ class TestSaiScheduler:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_scheduler_attr_min_bandwidth_burst_rate_set')
     def test_sai_scheduler_attr_min_bandwidth_burst_rate_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER',
-                'atrribute': ['SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_BURST_RATE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_BURST_RATE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -180,17 +175,16 @@ class TestSaiScheduler:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_scheduler_attr_max_bandwidth_rate_set')
     def test_sai_scheduler_attr_max_bandwidth_rate_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER',
-                'atrribute': ['SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_RATE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_RATE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -211,17 +205,16 @@ class TestSaiScheduler:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_scheduler_attr_max_bandwidth_burst_rate_set')
     def test_sai_scheduler_attr_max_bandwidth_burst_rate_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER',
-                'atrribute': ['SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_BURST_RATE', '0'],
+                'op': 'set',
+                'attributes': ['SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_BURST_RATE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -244,7 +237,7 @@ class TestSaiScheduler:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[1][0].value()
+            'Get error, expected 0 but got %s' % results[0][0].value()
         )
 
     def test_scheduler_remove(self, npu):

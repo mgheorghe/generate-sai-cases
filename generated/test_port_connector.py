@@ -37,14 +37,13 @@ class TestSaiPortConnector:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_port_connector_attr_failover_mode_set')
     def test_sai_port_connector_attr_failover_mode_set(self, npu):
         commands = [
             {
                 'name': 'port_connector_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_PORT_CONNECTOR',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE',
                     'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE',
                 ],
@@ -69,7 +68,7 @@ class TestSaiPortConnector:
         pprint(results)
         assert results[0][0].value() == 'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE', (
             'Get error, expected SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_port_connector_remove(self, npu):

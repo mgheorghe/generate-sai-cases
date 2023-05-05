@@ -24,14 +24,18 @@ class TestSaiNextHopGroupMap:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_next_hop_group_map_attr_map_to_value_list_set'
+    )
     def test_sai_next_hop_group_map_attr_map_to_value_list_set(self, npu):
         commands = [
             {
                 'name': 'next_hop_group_map_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MAP',
-                'atrribute': ['SAI_NEXT_HOP_GROUP_MAP_ATTR_MAP_TO_VALUE_LIST', 'empty'],
+                'op': 'set',
+                'attributes': [
+                    'SAI_NEXT_HOP_GROUP_MAP_ATTR_MAP_TO_VALUE_LIST',
+                    'empty',
+                ],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -54,7 +58,7 @@ class TestSaiNextHopGroupMap:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[1][0].value()
+            'Get error, expected empty but got %s' % results[0][0].value()
         )
 
     def test_next_hop_group_map_remove(self, npu):

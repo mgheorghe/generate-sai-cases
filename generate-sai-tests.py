@@ -29,7 +29,7 @@ TEST_TEMPLATE_GET = '''
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
-        assert results[0][0].value() == '%(EXPECTED_VALUE)s', 'Get error, expected %(EXPECTED_VALUE)s but got %%s' %%  results[1][0].value()
+        assert results[0][0].value() == '%(EXPECTED_VALUE)s', 'Get error, expected %(EXPECTED_VALUE)s but got %%s' %%  results[0][0].value()
 '''
 
 TEST_TEMPLATE_SET = '''
@@ -40,9 +40,8 @@ TEST_TEMPLATE_SET = '''
         commands = [
             {
                 "name": "%(OBJECT_NAME)s_1",
-                "op": "get",
-                "type": "%(OBJECT_TYPE)s",
-                "atrribute": ["%(ATTRIBUTE)s", '%(EXPECTED_VALUE)s']
+                "op": "set",
+                "attributes": ["%(ATTRIBUTE)s", '%(EXPECTED_VALUE)s']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -339,7 +338,7 @@ def generate_comment(obj_type):
 
 def get_attribute_expected_value(attribute):
     if attribute['default'] is not None:
-        return attribute['default']
+        return attribute['default'].replace('attrvalue', '').strip()
     else:
         return 'TODO'
 
@@ -374,10 +373,10 @@ def generate_pyetes_test(obj_type):
                     }
                 elif 'CREATE_AND_SET' in obj['attributes'][attribute]['flags']:
                     TEST_CODE += TEST_TEMPLATE_SET % {
-                        'PYTEST_MARKER': '@pytest.mark.dependency()',
+                        'PYTEST_MARKER': '@pytest.mark.dependency(name="test_%s_set")'
+                        % get_obj_name(attribute),
                         'ATTR_NAME': get_obj_name(attribute),
                         'OBJECT_NAME': obj_name,
-                        'OBJECT_TYPE': obj_type,
                         'ATTRIBUTE': attribute,
                         'EXPECTED_VALUE': get_attribute_expected_value(
                             obj['attributes'][attribute]

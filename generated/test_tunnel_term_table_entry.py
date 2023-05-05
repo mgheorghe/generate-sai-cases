@@ -109,17 +109,18 @@ class TestSaiTunnelTermTableEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_tunnel_term_table_entry_attr_ipsec_verified_set'
+    )
     def test_sai_tunnel_term_table_entry_attr_ipsec_verified_set(self, npu):
         commands = [
             {
                 'name': 'tunnel_term_table_entry_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TUNNEL_TERM_TABLE_ENTRY',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IPSEC_VERIFIED',
                     'true',
                 ],
@@ -145,7 +146,7 @@ class TestSaiTunnelTermTableEntry:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'true', (
-            'Get error, expected true but got %s' % results[1][0].value()
+            'Get error, expected true but got %s' % results[0][0].value()
         )
 
     def test_tunnel_term_table_entry_remove(self, npu):

@@ -21,14 +21,13 @@ class TestSaiDashAclGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_dash_acl_group_attr_ip_addr_family_set')
     def test_sai_dash_acl_group_attr_ip_addr_family_set(self, npu):
         commands = [
             {
                 'name': 'dash_acl_group_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DASH_ACL_GROUP',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_DASH_ACL_GROUP_ATTR_IP_ADDR_FAMILY',
                     'SAI_IP_ADDR_FAMILY_IPV4',
                 ],
@@ -53,7 +52,7 @@ class TestSaiDashAclGroup:
         pprint(results)
         assert results[0][0].value() == 'SAI_IP_ADDR_FAMILY_IPV4', (
             'Get error, expected SAI_IP_ADDR_FAMILY_IPV4 but got %s'
-            % results[1][0].value()
+            % results[0][0].value()
         )
 
     def test_dash_acl_group_remove(self, npu):

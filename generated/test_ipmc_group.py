@@ -31,7 +31,7 @@ class TestSaiIpmcGroup:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_ipmc_group_attr_ipmc_member_list_get(self, npu):
@@ -46,7 +46,7 @@ class TestSaiIpmcGroup:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_ipmc_group_remove(self, npu):

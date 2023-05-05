@@ -48,14 +48,13 @@ class TestSaiPortPool:
         pprint(results)
         assert all(results), 'Create error'
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_port_pool_attr_qos_wred_profile_id_set')
     def test_sai_port_pool_attr_qos_wred_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'port_pool_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_PORT_POOL',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_PORT_POOL_ATTR_QOS_WRED_PROFILE_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -79,7 +78,7 @@ class TestSaiPortPool:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
     def test_port_pool_remove(self, npu):

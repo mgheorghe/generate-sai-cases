@@ -53,7 +53,7 @@ class TestSaiSchedulerGroup:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_scheduler_group_attr_child_list_get(self, npu):
@@ -68,17 +68,18 @@ class TestSaiSchedulerGroup:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(
+        name='test_sai_scheduler_group_attr_scheduler_profile_id_set'
+    )
     def test_sai_scheduler_group_attr_scheduler_profile_id_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_group_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER_GROUP',
-                'atrribute': [
+                'op': 'set',
+                'attributes': [
                     'SAI_SCHEDULER_GROUP_ATTR_SCHEDULER_PROFILE_ID',
                     'SAI_NULL_OBJECT_ID',
                 ],
@@ -104,17 +105,16 @@ class TestSaiSchedulerGroup:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
         )
 
-    @pytest.mark.dependency()
+    @pytest.mark.dependency(name='test_sai_scheduler_group_attr_parent_node_set')
     def test_sai_scheduler_group_attr_parent_node_set(self, npu):
         commands = [
             {
                 'name': 'scheduler_group_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER_GROUP',
-                'atrribute': ['SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE', 'TODO'],
+                'op': 'set',
+                'attributes': ['SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE', 'TODO'],
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -135,7 +135,7 @@ class TestSaiSchedulerGroup:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_scheduler_group_remove(self, npu):

@@ -47,7 +47,7 @@ class TestSaiHostifPacket:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_hostif_packet_attr_ingress_port_get(self, npu):
@@ -62,7 +62,7 @@ class TestSaiHostifPacket:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_hostif_packet_attr_ingress_lag_get(self, npu):
@@ -77,7 +77,7 @@ class TestSaiHostifPacket:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_hostif_packet_attr_bridge_id_get(self, npu):
@@ -92,7 +92,7 @@ class TestSaiHostifPacket:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_sai_hostif_packet_attr_timestamp_get(self, npu):
@@ -107,7 +107,7 @@ class TestSaiHostifPacket:
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[1][0].value()
+            'Get error, expected TODO but got %s' % results[0][0].value()
         )
 
     def test_hostif_packet_remove(self, npu):
