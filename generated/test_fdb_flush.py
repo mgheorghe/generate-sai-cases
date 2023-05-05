@@ -20,14 +20,7 @@ class TestSaiFdbFlush:
         assert all(results), 'Create error'
 
     def test_fdb_flush_remove(self, npu):
-        commands = [
-            {
-                'name': 'fdb_flush_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_FDB_FLUSH',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'fdb_flush_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

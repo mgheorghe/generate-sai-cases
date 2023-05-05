@@ -66,14 +66,13 @@ class TestSaiDashAclRule:
             {
                 'name': 'dash_acl_rule_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DASH_ACL_RULE',
-                'atrribute': 'SAI_DASH_ACL_RULE_ATTR_ACTION',
+                'attributes': ['SAI_DASH_ACL_RULE_ATTR_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_DASH_ACL_RULE_ACTION_PERMIT', (
+        assert results[0][0].value() == 'SAI_DASH_ACL_RULE_ACTION_PERMIT', (
             'Get error, expected SAI_DASH_ACL_RULE_ACTION_PERMIT but got %s'
             % results[1][0].value()
         )
@@ -102,46 +101,20 @@ class TestSaiDashAclRule:
             {
                 'name': 'dash_acl_rule_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DASH_ACL_RULE',
-                'atrribute': 'SAI_DASH_ACL_RULE_ATTR_COUNTER_ID',
+                'attributes': ['SAI_DASH_ACL_RULE_ATTR_COUNTER_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
     def test_dash_acl_rule_remove(self, npu):
         commands = [
-            {
-                'name': 'dash_acl_rule_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_DASH_ACL_RULE',
-                'attributes': [
-                    'SAI_DASH_ACL_RULE_ATTR_DASH_ACL_GROUP_ID',
-                    '$dash_acl_group_1',
-                    'SAI_DASH_ACL_RULE_ATTR_DIP',
-                    'sai_ip_prefix_list_t',
-                    'SAI_DASH_ACL_RULE_ATTR_SIP',
-                    'sai_ip_prefix_list_t',
-                    'SAI_DASH_ACL_RULE_ATTR_PROTOCOL',
-                    'sai_u8_list_t',
-                    'SAI_DASH_ACL_RULE_ATTR_SRC_PORT',
-                    'sai_u16_range_list_t',
-                    'SAI_DASH_ACL_RULE_ATTR_DST_PORT',
-                    'sai_u16_range_list_t',
-                    'SAI_DASH_ACL_RULE_ATTR_PRIORITY',
-                    '10',
-                ],
-            },
-            {
-                'name': 'dash_acl_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_DASH_ACL_GROUP',
-                'attributes': [],
-            },
+            {'name': 'dash_acl_rule_1', 'op': 'remove'},
+            {'name': 'dash_acl_group_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

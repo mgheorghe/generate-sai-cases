@@ -32,23 +32,8 @@ class TestSaiPortSerdes:
 
     def test_port_serdes_remove(self, npu):
         commands = [
-            {
-                'name': 'port_serdes_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT_SERDES',
-                'attributes': ['SAI_PORT_SERDES_ATTR_PORT_ID', '$port_1'],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
+            {'name': 'port_serdes_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

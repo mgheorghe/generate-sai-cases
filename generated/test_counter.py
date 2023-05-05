@@ -39,29 +39,17 @@ class TestSaiCounter:
     @pytest.mark.dependency(depends=['test_sai_counter_attr_label_set'])
     def test_sai_counter_attr_label_get(self, npu):
         commands = [
-            {
-                'name': 'counter_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_COUNTER',
-                'atrribute': 'SAI_COUNTER_ATTR_LABEL',
-            }
+            {'name': 'counter_1', 'op': 'get', 'attributes': ['SAI_COUNTER_ATTR_LABEL']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '""', (
+        assert results[0][0].value() == '""', (
             'Get error, expected "" but got %s' % results[1][0].value()
         )
 
     def test_counter_remove(self, npu):
-        commands = [
-            {
-                'name': 'counter_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_COUNTER',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'counter_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

@@ -42,14 +42,13 @@ class TestSaiTam:
             {
                 'name': 'tam_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM',
-                'atrribute': 'SAI_TAM_ATTR_TELEMETRY_OBJECTS_LIST',
+                'attributes': ['SAI_TAM_ATTR_TELEMETRY_OBJECTS_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
@@ -74,14 +73,13 @@ class TestSaiTam:
             {
                 'name': 'tam_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM',
-                'atrribute': 'SAI_TAM_ATTR_EVENT_OBJECTS_LIST',
+                'attributes': ['SAI_TAM_ATTR_EVENT_OBJECTS_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
@@ -106,26 +104,18 @@ class TestSaiTam:
             {
                 'name': 'tam_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM',
-                'atrribute': 'SAI_TAM_ATTR_INT_OBJECTS_LIST',
+                'attributes': ['SAI_TAM_ATTR_INT_OBJECTS_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
     def test_tam_remove(self, npu):
-        commands = [
-            {
-                'name': 'tam_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_TAM',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'tam_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

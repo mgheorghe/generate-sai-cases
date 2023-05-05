@@ -49,14 +49,13 @@ class TestSaiTamEvent:
             {
                 'name': 'tam_event_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
-                'atrribute': 'SAI_TAM_EVENT_ATTR_THRESHOLD',
+                'attributes': ['SAI_TAM_EVENT_ATTR_THRESHOLD'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -81,33 +80,18 @@ class TestSaiTamEvent:
             {
                 'name': 'tam_event_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
-                'atrribute': 'SAI_TAM_EVENT_ATTR_DSCP_VALUE',
+                'attributes': ['SAI_TAM_EVENT_ATTR_DSCP_VALUE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
     def test_tam_event_remove(self, npu):
-        commands = [
-            {
-                'name': 'tam_event_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
-                'attributes': [
-                    'SAI_TAM_EVENT_ATTR_TYPE',
-                    'SAI_TAM_EVENT_TYPE_FLOW_STATE',
-                    'SAI_TAM_EVENT_ATTR_ACTION_LIST',
-                    'sai_object_list_t',
-                    'SAI_TAM_EVENT_ATTR_COLLECTOR_LIST',
-                    'sai_object_list_t',
-                ],
-            }
-        ]
+        commands = [{'name': 'tam_event_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

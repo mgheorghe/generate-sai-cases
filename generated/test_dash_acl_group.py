@@ -45,27 +45,19 @@ class TestSaiDashAclGroup:
             {
                 'name': 'dash_acl_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DASH_ACL_GROUP',
-                'atrribute': 'SAI_DASH_ACL_GROUP_ATTR_IP_ADDR_FAMILY',
+                'attributes': ['SAI_DASH_ACL_GROUP_ATTR_IP_ADDR_FAMILY'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_IP_ADDR_FAMILY_IPV4', (
+        assert results[0][0].value() == 'SAI_IP_ADDR_FAMILY_IPV4', (
             'Get error, expected SAI_IP_ADDR_FAMILY_IPV4 but got %s'
             % results[1][0].value()
         )
 
     def test_dash_acl_group_remove(self, npu):
-        commands = [
-            {
-                'name': 'dash_acl_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_DASH_ACL_GROUP',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'dash_acl_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

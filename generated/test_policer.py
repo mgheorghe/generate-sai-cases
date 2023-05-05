@@ -44,17 +44,12 @@ class TestSaiPolicer:
     @pytest.mark.dependency(depends=['test_sai_policer_attr_cbs_set'])
     def test_sai_policer_attr_cbs_get(self, npu):
         commands = [
-            {
-                'name': 'policer_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'atrribute': 'SAI_POLICER_ATTR_CBS',
-            }
+            {'name': 'policer_1', 'op': 'get', 'attributes': ['SAI_POLICER_ATTR_CBS']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -76,17 +71,12 @@ class TestSaiPolicer:
     @pytest.mark.dependency(depends=['test_sai_policer_attr_cir_set'])
     def test_sai_policer_attr_cir_get(self, npu):
         commands = [
-            {
-                'name': 'policer_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'atrribute': 'SAI_POLICER_ATTR_CIR',
-            }
+            {'name': 'policer_1', 'op': 'get', 'attributes': ['SAI_POLICER_ATTR_CIR']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -108,17 +98,12 @@ class TestSaiPolicer:
     @pytest.mark.dependency(depends=['test_sai_policer_attr_pbs_set'])
     def test_sai_policer_attr_pbs_get(self, npu):
         commands = [
-            {
-                'name': 'policer_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'atrribute': 'SAI_POLICER_ATTR_PBS',
-            }
+            {'name': 'policer_1', 'op': 'get', 'attributes': ['SAI_POLICER_ATTR_PBS']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -140,17 +125,12 @@ class TestSaiPolicer:
     @pytest.mark.dependency(depends=['test_sai_policer_attr_pir_set'])
     def test_sai_policer_attr_pir_get(self, npu):
         commands = [
-            {
-                'name': 'policer_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'atrribute': 'SAI_POLICER_ATTR_PIR',
-            }
+            {'name': 'policer_1', 'op': 'get', 'attributes': ['SAI_POLICER_ATTR_PIR']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -178,14 +158,13 @@ class TestSaiPolicer:
             {
                 'name': 'policer_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'atrribute': 'SAI_POLICER_ATTR_GREEN_PACKET_ACTION',
+                'attributes': ['SAI_POLICER_ATTR_GREEN_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
             'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
             % results[1][0].value()
         )
@@ -214,14 +193,13 @@ class TestSaiPolicer:
             {
                 'name': 'policer_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'atrribute': 'SAI_POLICER_ATTR_YELLOW_PACKET_ACTION',
+                'attributes': ['SAI_POLICER_ATTR_YELLOW_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
             'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
             % results[1][0].value()
         )
@@ -250,14 +228,13 @@ class TestSaiPolicer:
             {
                 'name': 'policer_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'atrribute': 'SAI_POLICER_ATTR_RED_PACKET_ACTION',
+                'attributes': ['SAI_POLICER_ATTR_RED_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
             'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
             % results[1][0].value()
         )
@@ -288,31 +265,18 @@ class TestSaiPolicer:
             {
                 'name': 'policer_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'atrribute': 'SAI_POLICER_ATTR_ENABLE_COUNTER_PACKET_ACTION_LIST',
+                'attributes': ['SAI_POLICER_ATTR_ENABLE_COUNTER_PACKET_ACTION_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
     def test_policer_remove(self, npu):
-        commands = [
-            {
-                'name': 'policer_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
-                'attributes': [
-                    'SAI_POLICER_ATTR_METER_TYPE',
-                    'SAI_METER_TYPE_PACKETS',
-                    'SAI_POLICER_ATTR_MODE',
-                    'SAI_POLICER_MODE_SR_TCM',
-                ],
-            }
-        ]
+        commands = [{'name': 'policer_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

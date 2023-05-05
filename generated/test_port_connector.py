@@ -61,42 +61,21 @@ class TestSaiPortConnector:
             {
                 'name': 'port_connector_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_PORT_CONNECTOR',
-                'atrribute': 'SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE',
+                'attributes': ['SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE', (
+        assert results[0][0].value() == 'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE', (
             'Get error, expected SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE but got %s'
             % results[1][0].value()
         )
 
     def test_port_connector_remove(self, npu):
         commands = [
-            {
-                'name': 'port_connector_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT_CONNECTOR',
-                'attributes': [
-                    'SAI_PORT_CONNECTOR_ATTR_SYSTEM_SIDE_PORT_ID',
-                    '$port_1',
-                    'SAI_PORT_CONNECTOR_ATTR_LINE_SIDE_PORT_ID',
-                    '$port_1',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
+            {'name': 'port_connector_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

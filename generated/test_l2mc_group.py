@@ -24,14 +24,13 @@ class TestSaiL2McGroup:
             {
                 'name': 'l2mc_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_L2MC_GROUP',
-                'atrribute': 'SAI_L2MC_GROUP_ATTR_L2MC_OUTPUT_COUNT',
+                'attributes': ['SAI_L2MC_GROUP_ATTR_L2MC_OUTPUT_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -40,26 +39,18 @@ class TestSaiL2McGroup:
             {
                 'name': 'l2mc_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_L2MC_GROUP',
-                'atrribute': 'SAI_L2MC_GROUP_ATTR_L2MC_MEMBER_LIST',
+                'attributes': ['SAI_L2MC_GROUP_ATTR_L2MC_MEMBER_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_l2mc_group_remove(self, npu):
-        commands = [
-            {
-                'name': 'l2mc_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_L2MC_GROUP',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'l2mc_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

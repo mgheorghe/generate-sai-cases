@@ -46,14 +46,13 @@ class TestSaiVipEntry:
             {
                 'name': 'vip_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_VIP_ENTRY',
-                'atrribute': 'SAI_VIP_ENTRY_ATTR_ACTION',
+                'attributes': ['SAI_VIP_ENTRY_ATTR_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_VIP_ENTRY_ACTION_ACCEPT', (
+        assert results[0][0].value() == 'SAI_VIP_ENTRY_ACTION_ACCEPT', (
             'Get error, expected SAI_VIP_ENTRY_ACTION_ACCEPT but got %s'
             % results[1][0].value()
         )
@@ -62,10 +61,8 @@ class TestSaiVipEntry:
         commands = [
             {
                 'name': 'vip_entry_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_VIP_ENTRY',
-                'attributes': [],
                 'key': {'switch_id': '$SWITCH_ID', 'vip': 'TODO'},
+                'op': 'remove',
             }
         ]
 

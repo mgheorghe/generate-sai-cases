@@ -60,14 +60,13 @@ class TestSaiIpmcEntry:
             {
                 'name': 'ipmc_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'atrribute': 'SAI_IPMC_ENTRY_ATTR_PACKET_ACTION',
+                'attributes': ['SAI_IPMC_ENTRY_ATTR_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -95,14 +94,13 @@ class TestSaiIpmcEntry:
             {
                 'name': 'ipmc_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'atrribute': 'SAI_IPMC_ENTRY_ATTR_OUTPUT_GROUP_ID',
+                'attributes': ['SAI_IPMC_ENTRY_ATTR_OUTPUT_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -127,14 +125,13 @@ class TestSaiIpmcEntry:
             {
                 'name': 'ipmc_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'atrribute': 'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
+                'attributes': ['SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -159,14 +156,13 @@ class TestSaiIpmcEntry:
             {
                 'name': 'ipmc_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'atrribute': 'SAI_IPMC_ENTRY_ATTR_COUNTER_ID',
+                'attributes': ['SAI_IPMC_ENTRY_ATTR_COUNTER_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -174,14 +170,6 @@ class TestSaiIpmcEntry:
         commands = [
             {
                 'name': 'ipmc_entry_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_IPMC_ENTRY',
-                'attributes': [
-                    'SAI_IPMC_ENTRY_ATTR_PACKET_ACTION',
-                    'SAI_PACKET_ACTION_DROP',
-                    'SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID',
-                    '$rpf_group_1',
-                ],
                 'key': {
                     'switch_id': '$SWITCH_ID',
                     'vr_id': 'TODO',
@@ -189,13 +177,9 @@ class TestSaiIpmcEntry:
                     'destination': 'TODO',
                     'source': 'TODO',
                 },
-            },
-            {
-                'name': 'rpf_group_1',
                 'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
-                'attributes': [],
             },
+            {'name': 'rpf_group_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

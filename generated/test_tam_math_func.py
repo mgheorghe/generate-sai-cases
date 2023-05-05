@@ -47,27 +47,19 @@ class TestSaiTamMathFunc:
             {
                 'name': 'tam_math_func_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_MATH_FUNC',
-                'atrribute': 'SAI_TAM_MATH_FUNC_ATTR_TAM_TEL_MATH_FUNC_TYPE',
+                'attributes': ['SAI_TAM_MATH_FUNC_ATTR_TAM_TEL_MATH_FUNC_TYPE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_TAM_TEL_MATH_FUNC_TYPE_NONE', (
+        assert results[0][0].value() == 'SAI_TAM_TEL_MATH_FUNC_TYPE_NONE', (
             'Get error, expected SAI_TAM_TEL_MATH_FUNC_TYPE_NONE but got %s'
             % results[1][0].value()
         )
 
     def test_tam_math_func_remove(self, npu):
-        commands = [
-            {
-                'name': 'tam_math_func_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_TAM_MATH_FUNC',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'tam_math_func_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

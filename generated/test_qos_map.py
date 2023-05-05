@@ -48,14 +48,13 @@ class TestSaiQosMap:
             {
                 'name': 'qos_map_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QOS_MAP',
-                'atrribute': 'SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST',
+                'attributes': ['SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -63,15 +62,8 @@ class TestSaiQosMap:
         commands = [
             {
                 'name': 'qos_map_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_QOS_MAP',
-                'attributes': [
-                    'SAI_QOS_MAP_ATTR_TYPE',
-                    'SAI_QOS_MAP_TYPE_DOT1P_TO_TC',
-                    'SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST',
-                    '2:10,11',
-                ],
                 'key': {'key': 'TODO', 'value': 'TODO'},
+                'op': 'remove',
             }
         ]
 

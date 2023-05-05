@@ -26,14 +26,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_TERM_REMOTE_IP_MATCH_SUPPORTED',
+                'attributes': ['SAI_IPSEC_ATTR_TERM_REMOTE_IP_MATCH_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -42,14 +41,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_SWITCHING_MODE_CUT_THROUGH_SUPPORTED',
+                'attributes': ['SAI_IPSEC_ATTR_SWITCHING_MODE_CUT_THROUGH_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -58,14 +56,15 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_SWITCHING_MODE_STORE_AND_FORWARD_SUPPORTED',
+                'attributes': [
+                    'SAI_IPSEC_ATTR_SWITCHING_MODE_STORE_AND_FORWARD_SUPPORTED'
+                ],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -74,14 +73,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_STATS_MODE_READ_SUPPORTED',
+                'attributes': ['SAI_IPSEC_ATTR_STATS_MODE_READ_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -90,14 +88,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_STATS_MODE_READ_CLEAR_SUPPORTED',
+                'attributes': ['SAI_IPSEC_ATTR_STATS_MODE_READ_CLEAR_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -106,14 +103,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_SN_32BIT_SUPPORTED',
+                'attributes': ['SAI_IPSEC_ATTR_SN_32BIT_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -122,14 +118,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_ESN_64BIT_SUPPORTED',
+                'attributes': ['SAI_IPSEC_ATTR_ESN_64BIT_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -138,14 +133,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_SUPPORTED_CIPHER_LIST',
+                'attributes': ['SAI_IPSEC_ATTR_SUPPORTED_CIPHER_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -154,14 +148,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_SYSTEM_SIDE_MTU',
+                'attributes': ['SAI_IPSEC_ATTR_SYSTEM_SIDE_MTU'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -170,14 +163,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_WARM_BOOT_SUPPORTED',
+                'attributes': ['SAI_IPSEC_ATTR_WARM_BOOT_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -202,14 +194,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_WARM_BOOT_ENABLE',
+                'attributes': ['SAI_IPSEC_ATTR_WARM_BOOT_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -231,17 +222,12 @@ class TestSaiIpsec:
     @pytest.mark.dependency(depends=['test_sai_ipsec_attr_ctag_tpid_set'])
     def test_sai_ipsec_attr_ctag_tpid_get(self, npu):
         commands = [
-            {
-                'name': 'ipsec_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_CTAG_TPID',
-            }
+            {'name': 'ipsec_1', 'op': 'get', 'attributes': ['SAI_IPSEC_ATTR_CTAG_TPID']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0x8100', (
+        assert results[0][0].value() == '0x8100', (
             'Get error, expected 0x8100 but got %s' % results[1][0].value()
         )
 
@@ -263,17 +249,12 @@ class TestSaiIpsec:
     @pytest.mark.dependency(depends=['test_sai_ipsec_attr_stag_tpid_set'])
     def test_sai_ipsec_attr_stag_tpid_get(self, npu):
         commands = [
-            {
-                'name': 'ipsec_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_STAG_TPID',
-            }
+            {'name': 'ipsec_1', 'op': 'get', 'attributes': ['SAI_IPSEC_ATTR_STAG_TPID']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0x88A8', (
+        assert results[0][0].value() == '0x88A8', (
             'Get error, expected 0x88A8 but got %s' % results[1][0].value()
         )
 
@@ -298,14 +279,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_MAX_VLAN_TAGS_PARSED',
+                'attributes': ['SAI_IPSEC_ATTR_MAX_VLAN_TAGS_PARSED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -332,14 +312,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_OCTET_COUNT_HIGH_WATERMARK',
+                'attributes': ['SAI_IPSEC_ATTR_OCTET_COUNT_HIGH_WATERMARK'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -366,14 +345,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_OCTET_COUNT_LOW_WATERMARK',
+                'attributes': ['SAI_IPSEC_ATTR_OCTET_COUNT_LOW_WATERMARK'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -401,14 +379,13 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_STATS_MODE',
+                'attributes': ['SAI_IPSEC_ATTR_STATS_MODE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_STATS_MODE_READ_AND_CLEAR', (
+        assert results[0][0].value() == 'SAI_STATS_MODE_READ_AND_CLEAR', (
             'Get error, expected SAI_STATS_MODE_READ_AND_CLEAR but got %s'
             % results[1][0].value()
         )
@@ -418,42 +395,29 @@ class TestSaiIpsec:
             {
                 'name': 'ipsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_AVAILABLE_IPSEC_SA',
+                'attributes': ['SAI_IPSEC_ATTR_AVAILABLE_IPSEC_SA'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_sai_ipsec_attr_sa_list_get(self, npu):
         commands = [
-            {
-                'name': 'ipsec_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'atrribute': 'SAI_IPSEC_ATTR_SA_LIST',
-            }
+            {'name': 'ipsec_1', 'op': 'get', 'attributes': ['SAI_IPSEC_ATTR_SA_LIST']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_ipsec_remove(self, npu):
-        commands = [
-            {
-                'name': 'ipsec_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_IPSEC',
-                'attributes': ['SAI_IPSEC_ATTR_EXTERNAL_SA_INDEX_ENABLE', 'True'],
-            }
-        ]
+        commands = [{'name': 'ipsec_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

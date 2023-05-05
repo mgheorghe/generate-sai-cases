@@ -104,14 +104,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER',
+                'attributes': ['SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -136,14 +135,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_PORT',
+                'attributes': ['SAI_BFD_SESSION_ATTR_PORT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -168,14 +166,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_TC',
+                'attributes': ['SAI_BFD_SESSION_ATTR_TC'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -200,14 +197,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_VLAN_TPID',
+                'attributes': ['SAI_BFD_SESSION_ATTR_VLAN_TPID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0x8100', (
+        assert results[0][0].value() == '0x8100', (
             'Get error, expected 0x8100 but got %s' % results[1][0].value()
         )
 
@@ -232,14 +228,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_VLAN_PRI',
+                'attributes': ['SAI_BFD_SESSION_ATTR_VLAN_PRI'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -264,14 +259,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_VLAN_CFI',
+                'attributes': ['SAI_BFD_SESSION_ATTR_VLAN_CFI'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -296,14 +290,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_IPHDR_VERSION',
+                'attributes': ['SAI_BFD_SESSION_ATTR_IPHDR_VERSION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -328,14 +321,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_TOS',
+                'attributes': ['SAI_BFD_SESSION_ATTR_TOS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -360,14 +352,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_TTL',
+                'attributes': ['SAI_BFD_SESSION_ATTR_TTL'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '255', (
+        assert results[0][0].value() == '255', (
             'Get error, expected 255 but got %s' % results[1][0].value()
         )
 
@@ -392,14 +383,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_TUNNEL_TOS',
+                'attributes': ['SAI_BFD_SESSION_ATTR_TUNNEL_TOS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -424,14 +414,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_TUNNEL_TTL',
+                'attributes': ['SAI_BFD_SESSION_ATTR_TUNNEL_TTL'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '255', (
+        assert results[0][0].value() == '255', (
             'Get error, expected 255 but got %s' % results[1][0].value()
         )
 
@@ -456,14 +445,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS',
+                'attributes': ['SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -488,14 +476,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS',
+                'attributes': ['SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -520,14 +507,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_ECHO_ENABLE',
+                'attributes': ['SAI_BFD_SESSION_ATTR_ECHO_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -552,14 +538,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_MIN_TX',
+                'attributes': ['SAI_BFD_SESSION_ATTR_MIN_TX'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -584,14 +569,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_MIN_RX',
+                'attributes': ['SAI_BFD_SESSION_ATTR_MIN_RX'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -616,14 +600,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_MULTIPLIER',
+                'attributes': ['SAI_BFD_SESSION_ATTR_MULTIPLIER'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -632,14 +615,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_REMOTE_MIN_TX',
+                'attributes': ['SAI_BFD_SESSION_ATTR_REMOTE_MIN_TX'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -648,14 +630,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_REMOTE_MIN_RX',
+                'attributes': ['SAI_BFD_SESSION_ATTR_REMOTE_MIN_RX'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -664,14 +645,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_STATE',
+                'attributes': ['SAI_BFD_SESSION_ATTR_STATE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -680,14 +660,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_NEGOTIATED_TX',
+                'attributes': ['SAI_BFD_SESSION_ATTR_NEGOTIATED_TX'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -696,14 +675,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_NEGOTIATED_RX',
+                'attributes': ['SAI_BFD_SESSION_ATTR_NEGOTIATED_RX'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -712,14 +690,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_LOCAL_DIAG',
+                'attributes': ['SAI_BFD_SESSION_ATTR_LOCAL_DIAG'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -728,14 +705,13 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_REMOTE_DIAG',
+                'attributes': ['SAI_BFD_SESSION_ATTR_REMOTE_DIAG'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -744,87 +720,22 @@ class TestSaiBfdSession:
             {
                 'name': 'bfd_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'atrribute': 'SAI_BFD_SESSION_ATTR_REMOTE_MULTIPLIER',
+                'attributes': ['SAI_BFD_SESSION_ATTR_REMOTE_MULTIPLIER'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_bfd_session_remove(self, npu):
         commands = [
-            {
-                'name': 'bfd_session_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_BFD_SESSION',
-                'attributes': [
-                    'SAI_BFD_SESSION_ATTR_TYPE',
-                    'SAI_BFD_SESSION_TYPE_DEMAND_ACTIVE',
-                    'SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER',
-                    '$virtual_router_1',
-                    'SAI_BFD_SESSION_ATTR_PORT',
-                    '$port_1',
-                    'SAI_BFD_SESSION_ATTR_LOCAL_DISCRIMINATOR',
-                    '10',
-                    'SAI_BFD_SESSION_ATTR_REMOTE_DISCRIMINATOR',
-                    '10',
-                    'SAI_BFD_SESSION_ATTR_UDP_SRC_PORT',
-                    '10',
-                    'SAI_BFD_SESSION_ATTR_VLAN_ID',
-                    '10',
-                    'SAI_BFD_SESSION_ATTR_BFD_ENCAPSULATION_TYPE',
-                    'SAI_BFD_ENCAPSULATION_TYPE_IP_IN_IP',
-                    'SAI_BFD_SESSION_ATTR_IPHDR_VERSION',
-                    '1',
-                    'SAI_BFD_SESSION_ATTR_SRC_IP_ADDRESS',
-                    '180.0.0.1',
-                    'SAI_BFD_SESSION_ATTR_DST_IP_ADDRESS',
-                    '180.0.0.1',
-                    'SAI_BFD_SESSION_ATTR_TUNNEL_SRC_IP_ADDRESS',
-                    '180.0.0.1',
-                    'SAI_BFD_SESSION_ATTR_TUNNEL_DST_IP_ADDRESS',
-                    '180.0.0.1',
-                    'SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS',
-                    '00:00:B1:AE:C5:00',
-                    'SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS',
-                    '00:00:B1:AE:C5:00',
-                    'SAI_BFD_SESSION_ATTR_MIN_TX',
-                    '10',
-                    'SAI_BFD_SESSION_ATTR_MIN_RX',
-                    '10',
-                    'SAI_BFD_SESSION_ATTR_MULTIPLIER',
-                    '1',
-                    'SAI_BFD_SESSION_ATTR_SRV6_SIDLIST_ID',
-                    '$srv6_sidlist_1',
-                ],
-            },
-            {
-                'name': 'srv6_sidlist_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_SRV6_SIDLIST',
-                'attributes': ['SAI_SRV6_SIDLIST_ATTR_TYPE', 'sai_srv6_sidlist_type_t'],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
-            {
-                'name': 'virtual_router_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
-                'attributes': [],
-            },
+            {'name': 'bfd_session_1', 'op': 'remove'},
+            {'name': 'srv6_sidlist_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
+            {'name': 'virtual_router_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

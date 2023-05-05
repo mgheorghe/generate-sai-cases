@@ -56,14 +56,13 @@ class TestSaiMySidEntry:
             {
                 'name': 'my_sid_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'atrribute': 'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR',
+                'attributes': ['SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -93,15 +92,14 @@ class TestSaiMySidEntry:
             {
                 'name': 'my_sid_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'atrribute': 'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR_FLAVOR',
+                'attributes': ['SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR_FLAVOR'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert (
-            results[1][0].value() == 'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_FLAVOR_NONE'
+            results[0][0].value() == 'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_FLAVOR_NONE'
         ), (
             'Get error, expected SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_FLAVOR_NONE but got %s'
             % results[1][0].value()
@@ -131,14 +129,13 @@ class TestSaiMySidEntry:
             {
                 'name': 'my_sid_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'atrribute': 'SAI_MY_SID_ENTRY_ATTR_PACKET_ACTION',
+                'attributes': ['SAI_MY_SID_ENTRY_ATTR_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
             'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
             % results[1][0].value()
         )
@@ -164,14 +161,13 @@ class TestSaiMySidEntry:
             {
                 'name': 'my_sid_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'atrribute': 'SAI_MY_SID_ENTRY_ATTR_TRAP_PRIORITY',
+                'attributes': ['SAI_MY_SID_ENTRY_ATTR_TRAP_PRIORITY'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -199,14 +195,13 @@ class TestSaiMySidEntry:
             {
                 'name': 'my_sid_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'atrribute': 'SAI_MY_SID_ENTRY_ATTR_NEXT_HOP_ID',
+                'attributes': ['SAI_MY_SID_ENTRY_ATTR_NEXT_HOP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -231,14 +226,13 @@ class TestSaiMySidEntry:
             {
                 'name': 'my_sid_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'atrribute': 'SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID',
+                'attributes': ['SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -263,14 +257,13 @@ class TestSaiMySidEntry:
             {
                 'name': 'my_sid_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'atrribute': 'SAI_MY_SID_ENTRY_ATTR_VRF',
+                'attributes': ['SAI_MY_SID_ENTRY_ATTR_VRF'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -295,14 +288,13 @@ class TestSaiMySidEntry:
             {
                 'name': 'my_sid_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'atrribute': 'SAI_MY_SID_ENTRY_ATTR_COUNTER_ID',
+                'attributes': ['SAI_MY_SID_ENTRY_ATTR_COUNTER_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -310,12 +302,6 @@ class TestSaiMySidEntry:
         commands = [
             {
                 'name': 'my_sid_entry_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'attributes': [
-                    'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR',
-                    'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_E',
-                ],
                 'key': {
                     'switch_id': '$SWITCH_ID',
                     'vr_id': 'TODO',
@@ -325,6 +311,7 @@ class TestSaiMySidEntry:
                     'args_len': 'TODO',
                     'sid': 'TODO',
                 },
+                'op': 'remove',
             }
         ]
 

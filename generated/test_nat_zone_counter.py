@@ -45,14 +45,13 @@ class TestSaiNatZoneCounter:
             {
                 'name': 'nat_zone_counter_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
-                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_NAT_TYPE',
+                'attributes': ['SAI_NAT_ZONE_COUNTER_ATTR_NAT_TYPE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NAT_TYPE_NONE', (
+        assert results[0][0].value() == 'SAI_NAT_TYPE_NONE', (
             'Get error, expected SAI_NAT_TYPE_NONE but got %s' % results[1][0].value()
         )
 
@@ -77,14 +76,13 @@ class TestSaiNatZoneCounter:
             {
                 'name': 'nat_zone_counter_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
-                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_ZONE_ID',
+                'attributes': ['SAI_NAT_ZONE_COUNTER_ATTR_ZONE_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -111,14 +109,13 @@ class TestSaiNatZoneCounter:
             {
                 'name': 'nat_zone_counter_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
-                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_DISCARD_PACKET_COUNT',
+                'attributes': ['SAI_NAT_ZONE_COUNTER_ATTR_DISCARD_PACKET_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -148,14 +145,15 @@ class TestSaiNatZoneCounter:
             {
                 'name': 'nat_zone_counter_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
-                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATION_NEEDED_PACKET_COUNT',
+                'attributes': [
+                    'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATION_NEEDED_PACKET_COUNT'
+                ],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -185,26 +183,18 @@ class TestSaiNatZoneCounter:
             {
                 'name': 'nat_zone_counter_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
-                'atrribute': 'SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATIONS_PACKET_COUNT',
+                'attributes': ['SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATIONS_PACKET_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
     def test_nat_zone_counter_remove(self, npu):
-        commands = [
-            {
-                'name': 'nat_zone_counter_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'nat_zone_counter_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

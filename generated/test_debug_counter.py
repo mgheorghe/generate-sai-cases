@@ -29,14 +29,13 @@ class TestSaiDebugCounter:
             {
                 'name': 'debug_counter_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
-                'atrribute': 'SAI_DEBUG_COUNTER_ATTR_INDEX',
+                'attributes': ['SAI_DEBUG_COUNTER_ATTR_INDEX'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -63,14 +62,13 @@ class TestSaiDebugCounter:
             {
                 'name': 'debug_counter_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
-                'atrribute': 'SAI_DEBUG_COUNTER_ATTR_IN_DROP_REASON_LIST',
+                'attributes': ['SAI_DEBUG_COUNTER_ATTR_IN_DROP_REASON_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
@@ -97,29 +95,18 @@ class TestSaiDebugCounter:
             {
                 'name': 'debug_counter_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
-                'atrribute': 'SAI_DEBUG_COUNTER_ATTR_OUT_DROP_REASON_LIST',
+                'attributes': ['SAI_DEBUG_COUNTER_ATTR_OUT_DROP_REASON_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
     def test_debug_counter_remove(self, npu):
-        commands = [
-            {
-                'name': 'debug_counter_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
-                'attributes': [
-                    'SAI_DEBUG_COUNTER_ATTR_TYPE',
-                    'SAI_DEBUG_COUNTER_TYPE_PORT_IN_DROP_REASONS',
-                ],
-            }
-        ]
+        commands = [{'name': 'debug_counter_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

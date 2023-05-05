@@ -60,14 +60,13 @@ class TestSaiTamCollector:
             {
                 'name': 'tam_collector_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': 'SAI_TAM_COLLECTOR_ATTR_SRC_IP',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_SRC_IP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -92,14 +91,13 @@ class TestSaiTamCollector:
             {
                 'name': 'tam_collector_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': 'SAI_TAM_COLLECTOR_ATTR_DST_IP',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_DST_IP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -124,14 +122,13 @@ class TestSaiTamCollector:
             {
                 'name': 'tam_collector_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': 'SAI_TAM_COLLECTOR_ATTR_LOCALHOST',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_LOCALHOST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'true', (
+        assert results[0][0].value() == 'true', (
             'Get error, expected true but got %s' % results[1][0].value()
         )
 
@@ -161,14 +158,13 @@ class TestSaiTamCollector:
             {
                 'name': 'tam_collector_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': 'SAI_TAM_COLLECTOR_ATTR_VIRTUAL_ROUTER_ID',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_VIRTUAL_ROUTER_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -193,14 +189,13 @@ class TestSaiTamCollector:
             {
                 'name': 'tam_collector_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': 'SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -225,14 +220,13 @@ class TestSaiTamCollector:
             {
                 'name': 'tam_collector_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': 'SAI_TAM_COLLECTOR_ATTR_TRANSPORT',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_TRANSPORT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -257,43 +251,20 @@ class TestSaiTamCollector:
             {
                 'name': 'tam_collector_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'atrribute': 'SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE',
+                'attributes': ['SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_tam_collector_remove(self, npu):
         commands = [
-            {
-                'name': 'tam_collector_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_TAM_COLLECTOR',
-                'attributes': [
-                    'SAI_TAM_COLLECTOR_ATTR_SRC_IP',
-                    '180.0.0.1',
-                    'SAI_TAM_COLLECTOR_ATTR_DST_IP',
-                    '180.0.0.1',
-                    'SAI_TAM_COLLECTOR_ATTR_TRANSPORT',
-                    '$tam_transport_1',
-                    'SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE',
-                    '1',
-                ],
-            },
-            {
-                'name': 'tam_transport_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
-                'attributes': [
-                    'SAI_TAM_TRANSPORT_ATTR_TRANSPORT_TYPE',
-                    'SAI_TAM_TRANSPORT_TYPE_TCP',
-                ],
-            },
+            {'name': 'tam_collector_1', 'op': 'remove'},
+            {'name': 'tam_transport_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

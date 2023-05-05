@@ -58,14 +58,13 @@ class TestSaiIpsecPort:
             {
                 'name': 'ipsec_port_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC_PORT',
-                'atrribute': 'SAI_IPSEC_PORT_ATTR_CTAG_ENABLE',
+                'attributes': ['SAI_IPSEC_PORT_ATTR_CTAG_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -90,14 +89,13 @@ class TestSaiIpsecPort:
             {
                 'name': 'ipsec_port_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC_PORT',
-                'atrribute': 'SAI_IPSEC_PORT_ATTR_STAG_ENABLE',
+                'attributes': ['SAI_IPSEC_PORT_ATTR_STAG_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -127,14 +125,13 @@ class TestSaiIpsecPort:
             {
                 'name': 'ipsec_port_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC_PORT',
-                'atrribute': 'SAI_IPSEC_PORT_ATTR_VRF_FROM_PACKET_VLAN_ENABLE',
+                'attributes': ['SAI_IPSEC_PORT_ATTR_VRF_FROM_PACKET_VLAN_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -164,42 +161,21 @@ class TestSaiIpsecPort:
             {
                 'name': 'ipsec_port_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_IPSEC_PORT',
-                'atrribute': 'SAI_IPSEC_PORT_ATTR_SWITCH_SWITCHING_MODE',
+                'attributes': ['SAI_IPSEC_PORT_ATTR_SWITCH_SWITCHING_MODE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH', (
+        assert results[0][0].value() == 'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH', (
             'Get error, expected SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH but got %s'
             % results[1][0].value()
         )
 
     def test_ipsec_port_remove(self, npu):
         commands = [
-            {
-                'name': 'ipsec_port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_IPSEC_PORT',
-                'attributes': [
-                    'SAI_IPSEC_PORT_ATTR_PORT_ID',
-                    '$port_1',
-                    'SAI_IPSEC_PORT_ATTR_NATIVE_VLAN_ID',
-                    '10',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
+            {'name': 'ipsec_port_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

@@ -45,14 +45,13 @@ class TestSaiTamTransport:
             {
                 'name': 'tam_transport_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
-                'atrribute': 'SAI_TAM_TRANSPORT_ATTR_SRC_PORT',
+                'attributes': ['SAI_TAM_TRANSPORT_ATTR_SRC_PORT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '31337', (
+        assert results[0][0].value() == '31337', (
             'Get error, expected 31337 but got %s' % results[1][0].value()
         )
 
@@ -77,14 +76,13 @@ class TestSaiTamTransport:
             {
                 'name': 'tam_transport_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
-                'atrribute': 'SAI_TAM_TRANSPORT_ATTR_DST_PORT',
+                'attributes': ['SAI_TAM_TRANSPORT_ATTR_DST_PORT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '31337', (
+        assert results[0][0].value() == '31337', (
             'Get error, expected 31337 but got %s' % results[1][0].value()
         )
 
@@ -114,14 +112,13 @@ class TestSaiTamTransport:
             {
                 'name': 'tam_transport_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
-                'atrribute': 'SAI_TAM_TRANSPORT_ATTR_TRANSPORT_AUTH_TYPE',
+                'attributes': ['SAI_TAM_TRANSPORT_ATTR_TRANSPORT_AUTH_TYPE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_TAM_TRANSPORT_AUTH_TYPE_NONE', (
+        assert results[0][0].value() == 'SAI_TAM_TRANSPORT_AUTH_TYPE_NONE', (
             'Get error, expected SAI_TAM_TRANSPORT_AUTH_TYPE_NONE but got %s'
             % results[1][0].value()
         )
@@ -147,29 +144,18 @@ class TestSaiTamTransport:
             {
                 'name': 'tam_transport_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
-                'atrribute': 'SAI_TAM_TRANSPORT_ATTR_MTU',
+                'attributes': ['SAI_TAM_TRANSPORT_ATTR_MTU'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '1500', (
+        assert results[0][0].value() == '1500', (
             'Get error, expected 1500 but got %s' % results[1][0].value()
         )
 
     def test_tam_transport_remove(self, npu):
-        commands = [
-            {
-                'name': 'tam_transport_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_TAM_TRANSPORT',
-                'attributes': [
-                    'SAI_TAM_TRANSPORT_ATTR_TRANSPORT_TYPE',
-                    'SAI_TAM_TRANSPORT_TYPE_TCP',
-                ],
-            }
-        ]
+        commands = [{'name': 'tam_transport_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

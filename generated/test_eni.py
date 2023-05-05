@@ -38,18 +38,11 @@ class TestSaiEni:
 
     @pytest.mark.dependency(depends=['test_sai_eni_attr_cps_set'])
     def test_sai_eni_attr_cps_get(self, npu):
-        commands = [
-            {
-                'name': 'eni_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_CPS',
-            }
-        ]
+        commands = [{'name': 'eni_1', 'op': 'get', 'attributes': ['SAI_ENI_ATTR_CPS']}]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -70,18 +63,11 @@ class TestSaiEni:
 
     @pytest.mark.dependency(depends=['test_sai_eni_attr_pps_set'])
     def test_sai_eni_attr_pps_get(self, npu):
-        commands = [
-            {
-                'name': 'eni_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_PPS',
-            }
-        ]
+        commands = [{'name': 'eni_1', 'op': 'get', 'attributes': ['SAI_ENI_ATTR_PPS']}]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -103,17 +89,12 @@ class TestSaiEni:
     @pytest.mark.dependency(depends=['test_sai_eni_attr_flows_set'])
     def test_sai_eni_attr_flows_get(self, npu):
         commands = [
-            {
-                'name': 'eni_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_FLOWS',
-            }
+            {'name': 'eni_1', 'op': 'get', 'attributes': ['SAI_ENI_ATTR_FLOWS']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -135,17 +116,12 @@ class TestSaiEni:
     @pytest.mark.dependency(depends=['test_sai_eni_attr_admin_state_set'])
     def test_sai_eni_attr_admin_state_get(self, npu):
         commands = [
-            {
-                'name': 'eni_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_ADMIN_STATE',
-            }
+            {'name': 'eni_1', 'op': 'get', 'attributes': ['SAI_ENI_ATTR_ADMIN_STATE']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -170,14 +146,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_VM_UNDERLAY_DIP',
+                'attributes': ['SAI_ENI_ATTR_VM_UNDERLAY_DIP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0.0.0.0', (
+        assert results[0][0].value() == '0.0.0.0', (
             'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
         )
 
@@ -199,17 +174,12 @@ class TestSaiEni:
     @pytest.mark.dependency(depends=['test_sai_eni_attr_vm_vni_set'])
     def test_sai_eni_attr_vm_vni_get(self, npu):
         commands = [
-            {
-                'name': 'eni_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_VM_VNI',
-            }
+            {'name': 'eni_1', 'op': 'get', 'attributes': ['SAI_ENI_ATTR_VM_VNI']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -231,17 +201,12 @@ class TestSaiEni:
     @pytest.mark.dependency(depends=['test_sai_eni_attr_vnet_id_set'])
     def test_sai_eni_attr_vnet_id_get(self, npu):
         commands = [
-            {
-                'name': 'eni_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_VNET_ID',
-            }
+            {'name': 'eni_1', 'op': 'get', 'attributes': ['SAI_ENI_ATTR_VNET_ID']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -271,14 +236,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V4_STAGE1_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V4_STAGE1_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -308,14 +272,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V4_STAGE2_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V4_STAGE2_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -345,14 +308,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V4_STAGE3_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V4_STAGE3_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -382,14 +344,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V4_STAGE4_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V4_STAGE4_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -419,14 +380,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V4_STAGE5_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V4_STAGE5_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -456,14 +416,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V6_STAGE1_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V6_STAGE1_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -493,14 +452,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V6_STAGE2_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V6_STAGE2_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -530,14 +488,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V6_STAGE3_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V6_STAGE3_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -567,14 +524,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V6_STAGE4_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V6_STAGE4_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -604,14 +560,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_INBOUND_V6_STAGE5_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_INBOUND_V6_STAGE5_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -641,14 +596,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V4_STAGE1_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V4_STAGE1_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -678,14 +632,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V4_STAGE2_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V4_STAGE2_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -715,14 +668,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V4_STAGE3_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V4_STAGE3_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -752,14 +704,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V4_STAGE4_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V4_STAGE4_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -789,14 +740,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V4_STAGE5_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V4_STAGE5_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -826,14 +776,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V6_STAGE1_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V6_STAGE1_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -863,14 +812,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V6_STAGE2_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V6_STAGE2_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -900,14 +848,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V6_STAGE3_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V6_STAGE3_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -937,14 +884,13 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V6_STAGE4_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V6_STAGE4_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -974,26 +920,18 @@ class TestSaiEni:
             {
                 'name': 'eni_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'atrribute': 'SAI_ENI_ATTR_OUTBOUND_V6_STAGE5_DASH_ACL_GROUP_ID',
+                'attributes': ['SAI_ENI_ATTR_OUTBOUND_V6_STAGE5_DASH_ACL_GROUP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
     def test_eni_remove(self, npu):
-        commands = [
-            {
-                'name': 'eni_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_ENI',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'eni_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

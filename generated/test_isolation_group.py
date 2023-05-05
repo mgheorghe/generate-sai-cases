@@ -27,29 +27,18 @@ class TestSaiIsolationGroup:
             {
                 'name': 'isolation_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
-                'atrribute': 'SAI_ISOLATION_GROUP_ATTR_ISOLATION_MEMBER_LIST',
+                'attributes': ['SAI_ISOLATION_GROUP_ATTR_ISOLATION_MEMBER_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_isolation_group_remove(self, npu):
-        commands = [
-            {
-                'name': 'isolation_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
-                'attributes': [
-                    'SAI_ISOLATION_GROUP_ATTR_TYPE',
-                    'SAI_ISOLATION_GROUP_TYPE_PORT',
-                ],
-            }
-        ]
+        commands = [{'name': 'isolation_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

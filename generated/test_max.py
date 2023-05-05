@@ -20,14 +20,7 @@ class TestSaiMax:
         assert all(results), 'Create error'
 
     def test_max_remove(self, npu):
-        commands = [
-            {
-                'name': 'max_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_MAX',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'max_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

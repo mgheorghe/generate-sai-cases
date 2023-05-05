@@ -29,14 +29,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_SWITCHING_MODE_CUT_THROUGH_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_SWITCHING_MODE_CUT_THROUGH_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -45,14 +44,15 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_SWITCHING_MODE_STORE_AND_FORWARD_SUPPORTED',
+                'attributes': [
+                    'SAI_MACSEC_ATTR_SWITCHING_MODE_STORE_AND_FORWARD_SUPPORTED'
+                ],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -61,14 +61,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_STATS_MODE_READ_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_STATS_MODE_READ_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -77,14 +76,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_STATS_MODE_READ_CLEAR_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_STATS_MODE_READ_CLEAR_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -93,14 +91,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_SCI_IN_INGRESS_MACSEC_ACL',
+                'attributes': ['SAI_MACSEC_ATTR_SCI_IN_INGRESS_MACSEC_ACL'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -109,14 +106,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_SUPPORTED_CIPHER_SUITE_LIST',
+                'attributes': ['SAI_MACSEC_ATTR_SUPPORTED_CIPHER_SUITE_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -125,14 +121,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_PN_32BIT_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_PN_32BIT_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -141,14 +136,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_XPN_64BIT_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_XPN_64BIT_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -157,14 +151,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_GCM_AES128_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_GCM_AES128_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -173,14 +166,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_GCM_AES256_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_GCM_AES256_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -189,14 +181,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_SECTAG_OFFSETS_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_SECTAG_OFFSETS_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -205,14 +196,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_SYSTEM_SIDE_MTU',
+                'attributes': ['SAI_MACSEC_ATTR_SYSTEM_SIDE_MTU'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -221,14 +211,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_WARM_BOOT_SUPPORTED',
+                'attributes': ['SAI_MACSEC_ATTR_WARM_BOOT_SUPPORTED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -253,14 +242,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_WARM_BOOT_ENABLE',
+                'attributes': ['SAI_MACSEC_ATTR_WARM_BOOT_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -285,14 +273,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_CTAG_TPID',
+                'attributes': ['SAI_MACSEC_ATTR_CTAG_TPID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0x8100', (
+        assert results[0][0].value() == '0x8100', (
             'Get error, expected 0x8100 but got %s' % results[1][0].value()
         )
 
@@ -317,14 +304,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_STAG_TPID',
+                'attributes': ['SAI_MACSEC_ATTR_STAG_TPID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0x88A8', (
+        assert results[0][0].value() == '0x88A8', (
             'Get error, expected 0x88A8 but got %s' % results[1][0].value()
         )
 
@@ -349,14 +335,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_MAX_VLAN_TAGS_PARSED',
+                'attributes': ['SAI_MACSEC_ATTR_MAX_VLAN_TAGS_PARSED'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -384,14 +369,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_STATS_MODE',
+                'attributes': ['SAI_MACSEC_ATTR_STATS_MODE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_STATS_MODE_READ_AND_CLEAR', (
+        assert results[0][0].value() == 'SAI_STATS_MODE_READ_AND_CLEAR', (
             'Get error, expected SAI_STATS_MODE_READ_AND_CLEAR but got %s'
             % results[1][0].value()
         )
@@ -417,14 +401,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_PHYSICAL_BYPASS_ENABLE',
+                'attributes': ['SAI_MACSEC_ATTR_PHYSICAL_BYPASS_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -433,14 +416,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_SUPPORTED_PORT_LIST',
+                'attributes': ['SAI_MACSEC_ATTR_SUPPORTED_PORT_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -449,14 +431,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_AVAILABLE_MACSEC_FLOW',
+                'attributes': ['SAI_MACSEC_ATTR_AVAILABLE_MACSEC_FLOW'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -465,14 +446,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_FLOW_LIST',
+                'attributes': ['SAI_MACSEC_ATTR_FLOW_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -481,14 +461,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_AVAILABLE_MACSEC_SC',
+                'attributes': ['SAI_MACSEC_ATTR_AVAILABLE_MACSEC_SC'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -497,14 +476,13 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_AVAILABLE_MACSEC_SA',
+                'attributes': ['SAI_MACSEC_ATTR_AVAILABLE_MACSEC_SA'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -513,29 +491,18 @@ class TestSaiMacsec:
             {
                 'name': 'macsec_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'atrribute': 'SAI_MACSEC_ATTR_MAX_SECURE_ASSOCIATIONS_PER_SC',
+                'attributes': ['SAI_MACSEC_ATTR_MAX_SECURE_ASSOCIATIONS_PER_SC'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_macsec_remove(self, npu):
-        commands = [
-            {
-                'name': 'macsec_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
-                'attributes': [
-                    'SAI_MACSEC_ATTR_DIRECTION',
-                    'SAI_MACSEC_DIRECTION_EGRESS',
-                ],
-            }
-        ]
+        commands = [{'name': 'macsec_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

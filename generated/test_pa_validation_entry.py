@@ -46,14 +46,13 @@ class TestSaiPaValidationEntry:
             {
                 'name': 'pa_validation_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_PA_VALIDATION_ENTRY',
-                'atrribute': 'SAI_PA_VALIDATION_ENTRY_ATTR_ACTION',
+                'attributes': ['SAI_PA_VALIDATION_ENTRY_ATTR_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT', (
+        assert results[0][0].value() == 'SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT', (
             'Get error, expected SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT but got %s'
             % results[1][0].value()
         )
@@ -62,10 +61,8 @@ class TestSaiPaValidationEntry:
         commands = [
             {
                 'name': 'pa_validation_entry_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PA_VALIDATION_ENTRY',
-                'attributes': [],
                 'key': {'switch_id': '$SWITCH_ID', 'vnet_id': 'TODO', 'sip': 'TODO'},
+                'op': 'remove',
             }
         ]
 

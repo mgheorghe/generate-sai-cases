@@ -66,14 +66,13 @@ class TestSaiBufferProfile:
             {
                 'name': 'buffer_profile_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
-                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE',
+                'attributes': ['SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -100,14 +99,13 @@ class TestSaiBufferProfile:
             {
                 'name': 'buffer_profile_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
-                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH',
+                'attributes': ['SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -134,14 +132,13 @@ class TestSaiBufferProfile:
             {
                 'name': 'buffer_profile_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
-                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH',
+                'attributes': ['SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -166,14 +163,13 @@ class TestSaiBufferProfile:
             {
                 'name': 'buffer_profile_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
-                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XOFF_TH',
+                'attributes': ['SAI_BUFFER_PROFILE_ATTR_XOFF_TH'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -198,14 +194,13 @@ class TestSaiBufferProfile:
             {
                 'name': 'buffer_profile_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
-                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XON_TH',
+                'attributes': ['SAI_BUFFER_PROFILE_ATTR_XON_TH'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -230,47 +225,20 @@ class TestSaiBufferProfile:
             {
                 'name': 'buffer_profile_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
-                'atrribute': 'SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH',
+                'attributes': ['SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
     def test_buffer_profile_remove(self, npu):
         commands = [
-            {
-                'name': 'buffer_profile_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_PROFILE',
-                'attributes': [
-                    'SAI_BUFFER_PROFILE_ATTR_POOL_ID',
-                    '$buffer_pool_1',
-                    'SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE',
-                    '10',
-                    'SAI_BUFFER_PROFILE_ATTR_THRESHOLD_MODE',
-                    'SAI_BUFFER_PROFILE_THRESHOLD_MODE_STATIC',
-                    'SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH',
-                    '1',
-                    'SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH',
-                    '10',
-                ],
-            },
-            {
-                'name': 'buffer_pool_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
-                'attributes': [
-                    'SAI_BUFFER_POOL_ATTR_TYPE',
-                    'SAI_BUFFER_POOL_TYPE_INGRESS',
-                    'SAI_BUFFER_POOL_ATTR_SIZE',
-                    '10',
-                ],
-            },
+            {'name': 'buffer_profile_1', 'op': 'remove'},
+            {'name': 'buffer_pool_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

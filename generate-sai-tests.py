@@ -23,14 +23,13 @@ TEST_TEMPLATE_GET = '''
             {
                 "name": "%(OBJECT_NAME)s_1",
                 "op": "get",
-                "type": "%(OBJECT_TYPE)s",
-                "atrribute": "%(ATTRIBUTE)s"
+                "attributes": ["%(ATTRIBUTE)s"]
             }
         ]
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
-        assert results[1][0].value() == '%(EXPECTED_VALUE)s', 'Get error, expected %(EXPECTED_VALUE)s but got %%s' %%  results[1][0].value()
+        assert results[0][0].value() == '%(EXPECTED_VALUE)s', 'Get error, expected %(EXPECTED_VALUE)s but got %%s' %%  results[1][0].value()
 '''
 
 TEST_TEMPLATE_SET = '''
@@ -302,8 +301,18 @@ def get_remove_commands(obj_type):
     commands = get_create_commands(obj_type)
     cleanup_commands = []
     for command in reversed(commands):
-        command['op'] = 'remove'
-        cleanup_commands.append(command)
+        if command['op'] == 'create':
+            if 'key' in command.keys():
+                cleanup_commands.append(
+                    {
+                        'name': command.get('name'),
+                        'key': command.get('key'),
+                        'op': 'remove',
+                    }
+                )
+            else:
+                cleanup_commands.append({'name': command.get('name'), 'op': 'remove'})
+    return cleanup_commands
     return cleanup_commands
 
 

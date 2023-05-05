@@ -62,14 +62,13 @@ class TestSaiHostif:
             {
                 'name': 'hostif_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF',
-                'atrribute': 'SAI_HOSTIF_ATTR_OPER_STATUS',
+                'attributes': ['SAI_HOSTIF_ATTR_OPER_STATUS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -91,17 +90,12 @@ class TestSaiHostif:
     @pytest.mark.dependency(depends=['test_sai_hostif_attr_queue_set'])
     def test_sai_hostif_attr_queue_get(self, npu):
         commands = [
-            {
-                'name': 'hostif_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF',
-                'atrribute': 'SAI_HOSTIF_ATTR_QUEUE',
-            }
+            {'name': 'hostif_1', 'op': 'get', 'attributes': ['SAI_HOSTIF_ATTR_QUEUE']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -126,46 +120,21 @@ class TestSaiHostif:
             {
                 'name': 'hostif_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF',
-                'atrribute': 'SAI_HOSTIF_ATTR_VLAN_TAG',
+                'attributes': ['SAI_HOSTIF_ATTR_VLAN_TAG'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_HOSTIF_VLAN_TAG_STRIP', (
+        assert results[0][0].value() == 'SAI_HOSTIF_VLAN_TAG_STRIP', (
             'Get error, expected SAI_HOSTIF_VLAN_TAG_STRIP but got %s'
             % results[1][0].value()
         )
 
     def test_hostif_remove(self, npu):
         commands = [
-            {
-                'name': 'hostif_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF',
-                'attributes': [
-                    'SAI_HOSTIF_ATTR_TYPE',
-                    'SAI_HOSTIF_TYPE_NETDEV',
-                    'SAI_HOSTIF_ATTR_OBJ_ID',
-                    '$port_1',
-                    'SAI_HOSTIF_ATTR_NAME',
-                    'char',
-                    'SAI_HOSTIF_ATTR_GENETLINK_MCGRP_NAME',
-                    'char',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
+            {'name': 'hostif_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

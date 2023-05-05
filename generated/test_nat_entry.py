@@ -48,14 +48,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_NAT_TYPE',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_NAT_TYPE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NAT_TYPE_NONE', (
+        assert results[0][0].value() == 'SAI_NAT_TYPE_NONE', (
             'Get error, expected SAI_NAT_TYPE_NONE but got %s' % results[1][0].value()
         )
 
@@ -80,14 +79,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_SRC_IP',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_SRC_IP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0.0.0.0', (
+        assert results[0][0].value() == '0.0.0.0', (
             'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
         )
 
@@ -112,14 +110,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_SRC_IP_MASK',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_SRC_IP_MASK'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0.0.0.0', (
+        assert results[0][0].value() == '0.0.0.0', (
             'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
         )
 
@@ -144,14 +141,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_VR_ID',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_VR_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -176,14 +172,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_DST_IP',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_DST_IP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0.0.0.0', (
+        assert results[0][0].value() == '0.0.0.0', (
             'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
         )
 
@@ -208,14 +203,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_DST_IP_MASK',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_DST_IP_MASK'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0.0.0.0', (
+        assert results[0][0].value() == '0.0.0.0', (
             'Get error, expected 0.0.0.0 but got %s' % results[1][0].value()
         )
 
@@ -240,14 +234,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_L4_SRC_PORT',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_L4_SRC_PORT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -272,14 +265,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_L4_DST_PORT',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_L4_DST_PORT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -304,14 +296,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_ENABLE_PACKET_COUNT',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_ENABLE_PACKET_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -336,14 +327,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_PACKET_COUNT',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_PACKET_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -368,14 +358,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_ENABLE_BYTE_COUNT',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_ENABLE_BYTE_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -400,14 +389,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_BYTE_COUNT',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_BYTE_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -432,14 +420,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_HIT_BIT_COR',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_HIT_BIT_COR'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -464,14 +451,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_HIT_BIT',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_HIT_BIT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -496,14 +482,13 @@ class TestSaiNatEntry:
             {
                 'name': 'nat_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'atrribute': 'SAI_NAT_ENTRY_ATTR_AGING_TIME',
+                'attributes': ['SAI_NAT_ENTRY_ATTR_AGING_TIME'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -511,15 +496,13 @@ class TestSaiNatEntry:
         commands = [
             {
                 'name': 'nat_entry_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
-                'attributes': [],
                 'key': {
                     'switch_id': '$SWITCH_ID',
                     'vr_id': 'TODO',
                     'nat_type': 'TODO',
                     'data': 'TODO',
                 },
+                'op': 'remove',
             }
         ]
 

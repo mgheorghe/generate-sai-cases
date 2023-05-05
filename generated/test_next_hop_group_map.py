@@ -47,29 +47,18 @@ class TestSaiNextHopGroupMap:
             {
                 'name': 'next_hop_group_map_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MAP',
-                'atrribute': 'SAI_NEXT_HOP_GROUP_MAP_ATTR_MAP_TO_VALUE_LIST',
+                'attributes': ['SAI_NEXT_HOP_GROUP_MAP_ATTR_MAP_TO_VALUE_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
     def test_next_hop_group_map_remove(self, npu):
-        commands = [
-            {
-                'name': 'next_hop_group_map_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MAP',
-                'attributes': [
-                    'SAI_NEXT_HOP_GROUP_MAP_ATTR_TYPE',
-                    'SAI_NEXT_HOP_GROUP_MAP_TYPE_FORWARDING_CLASS_TO_INDEX',
-                ],
-            }
-        ]
+        commands = [{'name': 'next_hop_group_map_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

@@ -24,14 +24,13 @@ class TestSaiRpfGroup:
             {
                 'name': 'rpf_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
-                'atrribute': 'SAI_RPF_GROUP_ATTR_RPF_INTERFACE_COUNT',
+                'attributes': ['SAI_RPF_GROUP_ATTR_RPF_INTERFACE_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -40,26 +39,18 @@ class TestSaiRpfGroup:
             {
                 'name': 'rpf_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
-                'atrribute': 'SAI_RPF_GROUP_ATTR_RPF_MEMBER_LIST',
+                'attributes': ['SAI_RPF_GROUP_ATTR_RPF_MEMBER_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_rpf_group_remove(self, npu):
-        commands = [
-            {
-                'name': 'rpf_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'rpf_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

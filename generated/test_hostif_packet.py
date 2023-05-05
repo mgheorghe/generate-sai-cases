@@ -40,14 +40,13 @@ class TestSaiHostifPacket:
             {
                 'name': 'hostif_packet_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
-                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_HOSTIF_TRAP_ID',
+                'attributes': ['SAI_HOSTIF_PACKET_ATTR_HOSTIF_TRAP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -56,14 +55,13 @@ class TestSaiHostifPacket:
             {
                 'name': 'hostif_packet_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
-                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_INGRESS_PORT',
+                'attributes': ['SAI_HOSTIF_PACKET_ATTR_INGRESS_PORT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -72,14 +70,13 @@ class TestSaiHostifPacket:
             {
                 'name': 'hostif_packet_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
-                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_INGRESS_LAG',
+                'attributes': ['SAI_HOSTIF_PACKET_ATTR_INGRESS_LAG'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -88,14 +85,13 @@ class TestSaiHostifPacket:
             {
                 'name': 'hostif_packet_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
-                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_BRIDGE_ID',
+                'attributes': ['SAI_HOSTIF_PACKET_ATTR_BRIDGE_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -104,41 +100,20 @@ class TestSaiHostifPacket:
             {
                 'name': 'hostif_packet_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
-                'atrribute': 'SAI_HOSTIF_PACKET_ATTR_TIMESTAMP',
+                'attributes': ['SAI_HOSTIF_PACKET_ATTR_TIMESTAMP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_hostif_packet_remove(self, npu):
         commands = [
-            {
-                'name': 'hostif_packet_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
-                'attributes': [
-                    'SAI_HOSTIF_PACKET_ATTR_HOSTIF_TX_TYPE',
-                    'SAI_HOSTIF_TX_TYPE_PIPELINE_BYPASS',
-                    'SAI_HOSTIF_PACKET_ATTR_EGRESS_PORT_OR_LAG',
-                    '$port_1',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
+            {'name': 'hostif_packet_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

@@ -44,14 +44,13 @@ class TestSaiDtelIntSession:
             {
                 'name': 'dtel_int_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_MAX_HOP_COUNT',
+                'attributes': ['SAI_DTEL_INT_SESSION_ATTR_MAX_HOP_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '8', (
+        assert results[0][0].value() == '8', (
             'Get error, expected 8 but got %s' % results[1][0].value()
         )
 
@@ -78,14 +77,13 @@ class TestSaiDtelIntSession:
             {
                 'name': 'dtel_int_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_ID',
+                'attributes': ['SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -115,14 +113,13 @@ class TestSaiDtelIntSession:
             {
                 'name': 'dtel_int_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_PORTS',
+                'attributes': ['SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_PORTS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -152,14 +149,13 @@ class TestSaiDtelIntSession:
             {
                 'name': 'dtel_int_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_INGRESS_TIMESTAMP',
+                'attributes': ['SAI_DTEL_INT_SESSION_ATTR_COLLECT_INGRESS_TIMESTAMP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -189,14 +185,13 @@ class TestSaiDtelIntSession:
             {
                 'name': 'dtel_int_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_EGRESS_TIMESTAMP',
+                'attributes': ['SAI_DTEL_INT_SESSION_ATTR_COLLECT_EGRESS_TIMESTAMP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -223,26 +218,18 @@ class TestSaiDtelIntSession:
             {
                 'name': 'dtel_int_session_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-                'atrribute': 'SAI_DTEL_INT_SESSION_ATTR_COLLECT_QUEUE_INFO',
+                'attributes': ['SAI_DTEL_INT_SESSION_ATTR_COLLECT_QUEUE_INFO'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
     def test_dtel_int_session_remove(self, npu):
-        commands = [
-            {
-                'name': 'dtel_int_session_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'dtel_int_session_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

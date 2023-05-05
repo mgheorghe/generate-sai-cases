@@ -27,29 +27,18 @@ class TestSaiAclTableGroup:
             {
                 'name': 'acl_table_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ACL_TABLE_GROUP',
-                'atrribute': 'SAI_ACL_TABLE_GROUP_ATTR_MEMBER_LIST',
+                'attributes': ['SAI_ACL_TABLE_GROUP_ATTR_MEMBER_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_acl_table_group_remove(self, npu):
-        commands = [
-            {
-                'name': 'acl_table_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_ACL_TABLE_GROUP',
-                'attributes': [
-                    'SAI_ACL_TABLE_GROUP_ATTR_ACL_STAGE',
-                    'SAI_ACL_STAGE_INGRESS',
-                ],
-            }
-        ]
+        commands = [{'name': 'acl_table_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

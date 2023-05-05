@@ -42,26 +42,18 @@ class TestSaiSamplepacket:
             {
                 'name': 'samplepacket_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_SAMPLEPACKET',
-                'atrribute': 'SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE',
+                'attributes': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_samplepacket_remove(self, npu):
-        commands = [
-            {
-                'name': 'samplepacket_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_SAMPLEPACKET',
-                'attributes': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', '10'],
-            }
-        ]
+        commands = [{'name': 'samplepacket_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

@@ -42,14 +42,13 @@ class TestSaiGenericProgrammable:
             {
                 'name': 'generic_programmable_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-                'atrribute': 'SAI_GENERIC_PROGRAMMABLE_ATTR_ENTRY',
+                'attributes': ['SAI_GENERIC_PROGRAMMABLE_ATTR_ENTRY'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'vendor', (
+        assert results[0][0].value() == 'vendor', (
             'Get error, expected vendor but got %s' % results[1][0].value()
         )
 
@@ -79,26 +78,18 @@ class TestSaiGenericProgrammable:
             {
                 'name': 'generic_programmable_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-                'atrribute': 'SAI_GENERIC_PROGRAMMABLE_ATTR_COUNTER_ID',
+                'attributes': ['SAI_GENERIC_PROGRAMMABLE_ATTR_COUNTER_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
     def test_generic_programmable_remove(self, npu):
-        commands = [
-            {
-                'name': 'generic_programmable_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-                'attributes': ['SAI_GENERIC_PROGRAMMABLE_ATTR_OBJECT_NAME', '2:10,11'],
-            }
-        ]
+        commands = [{'name': 'generic_programmable_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

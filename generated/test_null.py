@@ -20,14 +20,7 @@ class TestSaiNull:
         assert all(results), 'Create error'
 
     def test_null_remove(self, npu):
-        commands = [
-            {
-                'name': 'null_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_NULL',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'null_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

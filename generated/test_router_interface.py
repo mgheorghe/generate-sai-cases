@@ -91,15 +91,14 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_SRC_MAC_ADDRESS',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_SRC_MAC_ADDRESS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert (
-            results[1][0].value() == 'attrvalue SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS'
+            results[0][0].value() == 'attrvalue SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS'
         ), (
             'Get error, expected attrvalue SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS but got %s'
             % results[1][0].value()
@@ -128,14 +127,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_ADMIN_V4_STATE',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_ADMIN_V4_STATE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'true', (
+        assert results[0][0].value() == 'true', (
             'Get error, expected true but got %s' % results[1][0].value()
         )
 
@@ -162,14 +160,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_ADMIN_V6_STATE',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_ADMIN_V6_STATE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'true', (
+        assert results[0][0].value() == 'true', (
             'Get error, expected true but got %s' % results[1][0].value()
         )
 
@@ -194,14 +191,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_MTU',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_MTU'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '1514', (
+        assert results[0][0].value() == '1514', (
             'Get error, expected 1514 but got %s' % results[1][0].value()
         )
 
@@ -229,14 +225,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_INGRESS_ACL',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_INGRESS_ACL'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -264,14 +259,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_EGRESS_ACL',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_EGRESS_ACL'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -301,14 +295,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_NEIGHBOR_MISS_PACKET_ACTION',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_NEIGHBOR_MISS_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PACKET_ACTION_TRAP', (
+        assert results[0][0].value() == 'SAI_PACKET_ACTION_TRAP', (
             'Get error, expected SAI_PACKET_ACTION_TRAP but got %s'
             % results[1][0].value()
         )
@@ -336,14 +329,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_V4_MCAST_ENABLE',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_V4_MCAST_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -370,14 +362,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_V6_MCAST_ENABLE',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_V6_MCAST_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -407,14 +398,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_LOOPBACK_PACKET_ACTION',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_LOOPBACK_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
             'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
             % results[1][0].value()
         )
@@ -440,14 +430,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_NAT_ZONE_ID',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_NAT_ZONE_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -477,14 +466,13 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_DISABLE_DECREMENT_TTL',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_DISABLE_DECREMENT_TTL'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -511,69 +499,23 @@ class TestSaiRouterInterface:
             {
                 'name': 'router_interface_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'atrribute': 'SAI_ROUTER_INTERFACE_ATTR_ADMIN_MPLS_STATE',
+                'attributes': ['SAI_ROUTER_INTERFACE_ATTR_ADMIN_MPLS_STATE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
     def test_router_interface_remove(self, npu):
         commands = [
-            {
-                'name': 'router_interface_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_ROUTER_INTERFACE',
-                'attributes': [
-                    'SAI_ROUTER_INTERFACE_ATTR_VIRTUAL_ROUTER_ID',
-                    '$virtual_router_1',
-                    'SAI_ROUTER_INTERFACE_ATTR_TYPE',
-                    'SAI_ROUTER_INTERFACE_TYPE_PORT',
-                    'SAI_ROUTER_INTERFACE_ATTR_PORT_ID',
-                    '$port_1',
-                    'SAI_ROUTER_INTERFACE_ATTR_VLAN_ID',
-                    '$vlan_1',
-                    'SAI_ROUTER_INTERFACE_ATTR_OUTER_VLAN_ID',
-                    '10',
-                    'SAI_ROUTER_INTERFACE_ATTR_INNER_VLAN_ID',
-                    '10',
-                    'SAI_ROUTER_INTERFACE_ATTR_BRIDGE_ID',
-                    '$bridge_1',
-                ],
-            },
-            {
-                'name': 'bridge_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
-            },
-            {
-                'name': 'vlan_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_VLAN',
-                'attributes': ['SAI_VLAN_ATTR_VLAN_ID', '10'],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
-            {
-                'name': 'virtual_router_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
-                'attributes': [],
-            },
+            {'name': 'router_interface_1', 'op': 'remove'},
+            {'name': 'bridge_1', 'op': 'remove'},
+            {'name': 'vlan_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
+            {'name': 'virtual_router_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

@@ -72,52 +72,21 @@ class TestSaiPortPool:
             {
                 'name': 'port_pool_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_PORT_POOL',
-                'atrribute': 'SAI_PORT_POOL_ATTR_QOS_WRED_PROFILE_ID',
+                'attributes': ['SAI_PORT_POOL_ATTR_QOS_WRED_PROFILE_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
     def test_port_pool_remove(self, npu):
         commands = [
-            {
-                'name': 'port_pool_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT_POOL',
-                'attributes': [
-                    'SAI_PORT_POOL_ATTR_PORT_ID',
-                    '$port_1',
-                    'SAI_PORT_POOL_ATTR_BUFFER_POOL_ID',
-                    '$buffer_pool_1',
-                ],
-            },
-            {
-                'name': 'buffer_pool_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
-                'attributes': [
-                    'SAI_BUFFER_POOL_ATTR_TYPE',
-                    'SAI_BUFFER_POOL_TYPE_INGRESS',
-                    'SAI_BUFFER_POOL_ATTR_SIZE',
-                    '10',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
+            {'name': 'port_pool_1', 'op': 'remove'},
+            {'name': 'buffer_pool_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

@@ -48,14 +48,13 @@ class TestSaiDtelEvent:
             {
                 'name': 'dtel_event_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_EVENT',
-                'atrribute': 'SAI_DTEL_EVENT_ATTR_REPORT_SESSION',
+                'attributes': ['SAI_DTEL_EVENT_ATTR_REPORT_SESSION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -80,29 +79,18 @@ class TestSaiDtelEvent:
             {
                 'name': 'dtel_event_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_DTEL_EVENT',
-                'atrribute': 'SAI_DTEL_EVENT_ATTR_DSCP_VALUE',
+                'attributes': ['SAI_DTEL_EVENT_ATTR_DSCP_VALUE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
     def test_dtel_event_remove(self, npu):
-        commands = [
-            {
-                'name': 'dtel_event_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_DTEL_EVENT',
-                'attributes': [
-                    'SAI_DTEL_EVENT_ATTR_TYPE',
-                    'SAI_DTEL_EVENT_TYPE_FLOW_STATE',
-                ],
-            }
-        ]
+        commands = [{'name': 'dtel_event_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

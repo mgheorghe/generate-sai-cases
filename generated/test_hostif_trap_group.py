@@ -42,14 +42,13 @@ class TestSaiHostifTrapGroup:
             {
                 'name': 'hostif_trap_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
-                'atrribute': 'SAI_HOSTIF_TRAP_GROUP_ATTR_ADMIN_STATE',
+                'attributes': ['SAI_HOSTIF_TRAP_GROUP_ATTR_ADMIN_STATE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'true', (
+        assert results[0][0].value() == 'true', (
             'Get error, expected true but got %s' % results[1][0].value()
         )
 
@@ -74,14 +73,13 @@ class TestSaiHostifTrapGroup:
             {
                 'name': 'hostif_trap_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
-                'atrribute': 'SAI_HOSTIF_TRAP_GROUP_ATTR_QUEUE',
+                'attributes': ['SAI_HOSTIF_TRAP_GROUP_ATTR_QUEUE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -109,26 +107,18 @@ class TestSaiHostifTrapGroup:
             {
                 'name': 'hostif_trap_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
-                'atrribute': 'SAI_HOSTIF_TRAP_GROUP_ATTR_POLICER',
+                'attributes': ['SAI_HOSTIF_TRAP_GROUP_ATTR_POLICER'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
     def test_hostif_trap_group_remove(self, npu):
-        commands = [
-            {
-                'name': 'hostif_trap_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'hostif_trap_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

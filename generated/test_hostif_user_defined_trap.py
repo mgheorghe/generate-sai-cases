@@ -50,15 +50,14 @@ class TestSaiHostifUserDefinedTrap:
             {
                 'name': 'hostif_user_defined_trap_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP',
-                'atrribute': 'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_PRIORITY',
+                'attributes': ['SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_PRIORITY'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert (
-            results[1][0].value()
+            results[0][0].value()
             == 'attrvalue SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY'
         ), (
             'Get error, expected attrvalue SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY but got %s'
@@ -91,32 +90,21 @@ class TestSaiHostifUserDefinedTrap:
             {
                 'name': 'hostif_user_defined_trap_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP',
-                'atrribute': 'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_GROUP',
+                'attributes': ['SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_GROUP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
         assert (
-            results[1][0].value() == 'attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP'
+            results[0][0].value() == 'attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP'
         ), (
             'Get error, expected attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP but got %s'
             % results[1][0].value()
         )
 
     def test_hostif_user_defined_trap_remove(self, npu):
-        commands = [
-            {
-                'name': 'hostif_user_defined_trap_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP',
-                'attributes': [
-                    'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TYPE',
-                    'SAI_HOSTIF_USER_DEFINED_TRAP_TYPE_END',
-                ],
-            }
-        ]
+        commands = [{'name': 'hostif_user_defined_trap_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

@@ -46,37 +46,9 @@ class TestSaiIsolationGroupMember:
 
     def test_isolation_group_member_remove(self, npu):
         commands = [
-            {
-                'name': 'isolation_group_member_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP_MEMBER',
-                'attributes': [
-                    'SAI_ISOLATION_GROUP_MEMBER_ATTR_ISOLATION_GROUP_ID',
-                    '$isolation_group_1',
-                    'SAI_ISOLATION_GROUP_MEMBER_ATTR_ISOLATION_OBJECT',
-                    '$port_1',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
-            {
-                'name': 'isolation_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
-                'attributes': [
-                    'SAI_ISOLATION_GROUP_ATTR_TYPE',
-                    'SAI_ISOLATION_GROUP_TYPE_PORT',
-                ],
-            },
+            {'name': 'isolation_group_member_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
+            {'name': 'isolation_group_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

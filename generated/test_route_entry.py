@@ -50,14 +50,13 @@ class TestSaiRouteEntry:
             {
                 'name': 'route_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-                'atrribute': 'SAI_ROUTE_ENTRY_ATTR_PACKET_ACTION',
+                'attributes': ['SAI_ROUTE_ENTRY_ATTR_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
+        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
             'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
             % results[1][0].value()
         )
@@ -86,14 +85,13 @@ class TestSaiRouteEntry:
             {
                 'name': 'route_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-                'atrribute': 'SAI_ROUTE_ENTRY_ATTR_USER_TRAP_ID',
+                'attributes': ['SAI_ROUTE_ENTRY_ATTR_USER_TRAP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -118,14 +116,13 @@ class TestSaiRouteEntry:
             {
                 'name': 'route_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-                'atrribute': 'SAI_ROUTE_ENTRY_ATTR_NEXT_HOP_ID',
+                'attributes': ['SAI_ROUTE_ENTRY_ATTR_NEXT_HOP_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -150,14 +147,13 @@ class TestSaiRouteEntry:
             {
                 'name': 'route_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-                'atrribute': 'SAI_ROUTE_ENTRY_ATTR_META_DATA',
+                'attributes': ['SAI_ROUTE_ENTRY_ATTR_META_DATA'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -166,14 +162,13 @@ class TestSaiRouteEntry:
             {
                 'name': 'route_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-                'atrribute': 'SAI_ROUTE_ENTRY_ATTR_IP_ADDR_FAMILY',
+                'attributes': ['SAI_ROUTE_ENTRY_ATTR_IP_ADDR_FAMILY'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -198,14 +193,13 @@ class TestSaiRouteEntry:
             {
                 'name': 'route_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-                'atrribute': 'SAI_ROUTE_ENTRY_ATTR_COUNTER_ID',
+                'attributes': ['SAI_ROUTE_ENTRY_ATTR_COUNTER_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -230,14 +224,13 @@ class TestSaiRouteEntry:
             {
                 'name': 'route_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-                'atrribute': 'SAI_ROUTE_ENTRY_ATTR_PREFIX_AGG_ID',
+                'attributes': ['SAI_ROUTE_ENTRY_ATTR_PREFIX_AGG_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -245,14 +238,12 @@ class TestSaiRouteEntry:
         commands = [
             {
                 'name': 'route_entry_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
-                'attributes': [],
                 'key': {
                     'switch_id': '$SWITCH_ID',
                     'vr_id': 'TODO',
                     'destination': 'TODO',
                 },
+                'op': 'remove',
             }
         ]
 

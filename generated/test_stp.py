@@ -21,61 +21,39 @@ class TestSaiStp:
 
     def test_sai_stp_attr_vlan_list_get(self, npu):
         commands = [
-            {
-                'name': 'stp_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_STP',
-                'atrribute': 'SAI_STP_ATTR_VLAN_LIST',
-            }
+            {'name': 'stp_1', 'op': 'get', 'attributes': ['SAI_STP_ATTR_VLAN_LIST']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_sai_stp_attr_bridge_id_get(self, npu):
         commands = [
-            {
-                'name': 'stp_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_STP',
-                'atrribute': 'SAI_STP_ATTR_BRIDGE_ID',
-            }
+            {'name': 'stp_1', 'op': 'get', 'attributes': ['SAI_STP_ATTR_BRIDGE_ID']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_sai_stp_attr_port_list_get(self, npu):
         commands = [
-            {
-                'name': 'stp_1',
-                'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_STP',
-                'atrribute': 'SAI_STP_ATTR_PORT_LIST',
-            }
+            {'name': 'stp_1', 'op': 'get', 'attributes': ['SAI_STP_ATTR_PORT_LIST']}
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_stp_remove(self, npu):
-        commands = [
-            {
-                'name': 'stp_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_STP',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'stp_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

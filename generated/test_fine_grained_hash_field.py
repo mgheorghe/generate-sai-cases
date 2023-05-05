@@ -25,19 +25,7 @@ class TestSaiFineGrainedHashField:
         assert all(results), 'Create error'
 
     def test_fine_grained_hash_field_remove(self, npu):
-        commands = [
-            {
-                'name': 'fine_grained_hash_field_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_FINE_GRAINED_HASH_FIELD',
-                'attributes': [
-                    'SAI_FINE_GRAINED_HASH_FIELD_ATTR_IPV4_MASK',
-                    '255.0.0.0',
-                    'SAI_FINE_GRAINED_HASH_FIELD_ATTR_IPV6_MASK',
-                    'FF::0',
-                ],
-            }
-        ]
+        commands = [{'name': 'fine_grained_hash_field_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

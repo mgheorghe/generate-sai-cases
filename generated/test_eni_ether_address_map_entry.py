@@ -48,14 +48,13 @@ class TestSaiEniEtherAddressMapEntry:
             {
                 'name': 'eni_ether_address_map_entry_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_ENI_ETHER_ADDRESS_MAP_ENTRY',
-                'atrribute': 'SAI_ENI_ETHER_ADDRESS_MAP_ENTRY_ATTR_ENI_ID',
+                'attributes': ['SAI_ENI_ETHER_ADDRESS_MAP_ENTRY_ATTR_ENI_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -63,10 +62,8 @@ class TestSaiEniEtherAddressMapEntry:
         commands = [
             {
                 'name': 'eni_ether_address_map_entry_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_ENI_ETHER_ADDRESS_MAP_ENTRY',
-                'attributes': [],
                 'key': {'switch_id': '$SWITCH_ID', 'address': 'TODO'},
+                'op': 'remove',
             }
         ]
 

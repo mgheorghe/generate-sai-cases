@@ -20,14 +20,7 @@ class TestSaiHostInterface:
         assert all(results), 'Create error'
 
     def test_host_interface_remove(self, npu):
-        commands = [
-            {
-                'name': 'host_interface_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_HOST_INTERFACE',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'host_interface_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

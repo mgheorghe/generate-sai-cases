@@ -63,14 +63,13 @@ class TestSaiIngressPriorityGroup:
             {
                 'name': 'ingress_priority_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
-                'atrribute': 'SAI_INGRESS_PRIORITY_GROUP_ATTR_BUFFER_PROFILE',
+                'attributes': ['SAI_INGRESS_PRIORITY_GROUP_ATTR_BUFFER_PROFILE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -95,41 +94,20 @@ class TestSaiIngressPriorityGroup:
             {
                 'name': 'ingress_priority_group_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
-                'atrribute': 'SAI_INGRESS_PRIORITY_GROUP_ATTR_TAM',
+                'attributes': ['SAI_INGRESS_PRIORITY_GROUP_ATTR_TAM'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
     def test_ingress_priority_group_remove(self, npu):
         commands = [
-            {
-                'name': 'ingress_priority_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP',
-                'attributes': [
-                    'SAI_INGRESS_PRIORITY_GROUP_ATTR_PORT',
-                    '$port_1',
-                    'SAI_INGRESS_PRIORITY_GROUP_ATTR_INDEX',
-                    '1',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
+            {'name': 'ingress_priority_group_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

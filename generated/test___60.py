@@ -20,14 +20,7 @@ class TestSai60:
         assert all(results), 'Create error'
 
     def test___60_remove(self, npu):
-        commands = [
-            {
-                'name': '__60_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE___60',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': '__60_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

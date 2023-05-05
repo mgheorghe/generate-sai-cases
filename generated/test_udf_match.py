@@ -20,14 +20,7 @@ class TestSaiUdfMatch:
         assert all(results), 'Create error'
 
     def test_udf_match_remove(self, npu):
-        commands = [
-            {
-                'name': 'udf_match_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_UDF_MATCH',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'udf_match_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

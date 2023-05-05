@@ -42,26 +42,18 @@ class TestSaiMyMac:
             {
                 'name': 'my_mac_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_MY_MAC',
-                'atrribute': 'SAI_MY_MAC_ATTR_PRIORITY',
+                'attributes': ['SAI_MY_MAC_ATTR_PRIORITY'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
     def test_my_mac_remove(self, npu):
-        commands = [
-            {
-                'name': 'my_mac_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_MY_MAC',
-                'attributes': [],
-            }
-        ]
+        commands = [{'name': 'my_mac_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

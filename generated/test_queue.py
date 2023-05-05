@@ -77,14 +77,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE',
+                'attributes': ['SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -109,14 +108,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_WRED_PROFILE_ID',
+                'attributes': ['SAI_QUEUE_ATTR_WRED_PROFILE_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -141,14 +139,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_BUFFER_PROFILE_ID',
+                'attributes': ['SAI_QUEUE_ATTR_BUFFER_PROFILE_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -176,14 +173,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_SCHEDULER_PROFILE_ID',
+                'attributes': ['SAI_QUEUE_ATTR_SCHEDULER_PROFILE_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -192,14 +188,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_PAUSE_STATUS',
+                'attributes': ['SAI_QUEUE_ATTR_PAUSE_STATUS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -224,14 +219,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_ENABLE_PFC_DLDR',
+                'attributes': ['SAI_QUEUE_ATTR_ENABLE_PFC_DLDR'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -256,14 +250,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_PFC_DLR_INIT',
+                'attributes': ['SAI_QUEUE_ATTR_PFC_DLR_INIT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -288,14 +281,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_TAM_OBJECT',
+                'attributes': ['SAI_QUEUE_ATTR_TAM_OBJECT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
@@ -323,14 +315,13 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_PFC_DLR_PACKET_ACTION',
+                'attributes': ['SAI_QUEUE_ATTR_PFC_DLR_PACKET_ACTION'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_PACKET_ACTION_DROP', (
+        assert results[0][0].value() == 'SAI_PACKET_ACTION_DROP', (
             'Get error, expected SAI_PACKET_ACTION_DROP but got %s'
             % results[1][0].value()
         )
@@ -340,60 +331,21 @@ class TestSaiQueue:
             {
                 'name': 'queue_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'atrribute': 'SAI_QUEUE_ATTR_PFC_CONTINUOUS_DEADLOCK_STATE',
+                'attributes': ['SAI_QUEUE_ATTR_PFC_CONTINUOUS_DEADLOCK_STATE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
     def test_queue_remove(self, npu):
         commands = [
-            {
-                'name': 'queue_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_QUEUE',
-                'attributes': [
-                    'SAI_QUEUE_ATTR_TYPE',
-                    'SAI_QUEUE_TYPE_ALL',
-                    'SAI_QUEUE_ATTR_PORT',
-                    '$port_1',
-                    'SAI_QUEUE_ATTR_INDEX',
-                    '1',
-                    'SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE',
-                    '$scheduler_group_1',
-                ],
-            },
-            {
-                'name': 'scheduler_group_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_SCHEDULER_GROUP',
-                'attributes': [
-                    'SAI_SCHEDULER_GROUP_ATTR_PORT_ID',
-                    '$port_1',
-                    'SAI_SCHEDULER_GROUP_ATTR_LEVEL',
-                    '1',
-                    'SAI_SCHEDULER_GROUP_ATTR_MAX_CHILDS',
-                    '1',
-                    'SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE',
-                    'TODO_circular parent reference',
-                ],
-            },
-            {
-                'name': 'port_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
+            {'name': 'queue_1', 'op': 'remove'},
+            {'name': 'scheduler_group_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

@@ -26,14 +26,13 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_PORT_LIST',
+                'attributes': ['SAI_BRIDGE_ATTR_PORT_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'TODO', (
+        assert results[0][0].value() == 'TODO', (
             'Get error, expected TODO but got %s' % results[1][0].value()
         )
 
@@ -58,14 +57,13 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_MAX_LEARNED_ADDRESSES',
+                'attributes': ['SAI_BRIDGE_ATTR_MAX_LEARNED_ADDRESSES'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -90,14 +88,13 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_LEARN_DISABLE',
+                'attributes': ['SAI_BRIDGE_ATTR_LEARN_DISABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -127,14 +124,13 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_CONTROL_TYPE',
+                'attributes': ['SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_CONTROL_TYPE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS', (
+        assert results[0][0].value() == 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS', (
             'Get error, expected SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS but got %s'
             % results[1][0].value()
         )
@@ -165,14 +161,13 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP',
+                'attributes': ['SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -202,14 +197,13 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE',
+                'attributes': ['SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS', (
+        assert results[0][0].value() == 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS', (
             'Get error, expected SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS but got %s'
             % results[1][0].value()
         )
@@ -240,14 +234,13 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP',
+                'attributes': ['SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -277,14 +270,13 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_BROADCAST_FLOOD_CONTROL_TYPE',
+                'attributes': ['SAI_BRIDGE_ATTR_BROADCAST_FLOOD_CONTROL_TYPE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS', (
+        assert results[0][0].value() == 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS', (
             'Get error, expected SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS but got %s'
             % results[1][0].value()
         )
@@ -313,26 +305,18 @@ class TestSaiBridge:
             {
                 'name': 'bridge_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'atrribute': 'SAI_BRIDGE_ATTR_BROADCAST_FLOOD_GROUP',
+                'attributes': ['SAI_BRIDGE_ATTR_BROADCAST_FLOOD_GROUP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
     def test_bridge_remove(self, npu):
-        commands = [
-            {
-                'name': 'bridge_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
-            }
-        ]
+        commands = [{'name': 'bridge_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

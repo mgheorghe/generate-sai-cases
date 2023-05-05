@@ -67,14 +67,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_IOAM_TRACE_TYPE',
+                'attributes': ['SAI_TAM_INT_ATTR_IOAM_TRACE_TYPE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -99,14 +98,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_TRACE_VECTOR',
+                'attributes': ['SAI_TAM_INT_ATTR_TRACE_VECTOR'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -131,14 +129,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_ACTION_VECTOR',
+                'attributes': ['SAI_TAM_INT_ATTR_ACTION_VECTOR'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -165,14 +162,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_P4_INT_INSTRUCTION_BITMAP',
+                'attributes': ['SAI_TAM_INT_ATTR_P4_INT_INSTRUCTION_BITMAP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -199,14 +195,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_METADATA_FRAGMENT_ENABLE',
+                'attributes': ['SAI_TAM_INT_ATTR_METADATA_FRAGMENT_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -233,14 +228,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_METADATA_CHECKSUM_ENABLE',
+                'attributes': ['SAI_TAM_INT_ATTR_METADATA_CHECKSUM_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -265,14 +259,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_REPORT_ALL_PACKETS',
+                'attributes': ['SAI_TAM_INT_ATTR_REPORT_ALL_PACKETS'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -297,14 +290,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_FLOW_LIVENESS_PERIOD',
+                'attributes': ['SAI_TAM_INT_ATTR_FLOW_LIVENESS_PERIOD'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -329,14 +321,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_LATENCY_SENSITIVITY',
+                'attributes': ['SAI_TAM_INT_ATTR_LATENCY_SENSITIVITY'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '20', (
+        assert results[0][0].value() == '20', (
             'Get error, expected 20 but got %s' % results[1][0].value()
         )
 
@@ -361,14 +352,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_ACL_GROUP',
+                'attributes': ['SAI_TAM_INT_ATTR_ACL_GROUP'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -393,14 +383,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_MAX_HOP_COUNT',
+                'attributes': ['SAI_TAM_INT_ATTR_MAX_HOP_COUNT'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -425,14 +414,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_MAX_LENGTH',
+                'attributes': ['SAI_TAM_INT_ATTR_MAX_LENGTH'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -457,14 +445,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_NAME_SPACE_ID',
+                'attributes': ['SAI_TAM_INT_ATTR_NAME_SPACE_ID'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == '0', (
+        assert results[0][0].value() == '0', (
             'Get error, expected 0 but got %s' % results[1][0].value()
         )
 
@@ -489,14 +476,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_NAME_SPACE_ID_GLOBAL',
+                'attributes': ['SAI_TAM_INT_ATTR_NAME_SPACE_ID_GLOBAL'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'false', (
+        assert results[0][0].value() == 'false', (
             'Get error, expected false but got %s' % results[1][0].value()
         )
 
@@ -526,14 +512,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_INGRESS_SAMPLEPACKET_ENABLE',
+                'attributes': ['SAI_TAM_INT_ATTR_INGRESS_SAMPLEPACKET_ENABLE'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
@@ -558,14 +543,13 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_COLLECTOR_LIST',
+                'attributes': ['SAI_TAM_INT_ATTR_COLLECTOR_LIST'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'empty', (
+        assert results[0][0].value() == 'empty', (
             'Get error, expected empty but got %s' % results[1][0].value()
         )
 
@@ -590,50 +574,20 @@ class TestSaiTamInt:
             {
                 'name': 'tam_int_1',
                 'op': 'get',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'atrribute': 'SAI_TAM_INT_ATTR_MATH_FUNC',
+                'attributes': ['SAI_TAM_INT_ATTR_MATH_FUNC'],
             }
         ]
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[1][0].value() == 'SAI_NULL_OBJECT_ID', (
+        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
             'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[1][0].value()
         )
 
     def test_tam_int_remove(self, npu):
         commands = [
-            {
-                'name': 'tam_int_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_TAM_INT',
-                'attributes': [
-                    'SAI_TAM_INT_ATTR_TYPE',
-                    'SAI_TAM_INT_TYPE_IOAM',
-                    'SAI_TAM_INT_ATTR_DEVICE_ID',
-                    '10',
-                    'SAI_TAM_INT_ATTR_INT_PRESENCE_TYPE',
-                    'SAI_TAM_INT_PRESENCE_TYPE_PB',
-                    'SAI_TAM_INT_ATTR_INT_PRESENCE_PB1',
-                    '10',
-                    'SAI_TAM_INT_ATTR_INT_PRESENCE_PB2',
-                    '10',
-                    'SAI_TAM_INT_ATTR_INT_PRESENCE_DSCP_VALUE',
-                    '1',
-                    'SAI_TAM_INT_ATTR_INLINE',
-                    'True',
-                    'SAI_TAM_INT_ATTR_INT_PRESENCE_L3_PROTOCOL',
-                    '1',
-                    'SAI_TAM_INT_ATTR_REPORT_ID',
-                    '$tam_report_1',
-                ],
-            },
-            {
-                'name': 'tam_report_1',
-                'op': 'remove',
-                'type': 'SAI_OBJECT_TYPE_TAM_REPORT',
-                'attributes': ['SAI_TAM_REPORT_ATTR_TYPE', 'SAI_TAM_REPORT_TYPE_SFLOW'],
-            },
+            {'name': 'tam_int_1', 'op': 'remove'},
+            {'name': 'tam_report_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]
