@@ -54,8 +54,10 @@ class TestSaiTamEvent:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_tam_event_attr_dscp_value_set')
@@ -84,9 +86,9 @@ class TestSaiTamEvent:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     def test_tam_event_remove(self, npu):
         commands = [{'name': 'tam_event_1', 'op': 'remove'}]

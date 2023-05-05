@@ -70,8 +70,10 @@ class TestSaiIngressPriorityGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_ingress_priority_group_attr_tam_set')
@@ -100,9 +102,9 @@ class TestSaiIngressPriorityGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'empty', 'Get error, expected empty but got %s' % r_value
 
     def test_ingress_priority_group_remove(self, npu):
         commands = [

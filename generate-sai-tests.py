@@ -29,7 +29,9 @@ TEST_TEMPLATE_GET = '''
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
-        assert results[0][0].value() == '%(EXPECTED_VALUE)s', 'Get error, expected %(EXPECTED_VALUE)s but got %%s' %%  results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '%(EXPECTED_VALUE)s', 'Get error, expected %(EXPECTED_VALUE)s but got %%s' %%  r_value
 '''
 
 TEST_TEMPLATE_SET = '''

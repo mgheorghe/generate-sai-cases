@@ -69,9 +69,9 @@ class TestSaiLagMember:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_lag_member_attr_ingress_disable_set')
     def test_sai_lag_member_attr_ingress_disable_set(self, npu):
@@ -99,9 +99,9 @@ class TestSaiLagMember:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     def test_lag_member_remove(self, npu):
         commands = [

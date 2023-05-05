@@ -57,9 +57,9 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_neighbor_entry_attr_packet_action_set')
     def test_sai_neighbor_entry_attr_packet_action_set(self, npu):
@@ -90,9 +90,10 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
-            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PACKET_ACTION_FORWARD', (
+            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_neighbor_entry_attr_user_trap_id_set')
@@ -124,8 +125,10 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_neighbor_entry_attr_no_host_route_set')
@@ -154,9 +157,9 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_neighbor_entry_attr_meta_data_set')
     def test_sai_neighbor_entry_attr_meta_data_set(self, npu):
@@ -184,9 +187,9 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_neighbor_entry_attr_counter_id_set')
     def test_sai_neighbor_entry_attr_counter_id_set(self, npu):
@@ -217,8 +220,10 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_neighbor_entry_attr_encap_index_set')
@@ -247,8 +252,10 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'internal', (
-            'Get error, expected internal but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'internal', (
+            'Get error, expected internal but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_neighbor_entry_attr_encap_impose_index_set')
@@ -279,9 +286,9 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_neighbor_entry_attr_is_local_set')
     def test_sai_neighbor_entry_attr_is_local_set(self, npu):
@@ -309,9 +316,9 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'true', (
-            'Get error, expected true but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'true', 'Get error, expected true but got %s' % r_value
 
     def test_sai_neighbor_entry_attr_ip_addr_family_get(self, npu):
         commands = [
@@ -324,9 +331,9 @@ class TestSaiNeighborEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_neighbor_entry_remove(self, npu):
         commands = [

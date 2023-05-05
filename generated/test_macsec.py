@@ -35,9 +35,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_switching_mode_store_and_forward_supported_get(self, npu):
         commands = [
@@ -52,9 +52,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_stats_mode_read_supported_get(self, npu):
         commands = [
@@ -67,9 +67,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_stats_mode_read_clear_supported_get(self, npu):
         commands = [
@@ -82,9 +82,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_sci_in_ingress_macsec_acl_get(self, npu):
         commands = [
@@ -97,9 +97,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_supported_cipher_suite_list_get(self, npu):
         commands = [
@@ -112,9 +112,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_pn_32bit_supported_get(self, npu):
         commands = [
@@ -127,9 +127,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_xpn_64bit_supported_get(self, npu):
         commands = [
@@ -142,9 +142,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_gcm_aes128_supported_get(self, npu):
         commands = [
@@ -157,9 +157,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_gcm_aes256_supported_get(self, npu):
         commands = [
@@ -172,9 +172,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_sectag_offsets_supported_get(self, npu):
         commands = [
@@ -187,9 +187,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_system_side_mtu_get(self, npu):
         commands = [
@@ -202,9 +202,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_warm_boot_supported_get(self, npu):
         commands = [
@@ -217,9 +217,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_macsec_attr_warm_boot_enable_set')
     def test_sai_macsec_attr_warm_boot_enable_set(self, npu):
@@ -247,9 +247,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_macsec_attr_ctag_tpid_set')
     def test_sai_macsec_attr_ctag_tpid_set(self, npu):
@@ -277,9 +277,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0x8100', (
-            'Get error, expected 0x8100 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0x8100', 'Get error, expected 0x8100 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_macsec_attr_stag_tpid_set')
     def test_sai_macsec_attr_stag_tpid_set(self, npu):
@@ -307,9 +307,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0x88A8', (
-            'Get error, expected 0x88A8 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0x88A8', 'Get error, expected 0x88A8 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_macsec_attr_max_vlan_tags_parsed_set')
     def test_sai_macsec_attr_max_vlan_tags_parsed_set(self, npu):
@@ -337,9 +337,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_macsec_attr_stats_mode_set')
     def test_sai_macsec_attr_stats_mode_set(self, npu):
@@ -370,9 +370,10 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_STATS_MODE_READ_AND_CLEAR', (
-            'Get error, expected SAI_STATS_MODE_READ_AND_CLEAR but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_STATS_MODE_READ_AND_CLEAR', (
+            'Get error, expected SAI_STATS_MODE_READ_AND_CLEAR but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_macsec_attr_physical_bypass_enable_set')
@@ -401,9 +402,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     def test_sai_macsec_attr_supported_port_list_get(self, npu):
         commands = [
@@ -416,9 +417,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_available_macsec_flow_get(self, npu):
         commands = [
@@ -431,9 +432,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_flow_list_get(self, npu):
         commands = [
@@ -446,9 +447,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_available_macsec_sc_get(self, npu):
         commands = [
@@ -461,9 +462,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_available_macsec_sa_get(self, npu):
         commands = [
@@ -476,9 +477,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_macsec_attr_max_secure_associations_per_sc_get(self, npu):
         commands = [
@@ -491,9 +492,9 @@ class TestSaiMacsec:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_macsec_remove(self, npu):
         commands = [{'name': 'macsec_1', 'op': 'remove'}]

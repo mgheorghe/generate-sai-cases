@@ -51,9 +51,11 @@ class TestSaiPaValidationEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT', (
             'Get error, expected SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     def test_pa_validation_entry_remove(self, npu):

@@ -137,9 +137,10 @@ class TestSaiVlanMember:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_VLAN_TAGGING_MODE_UNTAGGED', (
-            'Get error, expected SAI_VLAN_TAGGING_MODE_UNTAGGED but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_VLAN_TAGGING_MODE_UNTAGGED', (
+            'Get error, expected SAI_VLAN_TAGGING_MODE_UNTAGGED but got %s' % r_value
         )
 
     def test_vlan_member_remove(self, npu):

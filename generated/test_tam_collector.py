@@ -65,9 +65,9 @@ class TestSaiTamCollector:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_collector_attr_dst_ip_set')
     def test_sai_tam_collector_attr_dst_ip_set(self, npu):
@@ -95,9 +95,9 @@ class TestSaiTamCollector:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_collector_attr_localhost_set')
     def test_sai_tam_collector_attr_localhost_set(self, npu):
@@ -125,9 +125,9 @@ class TestSaiTamCollector:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'true', (
-            'Get error, expected true but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'true', 'Get error, expected true but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_collector_attr_virtual_router_id_set')
     def test_sai_tam_collector_attr_virtual_router_id_set(self, npu):
@@ -160,8 +160,10 @@ class TestSaiTamCollector:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_tam_collector_attr_truncate_size_set')
@@ -190,9 +192,9 @@ class TestSaiTamCollector:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_collector_attr_transport_set')
     def test_sai_tam_collector_attr_transport_set(self, npu):
@@ -220,9 +222,9 @@ class TestSaiTamCollector:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_collector_attr_dscp_value_set')
     def test_sai_tam_collector_attr_dscp_value_set(self, npu):
@@ -250,9 +252,9 @@ class TestSaiTamCollector:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_tam_collector_remove(self, npu):
         commands = [

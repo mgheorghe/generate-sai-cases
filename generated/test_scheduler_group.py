@@ -52,9 +52,9 @@ class TestSaiSchedulerGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_sai_scheduler_group_attr_child_list_get(self, npu):
         commands = [
@@ -67,9 +67,9 @@ class TestSaiSchedulerGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_scheduler_group_attr_scheduler_profile_id_set'
@@ -104,8 +104,10 @@ class TestSaiSchedulerGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_scheduler_group_attr_parent_node_set')
@@ -134,9 +136,9 @@ class TestSaiSchedulerGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     def test_scheduler_group_remove(self, npu):
         commands = [

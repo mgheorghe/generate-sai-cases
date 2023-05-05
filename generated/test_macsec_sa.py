@@ -88,9 +88,9 @@ class TestSaiMacsecSa:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     def test_sai_macsec_sa_attr_current_xpn_get(self, npu):
         commands = [
@@ -103,9 +103,9 @@ class TestSaiMacsecSa:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_macsec_sa_attr_minimum_ingress_xpn_set')
     def test_sai_macsec_sa_attr_minimum_ingress_xpn_set(self, npu):
@@ -133,9 +133,9 @@ class TestSaiMacsecSa:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '1', (
-            'Get error, expected 1 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '1', 'Get error, expected 1 but got %s' % r_value
 
     def test_macsec_sa_remove(self, npu):
         commands = [

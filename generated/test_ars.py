@@ -41,9 +41,10 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_ARS_MODE_FLOWLET_QUALITY', (
-            'Get error, expected SAI_ARS_MODE_FLOWLET_QUALITY but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_ARS_MODE_FLOWLET_QUALITY', (
+            'Get error, expected SAI_ARS_MODE_FLOWLET_QUALITY but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_ars_attr_idle_time_set')
@@ -68,9 +69,9 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '256', (
-            'Get error, expected 256 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '256', 'Get error, expected 256 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_ars_attr_max_flows_set')
     def test_sai_ars_attr_max_flows_set(self, npu):
@@ -94,9 +95,9 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '512', (
-            'Get error, expected 512 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '512', 'Get error, expected 512 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_ars_attr_mon_enable_set')
     def test_sai_ars_attr_mon_enable_set(self, npu):
@@ -120,9 +121,9 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_ars_attr_samplepacket_enable_set')
     def test_sai_ars_attr_samplepacket_enable_set(self, npu):
@@ -153,8 +154,10 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_ars_attr_max_alt_memebers_per_group_set')
@@ -185,9 +188,9 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '16', (
-            'Get error, expected 16 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '16', 'Get error, expected 16 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_ars_attr_max_primary_memebers_per_group_set')
     def test_sai_ars_attr_max_primary_memebers_per_group_set(self, npu):
@@ -217,9 +220,9 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '16', (
-            'Get error, expected 16 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '16', 'Get error, expected 16 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_ars_attr_primary_path_quality_threshold_set')
     def test_sai_ars_attr_primary_path_quality_threshold_set(self, npu):
@@ -249,9 +252,9 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '16', (
-            'Get error, expected 16 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '16', 'Get error, expected 16 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_ars_attr_alternate_path_cost_set')
     def test_sai_ars_attr_alternate_path_cost_set(self, npu):
@@ -279,9 +282,9 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_ars_attr_alternate_path_bias_set')
     def test_sai_ars_attr_alternate_path_bias_set(self, npu):
@@ -309,9 +312,9 @@ class TestSaiArs:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     def test_ars_remove(self, npu):
         commands = [{'name': 'ars_1', 'op': 'remove'}]

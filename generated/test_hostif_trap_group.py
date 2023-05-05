@@ -47,9 +47,9 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'true', (
-            'Get error, expected true but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'true', 'Get error, expected true but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_hostif_trap_group_attr_queue_set')
     def test_sai_hostif_trap_group_attr_queue_set(self, npu):
@@ -77,9 +77,9 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_hostif_trap_group_attr_policer_set')
     def test_sai_hostif_trap_group_attr_policer_set(self, npu):
@@ -110,8 +110,10 @@ class TestSaiHostifTrapGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     def test_hostif_trap_group_remove(self, npu):

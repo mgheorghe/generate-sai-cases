@@ -50,9 +50,10 @@ class TestSaiDashAclGroup:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_IP_ADDR_FAMILY_IPV4', (
-            'Get error, expected SAI_IP_ADDR_FAMILY_IPV4 but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_IP_ADDR_FAMILY_IPV4', (
+            'Get error, expected SAI_IP_ADDR_FAMILY_IPV4 but got %s' % r_value
         )
 
     def test_dash_acl_group_remove(self, npu):

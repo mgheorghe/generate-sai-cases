@@ -67,9 +67,9 @@ class TestSaiHostif:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_hostif_attr_queue_set')
     def test_sai_hostif_attr_queue_set(self, npu):
@@ -93,9 +93,9 @@ class TestSaiHostif:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_hostif_attr_vlan_tag_set')
     def test_sai_hostif_attr_vlan_tag_set(self, npu):
@@ -123,9 +123,10 @@ class TestSaiHostif:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_HOSTIF_VLAN_TAG_STRIP', (
-            'Get error, expected SAI_HOSTIF_VLAN_TAG_STRIP but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_HOSTIF_VLAN_TAG_STRIP', (
+            'Get error, expected SAI_HOSTIF_VLAN_TAG_STRIP but got %s' % r_value
         )
 
     def test_hostif_remove(self, npu):

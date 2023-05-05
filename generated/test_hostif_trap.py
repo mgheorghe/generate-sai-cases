@@ -52,9 +52,9 @@ class TestSaiHostifTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_hostif_trap_attr_trap_priority_set')
     def test_sai_hostif_trap_attr_trap_priority_set(self, npu):
@@ -85,9 +85,11 @@ class TestSaiHostifTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY', (
             'Get error, expected SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_hostif_trap_attr_exclude_port_list_set')
@@ -116,9 +118,9 @@ class TestSaiHostifTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'empty', 'Get error, expected empty but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_hostif_trap_attr_trap_group_set')
     def test_sai_hostif_trap_attr_trap_group_set(self, npu):
@@ -149,9 +151,11 @@ class TestSaiHostifTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP', (
             'Get error, expected SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_hostif_trap_attr_mirror_session_set')
@@ -180,9 +184,9 @@ class TestSaiHostifTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'empty', 'Get error, expected empty but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_hostif_trap_attr_counter_id_set')
     def test_sai_hostif_trap_attr_counter_id_set(self, npu):
@@ -210,8 +214,10 @@ class TestSaiHostifTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     def test_hostif_trap_remove(self, npu):

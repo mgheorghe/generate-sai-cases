@@ -47,9 +47,9 @@ class TestSaiGenericProgrammable:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'vendor', (
-            'Get error, expected vendor but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'vendor', 'Get error, expected vendor but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_generic_programmable_attr_counter_id_set')
     def test_sai_generic_programmable_attr_counter_id_set(self, npu):
@@ -82,8 +82,10 @@ class TestSaiGenericProgrammable:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     def test_generic_programmable_remove(self, npu):

@@ -57,9 +57,9 @@ class TestSaiNextHopGroupMap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'empty', (
-            'Get error, expected empty but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'empty', 'Get error, expected empty but got %s' % r_value
 
     def test_next_hop_group_map_remove(self, npu):
         commands = [{'name': 'next_hop_group_map_1', 'op': 'remove'}]

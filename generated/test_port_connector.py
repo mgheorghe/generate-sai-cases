@@ -66,9 +66,11 @@ class TestSaiPortConnector:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE', (
             'Get error, expected SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     def test_port_connector_remove(self, npu):

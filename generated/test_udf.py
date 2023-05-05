@@ -60,8 +60,10 @@ class TestSaiUdf:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_UDF_BASE_L2', (
-            'Get error, expected SAI_UDF_BASE_L2 but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_UDF_BASE_L2', (
+            'Get error, expected SAI_UDF_BASE_L2 but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_udf_attr_hash_mask_set')
@@ -86,9 +88,9 @@ class TestSaiUdf:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'const', (
-            'Get error, expected const but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'const', 'Get error, expected const but got %s' % r_value
 
     def test_udf_remove(self, npu):
         commands = [

@@ -96,9 +96,11 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS', (
             'Get error, expected SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_admin_v4_state_set')
@@ -129,9 +131,9 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'true', (
-            'Get error, expected true but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'true', 'Get error, expected true but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_admin_v6_state_set')
     def test_sai_router_interface_attr_admin_v6_state_set(self, npu):
@@ -161,9 +163,9 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'true', (
-            'Get error, expected true but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'true', 'Get error, expected true but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_mtu_set')
     def test_sai_router_interface_attr_mtu_set(self, npu):
@@ -191,9 +193,9 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '1514', (
-            'Get error, expected 1514 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '1514', 'Get error, expected 1514 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_ingress_acl_set')
     def test_sai_router_interface_attr_ingress_acl_set(self, npu):
@@ -224,8 +226,10 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_egress_acl_set')
@@ -257,8 +261,10 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(
@@ -294,9 +300,10 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_PACKET_ACTION_TRAP', (
-            'Get error, expected SAI_PACKET_ACTION_TRAP but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PACKET_ACTION_TRAP', (
+            'Get error, expected SAI_PACKET_ACTION_TRAP but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_v4_mcast_enable_set')
@@ -327,9 +334,9 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_v6_mcast_enable_set')
     def test_sai_router_interface_attr_v6_mcast_enable_set(self, npu):
@@ -359,9 +366,9 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_router_interface_attr_loopback_packet_action_set'
@@ -396,9 +403,10 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
-            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PACKET_ACTION_FORWARD', (
+            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_nat_zone_id_set')
@@ -427,9 +435,9 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_router_interface_attr_disable_decrement_ttl_set'
@@ -464,9 +472,9 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_router_interface_attr_admin_mpls_state_set')
     def test_sai_router_interface_attr_admin_mpls_state_set(self, npu):
@@ -496,9 +504,9 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     def test_router_interface_remove(self, npu):
         commands = [

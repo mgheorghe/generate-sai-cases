@@ -63,9 +63,9 @@ class TestSaiMacsecPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_macsec_port_attr_stag_enable_set')
     def test_sai_macsec_port_attr_stag_enable_set(self, npu):
@@ -93,9 +93,9 @@ class TestSaiMacsecPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_macsec_port_attr_switch_switching_mode_set')
     def test_sai_macsec_port_attr_switch_switching_mode_set(self, npu):
@@ -128,9 +128,11 @@ class TestSaiMacsecPort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH', (
             'Get error, expected SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     def test_macsec_port_remove(self, npu):

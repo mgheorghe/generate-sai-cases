@@ -49,9 +49,9 @@ class TestSaiDtelIntSession:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '8', (
-            'Get error, expected 8 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '8', 'Get error, expected 8 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_dtel_int_session_attr_collect_switch_id_set')
     def test_sai_dtel_int_session_attr_collect_switch_id_set(self, npu):
@@ -81,9 +81,9 @@ class TestSaiDtelIntSession:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_dtel_int_session_attr_collect_switch_ports_set'
@@ -118,9 +118,9 @@ class TestSaiDtelIntSession:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_dtel_int_session_attr_collect_ingress_timestamp_set'
@@ -155,9 +155,9 @@ class TestSaiDtelIntSession:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_dtel_int_session_attr_collect_egress_timestamp_set'
@@ -192,9 +192,9 @@ class TestSaiDtelIntSession:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_dtel_int_session_attr_collect_queue_info_set'
@@ -226,9 +226,9 @@ class TestSaiDtelIntSession:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     def test_dtel_int_session_remove(self, npu):
         commands = [{'name': 'dtel_int_session_1', 'op': 'remove'}]

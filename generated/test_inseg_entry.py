@@ -48,9 +48,9 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_packet_action_set')
     def test_sai_inseg_entry_attr_packet_action_set(self, npu):
@@ -81,9 +81,10 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
-            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PACKET_ACTION_FORWARD', (
+            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_trap_priority_set')
@@ -112,9 +113,9 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_next_hop_id_set')
     def test_sai_inseg_entry_attr_next_hop_id_set(self, npu):
@@ -145,8 +146,10 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_psc_type_set')
@@ -178,9 +181,10 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_INSEG_ENTRY_PSC_TYPE_ELSP', (
-            'Get error, expected SAI_INSEG_ENTRY_PSC_TYPE_ELSP but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_INSEG_ENTRY_PSC_TYPE_ELSP', (
+            'Get error, expected SAI_INSEG_ENTRY_PSC_TYPE_ELSP but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_qos_tc_set')
@@ -209,9 +213,9 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_mpls_exp_to_tc_map_set')
     def test_sai_inseg_entry_attr_mpls_exp_to_tc_map_set(self, npu):
@@ -244,8 +248,10 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_mpls_exp_to_color_map_set')
@@ -279,8 +285,10 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_pop_ttl_mode_set')
@@ -312,9 +320,11 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_INSEG_ENTRY_POP_TTL_MODE_UNIFORM', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_INSEG_ENTRY_POP_TTL_MODE_UNIFORM', (
             'Get error, expected SAI_INSEG_ENTRY_POP_TTL_MODE_UNIFORM but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_pop_qos_mode_set')
@@ -346,9 +356,11 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_INSEG_ENTRY_POP_QOS_MODE_UNIFORM', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_INSEG_ENTRY_POP_QOS_MODE_UNIFORM', (
             'Get error, expected SAI_INSEG_ENTRY_POP_QOS_MODE_UNIFORM but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_inseg_entry_attr_counter_id_set')
@@ -377,8 +389,10 @@ class TestSaiInsegEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     def test_inseg_entry_remove(self, npu):

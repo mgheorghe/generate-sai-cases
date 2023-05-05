@@ -57,9 +57,10 @@ class TestSaiSwitchTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_PACKET_ACTION_FORWARD', (
-            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PACKET_ACTION_FORWARD', (
+            'Get error, expected SAI_PACKET_ACTION_FORWARD but got %s' % r_value
         )
 
     @pytest.mark.dependency(
@@ -95,9 +96,11 @@ class TestSaiSwitchTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_TUNNEL_VXLAN_UDP_SPORT_MODE_EPHEMERAL', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_TUNNEL_VXLAN_UDP_SPORT_MODE_EPHEMERAL', (
             'Get error, expected SAI_TUNNEL_VXLAN_UDP_SPORT_MODE_EPHEMERAL but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_switch_tunnel_attr_vxlan_udp_sport_set')
@@ -126,9 +129,9 @@ class TestSaiSwitchTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_switch_tunnel_attr_vxlan_udp_sport_mask_set')
     def test_sai_switch_tunnel_attr_vxlan_udp_sport_mask_set(self, npu):
@@ -158,9 +161,9 @@ class TestSaiSwitchTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_switch_tunnel_attr_encap_qos_tc_and_color_to_dscp_map_set'
@@ -197,8 +200,10 @@ class TestSaiSwitchTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(
@@ -234,8 +239,10 @@ class TestSaiSwitchTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(
@@ -271,8 +278,10 @@ class TestSaiSwitchTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(
@@ -310,8 +319,10 @@ class TestSaiSwitchTunnel:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     def test_switch_tunnel_remove(self, npu):

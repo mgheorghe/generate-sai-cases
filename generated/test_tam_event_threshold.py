@@ -49,9 +49,9 @@ class TestSaiTamEventThreshold:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '90', (
-            'Get error, expected 90 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '90', 'Get error, expected 90 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_event_threshold_attr_low_watermark_set')
     def test_sai_tam_event_threshold_attr_low_watermark_set(self, npu):
@@ -81,9 +81,9 @@ class TestSaiTamEventThreshold:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '10', (
-            'Get error, expected 10 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '10', 'Get error, expected 10 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_event_threshold_attr_latency_set')
     def test_sai_tam_event_threshold_attr_latency_set(self, npu):
@@ -111,9 +111,9 @@ class TestSaiTamEventThreshold:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '10', (
-            'Get error, expected 10 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '10', 'Get error, expected 10 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_event_threshold_attr_rate_set')
     def test_sai_tam_event_threshold_attr_rate_set(self, npu):
@@ -141,9 +141,9 @@ class TestSaiTamEventThreshold:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_event_threshold_attr_abs_value_set')
     def test_sai_tam_event_threshold_attr_abs_value_set(self, npu):
@@ -171,9 +171,9 @@ class TestSaiTamEventThreshold:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_event_threshold_attr_unit_set')
     def test_sai_tam_event_threshold_attr_unit_set(self, npu):
@@ -204,9 +204,10 @@ class TestSaiTamEventThreshold:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_TAM_EVENT_THRESHOLD_UNIT_MSEC', (
-            'Get error, expected SAI_TAM_EVENT_THRESHOLD_UNIT_MSEC but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_TAM_EVENT_THRESHOLD_UNIT_MSEC', (
+            'Get error, expected SAI_TAM_EVENT_THRESHOLD_UNIT_MSEC but got %s' % r_value
         )
 
     def test_tam_event_threshold_remove(self, npu):

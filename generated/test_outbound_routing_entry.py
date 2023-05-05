@@ -55,11 +55,11 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert (
-            results[0][0].value() == 'SAI_OUTBOUND_ROUTING_ENTRY_ACTION_ROUTE_VNET'
-        ), (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_OUTBOUND_ROUTING_ENTRY_ACTION_ROUTE_VNET', (
             'Get error, expected SAI_OUTBOUND_ROUTING_ENTRY_ACTION_ROUTE_VNET but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_dst_vnet_id_set')
@@ -93,8 +93,10 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_overlay_ip_set')
@@ -125,9 +127,9 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_overlay_dip_set')
     def test_sai_outbound_routing_entry_attr_overlay_dip_set(self, npu):
@@ -160,9 +162,9 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_outbound_routing_entry_attr_overlay_dip_mask_set'
@@ -197,9 +199,9 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_overlay_sip_set')
     def test_sai_outbound_routing_entry_attr_overlay_sip_set(self, npu):
@@ -232,9 +234,9 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_outbound_routing_entry_attr_overlay_sip_mask_set'
@@ -269,9 +271,9 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_outbound_routing_entry_attr_underlay_dip_set'
@@ -306,9 +308,9 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_outbound_routing_entry_attr_underlay_sip_set'
@@ -343,9 +345,9 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_outbound_routing_entry_attr_dash_encapsulation_set'
@@ -380,9 +382,10 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_DASH_ENCAPSULATION_VXLAN', (
-            'Get error, expected SAI_DASH_ENCAPSULATION_VXLAN but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_DASH_ENCAPSULATION_VXLAN', (
+            'Get error, expected SAI_DASH_ENCAPSULATION_VXLAN but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_tunnel_key_set')
@@ -413,9 +416,9 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_outbound_routing_entry_attr_counter_id_set')
     def test_sai_outbound_routing_entry_attr_counter_id_set(self, npu):
@@ -448,8 +451,10 @@ class TestSaiOutboundRoutingEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     def test_outbound_routing_entry_remove(self, npu):

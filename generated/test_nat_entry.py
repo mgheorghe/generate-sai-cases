@@ -53,8 +53,10 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NAT_TYPE_NONE', (
-            'Get error, expected SAI_NAT_TYPE_NONE but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NAT_TYPE_NONE', (
+            'Get error, expected SAI_NAT_TYPE_NONE but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_src_ip_set')
@@ -83,9 +85,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_src_ip_mask_set')
     def test_sai_nat_entry_attr_src_ip_mask_set(self, npu):
@@ -113,9 +115,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_vr_id_set')
     def test_sai_nat_entry_attr_vr_id_set(self, npu):
@@ -143,8 +145,10 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_dst_ip_set')
@@ -173,9 +177,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_dst_ip_mask_set')
     def test_sai_nat_entry_attr_dst_ip_mask_set(self, npu):
@@ -203,9 +207,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_l4_src_port_set')
     def test_sai_nat_entry_attr_l4_src_port_set(self, npu):
@@ -233,9 +237,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_l4_dst_port_set')
     def test_sai_nat_entry_attr_l4_dst_port_set(self, npu):
@@ -263,9 +267,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_enable_packet_count_set')
     def test_sai_nat_entry_attr_enable_packet_count_set(self, npu):
@@ -293,9 +297,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_packet_count_set')
     def test_sai_nat_entry_attr_packet_count_set(self, npu):
@@ -323,9 +327,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_enable_byte_count_set')
     def test_sai_nat_entry_attr_enable_byte_count_set(self, npu):
@@ -353,9 +357,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_byte_count_set')
     def test_sai_nat_entry_attr_byte_count_set(self, npu):
@@ -383,9 +387,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_hit_bit_cor_set')
     def test_sai_nat_entry_attr_hit_bit_cor_set(self, npu):
@@ -413,9 +417,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_hit_bit_set')
     def test_sai_nat_entry_attr_hit_bit_set(self, npu):
@@ -443,9 +447,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_nat_entry_attr_aging_time_set')
     def test_sai_nat_entry_attr_aging_time_set(self, npu):
@@ -473,9 +477,9 @@ class TestSaiNatEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     def test_nat_entry_remove(self, npu):
         commands = [

@@ -126,9 +126,11 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_BRIDGE_PORT_TAGGING_MODE_TAGGED', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_BRIDGE_PORT_TAGGING_MODE_TAGGED', (
             'Get error, expected SAI_BRIDGE_PORT_TAGGING_MODE_TAGGED but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_bridge_port_attr_bridge_id_set')
@@ -157,9 +159,9 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_bridge_port_attr_fdb_learning_mode_set')
     def test_sai_bridge_port_attr_fdb_learning_mode_set(self, npu):
@@ -190,9 +192,11 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_BRIDGE_PORT_FDB_LEARNING_MODE_HW', (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_BRIDGE_PORT_FDB_LEARNING_MODE_HW', (
             'Get error, expected SAI_BRIDGE_PORT_FDB_LEARNING_MODE_HW but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_bridge_port_attr_max_learned_addresses_set')
@@ -223,9 +227,9 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_bridge_port_attr_fdb_learning_limit_violation_packet_action_set'
@@ -268,9 +272,10 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_PACKET_ACTION_DROP', (
-            'Get error, expected SAI_PACKET_ACTION_DROP but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PACKET_ACTION_DROP', (
+            'Get error, expected SAI_PACKET_ACTION_DROP but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_bridge_port_attr_admin_state_set')
@@ -299,9 +304,9 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_bridge_port_attr_ingress_filtering_set')
     def test_sai_bridge_port_attr_ingress_filtering_set(self, npu):
@@ -329,9 +334,9 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_bridge_port_attr_egress_filtering_set')
     def test_sai_bridge_port_attr_egress_filtering_set(self, npu):
@@ -359,9 +364,9 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_bridge_port_attr_isolation_group_set')
     def test_sai_bridge_port_attr_isolation_group_set(self, npu):
@@ -392,8 +397,10 @@ class TestSaiBridgePort:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     def test_bridge_port_remove(self, npu):

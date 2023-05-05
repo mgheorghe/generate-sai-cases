@@ -51,12 +51,11 @@ class TestSaiDirectionLookupEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert (
-            results[0][0].value()
-            == 'SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION'
-        ), (
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION', (
             'Get error, expected SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION but got %s'
-            % results[0][0].value()
+            % r_value
         )
 
     def test_direction_lookup_entry_remove(self, npu):

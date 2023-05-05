@@ -47,9 +47,9 @@ class TestSaiTamReport:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'TODO', (
-            'Get error, expected TODO but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_report_attr_quota_set')
     def test_sai_tam_report_attr_quota_set(self, npu):
@@ -77,9 +77,9 @@ class TestSaiTamReport:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_report_attr_report_interval_set')
     def test_sai_tam_report_attr_report_interval_set(self, npu):
@@ -107,9 +107,9 @@ class TestSaiTamReport:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '1000', (
-            'Get error, expected 1000 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '1000', 'Get error, expected 1000 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_tam_report_attr_enterprise_number_set')
     def test_sai_tam_report_attr_enterprise_number_set(self, npu):
@@ -137,9 +137,9 @@ class TestSaiTamReport:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_tam_report_attr_template_report_interval_set'
@@ -171,9 +171,9 @@ class TestSaiTamReport:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '15', (
-            'Get error, expected 15 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '15', 'Get error, expected 15 but got %s' % r_value
 
     def test_tam_report_remove(self, npu):
         commands = [{'name': 'tam_report_1', 'op': 'remove'}]

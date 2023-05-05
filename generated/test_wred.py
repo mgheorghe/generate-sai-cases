@@ -47,9 +47,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_green_min_threshold_set')
     def test_sai_wred_attr_green_min_threshold_set(self, npu):
@@ -77,9 +77,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_green_max_threshold_set')
     def test_sai_wred_attr_green_max_threshold_set(self, npu):
@@ -107,9 +107,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_green_drop_probability_set')
     def test_sai_wred_attr_green_drop_probability_set(self, npu):
@@ -137,9 +137,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '100', (
-            'Get error, expected 100 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '100', 'Get error, expected 100 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_yellow_enable_set')
     def test_sai_wred_attr_yellow_enable_set(self, npu):
@@ -167,9 +167,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_yellow_min_threshold_set')
     def test_sai_wred_attr_yellow_min_threshold_set(self, npu):
@@ -197,9 +197,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_yellow_max_threshold_set')
     def test_sai_wred_attr_yellow_max_threshold_set(self, npu):
@@ -227,9 +227,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_yellow_drop_probability_set')
     def test_sai_wred_attr_yellow_drop_probability_set(self, npu):
@@ -257,9 +257,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '100', (
-            'Get error, expected 100 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '100', 'Get error, expected 100 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_red_enable_set')
     def test_sai_wred_attr_red_enable_set(self, npu):
@@ -283,9 +283,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_red_min_threshold_set')
     def test_sai_wred_attr_red_min_threshold_set(self, npu):
@@ -313,9 +313,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_red_max_threshold_set')
     def test_sai_wred_attr_red_max_threshold_set(self, npu):
@@ -343,9 +343,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_red_drop_probability_set')
     def test_sai_wred_attr_red_drop_probability_set(self, npu):
@@ -373,9 +373,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '100', (
-            'Get error, expected 100 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '100', 'Get error, expected 100 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_weight_set')
     def test_sai_wred_attr_weight_set(self, npu):
@@ -395,9 +395,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_mark_mode_set')
     def test_sai_wred_attr_ecn_mark_mode_set(self, npu):
@@ -425,9 +425,10 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_ECN_MARK_MODE_NONE', (
-            'Get error, expected SAI_ECN_MARK_MODE_NONE but got %s'
-            % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_ECN_MARK_MODE_NONE', (
+            'Get error, expected SAI_ECN_MARK_MODE_NONE but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_green_min_threshold_set')
@@ -456,9 +457,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_green_max_threshold_set')
     def test_sai_wred_attr_ecn_green_max_threshold_set(self, npu):
@@ -486,9 +487,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_green_mark_probability_set')
     def test_sai_wred_attr_ecn_green_mark_probability_set(self, npu):
@@ -518,9 +519,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '100', (
-            'Get error, expected 100 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '100', 'Get error, expected 100 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_yellow_min_threshold_set')
     def test_sai_wred_attr_ecn_yellow_min_threshold_set(self, npu):
@@ -548,9 +549,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_yellow_max_threshold_set')
     def test_sai_wred_attr_ecn_yellow_max_threshold_set(self, npu):
@@ -578,9 +579,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_yellow_mark_probability_set')
     def test_sai_wred_attr_ecn_yellow_mark_probability_set(self, npu):
@@ -610,9 +611,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '100', (
-            'Get error, expected 100 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '100', 'Get error, expected 100 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_red_min_threshold_set')
     def test_sai_wred_attr_ecn_red_min_threshold_set(self, npu):
@@ -640,9 +641,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_red_max_threshold_set')
     def test_sai_wred_attr_ecn_red_max_threshold_set(self, npu):
@@ -670,9 +671,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_wred_attr_ecn_red_mark_probability_set')
     def test_sai_wred_attr_ecn_red_mark_probability_set(self, npu):
@@ -700,9 +701,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '100', (
-            'Get error, expected 100 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '100', 'Get error, expected 100 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_wred_attr_ecn_color_unaware_min_threshold_set'
@@ -734,9 +735,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_wred_attr_ecn_color_unaware_max_threshold_set'
@@ -768,9 +769,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_wred_attr_ecn_color_unaware_mark_probability_set'
@@ -805,9 +806,9 @@ class TestSaiWred:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '100', (
-            'Get error, expected 100 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '100', 'Get error, expected 100 but got %s' % r_value
 
     def test_wred_remove(self, npu):
         commands = [{'name': 'wred_1', 'op': 'remove'}]

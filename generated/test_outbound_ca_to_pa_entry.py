@@ -59,9 +59,9 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0.0.0.0', (
-            'Get error, expected 0.0.0.0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0.0.0.0', 'Get error, expected 0.0.0.0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_outbound_ca_to_pa_entry_attr_overlay_dmac_set'
@@ -96,8 +96,10 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0:0:0:0:0:0', (
-            'Get error, expected 0:0:0:0:0:0 but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0:0:0:0:0:0', (
+            'Get error, expected 0:0:0:0:0:0 but got %s' % r_value
         )
 
     @pytest.mark.dependency(
@@ -133,9 +135,9 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'false', (
-            'Get error, expected false but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'false', 'Get error, expected false but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_outbound_ca_to_pa_entry_attr_counter_id_set')
     def test_sai_outbound_ca_to_pa_entry_attr_counter_id_set(self, npu):
@@ -168,8 +170,10 @@ class TestSaiOutboundCaToPaEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NULL_OBJECT_ID', (
-            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NULL_OBJECT_ID', (
+            'Get error, expected SAI_NULL_OBJECT_ID but got %s' % r_value
         )
 
     def test_outbound_ca_to_pa_entry_remove(self, npu):

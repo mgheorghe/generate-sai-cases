@@ -50,8 +50,10 @@ class TestSaiNatZoneCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == 'SAI_NAT_TYPE_NONE', (
-            'Get error, expected SAI_NAT_TYPE_NONE but got %s' % results[0][0].value()
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_NAT_TYPE_NONE', (
+            'Get error, expected SAI_NAT_TYPE_NONE but got %s' % r_value
         )
 
     @pytest.mark.dependency(name='test_sai_nat_zone_counter_attr_zone_id_set')
@@ -80,9 +82,9 @@ class TestSaiNatZoneCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_nat_zone_counter_attr_discard_packet_count_set'
@@ -114,9 +116,9 @@ class TestSaiNatZoneCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_nat_zone_counter_attr_translation_needed_packet_count_set'
@@ -153,9 +155,9 @@ class TestSaiNatZoneCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(
         name='test_sai_nat_zone_counter_attr_translations_packet_count_set'
@@ -190,9 +192,9 @@ class TestSaiNatZoneCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     def test_nat_zone_counter_remove(self, npu):
         commands = [{'name': 'nat_zone_counter_1', 'op': 'remove'}]

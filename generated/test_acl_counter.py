@@ -53,9 +53,9 @@ class TestSaiAclCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_acl_counter_attr_bytes_set')
     def test_sai_acl_counter_attr_bytes_set(self, npu):
@@ -83,9 +83,9 @@ class TestSaiAclCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '0', (
-            'Get error, expected 0 but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     @pytest.mark.dependency(name='test_sai_acl_counter_attr_label_set')
     def test_sai_acl_counter_attr_label_set(self, npu):
@@ -113,9 +113,9 @@ class TestSaiAclCounter:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert results[0][0].value() == '""', (
-            'Get error, expected "" but got %s' % results[0][0].value()
-        )
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '""', 'Get error, expected "" but got %s' % r_value
 
     def test_acl_counter_remove(self, npu):
         commands = [
