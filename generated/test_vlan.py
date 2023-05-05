@@ -70,7 +70,7 @@ class TestSaiVlan:
                 'op': 'set',
                 'attributes': [
                     'SAI_VLAN_ATTR_STP_INSTANCE',
-                    'attrvalue SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID',
+                    'SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID',
                 ],
             }
         ]
@@ -91,10 +91,8 @@ class TestSaiVlan:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert (
-            results[0][0].value() == 'attrvalue SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID'
-        ), (
-            'Get error, expected attrvalue SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID but got %s'
+        assert results[0][0].value() == 'SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID', (
+            'Get error, expected SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID but got %s'
             % results[0][0].value()
         )
 

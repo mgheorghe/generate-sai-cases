@@ -73,7 +73,7 @@ class TestSaiRouterInterface:
                 'op': 'set',
                 'attributes': [
                     'SAI_ROUTER_INTERFACE_ATTR_SRC_MAC_ADDRESS',
-                    'attrvalue SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS',
+                    'SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS',
                 ],
             }
         ]
@@ -96,10 +96,8 @@ class TestSaiRouterInterface:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert (
-            results[0][0].value() == 'attrvalue SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS'
-        ), (
-            'Get error, expected attrvalue SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS but got %s'
+        assert results[0][0].value() == 'SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS', (
+            'Get error, expected SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS but got %s'
             % results[0][0].value()
         )
 

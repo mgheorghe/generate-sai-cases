@@ -34,7 +34,7 @@ class TestSaiHostifUserDefinedTrap:
                 'op': 'set',
                 'attributes': [
                     'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_PRIORITY',
-                    'attrvalue SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY',
+                    'SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY',
                 ],
             }
         ]
@@ -57,11 +57,8 @@ class TestSaiHostifUserDefinedTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert (
-            results[0][0].value()
-            == 'attrvalue SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY'
-        ), (
-            'Get error, expected attrvalue SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY but got %s'
+        assert results[0][0].value() == 'SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY', (
+            'Get error, expected SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY but got %s'
             % results[0][0].value()
         )
 
@@ -75,7 +72,7 @@ class TestSaiHostifUserDefinedTrap:
                 'op': 'set',
                 'attributes': [
                     'SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_GROUP',
-                    'attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP',
+                    'SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP',
                 ],
             }
         ]
@@ -98,10 +95,8 @@ class TestSaiHostifUserDefinedTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert (
-            results[0][0].value() == 'attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP'
-        ), (
-            'Get error, expected attrvalue SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP but got %s'
+        assert results[0][0].value() == 'SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP', (
+            'Get error, expected SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP but got %s'
             % results[0][0].value()
         )
 

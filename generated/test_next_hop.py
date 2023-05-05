@@ -141,7 +141,7 @@ class TestSaiNextHop:
                 'op': 'set',
                 'attributes': [
                     'SAI_NEXT_HOP_ATTR_TUNNEL_MAC',
-                    'attrvalue SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC',
+                    'SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC',
                 ],
             }
         ]
@@ -162,11 +162,8 @@ class TestSaiNextHop:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values get =======')
         pprint(results)
-        assert (
-            results[0][0].value()
-            == 'attrvalue SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC'
-        ), (
-            'Get error, expected attrvalue SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC but got %s'
+        assert results[0][0].value() == 'SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC', (
+            'Get error, expected SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC but got %s'
             % results[0][0].value()
         )
 
