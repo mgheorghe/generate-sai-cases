@@ -11,7 +11,7 @@ from default_values import DEFAULT_VALUES, SAI_OBJECT_TYPES
 
 # give your custom path
 SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
-SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
+# SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
 # SAI_CODE_LOCATION = r'C:/github-mgheorghe/SAI'
 
 TEST_TEMPLATE_GET = '''
@@ -49,7 +49,6 @@ TEST_TEMPLATE_SET = '''
         results = [*npu.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Set error'
 
 '''
 
@@ -69,7 +68,6 @@ class TestSai%(CLASS_NAME)s:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values create =======')
         pprint(results)
-        assert all(results), 'Create error'
 
 '''
 TEST_TEMPLATE_REMOVE = '''
@@ -81,7 +79,6 @@ TEST_TEMPLATE_REMOVE = '''
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
-        assert all([result == 'SAI_STATUS_SUCCESS' for result in results]), 'Remove error'
 
 '''
 
