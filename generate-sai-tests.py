@@ -17,7 +17,7 @@ SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
 TEST_TEMPLATE_GET = '''
 
     %(PYTEST_MARKER)s
-    def test_%(ATTR_NAME)s_get(self, npu):
+    def test_%(ATTR_NAME)s_get(self, %(NPU_DPU_MARKER)s):
 
         commands = [
             {
@@ -26,9 +26,11 @@ TEST_TEMPLATE_GET = '''
                 "attributes": ["%(ATTRIBUTE)s"]
             }
         ]
-        results = [*npu.process_commands(commands)]
+        results = [*%(NPU_DPU_MARKER)s.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
-        pprint(results)
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
         assert r_value == '%(EXPECTED_VALUE)s', 'Get error, expected %(EXPECTED_VALUE)s but got %%s' %%  r_value
@@ -37,7 +39,7 @@ TEST_TEMPLATE_GET = '''
 TEST_TEMPLATE_SET = '''
 
     %(PYTEST_MARKER)s
-    def test_%(ATTR_NAME)s_set(self, npu):
+    def test_%(ATTR_NAME)s_set(self, %(NPU_DPU_MARKER)s):
 
         commands = [
             {
@@ -46,7 +48,7 @@ TEST_TEMPLATE_SET = '''
                 "attributes": ["%(ATTRIBUTE)s", '%(EXPECTED_VALUE)s']
             }
         ]
-        results = [*npu.process_commands(commands)]
+        results = [*%(NPU_DPU_MARKER)s.process_commands(commands)]
         print("======= SAI commands RETURN values get =======")
         pprint(results)
 
@@ -57,26 +59,26 @@ from pprint import pprint
 
 import pytest
 
-
+@pytest.mark.%(NPU_DPU_MARKER)s
 class TestSai%(CLASS_NAME)s:
     # %(COMMENT)s
 
-    def test_%(OBJECT_NAME)s_create(self, npu):
+    def test_%(OBJECT_NAME)s_create(self, %(NPU_DPU_MARKER)s):
 
         commands = %(CREATE_COMMANDS)s
 
-        results = [*npu.process_commands(commands)]
+        results = [*%(NPU_DPU_MARKER)s.process_commands(commands)]
         print('======= SAI commands RETURN values create =======')
         pprint(results)
 
 '''
 TEST_TEMPLATE_REMOVE = '''
 
-    def test_%(OBJECT_NAME)s_remove(self, npu):
+    def test_%(OBJECT_NAME)s_remove(self, %(NPU_DPU_MARKER)s):
 
         commands = %(REMOVE_COMMANDS)s
 
-        results = [*npu.process_commands(commands)]
+        results = [*%(NPU_DPU_MARKER)s.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
 
@@ -107,6 +109,7 @@ def parse_sai_header_files():
         dictionary[obj_type] = {}
         dictionary[obj_type]['keys'] = {}
         dictionary[obj_type]['attributes'] = {}
+        dictionary[obj_type]['npu_dpu'] = ''
         obj_name = get_obj_name(obj_type)
         attributes_block_start = 'typedef enum _sai_%s_attr_t' % obj_name
         attributes_block_end = '} sai_%s_attr_t;' % obj_name
@@ -123,16 +126,24 @@ def parse_sai_header_files():
             parsing_keys = False
 
             with io.open(h_file_path, 'rt', encoding='utf-8') as h_file:
+                print(h_file_path)
                 for text_line in h_file:
+                    # print(h_file_path
                     if attributes_block_start in text_line:
-                        print(h_file_path)
+                        if 'experimental' in h_file_path:
+                            # temp_list.append('dpu')
+                            dictionary[obj_type]['npu_dpu'] = 'dpu'
+                            # break
+                        else:
+                            # temp_list.append('npu')
+                            dictionary[obj_type]['npu_dpu'] = 'npu'
                         start_copy = True
                         parsing_attributes = True
                     if attributes_block_end in text_line:
                         start_copy = False
                         parsing_attributes = False
                     if keys_block_start in text_line:
-                        print(h_file_path)
+                        # print(h_file_path)
                         start_copy = True
                         parsing_keys = True
                     if keys_block_end in text_line:
@@ -227,7 +238,6 @@ def parse_sai_header_files():
                             elif parsing_keys:
                                 is_key = True
 
-    # pprint.pprint(dictionary)
     return dictionary
 
 
@@ -351,6 +361,7 @@ def generate_pyetes_test(obj_type):
         TEST_CODE = ''
 
         TEST_CODE += TEST_TEMPLATE_CREATE % {
+            'NPU_DPU_MARKER': SAI_DATA[obj_type]['npu_dpu'],
             'CLASS_NAME': camel_case(obj_name),
             'OBJECT_NAME': obj_name,
             'CREATE_COMMANDS': get_create_commands(obj_type),
@@ -361,6 +372,7 @@ def generate_pyetes_test(obj_type):
             if obj['attributes'][attribute]['flags'] is not None:
                 if 'READ_ONLY' in obj['attributes'][attribute]['flags']:
                     TEST_CODE += TEST_TEMPLATE_GET % {
+                        'NPU_DPU_MARKER': SAI_DATA[obj_type]['npu_dpu'],
                         'PYTEST_MARKER': '',
                         'ATTR_NAME': get_obj_name(attribute),
                         'OBJECT_NAME': obj_name,
@@ -372,6 +384,7 @@ def generate_pyetes_test(obj_type):
                     }
                 elif 'CREATE_AND_SET' in obj['attributes'][attribute]['flags']:
                     TEST_CODE += TEST_TEMPLATE_SET % {
+                        'NPU_DPU_MARKER': SAI_DATA[obj_type]['npu_dpu'],
                         'PYTEST_MARKER': '@pytest.mark.dependency(name="test_%s_set")'
                         % get_obj_name(attribute),
                         'ATTR_NAME': get_obj_name(attribute),
@@ -382,6 +395,7 @@ def generate_pyetes_test(obj_type):
                         ),
                     }
                     TEST_CODE += TEST_TEMPLATE_GET % {
+                        'NPU_DPU_MARKER': SAI_DATA[obj_type]['npu_dpu'],
                         'PYTEST_MARKER': '@pytest.mark.dependency(depends=["test_%s_set"])'
                         % get_obj_name(attribute),
                         'ATTR_NAME': get_obj_name(attribute),
@@ -397,6 +411,7 @@ def generate_pyetes_test(obj_type):
                     pass
 
         TEST_CODE += TEST_TEMPLATE_REMOVE % {
+            'NPU_DPU_MARKER': SAI_DATA[obj_type]['npu_dpu'],
             'OBJECT_NAME': obj_name,
             'REMOVE_COMMANDS': get_remove_commands(obj_type),
         }
@@ -438,4 +453,6 @@ with io.open('sai_api_structure.json', 'wt', encoding='ascii') as json_f:
 create_depedency_graph()
 
 for obj_type in SAI_DATA.keys():
-    generate_pyetes_test(obj_type)
+    generate_pyetes_test(
+        obj_type,
+    )

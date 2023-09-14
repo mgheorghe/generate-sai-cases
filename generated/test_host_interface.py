@@ -1,30 +1,27 @@
+
 from pprint import pprint
 
+import pytest
 
+@pytest.mark.
 class TestSaiHostInterface:
     # object with no attributes
 
-    def test_host_interface_create(self, npu):
-        commands = [
-            {
-                'name': 'host_interface_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_HOST_INTERFACE',
-                'attributes': [],
-            }
-        ]
+    def test_host_interface_create(self, ):
 
-        results = [*npu.process_commands(commands)]
+        commands = [{'name': 'host_interface_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_HOST_INTERFACE', 'attributes': []}]
+
+        results = [*.process_commands(commands)]
         print('======= SAI commands RETURN values create =======')
         pprint(results)
-        assert all(results), 'Create error'
 
-    def test_host_interface_remove(self, npu):
+
+
+    def test_host_interface_remove(self, ):
+
         commands = [{'name': 'host_interface_1', 'op': 'remove'}]
 
-        results = [*npu.process_commands(commands)]
+        results = [*.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_STATUS_SUCCESS' for result in results]
-        ), 'Remove error'
+

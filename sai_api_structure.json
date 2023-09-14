@@ -1,7 +1,8 @@
 {
   "SAI_OBJECT_TYPE___60": {
     "keys": {},
-    "attributes": {}
+    "attributes": {},
+    "npu_dpu": ""
   },
   "SAI_OBJECT_TYPE_ACL_COUNTER": {
     "keys": {},
@@ -91,7 +92,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ACL_ENTRY": {
     "keys": {},
@@ -1562,6 +1564,17 @@
         "allownull": null,
         "default": "disabled"
       },
+      "SAI_ACL_ENTRY_ATTR_ACTION_CHAIN_REDIRECT": {
+        "type": "sai_object_id_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": [
+          "SAI_OBJECT_TYPE_ACL_TABLE_CHAIN_GROUP"
+        ],
+        "allownull": null,
+        "default": "disabled"
+      },
       "SAI_ACL_ENTRY_ATTR_ACTION_END": {
         "type": null,
         "flags": null,
@@ -1590,7 +1603,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ACL_RANGE": {
     "keys": {},
@@ -1643,7 +1657,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ACL_TABLE": {
     "keys": {},
@@ -2638,7 +2653,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ACL_TABLE_GROUP": {
     "keys": {},
@@ -2689,6 +2705,17 @@
         "allownull": null,
         "default": null
       },
+      "SAI_ACL_TABLE_GROUP_ATTR_CHAIN_GROUP_LIST": {
+        "type": "sai_object_list_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": [
+          "SAI_OBJECT_TYPE_ACL_TABLE_CHAIN_GROUP"
+        ],
+        "allownull": null,
+        "default": null
+      },
       "SAI_ACL_TABLE_GROUP_ATTR_END": {
         "type": null,
         "flags": null,
@@ -2710,7 +2737,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ACL_TABLE_GROUP_MEMBER": {
     "keys": {},
@@ -2756,6 +2784,17 @@
         "allownull": null,
         "default": null
       },
+      "SAI_ACL_TABLE_GROUP_MEMBER_ATTR_ACL_TABLE_CHAIN_GROUP_ID": {
+        "type": "sai_object_id_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": [
+          "SAI_OBJECT_TYPE_ACL_TABLE_CHAIN_GROUP"
+        ],
+        "allownull": "true",
+        "default": "SAI_NULL_OBJECT_ID"
+      },
       "SAI_ACL_TABLE_GROUP_MEMBER_ATTR_END": {
         "type": null,
         "flags": null,
@@ -2777,7 +2816,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ARS": {
     "keys": {},
@@ -2902,7 +2942,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ARS_PROFILE": {
     "keys": {},
@@ -3205,7 +3246,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_BFD_SESSION": {
     "keys": {},
@@ -3632,7 +3674,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_BRIDGE": {
     "keys": {},
@@ -3764,7 +3807,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_BRIDGE_PORT": {
     "keys": {},
@@ -3941,7 +3985,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_BUFFER_POOL": {
     "keys": {},
@@ -4043,7 +4088,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_BUFFER_PROFILE": {
     "keys": {},
@@ -4162,7 +4208,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_COUNTER": {
     "keys": {},
@@ -4213,7 +4260,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_DASH_ACL_GROUP": {
     "keys": {},
@@ -4255,7 +4303,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_DASH_ACL_RULE": {
     "keys": {},
@@ -4359,6 +4408,15 @@
         "allownull": null,
         "default": null
       },
+      "SAI_DASH_ACL_RULE_ATTR_IP_ADDR_FAMILY": {
+        "type": "sai_ip_addr_family_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
       "SAI_DASH_ACL_RULE_ATTR_END": {
         "type": null,
         "flags": null,
@@ -4380,7 +4438,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_DEBUG_COUNTER": {
     "keys": {},
@@ -4459,7 +4518,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY": {
     "keys": {
@@ -4518,7 +4578,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_DTEL": {
     "keys": {},
@@ -4643,7 +4704,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_DTEL_EVENT": {
     "keys": {},
@@ -4706,7 +4768,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_DTEL_INT_SESSION": {
     "keys": {},
@@ -4793,7 +4856,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_DTEL_QUEUE_REPORT": {
     "keys": {},
@@ -4874,7 +4938,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_DTEL_REPORT_SESSION": {
     "keys": {},
@@ -4954,7 +5019,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ENI": {
     "keys": {},
@@ -5027,6 +5093,28 @@
         ],
         "objects": [
           "SAI_OBJECT_TYPE_VNET"
+        ],
+        "allownull": "true",
+        "default": "SAI_NULL_OBJECT_ID"
+      },
+      "SAI_ENI_ATTR_V4_METER_POLICY_ID": {
+        "type": "sai_object_id_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": [
+          "SAI_OBJECT_TYPE_METER_POLICY"
+        ],
+        "allownull": "true",
+        "default": "SAI_NULL_OBJECT_ID"
+      },
+      "SAI_ENI_ATTR_V6_METER_POLICY_ID": {
+        "type": "sai_object_id_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": [
+          "SAI_OBJECT_TYPE_METER_POLICY"
         ],
         "allownull": "true",
         "default": "SAI_NULL_OBJECT_ID"
@@ -5272,7 +5360,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_ENI_ETHER_ADDRESS_MAP_ENTRY": {
     "keys": {
@@ -5333,15 +5422,18 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_EXTENSIONS_RANGE_END": {
     "keys": {},
-    "attributes": {}
+    "attributes": {},
+    "npu_dpu": ""
   },
   "SAI_OBJECT_TYPE_EXTENSIONS_RANGE_START": {
     "keys": {},
-    "attributes": {}
+    "attributes": {},
+    "npu_dpu": ""
   },
   "SAI_OBJECT_TYPE_FDB_ENTRY": {
     "keys": {
@@ -5480,7 +5572,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_FDB_FLUSH": {
     "keys": {},
@@ -5545,7 +5638,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_FINE_GRAINED_HASH_FIELD": {
     "keys": {},
@@ -5616,7 +5710,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE": {
     "keys": {},
@@ -5679,7 +5774,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_HASH": {
     "keys": {},
@@ -5743,11 +5839,13 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_HOST_INTERFACE": {
     "keys": {},
-    "attributes": {}
+    "attributes": {},
+    "npu_dpu": ""
   },
   "SAI_OBJECT_TYPE_HOSTIF": {
     "keys": {},
@@ -5852,7 +5950,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_HOSTIF_PACKET": {
     "keys": {},
@@ -5979,7 +6078,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_HOSTIF_TABLE_ENTRY": {
     "keys": {},
@@ -6071,7 +6171,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_HOSTIF_TRAP": {
     "keys": {},
@@ -6178,7 +6279,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP": {
     "keys": {},
@@ -6249,7 +6351,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP": {
     "keys": {},
@@ -6312,7 +6415,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_INBOUND_ROUTING_ENTRY": {
     "keys": {
@@ -6391,6 +6495,15 @@
         "allownull": "true",
         "default": "SAI_NULL_OBJECT_ID"
       },
+      "SAI_INBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY": {
+        "type": "sai_ip_addr_family_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
       "SAI_INBOUND_ROUTING_ENTRY_ATTR_END": {
         "type": null,
         "flags": null,
@@ -6412,7 +6525,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_INGRESS_PRIORITY_GROUP": {
     "keys": {},
@@ -6491,7 +6605,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_INSEG_ENTRY": {
     "keys": {
@@ -6650,7 +6765,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_IPMC_ENTRY": {
     "keys": {
@@ -6767,7 +6883,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_IPMC_GROUP": {
     "keys": {},
@@ -6820,7 +6937,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_IPMC_GROUP_MEMBER": {
     "keys": {},
@@ -6878,7 +6996,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_IPSEC": {
     "keys": {},
@@ -7094,7 +7213,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_IPSEC_PORT": {
     "keys": {},
@@ -7185,7 +7305,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_IPSEC_SA": {
     "keys": {},
@@ -7420,7 +7541,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ISOLATION_GROUP": {
     "keys": {},
@@ -7474,7 +7596,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ISOLATION_GROUP_MEMBER": {
     "keys": {},
@@ -7532,7 +7655,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_L2MC_ENTRY": {
     "keys": {
@@ -7627,7 +7751,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_L2MC_GROUP": {
     "keys": {},
@@ -7680,7 +7805,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_L2MC_GROUP_MEMBER": {
     "keys": {},
@@ -7746,7 +7872,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_LAG": {
     "keys": {},
@@ -7906,7 +8033,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_LAG_MEMBER": {
     "keys": {},
@@ -7982,7 +8110,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MACSEC": {
     "keys": {},
@@ -8254,7 +8383,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MACSEC_FLOW": {
     "keys": {},
@@ -8319,7 +8449,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MACSEC_PORT": {
     "keys": {},
@@ -8401,7 +8532,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MACSEC_SA": {
     "keys": {},
@@ -8547,7 +8679,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MACSEC_SC": {
     "keys": {},
@@ -8689,11 +8822,13 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MAX": {
     "keys": {},
-    "attributes": {}
+    "attributes": {},
+    "npu_dpu": ""
   },
   "SAI_OBJECT_TYPE_MCAST_FDB_ENTRY": {
     "keys": {
@@ -8784,7 +8919,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MIRROR_SESSION": {
     "keys": {},
@@ -9076,7 +9212,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MY_MAC": {
     "keys": {},
@@ -9157,7 +9294,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_MY_SID_ENTRY": {
     "keys": {
@@ -9327,7 +9465,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_NAT_ENTRY": {
     "keys": {
@@ -9530,7 +9669,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_NAT_ZONE_COUNTER": {
     "keys": {},
@@ -9635,7 +9775,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_NEIGHBOR_ENTRY": {
     "keys": {
@@ -9789,7 +9930,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_NEXT_HOP": {
     "keys": {},
@@ -9982,7 +10124,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_NEXT_HOP_GROUP": {
     "keys": {},
@@ -10141,7 +10284,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MAP": {
     "keys": {},
@@ -10193,7 +10337,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MEMBER": {
     "keys": {},
@@ -10332,11 +10477,13 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_NULL": {
     "keys": {},
-    "attributes": {}
+    "attributes": {},
+    "npu_dpu": ""
   },
   "SAI_OBJECT_TYPE_OUTBOUND_CA_TO_PA_ENTRY": {
     "keys": {
@@ -10401,6 +10548,24 @@
         "allownull": null,
         "default": "false"
       },
+      "SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_METER_CLASS": {
+        "type": "sai_uint16_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_METER_CLASS_OVERRIDE": {
+        "type": "bool",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "false"
+      },
       "SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_COUNTER_ID": {
         "type": "sai_object_id_t",
         "flags": [
@@ -10411,6 +10576,15 @@
         ],
         "allownull": "true",
         "default": "SAI_NULL_OBJECT_ID"
+      },
+      "SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_IP_ADDR_FAMILY": {
+        "type": "sai_ip_addr_family_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
       },
       "SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_END": {
         "type": null,
@@ -10433,7 +10607,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY": {
     "keys": {
@@ -10490,6 +10665,24 @@
         ],
         "allownull": "true",
         "default": "SAI_NULL_OBJECT_ID"
+      },
+      "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_METER_POLICY_EN": {
+        "type": "bool",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "false"
+      },
+      "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_METER_CLASS": {
+        "type": "sai_uint16_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
       },
       "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_IP": {
         "type": "sai_ip_address_t",
@@ -10583,6 +10776,15 @@
         "allownull": "true",
         "default": "SAI_NULL_OBJECT_ID"
       },
+      "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY": {
+        "type": "sai_ip_addr_family_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
       "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_END": {
         "type": null,
         "flags": null,
@@ -10604,7 +10806,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_PA_VALIDATION_ENTRY": {
     "keys": {
@@ -10651,6 +10854,15 @@
         "allownull": null,
         "default": "SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT"
       },
+      "SAI_PA_VALIDATION_ENTRY_ATTR_IP_ADDR_FAMILY": {
+        "type": "sai_ip_addr_family_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
       "SAI_PA_VALIDATION_ENTRY_ATTR_END": {
         "type": null,
         "flags": null,
@@ -10672,7 +10884,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_POLICER": {
     "keys": {},
@@ -10815,7 +11028,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_PORT": {
     "keys": {},
@@ -12394,6 +12608,15 @@
         "allownull": null,
         "default": "0"
       },
+      "SAI_PORT_ATTR_OPER_PORT_FEC_MODE": {
+        "type": "sai_port_fec_mode_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
       "SAI_PORT_ATTR_END": {
         "type": null,
         "flags": null,
@@ -12415,7 +12638,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_PORT_CONNECTOR": {
     "keys": {},
@@ -12505,7 +12729,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_PORT_POOL": {
     "keys": {},
@@ -12573,7 +12798,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_PORT_SERDES": {
     "keys": {},
@@ -12717,7 +12943,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_QOS_MAP": {
     "keys": {
@@ -12785,7 +13012,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_QUEUE": {
     "keys": {},
@@ -12955,7 +13183,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ROUTE_ENTRY": {
     "keys": {
@@ -13086,7 +13315,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_ROUTER_INTERFACE": {
     "keys": {},
@@ -13331,7 +13561,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_RPF_GROUP": {
     "keys": {},
@@ -13384,7 +13615,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_RPF_GROUP_MEMBER": {
     "keys": {},
@@ -13441,7 +13673,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_SAMPLEPACKET": {
     "keys": {},
@@ -13502,7 +13735,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_SCHEDULER": {
     "keys": {},
@@ -13598,7 +13832,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_SCHEDULER_GROUP": {
     "keys": {},
@@ -13708,7 +13943,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_SRV6_SIDLIST": {
     "keys": {},
@@ -13780,7 +14016,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_STP": {
     "keys": {},
@@ -13844,7 +14081,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_STP_PORT": {
     "keys": {},
@@ -13911,7 +14149,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_SWITCH": {
     "keys": {},
@@ -15983,6 +16222,51 @@
         "allownull": null,
         "default": "SAI_SWITCH_HOSTIF_OPER_STATUS_UPDATE_MODE_APPLICATION"
       },
+      "SAI_SWITCH_ATTR_SWITCH_ASIC_SDK_HEALTH_EVENT_NOTIFY": {
+        "type": "sai_switch_asic_sdk_health_event_notification_fn",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "NULL"
+      },
+      "SAI_SWITCH_ATTR_REG_FATAL_SWITCH_ASIC_SDK_HEALTH_CATEGORY": {
+        "type": "sai_switch_asic_sdk_health_category_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "empty"
+      },
+      "SAI_SWITCH_ATTR_REG_WARNING_SWITCH_ASIC_SDK_HEALTH_CATEGORY": {
+        "type": "sai_switch_asic_sdk_health_category_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "empty"
+      },
+      "SAI_SWITCH_ATTR_REG_NOTICE_SWITCH_ASIC_SDK_HEALTH_CATEGORY": {
+        "type": "sai_switch_asic_sdk_health_category_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "empty"
+      },
+      "SAI_SWITCH_ATTR_ACL_CHAIN_LIST": {
+        "type": "sai_acl_chain_list_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
       "SAI_SWITCH_ATTR_END": {
         "type": null,
         "flags": null,
@@ -16004,7 +16288,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_SWITCH_TUNNEL": {
     "keys": {},
@@ -16168,7 +16453,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_SYSTEM_PORT": {
     "keys": {},
@@ -16271,7 +16557,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TABLE_BITMAP_ROUTER_ENTRY": {
     "keys": {},
@@ -16400,7 +16687,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_TABLE_META_TUNNEL_ENTRY": {
     "keys": {},
@@ -16484,7 +16772,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_TAM": {
     "keys": {},
@@ -16559,7 +16848,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_COLLECTOR": {
     "keys": {},
@@ -16663,7 +16953,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_EVENT": {
     "keys": {},
@@ -16750,7 +17041,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_EVENT_ACTION": {
     "keys": {},
@@ -16804,7 +17096,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_EVENT_THRESHOLD": {
     "keys": {},
@@ -16891,7 +17184,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_INT": {
     "keys": {},
@@ -17178,7 +17472,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_MATH_FUNC": {
     "keys": {},
@@ -17220,7 +17515,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_REPORT": {
     "keys": {},
@@ -17326,7 +17622,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_TEL_TYPE": {
     "keys": {},
@@ -17509,7 +17806,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_TELEMETRY": {
     "keys": {},
@@ -17583,7 +17881,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TAM_TRANSPORT": {
     "keys": {},
@@ -17662,7 +17961,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TUNNEL": {
     "keys": {},
@@ -17988,7 +18288,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TUNNEL_MAP": {
     "keys": {
@@ -18057,7 +18358,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TUNNEL_MAP_ENTRY": {
     "keys": {},
@@ -18280,7 +18582,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_TUNNEL_TERM_TABLE_ENTRY": {
     "keys": {},
@@ -18413,7 +18716,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_UDF": {
     "keys": {},
@@ -18498,7 +18802,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_UDF_GROUP": {
     "keys": {},
@@ -18561,7 +18866,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_UDF_MATCH": {
     "keys": {},
@@ -18639,7 +18945,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_VIP_ENTRY": {
     "keys": {
@@ -18677,6 +18984,15 @@
         "allownull": null,
         "default": "SAI_VIP_ENTRY_ACTION_ACCEPT"
       },
+      "SAI_VIP_ENTRY_ATTR_IP_ADDR_FAMILY": {
+        "type": "sai_ip_addr_family_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
       "SAI_VIP_ENTRY_ATTR_END": {
         "type": null,
         "flags": null,
@@ -18698,7 +19014,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_VIRTUAL_ROUTER": {
     "keys": {},
@@ -18794,7 +19111,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_VLAN": {
     "keys": {},
@@ -19053,7 +19371,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_VLAN_MEMBER": {
     "keys": {},
@@ -19119,7 +19438,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_VNET": {
     "keys": {},
@@ -19161,7 +19481,8 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "dpu"
   },
   "SAI_OBJECT_TYPE_WRED": {
     "keys": {},
@@ -19407,6 +19728,132 @@
         "allownull": null,
         "default": "100"
       },
+      "SAI_WRED_ATTR_GREEN_MIN_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_GREEN_MAX_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_RED_MIN_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_RED_MAX_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_ECN_GREEN_MIN_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_ECN_GREEN_MAX_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_ECN_YELLOW_MIN_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_ECN_YELLOW_MAX_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_ECN_RED_MIN_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_ECN_RED_MAX_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MIN_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MAX_THRESHOLD_64": {
+        "type": "sai_uint64_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
       "SAI_WRED_ATTR_END": {
         "type": null,
         "flags": null,
@@ -19428,10 +19875,12 @@
         "allownull": null,
         "default": null
       }
-    }
+    },
+    "npu_dpu": "npu"
   },
   "SAI_OBJECT_TYPE_XXX": {
     "keys": {},
-    "attributes": {}
+    "attributes": {},
+    "npu_dpu": ""
   }
 }

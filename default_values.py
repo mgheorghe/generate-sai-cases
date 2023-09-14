@@ -1,4 +1,5 @@
 DEFAULT_VALUES = {
+    'char': 'inbound',
     'sai_int8_t': '1',
     'sai_uint8_t': '1',
     'sai_uint16_t': '10',

@@ -1,30 +1,27 @@
+
 from pprint import pprint
 
+import pytest
 
+@pytest.mark.
 class TestSaiXxx:
     # object with no attributes
 
-    def test_xxx_create(self, npu):
-        commands = [
-            {
-                'name': 'xxx_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_XXX',
-                'attributes': [],
-            }
-        ]
+    def test_xxx_create(self, ):
 
-        results = [*npu.process_commands(commands)]
+        commands = [{'name': 'xxx_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_XXX', 'attributes': []}]
+
+        results = [*.process_commands(commands)]
         print('======= SAI commands RETURN values create =======')
         pprint(results)
-        assert all(results), 'Create error'
 
-    def test_xxx_remove(self, npu):
+
+
+    def test_xxx_remove(self, ):
+
         commands = [{'name': 'xxx_1', 'op': 'remove'}]
 
-        results = [*npu.process_commands(commands)]
+        results = [*.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
-        assert all(
-            [result == 'SAI_STATUS_SUCCESS' for result in results]
-        ), 'Remove error'
+
