@@ -60,7 +60,7 @@ class TestSaiInboundRoutingEntry:
             {
                 "name": "inbound_routing_entry_1",
                 "op": "set",
-                "attributes": ["SAI_INBOUND_ROUTING_ENTRY_ATTR_SRC_VNET_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_INBOUND_ROUTING_ENTRY_ATTR_SRC_VNET_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -86,7 +86,7 @@ class TestSaiInboundRoutingEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     

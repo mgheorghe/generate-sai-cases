@@ -60,7 +60,7 @@ class TestSaiDashAclRule:
             {
                 "name": "dash_acl_rule_1",
                 "op": "set",
-                "attributes": ["SAI_DASH_ACL_RULE_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_DASH_ACL_RULE_ATTR_COUNTER_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -86,7 +86,7 @@ class TestSaiDashAclRule:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     

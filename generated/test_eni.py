@@ -240,7 +240,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_VNET_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_VNET_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -266,7 +266,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_v4_meter_policy_id_set")
@@ -276,7 +276,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_V4_METER_POLICY_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_V4_METER_POLICY_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -302,7 +302,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_v6_meter_policy_id_set")
@@ -312,7 +312,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_V6_METER_POLICY_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_V6_METER_POLICY_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -338,7 +338,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v4_stage1_dash_acl_group_id_set")
@@ -348,7 +348,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE1_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE1_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -374,7 +374,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v4_stage2_dash_acl_group_id_set")
@@ -384,7 +384,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE2_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE2_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -410,7 +410,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v4_stage3_dash_acl_group_id_set")
@@ -420,7 +420,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE3_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE3_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -446,7 +446,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v4_stage4_dash_acl_group_id_set")
@@ -456,7 +456,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE4_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE4_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -482,7 +482,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v4_stage5_dash_acl_group_id_set")
@@ -492,7 +492,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE5_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE5_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -518,7 +518,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v6_stage1_dash_acl_group_id_set")
@@ -528,7 +528,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE1_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE1_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -554,7 +554,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v6_stage2_dash_acl_group_id_set")
@@ -564,7 +564,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE2_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE2_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -590,7 +590,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v6_stage3_dash_acl_group_id_set")
@@ -600,7 +600,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE3_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE3_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -626,7 +626,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v6_stage4_dash_acl_group_id_set")
@@ -636,7 +636,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE4_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE4_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -662,7 +662,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_inbound_v6_stage5_dash_acl_group_id_set")
@@ -672,7 +672,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE5_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE5_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -698,7 +698,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v4_stage1_dash_acl_group_id_set")
@@ -708,7 +708,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE1_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE1_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -734,7 +734,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v4_stage2_dash_acl_group_id_set")
@@ -744,7 +744,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE2_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE2_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -770,7 +770,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v4_stage3_dash_acl_group_id_set")
@@ -780,7 +780,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE3_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE3_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -806,7 +806,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v4_stage4_dash_acl_group_id_set")
@@ -816,7 +816,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE4_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE4_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -842,7 +842,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v4_stage5_dash_acl_group_id_set")
@@ -852,7 +852,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE5_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE5_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -878,7 +878,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v6_stage1_dash_acl_group_id_set")
@@ -888,7 +888,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE1_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE1_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -914,7 +914,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v6_stage2_dash_acl_group_id_set")
@@ -924,7 +924,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE2_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE2_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -950,7 +950,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v6_stage3_dash_acl_group_id_set")
@@ -960,7 +960,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE3_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE3_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -986,7 +986,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v6_stage4_dash_acl_group_id_set")
@@ -996,7 +996,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE4_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE4_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -1022,7 +1022,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_eni_attr_outbound_v6_stage5_dash_acl_group_id_set")
@@ -1032,7 +1032,7 @@ class TestSaiEni:
             {
                 "name": "eni_1",
                 "op": "set",
-                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE5_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE5_DASH_ACL_GROUP_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -1058,7 +1058,7 @@ class TestSaiEni:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_eni_remove(self, dpu):

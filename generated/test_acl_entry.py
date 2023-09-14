@@ -3437,6 +3437,78 @@ class TestSaiAclEntry:
         assert r_value == 'disabled', 'Get error, expected disabled but got %s' %  r_value
 
 
+    @pytest.mark.dependency(name="test_sai_acl_entry_attr_field_inner_src_mac_set")
+    def test_sai_acl_entry_attr_field_inner_src_mac_set(self, npu):
+
+        commands = [
+            {
+                "name": "acl_entry_1",
+                "op": "set",
+                "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_MAC", 'disabled']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_acl_entry_attr_field_inner_src_mac_set"])
+    def test_sai_acl_entry_attr_field_inner_src_mac_get(self, npu):
+
+        commands = [
+            {
+                "name": "acl_entry_1",
+                "op": "get",
+                "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_MAC"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'disabled', 'Get error, expected disabled but got %s' %  r_value
+
+
+    @pytest.mark.dependency(name="test_sai_acl_entry_attr_field_inner_dst_mac_set")
+    def test_sai_acl_entry_attr_field_inner_dst_mac_set(self, npu):
+
+        commands = [
+            {
+                "name": "acl_entry_1",
+                "op": "set",
+                "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_MAC", 'disabled']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_acl_entry_attr_field_inner_dst_mac_set"])
+    def test_sai_acl_entry_attr_field_inner_dst_mac_get(self, npu):
+
+        commands = [
+            {
+                "name": "acl_entry_1",
+                "op": "get",
+                "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_MAC"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'disabled', 'Get error, expected disabled but got %s' %  r_value
+
+
     @pytest.mark.dependency(name="test_sai_acl_entry_attr_action_redirect_set")
     def test_sai_acl_entry_attr_action_redirect_set(self, npu):
 

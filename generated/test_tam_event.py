@@ -24,7 +24,7 @@ class TestSaiTamEvent:
             {
                 "name": "tam_event_1",
                 "op": "set",
-                "attributes": ["SAI_TAM_EVENT_ATTR_THRESHOLD", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TAM_EVENT_ATTR_THRESHOLD", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -50,7 +50,7 @@ class TestSaiTamEvent:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_tam_event_attr_dscp_value_set")

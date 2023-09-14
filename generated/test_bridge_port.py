@@ -312,7 +312,7 @@ class TestSaiBridgePort:
             {
                 "name": "bridge_port_1",
                 "op": "set",
-                "attributes": ["SAI_BRIDGE_PORT_ATTR_ISOLATION_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_BRIDGE_PORT_ATTR_ISOLATION_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -338,7 +338,7 @@ class TestSaiBridgePort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_bridge_port_remove(self, npu):

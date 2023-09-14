@@ -993,6 +993,24 @@
         "allownull": null,
         "default": "disabled"
       },
+      "SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_MAC": {
+        "type": "sai_mac_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "disabled"
+      },
+      "SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_MAC": {
+        "type": "sai_mac_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "disabled"
+      },
       "SAI_ACL_ENTRY_ATTR_FIELD_END": {
         "type": null,
         "flags": null,
@@ -2506,7 +2524,7 @@
           "SAI_OBJECT_TYPE_UDF_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ACL_TABLE_ATTR_USER_DEFINED_FIELD_GROUP_MAX": {
         "type": "sai_object_id_t",
@@ -2517,7 +2535,7 @@
           "SAI_OBJECT_TYPE_UDF_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ACL_TABLE_ATTR_FIELD_ACL_RANGE_TYPE": {
         "type": "sai_acl_range_type_t",
@@ -2547,6 +2565,24 @@
         "default": "false"
       },
       "SAI_ACL_TABLE_ATTR_FIELD_TAM_INT_TYPE": {
+        "type": "bool",
+        "flags": [
+          "CREATE_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "false"
+      },
+      "SAI_ACL_TABLE_ATTR_FIELD_INNER_SRC_MAC": {
+        "type": "bool",
+        "flags": [
+          "CREATE_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "false"
+      },
+      "SAI_ACL_TABLE_ATTR_FIELD_INNER_DST_MAC": {
         "type": "bool",
         "flags": [
           "CREATE_ONLY"
@@ -2793,7 +2829,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_CHAIN_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ACL_TABLE_GROUP_MEMBER_ATTR_END": {
         "type": null,
@@ -2874,7 +2910,7 @@
           "SAI_OBJECT_TYPE_SAMPLEPACKET"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ARS_ATTR_MAX_ALT_MEMEBERS_PER_GROUP": {
         "type": "sai_uint32_t",
@@ -3744,7 +3780,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE": {
         "type": "sai_bridge_flood_control_type_t",
@@ -3764,7 +3800,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_BRIDGE_ATTR_BROADCAST_FLOOD_CONTROL_TYPE": {
         "type": "sai_bridge_flood_control_type_t",
@@ -3784,7 +3820,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_BRIDGE_ATTR_END": {
         "type": null,
@@ -3962,7 +3998,7 @@
           "SAI_OBJECT_TYPE_ISOLATION_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_BRIDGE_PORT_ATTR_END": {
         "type": null,
@@ -4065,7 +4101,7 @@
           "SAI_OBJECT_TYPE_WRED"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_BUFFER_POOL_ATTR_END": {
         "type": null,
@@ -4396,7 +4432,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_DASH_ACL_RULE_ATTR_PRIORITY": {
         "type": "sai_uint32_t",
@@ -4736,7 +4772,7 @@
           "SAI_OBJECT_TYPE_DTEL_REPORT_SESSION"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_DTEL_EVENT_ATTR_DSCP_VALUE": {
         "type": "sai_uint8_t",
@@ -4978,7 +5014,7 @@
           "SAI_OBJECT_TYPE_VIRTUAL_ROUTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_DTEL_REPORT_SESSION_ATTR_TRUNCATE_SIZE": {
         "type": "sai_uint16_t",
@@ -5095,7 +5131,7 @@
           "SAI_OBJECT_TYPE_VNET"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_V4_METER_POLICY_ID": {
         "type": "sai_object_id_t",
@@ -5106,7 +5142,7 @@
           "SAI_OBJECT_TYPE_METER_POLICY"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_V6_METER_POLICY_ID": {
         "type": "sai_object_id_t",
@@ -5117,7 +5153,7 @@
           "SAI_OBJECT_TYPE_METER_POLICY"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V4_STAGE1_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5128,7 +5164,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V4_STAGE2_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5139,7 +5175,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V4_STAGE3_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5150,7 +5186,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V4_STAGE4_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5161,7 +5197,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V4_STAGE5_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5172,7 +5208,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V6_STAGE1_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5183,7 +5219,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V6_STAGE2_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5194,7 +5230,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V6_STAGE3_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5205,7 +5241,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V6_STAGE4_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5216,7 +5252,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_INBOUND_V6_STAGE5_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5227,7 +5263,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V4_STAGE1_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5238,7 +5274,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V4_STAGE2_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5249,7 +5285,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V4_STAGE3_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5260,7 +5296,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V4_STAGE4_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5271,7 +5307,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V4_STAGE5_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5282,7 +5318,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V6_STAGE1_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5293,7 +5329,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V6_STAGE2_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5304,7 +5340,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V6_STAGE3_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5315,7 +5351,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V6_STAGE4_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5326,7 +5362,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_OUTBOUND_V6_STAGE5_DASH_ACL_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -5337,7 +5373,7 @@
           "SAI_OBJECT_TYPE_DASH_ACL_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ATTR_END": {
         "type": null,
@@ -5399,7 +5435,7 @@
           "SAI_OBJECT_TYPE_ENI"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ENI_ETHER_ADDRESS_MAP_ENTRY_ATTR_END": {
         "type": null,
@@ -5500,7 +5536,7 @@
           "SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_FDB_ENTRY_ATTR_BRIDGE_PORT_ID": {
         "type": "sai_object_id_t",
@@ -5511,7 +5547,7 @@
           "SAI_OBJECT_TYPE_BRIDGE_PORT"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_FDB_ENTRY_ATTR_META_DATA": {
         "type": "sai_uint32_t",
@@ -5540,7 +5576,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_FDB_ENTRY_ATTR_ALLOW_MAC_MOVE": {
         "type": "bool",
@@ -5594,7 +5630,7 @@
           "SAI_OBJECT_TYPE_BRIDGE_PORT"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_FDB_FLUSH_ATTR_BV_ID": {
         "type": "sai_object_id_t",
@@ -5606,7 +5642,7 @@
           "SAI_OBJECT_TYPE_VLAN"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_FDB_FLUSH_ATTR_ENTRY_TYPE": {
         "type": "sai_fdb_flush_entry_type_t",
@@ -5751,7 +5787,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_GENERIC_PROGRAMMABLE_ATTR_END": {
         "type": null,
@@ -6256,7 +6292,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_HOSTIF_TRAP_ATTR_END": {
         "type": null,
@@ -6319,7 +6355,7 @@
           "SAI_OBJECT_TYPE_POLICER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_HOSTIF_TRAP_GROUP_ATTR_OBJECT_STAGE": {
         "type": "sai_object_stage_t",
@@ -6493,7 +6529,7 @@
           "SAI_OBJECT_TYPE_VNET"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_INBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY": {
         "type": "sai_ip_addr_family_t",
@@ -6547,7 +6583,7 @@
           "SAI_OBJECT_TYPE_BUFFER_PROFILE"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_INGRESS_PRIORITY_GROUP_ATTR_PORT": {
         "type": "sai_object_id_t",
@@ -6673,7 +6709,7 @@
           "SAI_OBJECT_TYPE_ROUTER_INTERFACE"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_INSEG_ENTRY_ATTR_PSC_TYPE": {
         "type": "sai_inseg_entry_psc_type_t",
@@ -6702,7 +6738,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_COLOR_MAP": {
         "type": "sai_object_id_t",
@@ -6713,7 +6749,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_INSEG_ENTRY_ATTR_POP_TTL_MODE": {
         "type": "sai_inseg_entry_pop_ttl_mode_t",
@@ -6742,7 +6778,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_INSEG_ENTRY_ATTR_END": {
         "type": null,
@@ -6837,7 +6873,7 @@
           "SAI_OBJECT_TYPE_IPMC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -6860,7 +6896,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_IPMC_ENTRY_ATTR_END": {
         "type": null,
@@ -7728,7 +7764,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_L2MC_ENTRY_ATTR_END": {
         "type": null,
@@ -7906,7 +7942,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_LAG_ATTR_EGRESS_ACL": {
         "type": "sai_object_id_t",
@@ -7918,7 +7954,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_LAG_ATTR_PORT_VLAN_ID": {
         "type": "sai_uint16_t",
@@ -7992,7 +8028,7 @@
           "SAI_OBJECT_TYPE_ARS"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_LAG_ATTR_ARS_PACKET_DROPS": {
         "type": "sai_uint32_t",
@@ -9158,7 +9194,7 @@
           "SAI_OBJECT_TYPE_POLICER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_MIRROR_SESSION_ATTR_UDP_SRC_PORT": {
         "type": "sai_uint16_t",
@@ -9189,7 +9225,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_MIRROR_SESSION_ATTR_END": {
         "type": null,
@@ -9244,7 +9280,7 @@
           "SAI_OBJECT_TYPE_LAG"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_MY_MAC_ATTR_VLAN_ID": {
         "type": "sai_uint16_t",
@@ -9409,7 +9445,7 @@
           "SAI_OBJECT_TYPE_ROUTER_INTERFACE"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID": {
         "type": "sai_object_id_t",
@@ -9420,7 +9456,7 @@
           "SAI_OBJECT_TYPE_TUNNEL"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_MY_SID_ENTRY_ATTR_VRF": {
         "type": "sai_object_id_t",
@@ -9431,7 +9467,7 @@
           "SAI_OBJECT_TYPE_VIRTUAL_ROUTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_MY_SID_ENTRY_ATTR_COUNTER_ID": {
         "type": "sai_object_id_t",
@@ -9442,7 +9478,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_MY_SID_ENTRY_ATTR_END": {
         "type": null,
@@ -9547,7 +9583,7 @@
           "SAI_OBJECT_TYPE_VIRTUAL_ROUTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NAT_ENTRY_ATTR_DST_IP": {
         "type": "sai_ip4_t",
@@ -9842,7 +9878,7 @@
           "SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEIGHBOR_ENTRY_ATTR_NO_HOST_ROUTE": {
         "type": "bool",
@@ -9871,7 +9907,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX": {
         "type": "sai_uint32_t",
@@ -10036,7 +10072,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEXT_HOP_ATTR_DISABLE_DECREMENT_TTL": {
         "type": "bool",
@@ -10101,7 +10137,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEXT_HOP_ATTR_END": {
         "type": null,
@@ -10185,7 +10221,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEXT_HOP_GROUP_ATTR_CONFIGURED_SIZE": {
         "type": "sai_uint32_t",
@@ -10214,7 +10250,7 @@
           "SAI_OBJECT_TYPE_NEXT_HOP_GROUP_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEXT_HOP_GROUP_ATTR_HIERARCHICAL_NEXTHOP": {
         "type": "bool",
@@ -10234,7 +10270,7 @@
           "SAI_OBJECT_TYPE_ARS"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEXT_HOP_GROUP_ATTR_ARS_PACKET_DROPS": {
         "type": "sai_uint32_t",
@@ -10416,7 +10452,7 @@
           "SAI_OBJECT_TYPE_BRIDGE_PORT"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEXT_HOP_GROUP_MEMBER_ATTR_INDEX": {
         "type": "sai_uint32_t",
@@ -10445,7 +10481,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_NEXT_HOP_GROUP_MEMBER_ATTR_ARS_ALTERNATE_PATH": {
         "type": "bool",
@@ -10575,7 +10611,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_IP_ADDR_FAMILY": {
         "type": "sai_ip_addr_family_t",
@@ -10664,7 +10700,7 @@
           "SAI_OBJECT_TYPE_VNET"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_METER_POLICY_EN": {
         "type": "bool",
@@ -10774,7 +10810,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_OUTBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY": {
         "type": "sai_ip_addr_family_t",
@@ -11554,7 +11590,7 @@
           "SAI_OBJECT_TYPE_POLICER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_BROADCAST_STORM_CONTROL_POLICER_ID": {
         "type": "sai_object_id_t",
@@ -11565,7 +11601,7 @@
           "SAI_OBJECT_TYPE_POLICER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_MULTICAST_STORM_CONTROL_POLICER_ID": {
         "type": "sai_object_id_t",
@@ -11576,7 +11612,7 @@
           "SAI_OBJECT_TYPE_POLICER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_GLOBAL_FLOW_CONTROL_MODE": {
         "type": "sai_port_flow_control_mode_t",
@@ -11597,7 +11633,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_EGRESS_ACL": {
         "type": "sai_object_id_t",
@@ -11609,7 +11645,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_INGRESS_MACSEC_ACL": {
         "type": "sai_object_id_t",
@@ -11620,7 +11656,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_EGRESS_MACSEC_ACL": {
         "type": "sai_object_id_t",
@@ -11631,7 +11667,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_MACSEC_PORT_LIST": {
         "type": "sai_object_list_t",
@@ -11675,7 +11711,7 @@
           "SAI_OBJECT_TYPE_SAMPLEPACKET"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_EGRESS_SAMPLEPACKET_ENABLE": {
         "type": "sai_object_id_t",
@@ -11686,7 +11722,7 @@
           "SAI_OBJECT_TYPE_SAMPLEPACKET"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_INGRESS_SAMPLE_MIRROR_SESSION": {
         "type": "sai_object_list_t",
@@ -11719,7 +11755,7 @@
           "SAI_OBJECT_TYPE_POLICER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_DEFAULT_TC": {
         "type": "sai_uint8_t",
@@ -11739,7 +11775,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_DOT1P_TO_COLOR_MAP": {
         "type": "sai_object_id_t",
@@ -11750,7 +11786,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP": {
         "type": "sai_object_id_t",
@@ -11761,7 +11797,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_DSCP_TO_COLOR_MAP": {
         "type": "sai_object_id_t",
@@ -11772,7 +11808,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_TC_TO_QUEUE_MAP": {
         "type": "sai_object_id_t",
@@ -11783,7 +11819,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP": {
         "type": "sai_object_id_t",
@@ -11794,7 +11830,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP": {
         "type": "sai_object_id_t",
@@ -11805,7 +11841,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_TC_TO_PRIORITY_GROUP_MAP": {
         "type": "sai_object_id_t",
@@ -11816,7 +11852,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_PRIORITY_GROUP_MAP": {
         "type": "sai_object_id_t",
@@ -11827,7 +11863,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_QUEUE_MAP": {
         "type": "sai_object_id_t",
@@ -11838,7 +11874,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_SCHEDULER_PROFILE_ID": {
         "type": "sai_object_id_t",
@@ -11849,7 +11885,7 @@
           "SAI_OBJECT_TYPE_SCHEDULER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_INGRESS_BUFFER_PROFILE_LIST": {
         "type": "sai_object_list_t",
@@ -11985,7 +12021,7 @@
           "SAI_OBJECT_TYPE_ISOLATION_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_PKT_TX_ENABLE": {
         "type": "bool",
@@ -12189,7 +12225,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP": {
         "type": "sai_object_id_t",
@@ -12200,7 +12236,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP": {
         "type": "sai_object_id_t",
@@ -12211,7 +12247,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_TPID": {
         "type": "sai_uint16_t",
@@ -12404,7 +12440,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP": {
         "type": "sai_object_id_t",
@@ -12415,7 +12451,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_ATTR_IPSEC_PORT": {
         "type": "sai_object_id_t",
@@ -12617,6 +12653,69 @@
         "allownull": null,
         "default": null
       },
+      "SAI_PORT_ATTR_HOST_TX_SIGNAL_ENABLE": {
+        "type": "bool",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "true"
+      },
+      "SAI_PORT_ATTR_HOST_TX_READY_STATUS": {
+        "type": "sai_port_host_tx_ready_status_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_PORT_ATTR_PATH_TRACING_INTF": {
+        "type": "sai_uint16_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
+      },
+      "SAI_PORT_ATTR_PATH_TRACING_TIMESTAMP_TYPE": {
+        "type": "sai_port_path_tracing_timestamp_type_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "SAI_PORT_PATH_TRACING_TIMESTAMP_TYPE_16_23"
+      },
+      "SAI_PORT_ATTR_RX_FREQUENCY_OFFSET_PPM": {
+        "type": "sai_port_frequency_offset_ppm_list_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_PORT_ATTR_RX_SNR": {
+        "type": "sai_port_snr_list_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_PORT_ATTR_DATAPATH_ENABLE": {
+        "type": "sai_port_datapath_enable_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "SAI_PORT_DATAPATH_ENABLE_PASS_THROUGH_MODE"
+      },
       "SAI_PORT_ATTR_END": {
         "type": null,
         "flags": null,
@@ -12686,7 +12785,7 @@
           "SAI_OBJECT_TYPE_PORT"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_CONNECTOR_ATTR_LINE_SIDE_FAILOVER_PORT_ID": {
         "type": "sai_object_id_t",
@@ -12697,7 +12796,7 @@
           "SAI_OBJECT_TYPE_PORT"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE": {
         "type": "sai_port_connector_failover_mode_t",
@@ -12775,7 +12874,7 @@
           "SAI_OBJECT_TYPE_WRED"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_PORT_POOL_ATTR_END": {
         "type": null,
@@ -12914,6 +13013,60 @@
         "default": "internal"
       },
       "SAI_PORT_SERDES_ATTR_TX_FIR_ATTN": {
+        "type": "sai_s32_list_t",
+        "flags": [
+          "CREATE_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "internal"
+      },
+      "SAI_PORT_SERDES_ATTR_TX_PAM4_RATIO": {
+        "type": "sai_s32_list_t",
+        "flags": [
+          "CREATE_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "internal"
+      },
+      "SAI_PORT_SERDES_ATTR_TX_OUT_COMMON_MODE": {
+        "type": "sai_s32_list_t",
+        "flags": [
+          "CREATE_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "internal"
+      },
+      "SAI_PORT_SERDES_ATTR_TX_PMOS_COMMON_MODE": {
+        "type": "sai_s32_list_t",
+        "flags": [
+          "CREATE_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "internal"
+      },
+      "SAI_PORT_SERDES_ATTR_TX_NMOS_COMMON_MODE": {
+        "type": "sai_s32_list_t",
+        "flags": [
+          "CREATE_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "internal"
+      },
+      "SAI_PORT_SERDES_ATTR_TX_PMOS_VLTG_REG": {
+        "type": "sai_s32_list_t",
+        "flags": [
+          "CREATE_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "internal"
+      },
+      "SAI_PORT_SERDES_ATTR_TX_NMOS_VLTG_REG": {
         "type": "sai_s32_list_t",
         "flags": [
           "CREATE_ONLY"
@@ -13082,7 +13235,7 @@
           "SAI_OBJECT_TYPE_WRED"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_QUEUE_ATTR_BUFFER_PROFILE_ID": {
         "type": "sai_object_id_t",
@@ -13093,7 +13246,7 @@
           "SAI_OBJECT_TYPE_BUFFER_PROFILE"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_QUEUE_ATTR_SCHEDULER_PROFILE_ID": {
         "type": "sai_object_id_t",
@@ -13104,7 +13257,7 @@
           "SAI_OBJECT_TYPE_SCHEDULER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_QUEUE_ATTR_PAUSE_STATUS": {
         "type": "bool",
@@ -13240,7 +13393,7 @@
           "SAI_OBJECT_TYPE_HOSTIF_USER_DEFINED_TRAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ROUTE_ENTRY_ATTR_NEXT_HOP_ID": {
         "type": "sai_object_id_t",
@@ -13254,7 +13407,7 @@
           "SAI_OBJECT_TYPE_PORT"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ROUTE_ENTRY_ATTR_META_DATA": {
         "type": "sai_uint32_t",
@@ -13283,7 +13436,7 @@
           "SAI_OBJECT_TYPE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ROUTE_ENTRY_ATTR_PREFIX_AGG_ID": {
         "type": "sai_uint32_t",
@@ -13454,7 +13607,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ROUTER_INTERFACE_ATTR_EGRESS_ACL": {
         "type": "sai_object_id_t",
@@ -13466,7 +13619,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_ROUTER_INTERFACE_ATTR_NEIGHBOR_MISS_PACKET_ACTION": {
         "type": "sai_packet_action_t",
@@ -13907,7 +14060,7 @@
           "SAI_OBJECT_TYPE_SCHEDULER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE": {
         "type": "sai_object_id_t",
@@ -13993,7 +14146,7 @@
           "SAI_OBJECT_TYPE_NEXT_HOP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SRV6_SIDLIST_ATTR_END": {
         "type": null,
@@ -14571,7 +14724,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_EGRESS_ACL": {
         "type": "sai_object_id_t",
@@ -14583,7 +14736,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_TRAFFIC_CLASSES": {
         "type": "sai_uint8_t",
@@ -15041,7 +15194,7 @@
           "SAI_OBJECT_TYPE_HASH"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_ECMP_HASH_IPV4_IN_IPV4": {
         "type": "sai_object_id_t",
@@ -15052,7 +15205,7 @@
           "SAI_OBJECT_TYPE_HASH"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_ECMP_HASH_IPV6": {
         "type": "sai_object_id_t",
@@ -15063,7 +15216,7 @@
           "SAI_OBJECT_TYPE_HASH"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_ALGORITHM": {
         "type": "sai_hash_algorithm_t",
@@ -15110,7 +15263,7 @@
           "SAI_OBJECT_TYPE_HASH"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_LAG_HASH_IPV4_IN_IPV4": {
         "type": "sai_object_id_t",
@@ -15121,7 +15274,7 @@
           "SAI_OBJECT_TYPE_HASH"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_LAG_HASH_IPV6": {
         "type": "sai_object_id_t",
@@ -15132,7 +15285,7 @@
           "SAI_OBJECT_TYPE_HASH"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_COUNTER_REFRESH_INTERVAL": {
         "type": "sai_uint32_t",
@@ -15161,7 +15314,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_DOT1P_TO_COLOR_MAP": {
         "type": "sai_object_id_t",
@@ -15172,7 +15325,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_DSCP_TO_TC_MAP": {
         "type": "sai_object_id_t",
@@ -15183,7 +15336,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_DSCP_TO_COLOR_MAP": {
         "type": "sai_object_id_t",
@@ -15194,7 +15347,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_TC_TO_QUEUE_MAP": {
         "type": "sai_object_id_t",
@@ -15205,7 +15358,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP": {
         "type": "sai_object_id_t",
@@ -15216,7 +15369,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP": {
         "type": "sai_object_id_t",
@@ -15227,7 +15380,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_SWITCH_SHELL_ENABLE": {
         "type": "bool",
@@ -15662,7 +15815,7 @@
           "SAI_OBJECT_TYPE_NAT_ZONE_COUNTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_NAT_ENABLE": {
         "type": "bool",
@@ -15843,7 +15996,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP": {
         "type": "sai_object_id_t",
@@ -15854,7 +16007,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP": {
         "type": "sai_object_id_t",
@@ -15865,7 +16018,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_SWITCH_ID": {
         "type": "sai_uint32_t",
@@ -15994,7 +16147,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_AVAILABLE_SNAPT_ENTRY": {
         "type": "sai_uint32_t",
@@ -16097,7 +16250,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP": {
         "type": "sai_object_id_t",
@@ -16108,7 +16261,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_IPSEC_OBJECT_ID": {
         "type": "sai_object_id_t",
@@ -16119,7 +16272,7 @@
           "SAI_OBJECT_TYPE_IPSEC"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_IPSEC_SA_TAG_TPID": {
         "type": "sai_uint16_t",
@@ -16175,7 +16328,7 @@
           "SAI_OBJECT_TYPE_ARS_PROFILE"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_ATTR_ACL_STAGE_POST_INGRESS": {
         "type": "sai_acl_capability_t",
@@ -16260,6 +16413,78 @@
       },
       "SAI_SWITCH_ATTR_ACL_CHAIN_LIST": {
         "type": "sai_acl_chain_list_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_SWITCH_ATTR_PORT_HOST_TX_READY_NOTIFY": {
+        "type": "sai_port_host_tx_ready_notification_fn",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "NULL"
+      },
+      "SAI_SWITCH_ATTR_TUNNEL_TERM_TABLE_ENTRY_MINIMUM_PRIORITY": {
+        "type": "sai_uint32_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_SWITCH_ATTR_TUNNEL_TERM_TABLE_ENTRY_MAXIMUM_PRIORITY": {
+        "type": "sai_uint32_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_SWITCH_ATTR_TWAMP_SESSION_EVENT_NOTIFY": {
+        "type": "sai_twamp_session_event_notification_fn",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "NULL"
+      },
+      "SAI_SWITCH_ATTR_AVAILABLE_TWAMP_SESSION": {
+        "type": "sai_uint32_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_SWITCH_ATTR_MAX_TWAMP_SESSION": {
+        "type": "sai_uint32_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_SWITCH_ATTR_AVAILABLE_IP_NEXT_HOP_GROUP_MEMBER_ENTRY": {
+        "type": "sai_uint32_t",
+        "flags": [
+          "READ_ONLY"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": null
+      },
+      "SAI_SWITCH_ATTR_AVAILABLE_SYSTEM_VOQS": {
+        "type": "sai_uint32_t",
         "flags": [
           "READ_ONLY"
         ],
@@ -16397,7 +16622,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP": {
         "type": "sai_object_id_t",
@@ -16408,7 +16633,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP": {
         "type": "sai_object_id_t",
@@ -16419,7 +16644,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP": {
         "type": "sai_object_id_t",
@@ -16430,7 +16655,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SWITCH_TUNNEL_ATTR_END": {
         "type": null,
@@ -16534,7 +16759,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_SYSTEM_PORT_ATTR_END": {
         "type": null,
@@ -16899,7 +17124,7 @@
           "SAI_OBJECT_TYPE_VIRTUAL_ROUTER"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE": {
         "type": "sai_uint16_t",
@@ -17009,7 +17234,7 @@
           "SAI_OBJECT_TYPE_TAM_EVENT_THRESHOLD"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TAM_EVENT_ATTR_DSCP_VALUE": {
         "type": "sai_uint8_t",
@@ -17368,7 +17593,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TAM_INT_ATTR_MAX_HOP_COUNT": {
         "type": "sai_uint8_t",
@@ -17415,7 +17640,7 @@
           "SAI_OBJECT_TYPE_SAMPLEPACKET"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TAM_INT_ATTR_COLLECTOR_LIST": {
         "type": "sai_object_list_t",
@@ -17437,7 +17662,7 @@
           "SAI_OBJECT_TYPE_TAM_MATH_FUNC"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TAM_INT_ATTR_REPORT_ID": {
         "type": "sai_object_id_t",
@@ -17771,7 +17996,7 @@
           "SAI_OBJECT_TYPE_TAM_MATH_FUNC"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TAM_TEL_TYPE_ATTR_REPORT_ID": {
         "type": "sai_object_id_t",
@@ -18223,7 +18448,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP": {
         "type": "sai_object_id_t",
@@ -18234,7 +18459,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP": {
         "type": "sai_object_id_t",
@@ -18245,7 +18470,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP": {
         "type": "sai_object_id_t",
@@ -18256,7 +18481,7 @@
           "SAI_OBJECT_TYPE_QOS_MAP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_SECURITY": {
         "type": "bool",
@@ -18694,6 +18919,15 @@
         "objects": null,
         "allownull": null,
         "default": "true"
+      },
+      "SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_PRIORITY": {
+        "type": "sai_uint32_t",
+        "flags": [
+          "CREATE_AND_SET"
+        ],
+        "objects": null,
+        "allownull": null,
+        "default": "0"
       },
       "SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_END": {
         "type": null,
@@ -19202,7 +19436,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_UNKNOWN_IPV4_MCAST_OUTPUT_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -19213,7 +19447,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_UNKNOWN_IPV6_MCAST_OUTPUT_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -19224,7 +19458,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_UNKNOWN_LINKLOCAL_MCAST_OUTPUT_GROUP_ID": {
         "type": "sai_object_id_t",
@@ -19235,7 +19469,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_INGRESS_ACL": {
         "type": "sai_object_id_t",
@@ -19247,7 +19481,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_EGRESS_ACL": {
         "type": "sai_object_id_t",
@@ -19259,7 +19493,7 @@
           "SAI_OBJECT_TYPE_ACL_TABLE_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_META_DATA": {
         "type": "sai_uint32_t",
@@ -19288,7 +19522,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE": {
         "type": "sai_vlan_flood_control_type_t",
@@ -19308,7 +19542,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_BROADCAST_FLOOD_CONTROL_TYPE": {
         "type": "sai_vlan_flood_control_type_t",
@@ -19328,7 +19562,7 @@
           "SAI_OBJECT_TYPE_L2MC_GROUP"
         ],
         "allownull": "true",
-        "default": "SAI_NULL_OBJECT_ID"
+        "default": "null"
       },
       "SAI_VLAN_ATTR_CUSTOM_IGMP_SNOOPING_ENABLE": {
         "type": "bool",

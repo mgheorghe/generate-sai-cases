@@ -132,7 +132,7 @@ class TestSaiInsegEntry:
             {
                 "name": "inseg_entry_1",
                 "op": "set",
-                "attributes": ["SAI_INSEG_ENTRY_ATTR_NEXT_HOP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_INSEG_ENTRY_ATTR_NEXT_HOP_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -158,7 +158,7 @@ class TestSaiInsegEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_inseg_entry_attr_psc_type_set")
@@ -240,7 +240,7 @@ class TestSaiInsegEntry:
             {
                 "name": "inseg_entry_1",
                 "op": "set",
-                "attributes": ["SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_TC_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -266,7 +266,7 @@ class TestSaiInsegEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_inseg_entry_attr_mpls_exp_to_color_map_set")
@@ -276,7 +276,7 @@ class TestSaiInsegEntry:
             {
                 "name": "inseg_entry_1",
                 "op": "set",
-                "attributes": ["SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_COLOR_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -302,7 +302,7 @@ class TestSaiInsegEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_inseg_entry_attr_pop_ttl_mode_set")
@@ -384,7 +384,7 @@ class TestSaiInsegEntry:
             {
                 "name": "inseg_entry_1",
                 "op": "set",
-                "attributes": ["SAI_INSEG_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_INSEG_ENTRY_ATTR_COUNTER_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -410,7 +410,7 @@ class TestSaiInsegEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_inseg_entry_remove(self, npu):

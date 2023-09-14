@@ -1452,7 +1452,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_FLOOD_STORM_CONTROL_POLICER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_FLOOD_STORM_CONTROL_POLICER_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1478,7 +1478,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_broadcast_storm_control_policer_id_set")
@@ -1488,7 +1488,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_BROADCAST_STORM_CONTROL_POLICER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_BROADCAST_STORM_CONTROL_POLICER_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1514,7 +1514,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_multicast_storm_control_policer_id_set")
@@ -1524,7 +1524,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_MULTICAST_STORM_CONTROL_POLICER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_MULTICAST_STORM_CONTROL_POLICER_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1550,7 +1550,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_global_flow_control_mode_set")
@@ -1596,7 +1596,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_INGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1622,7 +1622,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_egress_acl_set")
@@ -1632,7 +1632,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_EGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1658,7 +1658,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_ingress_macsec_acl_set")
@@ -1668,7 +1668,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_INGRESS_MACSEC_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_INGRESS_MACSEC_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1694,7 +1694,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_egress_macsec_acl_set")
@@ -1704,7 +1704,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_EGRESS_MACSEC_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_EGRESS_MACSEC_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1730,7 +1730,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     
@@ -1832,7 +1832,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_INGRESS_SAMPLEPACKET_ENABLE", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_INGRESS_SAMPLEPACKET_ENABLE", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1858,7 +1858,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_egress_samplepacket_enable_set")
@@ -1868,7 +1868,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_EGRESS_SAMPLEPACKET_ENABLE", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_EGRESS_SAMPLEPACKET_ENABLE", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -1894,7 +1894,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_ingress_sample_mirror_session_set")
@@ -1976,7 +1976,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_POLICER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_POLICER_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2002,7 +2002,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_default_tc_set")
@@ -2048,7 +2048,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_DOT1P_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_DOT1P_TO_TC_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2074,7 +2074,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_dot1p_to_color_map_set")
@@ -2084,7 +2084,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_DOT1P_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_DOT1P_TO_COLOR_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2110,7 +2110,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_dscp_to_tc_map_set")
@@ -2120,7 +2120,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2146,7 +2146,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_dscp_to_color_map_set")
@@ -2156,7 +2156,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_COLOR_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2182,7 +2182,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_tc_to_queue_map_set")
@@ -2192,7 +2192,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_TC_TO_QUEUE_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2218,7 +2218,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_tc_and_color_to_dot1p_map_set")
@@ -2228,7 +2228,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2254,7 +2254,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_tc_and_color_to_dscp_map_set")
@@ -2264,7 +2264,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2290,7 +2290,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_tc_to_priority_group_map_set")
@@ -2300,7 +2300,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_TC_TO_PRIORITY_GROUP_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_TC_TO_PRIORITY_GROUP_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2326,7 +2326,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_pfc_priority_to_priority_group_map_set")
@@ -2336,7 +2336,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_PRIORITY_GROUP_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_PRIORITY_GROUP_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2362,7 +2362,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_pfc_priority_to_queue_map_set")
@@ -2372,7 +2372,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_QUEUE_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2398,7 +2398,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_scheduler_profile_id_set")
@@ -2408,7 +2408,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_SCHEDULER_PROFILE_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_SCHEDULER_PROFILE_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2434,7 +2434,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_ingress_buffer_profile_list_set")
@@ -2896,7 +2896,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_ISOLATION_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_ISOLATION_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2922,7 +2922,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_pkt_tx_enable_set")
@@ -3524,7 +3524,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_TC_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -3550,7 +3550,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_mpls_exp_to_color_map_set")
@@ -3560,7 +3560,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -3586,7 +3586,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_tc_and_color_to_mpls_exp_map_set")
@@ -3596,7 +3596,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -3622,7 +3622,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_tpid_set")
@@ -4208,7 +4208,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -4234,7 +4234,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_port_attr_qos_mpls_exp_to_forwarding_class_map_set")
@@ -4244,7 +4244,7 @@ class TestSaiPort:
             {
                 "name": "port_1",
                 "op": "set",
-                "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -4270,7 +4270,7 @@ class TestSaiPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     
@@ -4887,6 +4887,210 @@ class TestSaiPort:
         r_value = results[0][0].value()
         print(r_value)
         assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    @pytest.mark.dependency(name="test_sai_port_attr_host_tx_signal_enable_set")
+    def test_sai_port_attr_host_tx_signal_enable_set(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "set",
+                "attributes": ["SAI_PORT_ATTR_HOST_TX_SIGNAL_ENABLE", 'true']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_port_attr_host_tx_signal_enable_set"])
+    def test_sai_port_attr_host_tx_signal_enable_get(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "get",
+                "attributes": ["SAI_PORT_ATTR_HOST_TX_SIGNAL_ENABLE"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'true', 'Get error, expected true but got %s' %  r_value
+
+
+    
+    def test_sai_port_attr_host_tx_ready_status_get(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "get",
+                "attributes": ["SAI_PORT_ATTR_HOST_TX_READY_STATUS"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    @pytest.mark.dependency(name="test_sai_port_attr_path_tracing_intf_set")
+    def test_sai_port_attr_path_tracing_intf_set(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "set",
+                "attributes": ["SAI_PORT_ATTR_PATH_TRACING_INTF", '0']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_port_attr_path_tracing_intf_set"])
+    def test_sai_port_attr_path_tracing_intf_get(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "get",
+                "attributes": ["SAI_PORT_ATTR_PATH_TRACING_INTF"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' %  r_value
+
+
+    @pytest.mark.dependency(name="test_sai_port_attr_path_tracing_timestamp_type_set")
+    def test_sai_port_attr_path_tracing_timestamp_type_set(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "set",
+                "attributes": ["SAI_PORT_ATTR_PATH_TRACING_TIMESTAMP_TYPE", 'SAI_PORT_PATH_TRACING_TIMESTAMP_TYPE_16_23']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_port_attr_path_tracing_timestamp_type_set"])
+    def test_sai_port_attr_path_tracing_timestamp_type_get(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "get",
+                "attributes": ["SAI_PORT_ATTR_PATH_TRACING_TIMESTAMP_TYPE"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PORT_PATH_TRACING_TIMESTAMP_TYPE_16_23', 'Get error, expected SAI_PORT_PATH_TRACING_TIMESTAMP_TYPE_16_23 but got %s' %  r_value
+
+
+    
+    def test_sai_port_attr_rx_frequency_offset_ppm_get(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "get",
+                "attributes": ["SAI_PORT_ATTR_RX_FREQUENCY_OFFSET_PPM"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    
+    def test_sai_port_attr_rx_snr_get(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "get",
+                "attributes": ["SAI_PORT_ATTR_RX_SNR"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    @pytest.mark.dependency(name="test_sai_port_attr_datapath_enable_set")
+    def test_sai_port_attr_datapath_enable_set(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "set",
+                "attributes": ["SAI_PORT_ATTR_DATAPATH_ENABLE", 'SAI_PORT_DATAPATH_ENABLE_PASS_THROUGH_MODE']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_port_attr_datapath_enable_set"])
+    def test_sai_port_attr_datapath_enable_get(self, npu):
+
+        commands = [
+            {
+                "name": "port_1",
+                "op": "get",
+                "attributes": ["SAI_PORT_ATTR_DATAPATH_ENABLE"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'SAI_PORT_DATAPATH_ENABLE_PASS_THROUGH_MODE', 'Get error, expected SAI_PORT_DATAPATH_ENABLE_PASS_THROUGH_MODE but got %s' %  r_value
 
 
     def test_port_remove(self, npu):

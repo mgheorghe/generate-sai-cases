@@ -348,7 +348,7 @@ class TestSaiTamInt:
             {
                 "name": "tam_int_1",
                 "op": "set",
-                "attributes": ["SAI_TAM_INT_ATTR_ACL_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TAM_INT_ATTR_ACL_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -374,7 +374,7 @@ class TestSaiTamInt:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_tam_int_attr_max_hop_count_set")
@@ -528,7 +528,7 @@ class TestSaiTamInt:
             {
                 "name": "tam_int_1",
                 "op": "set",
-                "attributes": ["SAI_TAM_INT_ATTR_INGRESS_SAMPLEPACKET_ENABLE", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TAM_INT_ATTR_INGRESS_SAMPLEPACKET_ENABLE", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -554,7 +554,7 @@ class TestSaiTamInt:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_tam_int_attr_collector_list_set")
@@ -600,7 +600,7 @@ class TestSaiTamInt:
             {
                 "name": "tam_int_1",
                 "op": "set",
-                "attributes": ["SAI_TAM_INT_ATTR_MATH_FUNC", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TAM_INT_ATTR_MATH_FUNC", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -626,7 +626,7 @@ class TestSaiTamInt:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_tam_int_remove(self, npu):

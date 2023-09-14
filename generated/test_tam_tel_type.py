@@ -492,7 +492,7 @@ class TestSaiTamTelType:
             {
                 "name": "tam_tel_type_1",
                 "op": "set",
-                "attributes": ["SAI_TAM_TEL_TYPE_ATTR_MATH_FUNC", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TAM_TEL_TYPE_ATTR_MATH_FUNC", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -518,7 +518,7 @@ class TestSaiTamTelType:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_tam_tel_type_remove(self, npu):

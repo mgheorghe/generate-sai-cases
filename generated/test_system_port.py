@@ -140,7 +140,7 @@ class TestSaiSystemPort:
             {
                 "name": "system_port_1",
                 "op": "set",
-                "attributes": ["SAI_SYSTEM_PORT_ATTR_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SYSTEM_PORT_ATTR_QOS_TC_TO_QUEUE_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -166,7 +166,7 @@ class TestSaiSystemPort:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_system_port_remove(self, npu):

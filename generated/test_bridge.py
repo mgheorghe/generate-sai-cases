@@ -152,7 +152,7 @@ class TestSaiBridge:
             {
                 "name": "bridge_1",
                 "op": "set",
-                "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -178,7 +178,7 @@ class TestSaiBridge:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_bridge_attr_unknown_multicast_flood_control_type_set")
@@ -224,7 +224,7 @@ class TestSaiBridge:
             {
                 "name": "bridge_1",
                 "op": "set",
-                "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -250,7 +250,7 @@ class TestSaiBridge:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_bridge_attr_broadcast_flood_control_type_set")
@@ -296,7 +296,7 @@ class TestSaiBridge:
             {
                 "name": "bridge_1",
                 "op": "set",
-                "attributes": ["SAI_BRIDGE_ATTR_BROADCAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_BRIDGE_ATTR_BROADCAST_FLOOD_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -322,7 +322,7 @@ class TestSaiBridge:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_bridge_remove(self, npu):

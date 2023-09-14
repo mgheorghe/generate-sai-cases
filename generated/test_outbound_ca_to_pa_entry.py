@@ -204,7 +204,7 @@ class TestSaiOutboundCaToPaEntry:
             {
                 "name": "outbound_ca_to_pa_entry_1",
                 "op": "set",
-                "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_COUNTER_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -230,7 +230,7 @@ class TestSaiOutboundCaToPaEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     

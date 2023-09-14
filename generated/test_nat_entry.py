@@ -132,7 +132,7 @@ class TestSaiNatEntry:
             {
                 "name": "nat_entry_1",
                 "op": "set",
-                "attributes": ["SAI_NAT_ENTRY_ATTR_VR_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_NAT_ENTRY_ATTR_VR_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -158,7 +158,7 @@ class TestSaiNatEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_nat_entry_attr_dst_ip_set")

@@ -168,7 +168,7 @@ class TestSaiRouterInterface:
             {
                 "name": "router_interface_1",
                 "op": "set",
-                "attributes": ["SAI_ROUTER_INTERFACE_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ROUTER_INTERFACE_ATTR_INGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -194,7 +194,7 @@ class TestSaiRouterInterface:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_router_interface_attr_egress_acl_set")
@@ -204,7 +204,7 @@ class TestSaiRouterInterface:
             {
                 "name": "router_interface_1",
                 "op": "set",
-                "attributes": ["SAI_ROUTER_INTERFACE_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ROUTER_INTERFACE_ATTR_EGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -230,7 +230,7 @@ class TestSaiRouterInterface:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_router_interface_attr_neighbor_miss_packet_action_set")

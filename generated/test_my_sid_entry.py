@@ -168,7 +168,7 @@ class TestSaiMySidEntry:
             {
                 "name": "my_sid_entry_1",
                 "op": "set",
-                "attributes": ["SAI_MY_SID_ENTRY_ATTR_NEXT_HOP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_MY_SID_ENTRY_ATTR_NEXT_HOP_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -194,7 +194,7 @@ class TestSaiMySidEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_my_sid_entry_attr_tunnel_id_set")
@@ -204,7 +204,7 @@ class TestSaiMySidEntry:
             {
                 "name": "my_sid_entry_1",
                 "op": "set",
-                "attributes": ["SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -230,7 +230,7 @@ class TestSaiMySidEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_my_sid_entry_attr_vrf_set")
@@ -240,7 +240,7 @@ class TestSaiMySidEntry:
             {
                 "name": "my_sid_entry_1",
                 "op": "set",
-                "attributes": ["SAI_MY_SID_ENTRY_ATTR_VRF", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_MY_SID_ENTRY_ATTR_VRF", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -266,7 +266,7 @@ class TestSaiMySidEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_my_sid_entry_attr_counter_id_set")
@@ -276,7 +276,7 @@ class TestSaiMySidEntry:
             {
                 "name": "my_sid_entry_1",
                 "op": "set",
-                "attributes": ["SAI_MY_SID_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_MY_SID_ENTRY_ATTR_COUNTER_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -302,7 +302,7 @@ class TestSaiMySidEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_my_sid_entry_remove(self, npu):

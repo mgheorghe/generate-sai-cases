@@ -512,7 +512,7 @@ class TestSaiTunnel:
             {
                 "name": "tunnel_1",
                 "op": "set",
-                "attributes": ["SAI_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -538,7 +538,7 @@ class TestSaiTunnel:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_tunnel_attr_encap_qos_tc_to_queue_map_set")
@@ -548,7 +548,7 @@ class TestSaiTunnel:
             {
                 "name": "tunnel_1",
                 "op": "set",
-                "attributes": ["SAI_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -574,7 +574,7 @@ class TestSaiTunnel:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_tunnel_attr_decap_qos_dscp_to_tc_map_set")
@@ -584,7 +584,7 @@ class TestSaiTunnel:
             {
                 "name": "tunnel_1",
                 "op": "set",
-                "attributes": ["SAI_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -610,7 +610,7 @@ class TestSaiTunnel:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_tunnel_attr_decap_qos_tc_to_priority_group_map_set")
@@ -620,7 +620,7 @@ class TestSaiTunnel:
             {
                 "name": "tunnel_1",
                 "op": "set",
-                "attributes": ["SAI_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -646,7 +646,7 @@ class TestSaiTunnel:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_tunnel_attr_vxlan_udp_sport_security_set")

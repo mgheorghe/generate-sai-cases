@@ -224,7 +224,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_NON_IP_MCAST_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_NON_IP_MCAST_OUTPUT_GROUP_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -250,7 +250,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_unknown_ipv4_mcast_output_group_id_set")
@@ -260,7 +260,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_IPV4_MCAST_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_IPV4_MCAST_OUTPUT_GROUP_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -286,7 +286,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_unknown_ipv6_mcast_output_group_id_set")
@@ -296,7 +296,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_IPV6_MCAST_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_IPV6_MCAST_OUTPUT_GROUP_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -322,7 +322,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_unknown_linklocal_mcast_output_group_id_set")
@@ -332,7 +332,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_LINKLOCAL_MCAST_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_LINKLOCAL_MCAST_OUTPUT_GROUP_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -358,7 +358,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_ingress_acl_set")
@@ -368,7 +368,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_INGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -394,7 +394,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_egress_acl_set")
@@ -404,7 +404,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_EGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -430,7 +430,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_meta_data_set")
@@ -512,7 +512,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -538,7 +538,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_unknown_multicast_flood_control_type_set")
@@ -584,7 +584,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -610,7 +610,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_broadcast_flood_control_type_set")
@@ -656,7 +656,7 @@ class TestSaiVlan:
             {
                 "name": "vlan_1",
                 "op": "set",
-                "attributes": ["SAI_VLAN_ATTR_BROADCAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_VLAN_ATTR_BROADCAST_FLOOD_GROUP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -682,7 +682,7 @@ class TestSaiVlan:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_vlan_attr_custom_igmp_snooping_enable_set")

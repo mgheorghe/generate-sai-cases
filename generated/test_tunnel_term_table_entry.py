@@ -73,6 +73,42 @@ class TestSaiTunnelTermTableEntry:
         assert r_value == 'true', 'Get error, expected true but got %s' %  r_value
 
 
+    @pytest.mark.dependency(name="test_sai_tunnel_term_table_entry_attr_priority_set")
+    def test_sai_tunnel_term_table_entry_attr_priority_set(self, npu):
+
+        commands = [
+            {
+                "name": "tunnel_term_table_entry_1",
+                "op": "set",
+                "attributes": ["SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_PRIORITY", '0']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_tunnel_term_table_entry_attr_priority_set"])
+    def test_sai_tunnel_term_table_entry_attr_priority_get(self, npu):
+
+        commands = [
+            {
+                "name": "tunnel_term_table_entry_1",
+                "op": "get",
+                "attributes": ["SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_PRIORITY"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' %  r_value
+
+
     def test_tunnel_term_table_entry_remove(self, npu):
 
         commands = [{'name': 'tunnel_term_table_entry_1', 'op': 'remove'}, {'name': 'tunnel_1', 'op': 'remove'}, {'name': 'router_interface_1', 'op': 'remove'}, {'name': 'bridge_1', 'op': 'remove'}, {'name': 'vlan_1', 'op': 'remove'}, {'name': 'port_1', 'op': 'remove'}, {'name': 'virtual_router_1', 'op': 'remove'}]

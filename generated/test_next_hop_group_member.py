@@ -116,7 +116,7 @@ class TestSaiNextHopGroupMember:
             {
                 "name": "next_hop_group_member_1",
                 "op": "set",
-                "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_MONITORED_OBJECT", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_MONITORED_OBJECT", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -142,7 +142,7 @@ class TestSaiNextHopGroupMember:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_next_hop_group_member_attr_sequence_id_set")
@@ -188,7 +188,7 @@ class TestSaiNextHopGroupMember:
             {
                 "name": "next_hop_group_member_1",
                 "op": "set",
-                "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_COUNTER_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -214,7 +214,7 @@ class TestSaiNextHopGroupMember:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_next_hop_group_member_attr_ars_alternate_path_set")

@@ -708,7 +708,7 @@ class TestSaiMirrorSession:
             {
                 "name": "mirror_session_1",
                 "op": "set",
-                "attributes": ["SAI_MIRROR_SESSION_ATTR_POLICER", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_MIRROR_SESSION_ATTR_POLICER", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -734,7 +734,7 @@ class TestSaiMirrorSession:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_mirror_session_attr_udp_src_port_set")
@@ -816,7 +816,7 @@ class TestSaiMirrorSession:
             {
                 "name": "mirror_session_1",
                 "op": "set",
-                "attributes": ["SAI_MIRROR_SESSION_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_MIRROR_SESSION_ATTR_COUNTER_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -842,7 +842,7 @@ class TestSaiMirrorSession:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_mirror_session_remove(self, npu):

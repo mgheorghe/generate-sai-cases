@@ -10,7 +10,7 @@ from pyvis.network import Network
 from default_values import DEFAULT_VALUES, SAI_OBJECT_TYPES
 
 # give your custom path
-SAI_CODE_LOCATION = r'/home/ubuntuserver/dinesh/SAI/'
+SAI_CODE_LOCATION = r'C:\Work\products\generatesai\SAI'
 # SAI_CODE_LOCATION = r'C:/github-keysight/SAI'
 # SAI_CODE_LOCATION = r'C:/github-mgheorghe/SAI'
 
@@ -175,6 +175,8 @@ def parse_sai_header_files():
                                 ).strip()
                             if '@default' in text_line:
                                 default = text_line.replace('* @default', '').strip()
+                                if default=="SAI_NULL_OBJECT_ID":
+                                    default = 'null'
 
                         if is_attribute:
                             attribute = text_line.split('=')[0].replace(',', '').strip()

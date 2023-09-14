@@ -60,7 +60,7 @@ class TestSaiOutboundRoutingEntry:
             {
                 "name": "outbound_routing_entry_1",
                 "op": "set",
-                "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DST_VNET_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DST_VNET_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -86,7 +86,7 @@ class TestSaiOutboundRoutingEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_outbound_routing_entry_attr_meter_policy_en_set")
@@ -492,7 +492,7 @@ class TestSaiOutboundRoutingEntry:
             {
                 "name": "outbound_routing_entry_1",
                 "op": "set",
-                "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_COUNTER_ID", 'null']
             }
         ]
         results = [*dpu.process_commands(commands)]
@@ -518,7 +518,7 @@ class TestSaiOutboundRoutingEntry:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     

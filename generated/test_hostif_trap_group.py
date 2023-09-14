@@ -96,7 +96,7 @@ class TestSaiHostifTrapGroup:
             {
                 "name": "hostif_trap_group_1",
                 "op": "set",
-                "attributes": ["SAI_HOSTIF_TRAP_GROUP_ATTR_POLICER", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_HOSTIF_TRAP_GROUP_ATTR_POLICER", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -122,7 +122,7 @@ class TestSaiHostifTrapGroup:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_hostif_trap_group_remove(self, npu):

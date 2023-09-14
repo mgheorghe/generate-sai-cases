@@ -24,7 +24,7 @@ class TestSaiAclTableGroupMember:
             {
                 "name": "acl_table_group_member_1",
                 "op": "set",
-                "attributes": ["SAI_ACL_TABLE_GROUP_MEMBER_ATTR_ACL_TABLE_CHAIN_GROUP_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_ACL_TABLE_GROUP_MEMBER_ATTR_ACL_TABLE_CHAIN_GROUP_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -50,7 +50,7 @@ class TestSaiAclTableGroupMember:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     def test_acl_table_group_member_remove(self, npu):

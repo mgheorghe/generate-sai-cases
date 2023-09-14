@@ -864,7 +864,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_INGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -890,7 +890,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_egress_acl_set")
@@ -900,7 +900,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_EGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -926,7 +926,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     
@@ -2156,7 +2156,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV4", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV4", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2182,7 +2182,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_ecmp_hash_ipv4_in_ipv4_set")
@@ -2192,7 +2192,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV4_IN_IPV4", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV4_IN_IPV4", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2218,7 +2218,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_ecmp_hash_ipv6_set")
@@ -2228,7 +2228,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV6", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV6", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2254,7 +2254,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_lag_default_hash_algorithm_set")
@@ -2408,7 +2408,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV4", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV4", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2434,7 +2434,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_lag_hash_ipv4_in_ipv4_set")
@@ -2444,7 +2444,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV4_IN_IPV4", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV4_IN_IPV4", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2470,7 +2470,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_lag_hash_ipv6_set")
@@ -2480,7 +2480,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV6", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV6", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2506,7 +2506,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_counter_refresh_interval_set")
@@ -2588,7 +2588,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_DOT1P_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_DOT1P_TO_TC_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2614,7 +2614,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_dot1p_to_color_map_set")
@@ -2624,7 +2624,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_DOT1P_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_DOT1P_TO_COLOR_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2650,7 +2650,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_dscp_to_tc_map_set")
@@ -2660,7 +2660,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_TC_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2686,7 +2686,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_dscp_to_color_map_set")
@@ -2696,7 +2696,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_COLOR_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2722,7 +2722,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_tc_to_queue_map_set")
@@ -2732,7 +2732,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_TC_TO_QUEUE_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2758,7 +2758,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_tc_and_color_to_dot1p_map_set")
@@ -2768,7 +2768,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2794,7 +2794,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_tc_and_color_to_dscp_map_set")
@@ -2804,7 +2804,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -2830,7 +2830,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_switch_shell_enable_set")
@@ -4064,7 +4064,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_NAT_ZONE_COUNTER_OBJECT_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_NAT_ZONE_COUNTER_OBJECT_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -4090,7 +4090,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_nat_enable_set")
@@ -4452,7 +4452,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_TC_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -4478,7 +4478,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_mpls_exp_to_color_map_set")
@@ -4488,7 +4488,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -4514,7 +4514,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_tc_and_color_to_mpls_exp_map_set")
@@ -4524,7 +4524,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -4550,7 +4550,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     
@@ -4772,7 +4772,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_PRE_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_PRE_INGRESS_ACL", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -4798,7 +4798,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     
@@ -4988,7 +4988,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -5014,7 +5014,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_qos_mpls_exp_to_forwarding_class_map_set")
@@ -5024,7 +5024,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -5050,7 +5050,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_ipsec_object_id_set")
@@ -5060,7 +5060,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_IPSEC_OBJECT_ID", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_IPSEC_OBJECT_ID", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -5086,7 +5086,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     @pytest.mark.dependency(name="test_sai_switch_attr_ipsec_sa_tag_tpid_set")
@@ -5260,7 +5260,7 @@ class TestSaiSwitch:
             {
                 "name": "switch_1",
                 "op": "set",
-                "attributes": ["SAI_SWITCH_ATTR_ARS_PROFILE", 'SAI_NULL_OBJECT_ID']
+                "attributes": ["SAI_SWITCH_ATTR_ARS_PROFILE", 'null']
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -5286,7 +5286,7 @@ class TestSaiSwitch:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'SAI_NULL_OBJECT_ID', 'Get error, expected SAI_NULL_OBJECT_ID but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
 
 
     
@@ -5605,6 +5605,198 @@ class TestSaiSwitch:
                 "name": "switch_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_CHAIN_LIST"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    @pytest.mark.dependency(name="test_sai_switch_attr_port_host_tx_ready_notify_set")
+    def test_sai_switch_attr_port_host_tx_ready_notify_set(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "set",
+                "attributes": ["SAI_SWITCH_ATTR_PORT_HOST_TX_READY_NOTIFY", 'NULL']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_switch_attr_port_host_tx_ready_notify_set"])
+    def test_sai_switch_attr_port_host_tx_ready_notify_get(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "get",
+                "attributes": ["SAI_SWITCH_ATTR_PORT_HOST_TX_READY_NOTIFY"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'NULL', 'Get error, expected NULL but got %s' %  r_value
+
+
+    
+    def test_sai_switch_attr_tunnel_term_table_entry_minimum_priority_get(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "get",
+                "attributes": ["SAI_SWITCH_ATTR_TUNNEL_TERM_TABLE_ENTRY_MINIMUM_PRIORITY"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    
+    def test_sai_switch_attr_tunnel_term_table_entry_maximum_priority_get(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "get",
+                "attributes": ["SAI_SWITCH_ATTR_TUNNEL_TERM_TABLE_ENTRY_MAXIMUM_PRIORITY"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    @pytest.mark.dependency(name="test_sai_switch_attr_twamp_session_event_notify_set")
+    def test_sai_switch_attr_twamp_session_event_notify_set(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "set",
+                "attributes": ["SAI_SWITCH_ATTR_TWAMP_SESSION_EVENT_NOTIFY", 'NULL']
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+
+
+
+    @pytest.mark.dependency(depends=["test_sai_switch_attr_twamp_session_event_notify_set"])
+    def test_sai_switch_attr_twamp_session_event_notify_get(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "get",
+                "attributes": ["SAI_SWITCH_ATTR_TWAMP_SESSION_EVENT_NOTIFY"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'NULL', 'Get error, expected NULL but got %s' %  r_value
+
+
+    
+    def test_sai_switch_attr_available_twamp_session_get(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "get",
+                "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_TWAMP_SESSION"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    
+    def test_sai_switch_attr_max_twamp_session_get(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "get",
+                "attributes": ["SAI_SWITCH_ATTR_MAX_TWAMP_SESSION"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    
+    def test_sai_switch_attr_available_ip_next_hop_group_member_entry_get(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "get",
+                "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_IP_NEXT_HOP_GROUP_MEMBER_ENTRY"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        for command in results:
+            for attribute in command:
+                pprint(attribute.raw())
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == 'TODO', 'Get error, expected TODO but got %s' %  r_value
+
+
+    
+    def test_sai_switch_attr_available_system_voqs_get(self, npu):
+
+        commands = [
+            {
+                "name": "switch_1",
+                "op": "get",
+                "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_SYSTEM_VOQS"]
             }
         ]
         results = [*npu.process_commands(commands)]
