@@ -175,8 +175,6 @@ def parse_sai_header_files():
                                 ).strip()
                             if '@default' in text_line:
                                 default = text_line.replace('* @default', '').strip()
-                                if default=="SAI_NULL_OBJECT_ID":
-                                    default = 'null'
 
                         if is_attribute:
                             attribute = text_line.split('=')[0].replace(',', '').strip()
