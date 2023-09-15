@@ -1,99 +1,94 @@
-
 from pprint import pprint
 
 import pytest
+
 
 @pytest.mark.npu
 class TestSaiDtelEvent:
     # object with no parents
 
     def test_dtel_event_create(self, npu):
-
-        commands = [{'name': 'dtel_event_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_DTEL_EVENT', 'attributes': ['SAI_DTEL_EVENT_ATTR_TYPE', 'SAI_DTEL_EVENT_TYPE_FLOW_STATE']}]
+        commands = [
+            {
+                'name': 'dtel_event_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_DTEL_EVENT',
+                'attributes': [
+                    'SAI_DTEL_EVENT_ATTR_TYPE',
+                    'SAI_DTEL_EVENT_TYPE_FLOW_STATE',
+                ],
+            }
+        ]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values create =======')
         pprint(results)
 
-
-
-    @pytest.mark.dependency(name="test_sai_dtel_event_attr_report_session_set")
+    @pytest.mark.dependency(name='test_sai_dtel_event_attr_report_session_set')
     def test_sai_dtel_event_attr_report_session_set(self, npu):
-
         commands = [
             {
-                "name": "dtel_event_1",
-                "op": "set",
-                "attributes": ["SAI_DTEL_EVENT_ATTR_REPORT_SESSION", 'null']
+                'name': 'dtel_event_1',
+                'op': 'set',
+                'attributes': ['SAI_DTEL_EVENT_ATTR_REPORT_SESSION', 'null'],
             }
         ]
         results = [*npu.process_commands(commands)]
-        print("======= SAI commands RETURN values get =======")
+        print('======= SAI commands RETURN values get =======')
         pprint(results)
 
-
-
-    @pytest.mark.dependency(depends=["test_sai_dtel_event_attr_report_session_set"])
+    @pytest.mark.dependency(depends=['test_sai_dtel_event_attr_report_session_set'])
     def test_sai_dtel_event_attr_report_session_get(self, npu):
-
         commands = [
             {
-                "name": "dtel_event_1",
-                "op": "get",
-                "attributes": ["SAI_DTEL_EVENT_ATTR_REPORT_SESSION"]
+                'name': 'dtel_event_1',
+                'op': 'get',
+                'attributes': ['SAI_DTEL_EVENT_ATTR_REPORT_SESSION'],
             }
         ]
         results = [*npu.process_commands(commands)]
-        print("======= SAI commands RETURN values get =======")
+        print('======= SAI commands RETURN values get =======')
         for command in results:
             for attribute in command:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == 'null', 'Get error, expected null but got %s' %  r_value
+        assert r_value == 'null', 'Get error, expected null but got %s' % r_value
 
-
-    @pytest.mark.dependency(name="test_sai_dtel_event_attr_dscp_value_set")
+    @pytest.mark.dependency(name='test_sai_dtel_event_attr_dscp_value_set')
     def test_sai_dtel_event_attr_dscp_value_set(self, npu):
-
         commands = [
             {
-                "name": "dtel_event_1",
-                "op": "set",
-                "attributes": ["SAI_DTEL_EVENT_ATTR_DSCP_VALUE", '0']
+                'name': 'dtel_event_1',
+                'op': 'set',
+                'attributes': ['SAI_DTEL_EVENT_ATTR_DSCP_VALUE', '0'],
             }
         ]
         results = [*npu.process_commands(commands)]
-        print("======= SAI commands RETURN values get =======")
+        print('======= SAI commands RETURN values get =======')
         pprint(results)
 
-
-
-    @pytest.mark.dependency(depends=["test_sai_dtel_event_attr_dscp_value_set"])
+    @pytest.mark.dependency(depends=['test_sai_dtel_event_attr_dscp_value_set'])
     def test_sai_dtel_event_attr_dscp_value_get(self, npu):
-
         commands = [
             {
-                "name": "dtel_event_1",
-                "op": "get",
-                "attributes": ["SAI_DTEL_EVENT_ATTR_DSCP_VALUE"]
+                'name': 'dtel_event_1',
+                'op': 'get',
+                'attributes': ['SAI_DTEL_EVENT_ATTR_DSCP_VALUE'],
             }
         ]
         results = [*npu.process_commands(commands)]
-        print("======= SAI commands RETURN values get =======")
+        print('======= SAI commands RETURN values get =======')
         for command in results:
             for attribute in command:
                 pprint(attribute.raw())
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == '0', 'Get error, expected 0 but got %s' %  r_value
-
+        assert r_value == '0', 'Get error, expected 0 but got %s' % r_value
 
     def test_dtel_event_remove(self, npu):
-
         commands = [{'name': 'dtel_event_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
-

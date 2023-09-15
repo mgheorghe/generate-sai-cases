@@ -3,7 +3,7 @@ from pprint import pprint
 
 import pytest
 
-@pytest.mark.
+@pytest.mark.npu
 class TestSaiXxx:
     # object with no attributes
 
@@ -24,4 +24,3 @@ class TestSaiXxx:
         results = [*.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
-
