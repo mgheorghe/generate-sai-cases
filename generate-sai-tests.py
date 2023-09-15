@@ -49,7 +49,7 @@ TEST_TEMPLATE_SET = '''
             }
         ]
         results = [*%(NPU_DPU_MARKER)s.process_commands(commands)]
-        print("======= SAI commands RETURN values get =======")
+        print("======= SAI commands RETURN values set =======")
         pprint(results)
 
 '''
