@@ -59,6 +59,16 @@ from pprint import pprint
 
 import pytest
 
+@pytest.fixture(scope="module", autouse=True)
+def discovery(%(NPU_DPU_MARKER)s):
+    %(NPU_DPU_MARKER)s.objects_discovery()
+
+@pytest.fixture(scope="module", autouse=True)
+def skip_all(testbed_instance):
+    testbed = testbed_instance
+    if testbed is not None and len(testbed.%(NPU_DPU_MARKER)s) != 1:
+        pytest.skip("invalid for {} testbed".format(testbed.name))
+
 @pytest.mark.%(NPU_DPU_MARKER)s
 class TestSai%(CLASS_NAME)s:
     # %(COMMENT)s
